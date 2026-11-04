@@ -1,0 +1,145 @@
+Scanned 5931 recipes, 2507 items, 632 item tags
+
+== andesite_age: 48 listed + 25 crafted from them
+  create:analog_lever
+  create:andesite_alloy_block
+  create:andesite_bars
+  create:andesite_door
+  create:andesite_ladder
+  create:andesite_scaffolding
+  create:brown_toolbox
+  create:chain_conveyor
+  create:copper_backtank
+  create:copper_diving_boots
+  create:cuckoo_clock
+  create:desk_bell
+  create:item_hatch
+  create:linked_controller
+  create:metal_bracket
+  create:metal_girder
+  create:minecart_coupling
+  create:mysterious_cuckoo_clock
+  create:nozzle
+  create:redstone_link
+  create:secondary_linear_chassis
+  create:sticker
+  create:turntable
+  create:wooden_bracket
+  numismatics:andesite_depositor
+
+== alloy_age: 15 listed + 14 crafted from them, whole mods: productivemetalworks
+  create:brass_bars
+  create:brass_ladder
+  create:brass_scaffolding
+  create:copper_door
+  create:flywheel
+  create_dragons_plus:fluid_hatch
+  immersiveengineering:bannerpattern_hammer
+  immersiveengineering:gunpart_barrel
+  immersiveengineering:plate_copper
+  immersiveengineering:plate_gold
+  immersiveengineering:plate_iron
+  immersiveengineering:slab_alloybrick
+  immersiveengineering:slab_blastbrick
+  immersiveengineering:slab_cokebrick
+
+== brass_age: 32 listed + 44 crafted from them
+  create:brass_door
+  create:clockwork_bearing
+  create:controller_rail
+  create:extendo_grip
+  create:potato_cannon
+  create:train_door
+  create:train_trapdoor
+  create:wand_of_symmetry
+  numismatics:bank_terminal
+  numismatics:black_authorized_card
+  numismatics:black_card
+  numismatics:blue_authorized_card
+  numismatics:blue_card
+  numismatics:brass_depositor
+  numismatics:brown_authorized_card
+  numismatics:brown_card
+  numismatics:cyan_authorized_card
+  numismatics:cyan_card
+  numismatics:gray_authorized_card
+  numismatics:gray_card
+  numismatics:green_authorized_card
+  numismatics:green_card
+  numismatics:light_blue_authorized_card
+  numismatics:light_blue_card
+  numismatics:light_gray_authorized_card
+  numismatics:light_gray_card
+  numismatics:lime_authorized_card
+  numismatics:lime_card
+  numismatics:magenta_authorized_card
+  numismatics:magenta_card
+  numismatics:orange_authorized_card
+  numismatics:orange_card
+  numismatics:pink_authorized_card
+  numismatics:pink_card
+  numismatics:purple_authorized_card
+  numismatics:purple_card
+  numismatics:red_authorized_card
+  numismatics:red_card
+  numismatics:salepoint
+  numismatics:vendor
+  numismatics:white_authorized_card
+  numismatics:white_card
+  numismatics:yellow_authorized_card
+  numismatics:yellow_card
+
+== electricity_age: 11 listed + 45 crafted from them, whole mods: createaddition
+  immersiveengineering:buzzsaw
+  immersiveengineering:chemthrower
+  immersiveengineering:cloche
+  immersiveengineering:connector_probe
+  immersiveengineering:current_transformer
+  immersiveengineering:drill
+  immersiveengineering:dynamo
+  immersiveengineering:electromagnet
+  immersiveengineering:floodlight
+  immersiveengineering:fluid_pump
+  immersiveengineering:fluid_sorter
+  immersiveengineering:fluorescent_tube
+  immersiveengineering:generator
+  immersiveengineering:item_batcher
+  immersiveengineering:machine_interface
+  immersiveengineering:pipe_valve
+  immersiveengineering:railgun
+  immersiveengineering:redstone_breaker
+  immersiveengineering:redstone_switchboard
+  immersiveengineering:redstone_timer
+  immersiveengineering:resonanz_engineering
+  immersiveengineering:revolver
+  immersiveengineering:robot_wolf
+  immersiveengineering:sample_drill
+  immersiveengineering:siren
+  immersiveengineering:skyhook
+  immersiveengineering:slab_blastbrick_reinforced
+  immersiveengineering:sorter
+  immersiveengineering:speedloader
+  immersiveengineering:tesla_coil
+  immersiveengineering:toolupgrade_chemthrower_focus
+  immersiveengineering:toolupgrade_chemthrower_multitank
+  immersiveengineering:toolupgrade_drill_damage
+  immersiveengineering:toolupgrade_drill_fortune
+  immersiveengineering:toolupgrade_powerpack_induction
+  immersiveengineering:toolupgrade_powerpack_magnet
+  immersiveengineering:toolupgrade_powerpack_tesla
+  immersiveengineering:toolupgrade_revolver_magazine
+  immersiveengineering:toolupgrade_skyhook_mace
+  immersiveengineering:toolupgrade_skyhook_slope
+  immersiveengineering:transformer
+  immersiveengineering:transformer_hv
+  immersiveengineering:turntable
+  immersiveengineering:turret_chem
+  immersiveengineering:turret_gun
+
+== exotic_age: 0 listed + 0 crafted from them, whole mods: create_enchantment_industry
+
+== flight: 0 listed + 1 crafted from them, whole mods: aeronautics, simulated, offroad, aeroworks
+  create_dragons_plus:levitite_fragile_fluid_tank
+
+== logistics: 10 listed + 0 crafted from them
+

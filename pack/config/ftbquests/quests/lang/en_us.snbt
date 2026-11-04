@@ -61,7 +61,7 @@
 	quest.0635FFA2161C851C.quest_desc: [
 		"Fire clay bakes into fire bricks, the walls of the foundry."
 	]
-	quest.0635FFA2161C851C.title: "Fire Clay"
+	quest.0635FFA2161C851C.title: "Fire Bricks"
 	quest.085E83B071D5B549.quest_desc: [
 		"Pipes, pumps and tanks move liquids. Copper casing opens fluid machines."
 	]
@@ -70,15 +70,6 @@
 		"IE multiblocks are built by hand, then struck with the hammer to form."
 	]
 	quest.0B632D1E4278637F.title: "Engineer's Hammer"
-	quest.0D238CF563B75DAD.quest_desc: [
-		"Pay the XP and hand in the samples to learn this tier's recipes."
-		""
-		"&eUnlocks:&r Create: Enchantment Industry (liquid XP, blaze enchanting). Exotic material chains come in a later update."
-		""
-		"&7Research is per player. Each team member has to claim the reward to learn it."
-	]
-	quest.0D238CF563B75DAD.quest_subtitle: "Research"
-	quest.0D238CF563B75DAD.title: "Research: Exotic Age"
 	quest.14C07CE62313C72B.quest_desc: [
 		"Load a repair kit with materials and use it on worn gear."
 	]
@@ -115,6 +106,15 @@
 		"Bulk storage that grows with size."
 	]
 	quest.2528654F1E81EF97.title: "Item Vault"
+	quest.2A46606BC2A136C7.quest_desc: [
+		"This chapter guides you through the age once you've researched it."
+		""
+		"&eResearch unlocks:&r andesite alloy, shafts and cogs, water wheels, the millstone, press, mixer, fans, drills, saws and belts."
+		""
+		"&7Until then these recipes stay hidden in JEI and can't be crafted. You can still use and trade the items if someone else makes them."
+	]
+	quest.2A46606BC2A136C7.quest_subtitle: "Learn this age at the Research Bench"
+	quest.2A46606BC2A136C7.title: "Andesite Age"
 	quest.2F252DBFBEB84507.quest_desc: [
 		"A rarer, windier village."
 	]
@@ -123,15 +123,6 @@
 		"Build a farm that harvests and collects on its own."
 	]
 	quest.33B02D03094CCD4D.title: "First Automated Farm"
-	quest.375C93965E524F70.quest_desc: [
-		"The Nether is sealed. Opening it takes the whole server."
-		""
-		"Deliver the materials (Task Screens accept items from funnels and belts). When it's done, the Nether opens for &eeveryone&r, including players who are offline."
-		""
-		"&7Amounts are first drafts and will be tuned."
-	]
-	quest.375C93965E524F70.quest_subtitle: "Server project"
-	quest.375C93965E524F70.title: "The Nether Key"
 	quest.38E272BEC301C853.quest_desc: [
 		"Mixing recipes. Some need heat underneath the basin."
 	]
@@ -156,15 +147,6 @@
 		"A new material for your gear. Check its stats with Shift."
 	]
 	quest.3D89B36A28B15DD4.title: "Azure Silver"
-	quest.4023463C3455073F.quest_desc: [
-		"Pay the XP and hand in the samples to learn this tier's recipes."
-		""
-		"&eUnlocks:&r Create Aeronautics: envelopes, burners, propellers, levitite, the physics assembler and controls."
-		""
-		"&7Research is per player. Each team member has to claim the reward to learn it."
-	]
-	quest.4023463C3455073F.quest_subtitle: "Research"
-	quest.4023463C3455073F.title: "Research: Flight"
 	quest.402CDE629135F79A.quest_desc: [
 		"Something came down here. Someone was flying."
 		"Search the wreck. There may be a map."
@@ -174,6 +156,15 @@
 		"Catch a blaze in an empty blaze burner. Superheated mixing needs it."
 	]
 	quest.422E48930EA981A8.title: "Capture a Blaze"
+	quest.443C440118CD9977.quest_desc: [
+		"This chapter guides you through the age once you've researched it."
+		""
+		"&eResearch unlocks:&r Crafts & Additions (alternators, motors, rolling mill, wires) and IE's powered machines."
+		""
+		"&7Until then these recipes stay hidden in JEI and can't be crafted. You can still use and trade the items if someone else makes them."
+	]
+	quest.443C440118CD9977.quest_subtitle: "Learn this age at the Research Bench"
+	quest.443C440118CD9977.title: "Electricity Age"
 	quest.474E0AF0EE3B1761.quest_desc: [
 		"Copy written books and enchanted books."
 	]
@@ -190,10 +181,26 @@
 		"Pour metal into casts for ingots, blocks and Silent Gear parts."
 	]
 	quest.52C6999E0CE31C24.title: "Casting"
+	quest.535CEE7D8640DD6C.quest_desc: [
+		"Whoever flew that wreck knew something you don't. Research Flight to learn it."
+		""
+		"&eResearch unlocks:&r Create Aeronautics: envelopes, burners, propellers, levitite, the physics assembler and controls. Needs the Brass Age first."
+	]
+	quest.535CEE7D8640DD6C.quest_subtitle: "Learn Flight at the Research Bench"
+	quest.535CEE7D8640DD6C.title: "Flight"
 	quest.55B4E304EAA31AC8.quest_desc: [
 		"A new material for your gear. Check its stats with Shift."
 	]
 	quest.55B4E304EAA31AC8.title: "Netherite"
+	quest.5E037319BF07DCE6.quest_desc: [
+		"This chapter guides you through the age once you've researched it."
+		""
+		"&eResearch unlocks:&r item vaults, portable storage interfaces, packagers, frogports and stock tickers."
+		""
+		"&7Until then these recipes stay hidden in JEI and can't be crafted. You can still use and trade the items if someone else makes them."
+	]
+	quest.5E037319BF07DCE6.quest_subtitle: "Learn this age at the Research Bench"
+	quest.5E037319BF07DCE6.title: "Logistics"
 	quest.61A405F49C73E0AF.quest_desc: [
 		"Punch a tree and make a crafting table."
 	]
@@ -207,32 +214,14 @@
 		"Rolls ingots into rods and wire."
 	]
 	quest.6970297A89A93F61.title: "Rolling Mill"
-	quest.6C3417D5F820F147.quest_desc: [
-		"Pay the XP and hand in the samples to learn this tier's recipes."
-		""
-		"&eUnlocks:&r item vaults, portable storage interfaces, packagers, frogports and stock tickers."
-		""
-		"&7Research is per player. Each team member has to claim the reward to learn it."
-	]
-	quest.6C3417D5F820F147.quest_subtitle: "Research"
-	quest.6C3417D5F820F147.title: "Research: Logistics"
 	quest.6D79E5BD18B1DCA9.quest_desc: [
 		"A 3x3x3 of coke bricks. Bakes coal into coke and gives creosote."
 	]
 	quest.6D79E5BD18B1DCA9.title: "Coke Oven"
 	quest.72AA908A48110531.quest_desc: [
-		"Rail lines for heavy freight. Needs the Brass Age."
+		"Rail lines for heavy freight. Trains are part of the Brass Age."
 	]
 	quest.72AA908A48110531.title: "Trains"
-	quest.754DF6051A9C62C4.quest_desc: [
-		"Pay the XP and hand in the samples to learn this tier's recipes."
-		""
-		"&eUnlocks:&r andesite alloy, shafts and cogs, water wheels, the millstone, press, mixer, fans, drills, saws and belts."
-		""
-		"&7Research is per player. Each team member has to claim the reward to learn it."
-	]
-	quest.754DF6051A9C62C4.quest_subtitle: "Research"
-	quest.754DF6051A9C62C4.title: "Research: Andesite Age"
 	quest.7557F1786D6F0996.quest_desc: [
 		"Copper and zinc, alloyed in the foundry or a heated mixer. Brass opens the next age and the sky."
 	]
@@ -253,15 +242,6 @@
 		"Load and unload moving contraptions and ships."
 	]
 	quest.7B8E1EA53DCC1054.title: "Ship Cargo"
-	quest.7DB10E1CD04D87D0.quest_desc: [
-		"Pay the XP and hand in the samples to learn this tier's recipes."
-		""
-		"&eUnlocks:&r brass machines, mechanical crafters, deployers and arms, precision mechanisms, crushing wheels, steam engines and trains."
-		""
-		"&7Research is per player. Each team member has to claim the reward to learn it."
-	]
-	quest.7DB10E1CD04D87D0.quest_subtitle: "Research"
-	quest.7DB10E1CD04D87D0.title: "Research: Brass Age"
 	quest.7E102607245F2767.quest_desc: [
 		"Stone tools and a furnace. Your tools are made of parts. You'll learn what that means soon."
 	]
@@ -270,6 +250,12 @@
 		"Electricity only comes from rotation. An alternator turns RPM into power."
 	]
 	quest.814A0EAEBA710452.title: "Alternator"
+	quest.84B0E8F0A2AF6216.quest_desc: [
+		"The Nether is sealed. Opening it takes the whole server working together."
+		"When the project is finished, the Nether opens for &eeveryone&r, including players who are offline."
+	]
+	quest.84B0E8F0A2AF6216.quest_subtitle: "Server project"
+	quest.84B0E8F0A2AF6216.title: "The Nether Key"
 	quest.85A8A025C5D4688B.quest_desc: [
 		"Order from your whole network at one counter."
 	]
@@ -302,11 +288,11 @@
 	quest.8F574400B7F12669.quest_desc: [
 		"Lapis is the key to research."
 		""
-		"Every recipe beyond vanilla has to be researched. Research costs &eXP&r plus a few sample items, and it's per player. One person can learn machines and supply the rest of the team."
+		"Every recipe beyond vanilla has to be researched at the &eResearch Bench&r. Research costs &eXP&r plus a few sample items, and it's per player. One person can learn machines and supply the rest of the team."
 		""
-		"For now research is done in this book. A research bench replaces it later."
+		"When you research an age, its chapter in this book opens."
 	]
-	quest.8F574400B7F12669.quest_subtitle: "Opens: Research"
+	quest.8F574400B7F12669.quest_subtitle: "Opens: March of Industry"
 	quest.8F574400B7F12669.title: "The Price of Knowledge"
 	quest.907F06D7468A6531.quest_desc: [
 		"Lost cargo, still floating."
@@ -316,15 +302,6 @@
 		"Polished rose quartz in an iron sheet."
 	]
 	quest.909F688C9015F0C6.title: "Electron Tubes"
-	quest.93299B5B7C65FC23.quest_desc: [
-		"Pay the XP and hand in the samples to learn this tier's recipes."
-		""
-		"&eUnlocks:&r Crafts & Additions (alternators, motors, rolling mill, wires) and IE's powered machines."
-		""
-		"&7Research is per player. Each team member has to claim the reward to learn it."
-	]
-	quest.93299B5B7C65FC23.quest_subtitle: "Research"
-	quest.93299B5B7C65FC23.title: "Research: Electricity Age"
 	quest.94BBFA5581DD8AEB.quest_desc: [
 		"Machines that break blocks for you."
 	]
@@ -338,10 +315,28 @@
 		"Open the Productive Metalworks guide for the build."
 	]
 	quest.9974DE548ABA45E5.title: "The Foundry"
+	quest.99B23FA3B8E06D0D.quest_desc: [
+		"This chapter guides you through the age once you've researched it."
+		""
+		"&eResearch unlocks:&r the IE coke oven, blast furnace and alloy kiln, copper fluid handling, brass, and the foundry."
+		""
+		"&7Until then these recipes stay hidden in JEI and can't be crafted. You can still use and trade the items if someone else makes them."
+	]
+	quest.99B23FA3B8E06D0D.quest_subtitle: "Learn this age at the Research Bench"
+	quest.99B23FA3B8E06D0D.title: "Alloy Age"
 	quest.9D2A3276DE5365BC.quest_desc: [
 		"A new material for your gear. Check its stats with Shift."
 	]
 	quest.9D2A3276DE5365BC.title: "Gold"
+	quest.9DDE83C75F74BA65.quest_desc: [
+		"This chapter guides you through the age once you've researched it."
+		""
+		"&eResearch unlocks:&r brass machines, mechanical crafters, deployers and arms, precision mechanisms, crushing wheels, steam engines and trains."
+		""
+		"&7Until then these recipes stay hidden in JEI and can't be crafted. You can still use and trade the items if someone else makes them."
+	]
+	quest.9DDE83C75F74BA65.quest_subtitle: "Learn this age at the Research Bench"
+	quest.9DDE83C75F74BA65.title: "Brass Age"
 	quest.9E17EC2B80200F11.quest_desc: [
 		"Grind ores, flowers and gravel."
 	]
@@ -387,6 +382,15 @@
 		"Power back into rotation, wherever you need it."
 	]
 	quest.B6872F8D80B7F51F.title: "Electric Motor"
+	quest.BAF4C2C8B1FCA99A.quest_desc: [
+		"This chapter guides you through the age once you've researched it."
+		""
+		"&eResearch unlocks:&r Create: Enchantment Industry (liquid XP, blaze enchanting). Exotic material chains come in a later update."
+		""
+		"&7Until then these recipes stay hidden in JEI and can't be crafted. You can still use and trade the items if someone else makes them."
+	]
+	quest.BAF4C2C8B1FCA99A.quest_subtitle: "Learn this age at the Research Bench"
+	quest.BAF4C2C8B1FCA99A.title: "Exotic Age"
 	quest.BEEEF5D03C97F95E.quest_desc: [
 		"XP as a fluid. Bank it in tanks, trade it, or feed it into factories."
 	]
@@ -400,9 +404,9 @@
 	]
 	quest.CCD45BF31A4763F2.title: "Stress"
 	quest.CDDC586BD5311E42.quest_desc: [
-		"A grey stone with a future. Andesite is the start of every machine."
+		"A grey stone with a future. Andesite plus iron makes andesite alloy, the backbone of Create. You'll need to research it first."
 	]
-	quest.CDDC586BD5311E42.quest_subtitle: "Opens: March of Industry"
+	quest.CDDC586BD5311E42.quest_subtitle: "The start of every machine"
 	quest.CDDC586BD5311E42.title: "Andesite"
 	quest.D11F451A37DE5F06.quest_desc: [
 		"Villages float high above the build limit. Land, trade, and see what they sell."
@@ -429,7 +433,7 @@
 		""
 		"Everything valuable floats above &bY 250&r, where nobody can place or break blocks. To reach it you'll need to build something that flies."
 		""
-		"Start like any vanilla world. The book opens new chapters as you find things."
+		"Start like any vanilla world. This book is your guide: it opens new chapters as you find things and learn new ages."
 	]
 	quest.D6BFAAAE8DC45F87.quest_subtitle: "Read me first"
 	quest.D6BFAAAE8DC45F87.title: "Welcome to Skybound"
@@ -437,15 +441,6 @@
 		"Carry power between buildings."
 	]
 	quest.D74E43DBFCECFBCF.title: "Wiring"
-	quest.E0236B653ECE5763.quest_desc: [
-		"Pay the XP and hand in the samples to learn this tier's recipes."
-		""
-		"&eUnlocks:&r the IE coke oven, blast furnace and alloy kiln, copper fluid handling, brass, and the foundry."
-		""
-		"&7Research is per player. Each team member has to claim the reward to learn it."
-	]
-	quest.E0236B653ECE5763.quest_subtitle: "Research"
-	quest.E0236B653ECE5763.title: "Research: Alloy Age"
 	quest.E17A9DE819FE4B0D.quest_desc: [
 		"Picks up and places items between machines."
 	]
@@ -478,7 +473,7 @@
 	]
 	quest.EF3A8F11B527ABAD.title: "Encased Fan"
 	quest.F0E6D2A6339B8D62.quest_desc: [
-		"Metal quests stay hidden until you hold the metal. Rumours so far:"
+		"Each metal gets its own entry here once you hold it. Rumours so far:"
 		"&7-&r Something red runs in the walls of the Nether."
 		"&7-&r Blue veins are said to glitter in the End."
 		"&7-&r Black crystals hide deep below the stone."
@@ -486,7 +481,7 @@
 		""
 		"The &eFoundry&r (Alloy Age) casts parts and doubles your ore."
 	]
-	quest.F0E6D2A6339B8D62.quest_subtitle: "Hints for hidden quests"
+	quest.F0E6D2A6339B8D62.quest_subtitle: "Hints for hidden entries"
 	quest.F0E6D2A6339B8D62.title: "Field Notes: Metals"
 	quest.F17E7E05A160CC66.quest_desc: [
 		"A new material for your gear. Check its stats with Shift."

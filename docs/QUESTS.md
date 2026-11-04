@@ -1,40 +1,54 @@
 # Quest book and research locks
 
-The quest book and the research stages are generated from one file:
+## Quest book
+
+The quest book is a **guide and tutorial only**. It has no costs and no rewards.
+Research is done separately, at the research bench (not built yet).
+
+Each age chapter opens with a gear-shaped quest holding a "gamestage" task. That task ticks
+itself once the player has the age's stage, which opens the rest of the chapter.
 
     python tools/questgen/build_quests.py --check <items.json>
 
-It writes `pack/config/ftbquests/quests/` and `pack/kubejs/data/skybound/chapters/stages/`.
-IDs come from stable keys, so regenerating keeps player progress. Once you start editing the
-book in-game, stop regenerating, or copy your edits back into the script first, because it
-overwrites the quest folder.
+This writes `pack/config/ftbquests/quests/`. IDs come from stable keys, so regenerating keeps
+player progress. Once you start editing the book in-game, stop regenerating, or copy your edits
+back into the script first, because it overwrites the quest folder.
 
-## How research works (for now)
+## Research locks
 
-Each age starts with a gear-shaped **Research** quest: pay XP points plus sample items, then
-claim the reward. The reward runs `/chapters add <player> skybound:<stage>`.
+    python tools/questgen/build_stages.py "mod-files/mods"
 
-FTB Quests progress is shared by a team, but rewards are claimed per player, so every team
-member has to claim the research reward. This is a stopgap until the research bench.
+This writes `pack/kubejs/data/skybound/chapters/stages/*.json` and `tools/questgen/stages-report.txt`.
 
-| Stage | XP points (≈ level) | Unlocks |
-|---|---|---|
-| andesite_age | 160 (10) | Create kinetics and basic machines |
-| logistics | 315 (15) | Vaults, packages, frogports, stock tickers |
-| alloy_age | 550 (20) | IE coke oven, blast furnace, alloy kiln, copper fluids, brass, foundry |
-| flight | 910 (25) | Create Aeronautics, Simulated, Offroad |
-| brass_age | 1395 (30) | Brass machines, crafters, deployers, arms, trains |
-| electricity_age | 2920 (40) | Crafts & Additions, IE powered machines |
-| exotic_age | 5345 (50) | Create: Enchantment Industry |
+- **Seed list:** each tier has a hand-written list of items (and whole mods) in `build_stages.py`.
+- **Crafted-from closure:** any item whose recipes all need a locked ingredient is locked too, in
+  the highest tier it depends on. The andesite alloy block is locked to the Andesite Age because
+  its only recipe uses andesite alloy. An item with any recipe made from free ingredients stays free.
+- **Locks are on crafting only:** a locked item can't be crafted and its recipes are hidden in JEI,
+  but it can still be picked up, used and traded.
+- **Not covered:** vanilla items are never locked, and fluid ingredients are ignored.
+- **When to re-run:** after adding or updating mods. Check the report for anything locked that
+  shouldn't be.
+
+| Tier | Opens the chapter |
+|---|---|
+| andesite_age | 1 · Andesite Age |
+| logistics | Logistics & Transport |
+| alloy_age | 2 · Alloy Age |
+| brass_age | 3 · Brass Age |
+| flight | 1 · First Flight (after finding a wreck) |
+| electricity_age | 4 · Electricity Age |
+| exotic_age | 5 · Exotic Age |
 
 ## Server-wide unlocks
 
-`/skybound unlock nether`, `/skybound lock nether`, `/skybound status` (ops only). The Nether Key
-quest runs the unlock. Players get or lose the stage at login, so offline players catch up.
+Ops can run `/skybound unlock nether`, `/skybound lock nether` and `/skybound status`.
+Players get or lose the stage when they log in, so offline players catch up.
+The Nether project mechanic itself is still to be designed (not in the quest book).
 
-## Admin commands
+## Testing commands
 
     /chapters list <player>
-    /chapters add <player> skybound:<stage>
-    /chapters remove <player> skybound:<stage>
+    /chapters add <player> skybound:andesite_age
+    /chapters remove <player> skybound:andesite_age
     /ftbquests editing_mode

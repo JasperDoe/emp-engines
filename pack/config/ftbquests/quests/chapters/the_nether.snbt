@@ -13,55 +13,22 @@
 	quests: [
 		{
 			dependencies: [
-				"93299B5B7C65FC23"
+				"443C440118CD9977"
 			]
 			hide_until_deps_complete: true
 			icon: {
 				count: 1
 				id: "minecraft:crying_obsidian"
 			}
-			id: "375C93965E524F70"
-			rewards: [
-				{
-					command: "/skybound unlock nether"
-					id: "4B069759459F299D"
-					permission_level: 2
-					silent: true
-					type: "command"
-				}
-			]
-			shape: "hexagon"
+			id: "84B0E8F0A2AF6216"
+			shape: "gear"
 			size: 2.0d
 			tasks: [
 				{
-					consume_items: true
-					count: 2000L
-					id: "C2F48835D9FDA21C"
-					item: {
-						count: 1
-						id: "minecraft:obsidian"
-					}
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 5000L
-					id: "699BA99C132D3A2A"
-					item: {
-						count: 1
-						id: "immersiveengineering:ingot_steel"
-					}
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 500L
-					id: "174C0FB9A4AE014C"
-					item: {
-						count: 1
-						id: "create:precision_mechanism"
-					}
-					type: "item"
+					id: "7423D2CA2B92277D"
+					stage: "skybound:nether_access"
+					team_stage: false
+					type: "gamestage"
 				}
 			]
 			x: 0.0d
@@ -69,16 +36,9 @@
 		}
 		{
 			dependencies: [
-				"375C93965E524F70"
+				"84B0E8F0A2AF6216"
 			]
 			id: "1C9F2F26F3CA7CA5"
-			rewards: [
-				{
-					id: "958F9FCB113617AC"
-					type: "xp"
-					xp: 100
-				}
-			]
 			tasks: [
 				{
 					dimension: "minecraft:the_nether"

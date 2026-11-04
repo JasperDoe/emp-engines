@@ -21,7 +21,21 @@
     "immersiveengineering:blastbrick",
     "immersiveengineering:alloybrick",
     "immersiveengineering:hammer",
-    "silentgear:alloy_forge"
+    "silentgear:alloy_forge",
+    "create:brass_bars",
+    "create:brass_ladder",
+    "create:brass_scaffolding",
+    "create:copper_door",
+    "create:flywheel",
+    "create_dragons_plus:fluid_hatch",
+    "immersiveengineering:bannerpattern_hammer",
+    "immersiveengineering:gunpart_barrel",
+    "immersiveengineering:plate_copper",
+    "immersiveengineering:plate_gold",
+    "immersiveengineering:plate_iron",
+    "immersiveengineering:slab_alloybrick",
+    "immersiveengineering:slab_blastbrick",
+    "immersiveengineering:slab_cokebrick"
   ],
   "namespaces": [
     "productivemetalworks"

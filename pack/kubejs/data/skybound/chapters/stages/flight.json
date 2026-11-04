@@ -6,10 +6,13 @@
     "dropFromInventory": false,
     "preventTransfer": false
   },
-  "items": [],
+  "items": [
+    "create_dragons_plus:levitite_fragile_fluid_tank"
+  ],
   "namespaces": [
     "aeronautics",
     "simulated",
-    "offroad"
+    "offroad",
+    "aeroworks"
   ]
 }

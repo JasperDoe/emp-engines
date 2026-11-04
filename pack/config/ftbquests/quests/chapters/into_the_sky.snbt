@@ -21,13 +21,6 @@
 				id: "minecraft:emerald"
 			}
 			id: "D11F451A37DE5F06"
-			rewards: [
-				{
-					id: "F09FEE89D460CD30"
-					type: "xp"
-					xp: 300
-				}
-			]
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [
@@ -45,13 +38,6 @@
 				"D11F451A37DE5F06"
 			]
 			id: "2F252DBFBEB84507"
-			rewards: [
-				{
-					id: "201C42600DCD0260"
-					type: "xp"
-					xp: 300
-				}
-			]
 			tasks: [
 				{
 					id: "2BB6B64DD502CA95"
@@ -67,13 +53,6 @@
 				"D11F451A37DE5F06"
 			]
 			id: "907F06D7468A6531"
-			rewards: [
-				{
-					id: "458F4B96EA64D22A"
-					type: "xp"
-					xp: 200
-				}
-			]
 			tasks: [
 				{
 					id: "3566F5274E791299"
@@ -89,13 +68,6 @@
 				"D11F451A37DE5F06"
 			]
 			id: "39445CA3841B2487"
-			rewards: [
-				{
-					id: "B0CBE049AE789129"
-					type: "xp"
-					xp: 400
-				}
-			]
 			tasks: [
 				{
 					id: "33F59083746A593D"

@@ -13,51 +13,21 @@
 	quests: [
 		{
 			dependencies: [
-				"E0236B653ECE5763"
-				"7557F1786D6F0996"
+				"99B23FA3B8E06D0D"
 			]
 			icon: {
 				count: 1
 				id: "create:brass_casing"
 			}
-			id: "7DB10E1CD04D87D0"
-			rewards: [
-				{
-					command: "/chapters add {p} skybound:brass_age"
-					id: "C728327BECE04833"
-					permission_level: 2
-					silent: true
-					type: "command"
-				}
-			]
+			id: "9DDE83C75F74BA65"
 			shape: "gear"
-			size: 1.5d
+			size: 2.0d
 			tasks: [
 				{
-					id: "1B5F0EF215194332"
-					points: true
-					type: "xp"
-					value: 1395L
-				}
-				{
-					consume_items: true
-					count: 16L
-					id: "DA2FEC2BA7F0EBFA"
-					item: {
-						count: 1
-						id: "create:brass_ingot"
-					}
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 8L
-					id: "47AFF4A9AA78C327"
-					item: {
-						count: 1
-						id: "immersiveengineering:ingot_steel"
-					}
-					type: "item"
+					id: "4166EACEC3D791A4"
+					stage: "skybound:brass_age"
+					team_stage: false
+					type: "gamestage"
 				}
 			]
 			x: 0.0d
@@ -65,7 +35,7 @@
 		}
 		{
 			dependencies: [
-				"7DB10E1CD04D87D0"
+				"9DDE83C75F74BA65"
 			]
 			id: "2251A18945B19799"
 			tasks: [
@@ -181,13 +151,6 @@
 				"FA5E2AA3C9E46332"
 			]
 			id: "D1D85BFBAF44A09D"
-			rewards: [
-				{
-					id: "D7DF2FE3F8DE471A"
-					type: "xp"
-					xp: 100
-				}
-			]
 			shape: "hexagon"
 			tasks: [
 				{

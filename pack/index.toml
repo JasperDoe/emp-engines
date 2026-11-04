@@ -1,6 +1,62 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/ftbquests/quests/chapter_groups.snbt"
+hash = "b598a1fa8f15245cbad10e998b0394661469b003e5c1f60b021687ba3ceae943"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/alloy_age.snbt"
+hash = "f93e1836d4ac76ea84bfe3f9aecf8e07f408dcca1a5157c0f9928e6e9447803f"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/andesite_age.snbt"
+hash = "ae7efc791317be2a374e0d3cba18fd7f3b012b602791f85be80fb741191b9cff"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/brass_age.snbt"
+hash = "2ce6f4aa748cfcf1ecea75aa95c5dfdd5ecc24dca251c0aa9f28468cd8aba2b9"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/briefing.snbt"
+hash = "38ff5529145432df57579a500c67f59a4c561329a3076419dd8d748c88fb038b"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/electricity_age.snbt"
+hash = "30e10f212bd697ca32bd44a6c2aaed55d3d744f1c3d155d7a0dc311c1011bc63"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/exotic_age.snbt"
+hash = "393898e35480f42a56fc588eabc5e9710dbd4c73267de5afc18167bc242d9c30"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/first_flight.snbt"
+hash = "2eb303180421c7168c2faa8f2b7942962b8e21d16d26d5c6382e2995e41f8b8b"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/gears_and_metals.snbt"
+hash = "1a2d4914c569a77f46aa280bdeda69323606dfc2d2631d84e2c19591a3c2cf25"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/into_the_sky.snbt"
+hash = "f0a4ef8218ee3c565a9dfdf8642eb2dbe16c2782007a8d45ab8dea696e1d8142"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/logistics.snbt"
+hash = "cfc27a0698934db2eabaa0f07de4de0369bbd5581fd736ad7d7d542c4ee49a00"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/the_nether.snbt"
+hash = "34e1df9e98c442e8865b56ca55483b7ab43ffeb96bf59f97dac6e3a3eee0bb5b"
+
+[[files]]
+file = "config/ftbquests/quests/data.snbt"
+hash = "4cb9e0a02ee096dc5985f9809ee77054998044d28a1d1aead24736b7758d760b"
+
+[[files]]
+file = "config/ftbquests/quests/lang/en_us.snbt"
+hash = "626f781dba309d50f7d46c33a26570c1ce421e22940a729488edb9335c97bd24"
+
+[[files]]
 file = "config/tectonic.json"
 hash = "2d820f65378fdd27635e06cbefcecdba7d757956f51593c70dafa57d2e177fe8"
 
@@ -21,12 +77,60 @@ file = "kubejs/data/minecraft/dimension_type/the_nether.json"
 hash = "3713c8ff5aff6993418c2f6a215a34425d5dc556f5c963b3353aa1a290af31ed"
 
 [[files]]
+file = "kubejs/data/skybound/chapters/stages/alloy_age.json"
+hash = "5cb347796499d2c432c2801c61d8339760842bb694dec50ac60e94ef40d572ce"
+
+[[files]]
+file = "kubejs/data/skybound/chapters/stages/andesite_age.json"
+hash = "884fb1f45964fe65f49e69c47ebbb97bedf5ca08447b2fa67bf831c2a7b1c42c"
+
+[[files]]
+file = "kubejs/data/skybound/chapters/stages/brass_age.json"
+hash = "4811def1f40bbe739f3963093cf96135acdd46223a4fdcf305b28d16cd99792d"
+
+[[files]]
+file = "kubejs/data/skybound/chapters/stages/electricity_age.json"
+hash = "b86f8a94b69f4782c66bb1fdbf769197cafe05545e51a4024331ab02f316bef3"
+
+[[files]]
+file = "kubejs/data/skybound/chapters/stages/end_access.json"
+hash = "ceab34dd54c35aecc0b6852424883208934cdcce185ca8d1fa859df36b8fdd53"
+
+[[files]]
+file = "kubejs/data/skybound/chapters/stages/exotic_age.json"
+hash = "b779992501ffd5b92683bbce1cdd8704577425a484091b1f02e070994d97f35e"
+
+[[files]]
+file = "kubejs/data/skybound/chapters/stages/flight.json"
+hash = "d5c17c60f1a1102b15467265e66cbf32485599486a45b214afecdc504af16016"
+
+[[files]]
+file = "kubejs/data/skybound/chapters/stages/logistics.json"
+hash = "84a0dc6c6328daea0dabe5cb4b1c564cfb25ffd1535f26471cd8b896ecec591c"
+
+[[files]]
+file = "kubejs/data/skybound/chapters/stages/nether_access.json"
+hash = "95efedd863c6f6e202c2cee4684c116b85d38c176ac1059590981ebcf9d57000"
+
+[[files]]
+file = "kubejs/data/skybound/tags/worldgen/structure/sky_villages.json"
+hash = "9af2cf78d6b8c690351b0b429e185d5375dd05e5073897e7614f81002689f973"
+
+[[files]]
+file = "kubejs/data/skybound/tags/worldgen/structure/wrecks.json"
+hash = "bb2a63e5fce4b162e6326b9d78033fb42ba0826b4002d53baca92733b37164ba"
+
+[[files]]
 file = "kubejs/server_scripts/build_limit.js"
 hash = "dd583542bb1aa8af323f96ae96518effbe3b34700e1e283f3e1ced6e8f71df60"
 
 [[files]]
+file = "kubejs/server_scripts/global_unlocks.js"
+hash = "d8c6e47a9bf820ebbeffd346e1f768b2dceb4af219f23e9a74cdb70413a91759"
+
+[[files]]
 file = "kubejs/server_scripts/startup_checks.js"
-hash = "a91e7e6fe3791df3f668e8cbbc5d1c475a2a91224a185ebe4000c97503e0b8af"
+hash = "9953adbf4df706c457dc33b0ec2f0db70a919da7af23d5b179f57eee1e9b6c48"
 
 [[files]]
 file = "mods/apothic-attributes.pw.toml"

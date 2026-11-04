@@ -123,13 +123,6 @@
 				"7E102607245F2767"
 			]
 			id: "89E3FED37B09A7DA"
-			rewards: [
-				{
-					id: "EB53551FA8460C2B"
-					type: "xp"
-					xp: 20
-				}
-			]
 			shape: "diamond"
 			tasks: [
 				{

@@ -81,7 +81,7 @@ $report = @(
     Get-Hits ($text + $kjs) '\[Skybound\]'
     ''
     '== Quests and research stages (expect 11 chapters, 9 stages) =='
-    Get-Hits $text 'datapack stage definitions|Ignoring non-object stage|ftbquests.*(error|exception|failed|chapters)|Loaded .* quests' 20
+    Get-Hits $text 'datapack stage definitions|registered as FTB Library stage provider|failed to register FTB Library|Ignoring non-object stage|ftbquests.*(error|exception|failed|chapters)|Loaded .* quests' 20
     ''
     '== KubeJS script errors =='
     Get-Hits $kjs 'ERROR|Error in|error:' 40

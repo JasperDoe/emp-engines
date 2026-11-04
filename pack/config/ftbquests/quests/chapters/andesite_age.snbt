@@ -13,51 +13,22 @@
 	quests: [
 		{
 			dependencies: [
-				"CDDC586BD5311E42"
 				"8F574400B7F12669"
+				"CDDC586BD5311E42"
 			]
 			icon: {
 				count: 1
 				id: "create:andesite_alloy"
 			}
-			id: "754DF6051A9C62C4"
-			rewards: [
-				{
-					command: "/chapters add {p} skybound:andesite_age"
-					id: "A40E4A9FB1E7423F"
-					permission_level: 2
-					silent: true
-					type: "command"
-				}
-			]
+			id: "2A46606BC2A136C7"
 			shape: "gear"
-			size: 1.5d
+			size: 2.0d
 			tasks: [
 				{
-					id: "21A4DA1043CC832F"
-					points: true
-					type: "xp"
-					value: 160L
-				}
-				{
-					consume_items: true
-					count: 32L
-					id: "B31D9B3036232893"
-					item: {
-						count: 1
-						id: "minecraft:andesite"
-					}
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 16L
-					id: "F85DBCC1BE46CB32"
-					item: {
-						count: 1
-						id: "minecraft:iron_nugget"
-					}
-					type: "item"
+					id: "800C042788F3CA00"
+					stage: "skybound:andesite_age"
+					team_stage: false
+					type: "gamestage"
 				}
 			]
 			x: 0.0d
@@ -65,7 +36,7 @@
 		}
 		{
 			dependencies: [
-				"754DF6051A9C62C4"
+				"2A46606BC2A136C7"
 			]
 			id: "766D007B2DE59619"
 			tasks: [
@@ -307,13 +278,6 @@
 				"94BBFA5581DD8AEB"
 			]
 			id: "33B02D03094CCD4D"
-			rewards: [
-				{
-					id: "2C7262ED52E8DE73"
-					type: "xp"
-					xp: 50
-				}
-			]
 			shape: "hexagon"
 			tasks: [
 				{

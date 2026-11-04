@@ -13,51 +13,21 @@
 	quests: [
 		{
 			dependencies: [
-				"7DB10E1CD04D87D0"
-				"D1D85BFBAF44A09D"
+				"9DDE83C75F74BA65"
 			]
 			icon: {
 				count: 1
 				id: "createaddition:alternator"
 			}
-			id: "93299B5B7C65FC23"
-			rewards: [
-				{
-					command: "/chapters add {p} skybound:electricity_age"
-					id: "7D0EFCB73A362462"
-					permission_level: 2
-					silent: true
-					type: "command"
-				}
-			]
+			id: "443C440118CD9977"
 			shape: "gear"
-			size: 1.5d
+			size: 2.0d
 			tasks: [
 				{
-					id: "039FB4789F07A84E"
-					points: true
-					type: "xp"
-					value: 2920L
-				}
-				{
-					consume_items: true
-					count: 4L
-					id: "E4E6443386123639"
-					item: {
-						count: 1
-						id: "create:precision_mechanism"
-					}
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 32L
-					id: "1EF73D6A94B04F92"
-					item: {
-						count: 1
-						id: "minecraft:copper_ingot"
-					}
-					type: "item"
+					id: "0AD40EECDE34C5E3"
+					stage: "skybound:electricity_age"
+					team_stage: false
+					type: "gamestage"
 				}
 			]
 			x: 0.0d
@@ -65,7 +35,7 @@
 		}
 		{
 			dependencies: [
-				"93299B5B7C65FC23"
+				"443C440118CD9977"
 			]
 			id: "814A0EAEBA710452"
 			shape: "hexagon"

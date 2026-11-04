@@ -18,15 +18,8 @@
 			}
 			id: "402CDE629135F79A"
 			invisible: true
-			rewards: [
-				{
-					id: "FBF61179B69EA904"
-					type: "xp"
-					xp: 100
-				}
-			]
 			shape: "hexagon"
-			size: 2.0d
+			size: 1.5d
 			tasks: [
 				{
 					id: "6D6967DD7C41CD00"
@@ -34,64 +27,34 @@
 					type: "structure"
 				}
 			]
-			x: 0.0d
+			x: -2.5d
 			y: 0.0d
 		}
 		{
 			dependencies: [
 				"402CDE629135F79A"
-				"7DB10E1CD04D87D0"
 			]
 			icon: {
 				count: 1
 				id: "aeronautics:propeller_bearing"
 			}
-			id: "4023463C3455073F"
-			rewards: [
-				{
-					command: "/chapters add {p} skybound:flight"
-					id: "C245AF29E8C5165F"
-					permission_level: 2
-					silent: true
-					type: "command"
-				}
-			]
+			id: "535CEE7D8640DD6C"
 			shape: "gear"
-			size: 1.5d
+			size: 2.0d
 			tasks: [
 				{
-					id: "BCE95B52DA55106D"
-					points: true
-					type: "xp"
-					value: 910L
-				}
-				{
-					consume_items: true
-					count: 8L
-					id: "FB58B074B8D058E7"
-					item: {
-						count: 1
-						id: "create:brass_ingot"
-					}
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 16L
-					id: "98CA45E907786228"
-					item: {
-						count: 1
-						id: "create:andesite_alloy"
-					}
-					type: "item"
+					id: "9502F28EC5D505A6"
+					stage: "skybound:flight"
+					team_stage: false
+					type: "gamestage"
 				}
 			]
-			x: 2.5d
+			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: [
-				"4023463C3455073F"
+				"535CEE7D8640DD6C"
 			]
 			id: "D258FA6E0B350AD5"
 			tasks: [
@@ -104,12 +67,12 @@
 					type: "item"
 				}
 			]
-			x: 4.5d
+			x: 2.5d
 			y: -2.0d
 		}
 		{
 			dependencies: [
-				"4023463C3455073F"
+				"535CEE7D8640DD6C"
 			]
 			id: "A51226797E7CF426"
 			tasks: [
@@ -131,12 +94,12 @@
 					type: "item"
 				}
 			]
-			x: 4.5d
+			x: 2.5d
 			y: 0.0d
 		}
 		{
 			dependencies: [
-				"4023463C3455073F"
+				"535CEE7D8640DD6C"
 			]
 			id: "8B5A6B7980D1D2B8"
 			tasks: [
@@ -157,7 +120,7 @@
 					type: "item"
 				}
 			]
-			x: 4.5d
+			x: 2.5d
 			y: 2.0d
 		}
 		{
@@ -185,7 +148,7 @@
 					type: "item"
 				}
 			]
-			x: 6.5d
+			x: 4.5d
 			y: 0.0d
 		}
 		{
@@ -205,7 +168,7 @@
 					type: "item"
 				}
 			]
-			x: 6.5d
+			x: 4.5d
 			y: -2.0d
 		}
 		{
@@ -217,13 +180,6 @@
 				id: "minecraft:feather"
 			}
 			id: "EEA9A940BEB15687"
-			rewards: [
-				{
-					id: "C4A8A0EFD47C5D68"
-					type: "xp"
-					xp: 200
-				}
-			]
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [
@@ -232,7 +188,7 @@
 					type: "checkmark"
 				}
 			]
-			x: 8.5d
+			x: 6.5d
 			y: 0.0d
 		}
 		{
@@ -250,7 +206,7 @@
 					type: "item"
 				}
 			]
-			x: 10.5d
+			x: 8.5d
 			y: 0.0d
 		}
 	]

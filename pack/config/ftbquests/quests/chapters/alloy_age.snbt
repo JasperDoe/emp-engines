@@ -13,51 +13,21 @@
 	quests: [
 		{
 			dependencies: [
-				"754DF6051A9C62C4"
-				"A7103F6D54C8870C"
+				"2A46606BC2A136C7"
 			]
 			icon: {
 				count: 1
 				id: "immersiveengineering:ingot_steel"
 			}
-			id: "E0236B653ECE5763"
-			rewards: [
-				{
-					command: "/chapters add {p} skybound:alloy_age"
-					id: "A74FB0BF07BFF051"
-					permission_level: 2
-					silent: true
-					type: "command"
-				}
-			]
+			id: "99B23FA3B8E06D0D"
 			shape: "gear"
-			size: 1.5d
+			size: 2.0d
 			tasks: [
 				{
-					id: "EE90FCAFE5BDD02C"
-					points: true
-					type: "xp"
-					value: 550L
-				}
-				{
-					consume_items: true
-					count: 32L
-					id: "66D934D393B516AF"
-					item: {
-						count: 1
-						id: "create:andesite_alloy"
-					}
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 16L
-					id: "1839417D1D67FED2"
-					item: {
-						count: 1
-						id: "minecraft:copper_ingot"
-					}
-					type: "item"
+					id: "A782936E5BFF376D"
+					stage: "skybound:alloy_age"
+					team_stage: false
+					type: "gamestage"
 				}
 			]
 			x: 0.0d
@@ -65,7 +35,7 @@
 		}
 		{
 			dependencies: [
-				"E0236B653ECE5763"
+				"99B23FA3B8E06D0D"
 			]
 			id: "0B632D1E4278637F"
 			tasks: [
@@ -143,13 +113,6 @@
 				"B618FBDD4DC45E32"
 			]
 			id: "5226AD7C7CCFF81E"
-			rewards: [
-				{
-					id: "3F0EE1C3FCB8D244"
-					type: "xp"
-					xp: 50
-				}
-			]
 			shape: "hexagon"
 			tasks: [
 				{
@@ -167,7 +130,7 @@
 		}
 		{
 			dependencies: [
-				"E0236B653ECE5763"
+				"99B23FA3B8E06D0D"
 			]
 			id: "085E83B071D5B549"
 			tasks: [
@@ -228,7 +191,7 @@
 		}
 		{
 			dependencies: [
-				"E0236B653ECE5763"
+				"99B23FA3B8E06D0D"
 			]
 			id: "0635FFA2161C851C"
 			tasks: [
@@ -250,13 +213,6 @@
 				"0635FFA2161C851C"
 			]
 			id: "9974DE548ABA45E5"
-			rewards: [
-				{
-					id: "E1B934FC873C1E3B"
-					type: "xp"
-					xp: 100
-				}
-			]
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [
@@ -328,13 +284,6 @@
 				"B00685259C307645"
 			]
 			id: "7557F1786D6F0996"
-			rewards: [
-				{
-					id: "8880D8E398C0E323"
-					type: "xp"
-					xp: 50
-				}
-			]
 			shape: "hexagon"
 			tasks: [
 				{

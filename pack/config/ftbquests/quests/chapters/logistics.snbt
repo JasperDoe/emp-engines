@@ -13,50 +13,21 @@
 	quests: [
 		{
 			dependencies: [
-				"754DF6051A9C62C4"
+				"2A46606BC2A136C7"
 			]
 			icon: {
 				count: 1
 				id: "create:item_vault"
 			}
-			id: "6C3417D5F820F147"
-			rewards: [
-				{
-					command: "/chapters add {p} skybound:logistics"
-					id: "C8ED9F6E92AEA9A6"
-					permission_level: 2
-					silent: true
-					type: "command"
-				}
-			]
+			id: "5E037319BF07DCE6"
 			shape: "gear"
-			size: 1.5d
+			size: 2.0d
 			tasks: [
 				{
-					id: "EFF627F1114308BD"
-					points: true
-					type: "xp"
-					value: 315L
-				}
-				{
-					consume_items: true
-					count: 16L
-					id: "CE8E904D558B58C5"
-					item: {
-						count: 1
-						id: "create:andesite_alloy"
-					}
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 8L
-					id: "F10DDE5186386042"
-					item: {
-						count: 1
-						id: "minecraft:chest"
-					}
-					type: "item"
+					id: "F93064CE78818BAC"
+					stage: "skybound:logistics"
+					team_stage: false
+					type: "gamestage"
 				}
 			]
 			x: 0.0d
@@ -64,7 +35,7 @@
 		}
 		{
 			dependencies: [
-				"6C3417D5F820F147"
+				"5E037319BF07DCE6"
 			]
 			id: "2528654F1E81EF97"
 			tasks: [
@@ -83,7 +54,7 @@
 		}
 		{
 			dependencies: [
-				"6C3417D5F820F147"
+				"5E037319BF07DCE6"
 			]
 			id: "01EB4F8E964E4A05"
 			tasks: [
@@ -175,7 +146,7 @@
 		{
 			dependencies: [
 				"7B8E1EA53DCC1054"
-				"4023463C3455073F"
+				"535CEE7D8640DD6C"
 			]
 			id: "C498BC94A5589DF8"
 			tasks: [
@@ -193,8 +164,8 @@
 		}
 		{
 			dependencies: [
-				"6C3417D5F820F147"
-				"7DB10E1CD04D87D0"
+				"5E037319BF07DCE6"
+				"9DDE83C75F74BA65"
 			]
 			icon: {
 				count: 1

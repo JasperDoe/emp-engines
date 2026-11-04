@@ -13,52 +13,21 @@
 	quests: [
 		{
 			dependencies: [
-				"93299B5B7C65FC23"
-				"86654732C380E293"
-				"D11F451A37DE5F06"
+				"443C440118CD9977"
 			]
 			icon: {
 				count: 1
 				id: "create_enchantment_industry:experience_bucket"
 			}
-			id: "0D238CF563B75DAD"
-			rewards: [
-				{
-					command: "/chapters add {p} skybound:exotic_age"
-					id: "FD1E9A1496EFB420"
-					permission_level: 2
-					silent: true
-					type: "command"
-				}
-			]
+			id: "BAF4C2C8B1FCA99A"
 			shape: "gear"
-			size: 1.5d
+			size: 2.0d
 			tasks: [
 				{
-					id: "DFB5408298195BA0"
-					points: true
-					type: "xp"
-					value: 5345L
-				}
-				{
-					consume_items: true
-					count: 16L
-					id: "A50D9F2D147CAB8D"
-					item: {
-						count: 1
-						id: "minecraft:blaze_rod"
-					}
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 4L
-					id: "F6667225B4DEFC96"
-					item: {
-						count: 1
-						id: "createaddition:electric_motor"
-					}
-					type: "item"
+					id: "3B03C34D570D4547"
+					stage: "skybound:exotic_age"
+					team_stage: false
+					type: "gamestage"
 				}
 			]
 			x: 0.0d
@@ -66,7 +35,7 @@
 		}
 		{
 			dependencies: [
-				"0D238CF563B75DAD"
+				"BAF4C2C8B1FCA99A"
 			]
 			id: "BEEEF5D03C97F95E"
 			tasks: [

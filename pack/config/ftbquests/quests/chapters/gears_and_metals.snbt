@@ -156,14 +156,6 @@
 			]
 			id: "A0C4D919AA3197C5"
 			invisible: true
-			rewards: [
-				{
-					id: "059F0937D6003AEF"
-					type: "xp"
-					xp: 10
-				}
-			]
-			shape: "circle"
 			tasks: [
 				{
 					id: "607A70F18284422B"
@@ -183,14 +175,6 @@
 			]
 			id: "9D2A3276DE5365BC"
 			invisible: true
-			rewards: [
-				{
-					id: "078A7CA93DA756A4"
-					type: "xp"
-					xp: 20
-				}
-			]
-			shape: "circle"
 			tasks: [
 				{
 					id: "25B4678AFB4C7C56"
@@ -210,14 +194,6 @@
 			]
 			id: "F90E583FB003DD52"
 			invisible: true
-			rewards: [
-				{
-					id: "5208FED6387F1868"
-					type: "xp"
-					xp: 50
-				}
-			]
-			shape: "circle"
 			tasks: [
 				{
 					id: "BB43CB5A04497500"
@@ -237,14 +213,6 @@
 			]
 			id: "F52B627E99FFF93E"
 			invisible: true
-			rewards: [
-				{
-					id: "A21F3382E6836881"
-					type: "xp"
-					xp: 50
-				}
-			]
-			shape: "circle"
 			tasks: [
 				{
 					id: "C42F238A26026531"
@@ -264,14 +232,6 @@
 			]
 			id: "79D8FB17B60C3C5E"
 			invisible: true
-			rewards: [
-				{
-					id: "FA1675090C509255"
-					type: "xp"
-					xp: 100
-				}
-			]
-			shape: "circle"
 			tasks: [
 				{
 					id: "3D479BD8BD6AFCBF"
@@ -291,14 +251,6 @@
 			]
 			id: "77B9096FC74E3799"
 			invisible: true
-			rewards: [
-				{
-					id: "E5247ECDCA885C0D"
-					type: "xp"
-					xp: 100
-				}
-			]
-			shape: "circle"
 			tasks: [
 				{
 					id: "C620E86BB311E45B"
@@ -318,14 +270,6 @@
 			]
 			id: "F17E7E05A160CC66"
 			invisible: true
-			rewards: [
-				{
-					id: "DB12675E6907A3CA"
-					type: "xp"
-					xp: 150
-				}
-			]
-			shape: "circle"
 			tasks: [
 				{
 					id: "E6EA4934D3704C40"
@@ -345,14 +289,6 @@
 			]
 			id: "55B4E304EAA31AC8"
 			invisible: true
-			rewards: [
-				{
-					id: "E41D158BC125C43B"
-					type: "xp"
-					xp: 200
-				}
-			]
-			shape: "circle"
 			tasks: [
 				{
 					id: "FA046B7DEC31592D"
@@ -372,14 +308,6 @@
 			]
 			id: "3D89B36A28B15DD4"
 			invisible: true
-			rewards: [
-				{
-					id: "C827144A359ACB8F"
-					type: "xp"
-					xp: 200
-				}
-			]
-			shape: "circle"
 			tasks: [
 				{
 					id: "62EDCB8F9FD9DDB6"
@@ -399,14 +327,6 @@
 			]
 			id: "1C789AEAC04A0DB7"
 			invisible: true
-			rewards: [
-				{
-					id: "31C4BC1F5D30A5F0"
-					type: "xp"
-					xp: 250
-				}
-			]
-			shape: "circle"
 			tasks: [
 				{
 					id: "44108462935C627B"
@@ -426,14 +346,6 @@
 			]
 			id: "8B960D393A5F7F6C"
 			invisible: true
-			rewards: [
-				{
-					id: "4D60120D3543875F"
-					type: "xp"
-					xp: 400
-				}
-			]
-			shape: "circle"
 			tasks: [
 				{
 					id: "B31D2D1341135BCE"
