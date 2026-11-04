@@ -38,6 +38,7 @@ If scripts are blocked, run once: `Set-ExecutionPolicy -Scope CurrentUser Remote
 | Update all mods | `tools\bin\packwiz.exe update --all` inside `pack\`, then boot test |
 | Boot test | `.\tools\test-server.ps1` |
 | Build server pack | `.\tools\build-server.ps1` → `build\skybound-server-<version>.zip` |
+| Play it yourself | `.\tools\install-client.ps1` (copies the pack into your CurseForge profile "Skybound SMP") |
 | Build client pack | `.\tools\export-client.ps1` → `.zip` (CurseForge) and `.mrpack` |
 
 See `docs\TESTING.md` for the full test workflow and `COMPATIBILITY.md` for

@@ -26,13 +26,13 @@ hash = "9009bd5cdcdbc6bc47a7fbb203844d9a551accdd796877bdba5233ac14bbd513"
 metafile = true
 
 [[files]]
-file = "mods/compass-to-map-xaeros.pw.toml"
-hash = "5f2392473cc76d2d92fade93480b4141030627572143eba506fa62c2fe27a1d3"
+file = "mods/chapters.pw.toml"
+hash = "9fa3eff2ed40627ffc33d07f79c83838dee2b801cf5516c04812d13d40270a96"
 metafile = true
 
 [[files]]
-file = "mods/create-aeronautics-ftb-chunks.pw.toml"
-hash = "0314ac67daeef11cd9dd2d1b9f959a7161e03a7d41af660992f329c08a16fe3a"
+file = "mods/compass-to-map-xaeros.pw.toml"
+hash = "5f2392473cc76d2d92fade93480b4141030627572143eba506fa62c2fe27a1d3"
 metafile = true
 
 [[files]]
@@ -77,7 +77,7 @@ metafile = true
 
 [[files]]
 file = "mods/create.pw.toml"
-hash = "4b0ca63279620ec9ba4c63820a9d4f9ceea9b717227137ea19e5c420c820f858"
+hash = "dcaf5f2e28db0b9a127d0167456832341045ddc9aec058c3d9fcf53f618d2404"
 metafile = true
 
 [[files]]
@@ -176,11 +176,6 @@ hash = "1bf9a73f7f3879aeed5e6d482a5e864b036e5659cc0e2d0c1f8a8ac8d67507c0"
 metafile = true
 
 [[files]]
-file = "mods/modern-ui.pw.toml"
-hash = "aaa5892af3e5d81c19b67ac1b450dc634980dd3af9443072adfa2bdc80b1e6dd"
-metafile = true
-
-[[files]]
 file = "mods/no-mob-farms.pw.toml"
 hash = "76e79a6e34f2ae55f447e470bbd290bc561e515c668115b7223b8d09228ca216"
 metafile = true
@@ -198,11 +193,6 @@ metafile = true
 [[files]]
 file = "mods/productive-metalworks.pw.toml"
 hash = "694d12649998576224bbaa1b13939e1fd6e099320d73a0c5304e442f3c037652"
-metafile = true
-
-[[files]]
-file = "mods/restage.pw.toml"
-hash = "e6af6e7260c7749f935dff81b488cdd98ccae86a2b978c4d6a632436ce289c69"
 metafile = true
 
 [[files]]

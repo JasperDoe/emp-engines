@@ -1,5 +1,6 @@
 # Skybound SMP mod list
 # Format:  slug            (tries Modrinth first, then CurseForge)
+#          remove:name     (removes a mod already in the pack; name = its pack\mods\<name>.pw.toml)
 #          final:slug      (Modrinth, re-added at the very end so a CurseForge
 #                           dependency can't replace it; for mods whose authors
 #                           block automatic CurseForge downloads)
@@ -16,7 +17,7 @@ final:oWaK0Q19                           # Create Aeronautics (pulls in Sable)
 cf:create-aeroportals                    # ships through Nether/End portals
 dimensional-sable                        # (?) scripted warps for the Sky Gate
 cf:sable-cleanup                         # MANUAL download, see manual-mods\README.txt
-cf:create-aeronautics-ftb-chunks         # (?) claims on ships
+remove:create-aeronautics-ftb-chunks     # OFF: requires exactly Sable 2.0.5, pack has 2.0.6. Re-add when updated
 create-aeroworks                         # (?) extra ship parts
 # cf:create-upgraded-portable-engines-for-aeronautics   # not found under this slug; optional, fix later
 
@@ -33,7 +34,9 @@ create-enchantment-industry              # pulls in Create: Dragons Plus
 apothic-enchanting
 
 # --- Research ---
-cf:restage                               # pulls in ModernUI
+chapters                                 # per-player recipe locks (replaces Restage)
+remove:restage                           # crashed Create 6.0.10 (millstone mixin)
+remove:modern-ui                         # was only needed by Restage
 
 # --- Gear ---
 cf:silent-gear                           # pulls in Silent Lib (Modrinth only has old betas)

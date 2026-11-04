@@ -21,7 +21,13 @@ Copy-ManualMods $out
 Push-Location $out
 try {
     $code = Invoke-Logged $log 'java' @('-jar', $bootstrap, '-g', '-s', 'both', $packUri) 3600
-    if ($code -ne 0) { if (Show-ManualDownloads $log) { exit 1 }; throw "Download failed, see $log" }
+    if ($code -ne 0) {
+        if (Show-ManualDownloads $log) { exit 1 }
+        if (Select-String -Path $log -Pattern 'Failed to download .*: timeout' -Quiet) {
+            Write-Host 'Some downloads timed out (network). Run the same command again; finished files are kept.' -ForegroundColor Yellow; exit 2
+        }
+        throw "Download failed, see $log"
+    }
 } finally { Pop-Location }
 
 $jars = Get-ChildItem (Join-Path $out 'mods') -Filter *.jar -ErrorAction SilentlyContinue

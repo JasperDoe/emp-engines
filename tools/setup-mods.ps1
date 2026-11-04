@@ -13,9 +13,19 @@ try {
     Invoke-Logged $log $packwiz @('-y', 'migrate', 'loader', 'latest') | Out-Null
 
     $added = 0; $failed = 0; $skipped = 0
+    $final = @()
     foreach ($raw in Get-Content (Join-Path $Root 'mods.txt')) {
         $entry = ($raw -split '#')[0].Trim()
         if (-not $entry) { continue }
+        if ($entry -like 'final:*') { $final += $entry.Substring(6); continue }
+        if ($entry -like 'remove:*') {
+            $name = $entry.Substring(7)
+            if ((Test-Path (Join-Path $PackDir "mods\$name.pw.toml")) -or (Test-Path (Join-Path $PackDir "resourcepacks\$name.pw.toml"))) {
+                Write-Host "==> removing $name"
+                Invoke-Logged $log $packwiz @('-y', 'remove', $name) | Out-Null
+            }
+            continue
+        }
         $platform = 'any'; $slug = $entry
         if ($entry -like 'cf:*') { $platform = 'cf'; $slug = $entry.Substring(3) }
         elseif ($entry -like 'mr:*') { $platform = 'mr'; $slug = $entry.Substring(3) }
@@ -26,6 +36,13 @@ try {
         if ($platform -ne 'cf') { $ok = (Invoke-Logged $log $packwiz @('-y', 'modrinth', 'add', $slug) 180) -eq 0 }
         if (-not $ok -and $platform -ne 'mr') { $ok = (Invoke-Logged $log $packwiz @('-y', 'curseforge', 'add', $slug) 180) -eq 0 }
         if ($ok) { $added++ } else { $failed++; Add-Content $failedFile $slug; Write-Host '    !! not found for 1.21.1 NeoForge' -ForegroundColor Yellow }
+    }
+
+    # Modrinth-only mods last, so no CurseForge dependency can replace them
+    foreach ($slug in $final) {
+        Write-Host "==> $slug (Modrinth)"
+        if ((Invoke-Logged $log $packwiz @('-y', 'modrinth', 'add', $slug) 180) -eq 0) { $added++ }
+        else { $failed++; Add-Content $failedFile $slug; Write-Host '    !! not found for 1.21.1 NeoForge' -ForegroundColor Yellow }
     }
 
     Invoke-Logged $log $packwiz @('refresh') | Out-Null

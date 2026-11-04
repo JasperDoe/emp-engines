@@ -2,12 +2,24 @@
 # brand-new world, boots it once, and writes compat-report.txt.
 # Run it after every mod change.
 #
-# Usage:  .\tools\test-server.ps1            (rebuilds the server pack first)
+# Usage:  .\tools\test-server.ps1            (applies mods.txt, rebuilds with auto-retry, boots)
 #         .\tools\test-server.ps1 -NoBuild   (reuse the last build)
 #         .\tools\test-server.ps1 -Timeout 900
-param([switch]$NoBuild, [int]$Timeout = 600)
+param([switch]$NoBuild, [int]$Timeout = 600, [int]$Retries = 4)
 . "$PSScriptRoot\common.ps1"
-if (-not $NoBuild) { & "$PSScriptRoot\build-server.ps1" }
+if (-not $NoBuild) {
+    # Apply any mods.txt changes (adds and removals), then build.
+    & "$PSScriptRoot\setup-mods.ps1"
+    # Network timeouts are common on big files; retry the build automatically.
+    for ($i = 1; $i -le $Retries; $i++) {
+        $global:LASTEXITCODE = 0
+        & "$PSScriptRoot\build-server.ps1"
+        if ($LASTEXITCODE -ne 2) { break }
+        Write-Host "Retrying downloads ($i of $Retries)..." -ForegroundColor Yellow
+        Start-Sleep -Seconds 5
+    }
+    if ($LASTEXITCODE -ne 0) { Write-Host 'Server pack build failed; see the messages above.' -ForegroundColor Red; exit 1 }
+}
 
 $src = Join-Path $Build 'server-pack'
 $srv = Join-Path $Build 'test-server'
