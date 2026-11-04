@@ -1,0 +1,13 @@
+{
+  "restrictions": {
+    "preventCraft": true,
+    "hideInJei": true,
+    "preventPickup": false,
+    "dropFromInventory": false,
+    "preventTransfer": false
+  },
+  "items": [],
+  "namespaces": [
+    "create_enchantment_industry"
+  ]
+}

@@ -27,8 +27,19 @@ if (-not $target) {
 }
 Write-Host "Profile: $target"
 
-# 2. Make sure the downloaded files match the pack
-if (-not $SkipDownload) { & "$PSScriptRoot\download-mods.ps1"; if ($LASTEXITCODE -and $LASTEXITCODE -ne 0) { exit 1 } }
+# 2. Apply mods.txt changes, then make sure the downloaded files match the pack
+#    (retries automatically when downloads time out)
+if (-not $SkipDownload) {
+    & "$PSScriptRoot\setup-mods.ps1"
+    for ($i = 1; $i -le 4; $i++) {
+        $global:LASTEXITCODE = 0
+        & "$PSScriptRoot\download-mods.ps1"
+        if ($LASTEXITCODE -ne 2) { break }
+        Write-Host "Retrying downloads ($i of 4)..." -ForegroundColor Yellow
+        Start-Sleep -Seconds 5
+    }
+    if ($LASTEXITCODE -ne 0) { exit 1 }
+}
 $src = Join-Path $Root 'mod-files'
 $srcMods = Join-Path $src 'mods'
 if (-not (Test-Path $srcMods)) { throw 'No downloaded mods. Run .\tools\download-mods.ps1 first.' }
@@ -53,6 +64,26 @@ foreach ($dir in 'config', 'defaultconfigs', 'kubejs', 'resourcepacks') {
         $to = Join-Path $target $dir
         New-Item -ItemType Directory -Force $to | Out-Null
         Copy-Item (Join-Path $from '*') $to -Recurse -Force
+    }
+}
+
+# 5. Switch on the pack's resource packs in the profile's settings
+#    (options.txt line: resourcePacks:["vanilla",...,"file/<name>.zip"])
+$packs = Get-ChildItem (Join-Path $src 'resourcepacks') -File -ErrorAction SilentlyContinue | ForEach-Object { "file/$($_.Name)" }
+if ($packs) {
+    $opt = Join-Path $target 'options.txt'
+    $lines = if (Test-Path $opt) { @(Get-Content $opt) } else { @() }
+    $i = -1
+    for ($n = 0; $n -lt $lines.Count; $n++) { if ($lines[$n] -like 'resourcePacks:*') { $i = $n; break } }
+    $current = @()
+    if ($i -ge 0) { $current = @([regex]::Matches($lines[$i], '"([^"]*)"') | ForEach-Object { $_.Groups[1].Value }) }
+    if ($current -notcontains 'vanilla') { $current = @('vanilla') + $current }
+    $added = @($packs | Where-Object { $current -notcontains $_ })
+    if ($added) {
+        $newLine = 'resourcePacks:[' + ((@($current) + $added | ForEach-Object { '"' + $_ + '"' }) -join ',') + ']'
+        if ($i -ge 0) { $lines[$i] = $newLine } else { $lines += $newLine }
+        Set-Content $opt $lines
+        Write-Host "Enabled resource pack(s): $($added -join ', ')"
     }
 }
 

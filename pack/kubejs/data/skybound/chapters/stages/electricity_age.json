@@ -1,0 +1,25 @@
+{
+  "restrictions": {
+    "preventCraft": true,
+    "hideInJei": true,
+    "preventPickup": false,
+    "dropFromInventory": false,
+    "preventTransfer": false
+  },
+  "items": [
+    "immersiveengineering:light_engineering",
+    "immersiveengineering:heavy_engineering",
+    "immersiveengineering:blastbrick_reinforced",
+    "immersiveengineering:circuit_table",
+    "immersiveengineering:component_iron",
+    "immersiveengineering:component_steel",
+    "immersiveengineering:component_electronic",
+    "immersiveengineering:component_electronic_adv",
+    "immersiveengineering:circuit_board",
+    "immersiveengineering:logic_circuit",
+    "immersiveengineering:graphite_electrode"
+  ],
+  "namespaces": [
+    "createaddition"
+  ]
+}

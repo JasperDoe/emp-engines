@@ -1,6 +1,34 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/tectonic.json"
+hash = "2d820f65378fdd27635e06cbefcecdba7d757956f51593c70dafa57d2e177fe8"
+
+[[files]]
+file = "kubejs/data/create_sky_village/worldgen/structure/highwind_village.json"
+hash = "b72e4696228af360b04a46f487ba9b475bcc85fb88820168eb5162377655265a"
+
+[[files]]
+file = "kubejs/data/create_sky_village/worldgen/structure/skyvillage.json"
+hash = "55fd7a3c3975a835c71d959ea2da7c37c0a46ea5471400709eaeac34991b9687"
+
+[[files]]
+file = "kubejs/data/minecraft/dimension_type/overworld.json"
+hash = "8799d35f1d441726e4462840446301e25db743b72219ea48f14fc8acce61645c"
+
+[[files]]
+file = "kubejs/data/minecraft/dimension_type/the_nether.json"
+hash = "3713c8ff5aff6993418c2f6a215a34425d5dc556f5c963b3353aa1a290af31ed"
+
+[[files]]
+file = "kubejs/server_scripts/build_limit.js"
+hash = "dd583542bb1aa8af323f96ae96518effbe3b34700e1e283f3e1ced6e8f71df60"
+
+[[files]]
+file = "kubejs/server_scripts/startup_checks.js"
+hash = "a91e7e6fe3791df3f668e8cbbc5d1c475a2a91224a185ebe4000c97503e0b8af"
+
+[[files]]
 file = "mods/apothic-attributes.pw.toml"
 hash = "8f5f05a72596ecc0dd11be483785c8a521e987dc2fe6d2fef212c2a382a0c779"
 metafile = true
@@ -33,6 +61,16 @@ metafile = true
 [[files]]
 file = "mods/compass-to-map-xaeros.pw.toml"
 hash = "5f2392473cc76d2d92fade93480b4141030627572143eba506fa62c2fe27a1d3"
+metafile = true
+
+[[files]]
+file = "mods/create-aeronautics-discovery.pw.toml"
+hash = "da400e22ffbbe487b0309bc69b48e9d7574c33941a70db5fb950b31a80da827f"
+metafile = true
+
+[[files]]
+file = "mods/create-aeronautics-structures.pw.toml"
+hash = "e00e0e202a77447c9b09093df954e9c661d66ff89c4cfef30221fcd1495d7dce"
 metafile = true
 
 [[files]]
@@ -131,6 +169,11 @@ hash = "c21c2308684a75cda7dd9d557d129c9f89f49be527da3d5aa675fff444c11f5e"
 metafile = true
 
 [[files]]
+file = "mods/geckolib.pw.toml"
+hash = "35779b39ddc06059ec483b33de2ecfdc3adb95c0a49e69b6701fb0024827e2f5"
+metafile = true
+
+[[files]]
 file = "mods/immersive-engineering.pw.toml"
 hash = "901106fc6fcb4dcb86c13dd8c1dfb0d26e048387fec5bd610d06082242bd786a"
 metafile = true
@@ -168,6 +211,11 @@ metafile = true
 [[files]]
 file = "mods/lootr.pw.toml"
 hash = "0d3683a8c533e1fb67bf0b1668089a322fc5f594f9610d441657378ab4f64383"
+metafile = true
+
+[[files]]
+file = "mods/lukis-grand-capitals.pw.toml"
+hash = "2fe01d8046db2246c6df01eedd1fbc7837c08cc6d3b2a9017107ade989e86a28"
 metafile = true
 
 [[files]]
@@ -231,11 +279,6 @@ hash = "6f9502735fcac7a35468358e2aa0fd9333b12df885db3325c472d298ce315a72"
 metafile = true
 
 [[files]]
-file = "mods/sky-archipelago.pw.toml"
-hash = "746605920354c6d4db2bdbed47c34d782f92af265b5956ffb5cdf7a840e4e6cf"
-metafile = true
-
-[[files]]
 file = "mods/sodium.pw.toml"
 hash = "2a001cdb3d5ac4970d422914083c27380eba8ebd40dfd435754fe6566ba78beb"
 metafile = true
@@ -248,6 +291,21 @@ metafile = true
 [[files]]
 file = "mods/tectonic.pw.toml"
 hash = "dd46fad79cf33a00123be0a74c73581da72cd98503ef23822a624a08f4b10ff2"
+metafile = true
+
+[[files]]
+file = "mods/terralith.pw.toml"
+hash = "da7ee99189ad35aac094919fe33cac647d98533b23c228f10d4811f08989e2b8"
+metafile = true
+
+[[files]]
+file = "mods/trek.pw.toml"
+hash = "856519bd5d0f0736c86a2ebbc833b8499075be4b1d6613988f4e5104ba2d9a32"
+metafile = true
+
+[[files]]
+file = "mods/wabi-sabi-structures.pw.toml"
+hash = "6d054c36efe3925eb6309abd10f46cf3672790353af8d6e53cc45a33acac274f"
 metafile = true
 
 [[files]]

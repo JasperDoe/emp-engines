@@ -1,0 +1,451 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "gears_and_metals"
+	group: ""
+	icon: {
+		count: 1
+		id: "silentgear:pickaxe"
+	}
+	id: "DC9E4321F3FC141C"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"89E3FED37B09A7DA"
+			]
+			hide_until_deps_complete: true
+			icon: {
+				count: 1
+				id: "silentgear:pickaxe"
+			}
+			id: "ECC25586EC50AADA"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [
+				{
+					id: "9B981B7DF4D66F42"
+					type: "checkmark"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"ECC25586EC50AADA"
+			]
+			id: "EBE2E9D7B112391A"
+			tasks: [
+				{
+					id: "2F36BACEF6E802F9"
+					item: {
+						count: 1
+						id: "silentgear:blueprint_paper"
+					}
+					type: "item"
+				}
+				{
+					id: "ABF41711E1C5532B"
+					item: {
+						count: 1
+						id: "silentgear:template_board"
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"ECC25586EC50AADA"
+			]
+			id: "3A1DD46ED306379D"
+			tasks: [
+				{
+					id: "626C72569AFE5098"
+					item: {
+						count: 1
+						id: "silentgear:mod_kit"
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"EBE2E9D7B112391A"
+			]
+			id: "14C07CE62313C72B"
+			tasks: [
+				{
+					id: "7B941FC954E829E9"
+					item: {
+						count: 1
+						id: "silentgear:crude_repair_kit"
+					}
+					type: "item"
+				}
+			]
+			x: 5.0d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"3A1DD46ED306379D"
+			]
+			id: "E702A41C8850A300"
+			optional: true
+			tasks: [
+				{
+					id: "CCD802EA812E4569"
+					item: {
+						count: 1
+						id: "silentgear:paint_mixer"
+					}
+					type: "item"
+				}
+			]
+			x: 5.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"14C07CE62313C72B"
+				"3A1DD46ED306379D"
+			]
+			id: "20BF147E65051B14"
+			tasks: [
+				{
+					id: "499A24BD0C4AB10B"
+					item: {
+						count: 1
+						id: "silentgear:salvager"
+					}
+					type: "item"
+				}
+			]
+			x: 7.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"ECC25586EC50AADA"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:paper"
+			}
+			id: "F0E6D2A6339B8D62"
+			tasks: [
+				{
+					id: "DAF20C058CB73AD0"
+					type: "checkmark"
+				}
+			]
+			x: 0.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"F0E6D2A6339B8D62"
+			]
+			id: "A0C4D919AA3197C5"
+			invisible: true
+			rewards: [
+				{
+					id: "059F0937D6003AEF"
+					type: "xp"
+					xp: 10
+				}
+			]
+			shape: "circle"
+			tasks: [
+				{
+					id: "607A70F18284422B"
+					item: {
+						count: 1
+						id: "minecraft:copper_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"F0E6D2A6339B8D62"
+			]
+			id: "9D2A3276DE5365BC"
+			invisible: true
+			rewards: [
+				{
+					id: "078A7CA93DA756A4"
+					type: "xp"
+					xp: 20
+				}
+			]
+			shape: "circle"
+			tasks: [
+				{
+					id: "25B4678AFB4C7C56"
+					item: {
+						count: 1
+						id: "minecraft:gold_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"F0E6D2A6339B8D62"
+			]
+			id: "F90E583FB003DD52"
+			invisible: true
+			rewards: [
+				{
+					id: "5208FED6387F1868"
+					type: "xp"
+					xp: 50
+				}
+			]
+			shape: "circle"
+			tasks: [
+				{
+					id: "BB43CB5A04497500"
+					item: {
+						count: 1
+						id: "minecraft:diamond"
+					}
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"F0E6D2A6339B8D62"
+			]
+			id: "F52B627E99FFF93E"
+			invisible: true
+			rewards: [
+				{
+					id: "A21F3382E6836881"
+					type: "xp"
+					xp: 50
+				}
+			]
+			shape: "circle"
+			tasks: [
+				{
+					id: "C42F238A26026531"
+					item: {
+						count: 1
+						id: "silentgear:bort"
+					}
+					type: "item"
+				}
+			]
+			x: 8.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"F0E6D2A6339B8D62"
+			]
+			id: "79D8FB17B60C3C5E"
+			invisible: true
+			rewards: [
+				{
+					id: "FA1675090C509255"
+					type: "xp"
+					xp: 100
+				}
+			]
+			shape: "circle"
+			tasks: [
+				{
+					id: "3D479BD8BD6AFCBF"
+					item: {
+						count: 1
+						id: "silentgear:crimson_iron_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 10.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"F0E6D2A6339B8D62"
+			]
+			id: "77B9096FC74E3799"
+			invisible: true
+			rewards: [
+				{
+					id: "E5247ECDCA885C0D"
+					type: "xp"
+					xp: 100
+				}
+			]
+			shape: "circle"
+			tasks: [
+				{
+					id: "C620E86BB311E45B"
+					item: {
+						count: 1
+						id: "silentgear:blaze_gold_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 12.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"F0E6D2A6339B8D62"
+			]
+			id: "F17E7E05A160CC66"
+			invisible: true
+			rewards: [
+				{
+					id: "DB12675E6907A3CA"
+					type: "xp"
+					xp: 150
+				}
+			]
+			shape: "circle"
+			tasks: [
+				{
+					id: "E6EA4934D3704C40"
+					item: {
+						count: 1
+						id: "silentgear:crimson_steel_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: 5.5d
+		}
+		{
+			dependencies: [
+				"F0E6D2A6339B8D62"
+			]
+			id: "55B4E304EAA31AC8"
+			invisible: true
+			rewards: [
+				{
+					id: "E41D158BC125C43B"
+					type: "xp"
+					xp: 200
+				}
+			]
+			shape: "circle"
+			tasks: [
+				{
+					id: "FA046B7DEC31592D"
+					item: {
+						count: 1
+						id: "minecraft:netherite_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 5.5d
+		}
+		{
+			dependencies: [
+				"F0E6D2A6339B8D62"
+			]
+			id: "3D89B36A28B15DD4"
+			invisible: true
+			rewards: [
+				{
+					id: "C827144A359ACB8F"
+					type: "xp"
+					xp: 200
+				}
+			]
+			shape: "circle"
+			tasks: [
+				{
+					id: "62EDCB8F9FD9DDB6"
+					item: {
+						count: 1
+						id: "silentgear:azure_silver_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: 5.5d
+		}
+		{
+			dependencies: [
+				"F0E6D2A6339B8D62"
+			]
+			id: "1C789AEAC04A0DB7"
+			invisible: true
+			rewards: [
+				{
+					id: "31C4BC1F5D30A5F0"
+					type: "xp"
+					xp: 250
+				}
+			]
+			shape: "circle"
+			tasks: [
+				{
+					id: "44108462935C627B"
+					item: {
+						count: 1
+						id: "silentgear:azure_electrum_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 8.5d
+			y: 5.5d
+		}
+		{
+			dependencies: [
+				"F0E6D2A6339B8D62"
+			]
+			id: "8B960D393A5F7F6C"
+			invisible: true
+			rewards: [
+				{
+					id: "4D60120D3543875F"
+					type: "xp"
+					xp: 400
+				}
+			]
+			shape: "circle"
+			tasks: [
+				{
+					id: "B31D2D1341135BCE"
+					item: {
+						count: 1
+						id: "silentgear:tyrian_steel_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 10.5d
+			y: 5.5d
+		}
+	]
+}

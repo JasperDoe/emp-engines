@@ -1,0 +1,43 @@
+{
+  "restrictions": {
+    "preventCraft": true,
+    "hideInJei": true,
+    "preventPickup": false,
+    "dropFromInventory": false,
+    "preventTransfer": false
+  },
+  "items": [
+    "create:brass_casing",
+    "create:electron_tube",
+    "create:precision_mechanism",
+    "create:mechanical_crafter",
+    "create:deployer",
+    "create:brass_hand",
+    "create:mechanical_arm",
+    "create:brass_funnel",
+    "create:brass_tunnel",
+    "create:smart_chute",
+    "create:smart_fluid_pipe",
+    "create:rotation_speed_controller",
+    "create:sequenced_gearshift",
+    "create:adjustable_chain_gearshift",
+    "create:steam_engine",
+    "create:crushing_wheel",
+    "create:mechanical_roller",
+    "create:schematicannon",
+    "create:schematic_table",
+    "create:elevator_pulley",
+    "create:contraption_controls",
+    "create:display_link",
+    "create:display_board",
+    "create:nixie_tube",
+    "create:content_observer",
+    "create:stockpile_switch",
+    "create:track",
+    "create:track_station",
+    "create:track_signal",
+    "create:track_observer",
+    "create:controls",
+    "create:railway_casing"
+  ]
+}

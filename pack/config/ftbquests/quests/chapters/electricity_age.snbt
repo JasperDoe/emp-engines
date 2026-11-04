@@ -1,0 +1,214 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "electricity_age"
+	group: "F02A3E854920CEED"
+	icon: {
+		count: 1
+		id: "createaddition:alternator"
+	}
+	id: "3F13798D760407BD"
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"7DB10E1CD04D87D0"
+				"D1D85BFBAF44A09D"
+			]
+			icon: {
+				count: 1
+				id: "createaddition:alternator"
+			}
+			id: "93299B5B7C65FC23"
+			rewards: [
+				{
+					command: "/chapters add {p} skybound:electricity_age"
+					id: "7D0EFCB73A362462"
+					permission_level: 2
+					silent: true
+					type: "command"
+				}
+			]
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "039FB4789F07A84E"
+					points: true
+					type: "xp"
+					value: 2920L
+				}
+				{
+					consume_items: true
+					count: 4L
+					id: "E4E6443386123639"
+					item: {
+						count: 1
+						id: "create:precision_mechanism"
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "1EF73D6A94B04F92"
+					item: {
+						count: 1
+						id: "minecraft:copper_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"93299B5B7C65FC23"
+			]
+			id: "814A0EAEBA710452"
+			shape: "hexagon"
+			tasks: [
+				{
+					id: "0C7D7E825C1D6CE5"
+					item: {
+						count: 1
+						id: "createaddition:alternator"
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"814A0EAEBA710452"
+			]
+			id: "6970297A89A93F61"
+			tasks: [
+				{
+					id: "E71BF2A70B577CEC"
+					item: {
+						count: 1
+						id: "createaddition:rolling_mill"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"6970297A89A93F61"
+			]
+			id: "D74E43DBFCECFBCF"
+			tasks: [
+				{
+					id: "1D24FA84AB78E024"
+					item: {
+						count: 1
+						id: "createaddition:copper_spool"
+					}
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "857A3049D1AD1A71"
+					item: {
+						count: 1
+						id: "createaddition:connector"
+					}
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"814A0EAEBA710452"
+			]
+			id: "B6872F8D80B7F51F"
+			tasks: [
+				{
+					id: "F2049149937B3F5F"
+					item: {
+						count: 1
+						id: "createaddition:electric_motor"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"814A0EAEBA710452"
+			]
+			id: "8DE13429C2DED363"
+			tasks: [
+				{
+					id: "D912A38DD85B9A3B"
+					item: {
+						count: 1
+						id: "createaddition:accumulator"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"B6872F8D80B7F51F"
+				"D74E43DBFCECFBCF"
+			]
+			id: "96790FA4E2D5231E"
+			tasks: [
+				{
+					count: 8L
+					id: "CE66A1BA22A88500"
+					item: {
+						count: 1
+						id: "immersiveengineering:light_engineering"
+					}
+					type: "item"
+				}
+				{
+					count: 8L
+					id: "8EDF0E4880224C0A"
+					item: {
+						count: 1
+						id: "immersiveengineering:heavy_engineering"
+					}
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"96790FA4E2D5231E"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:obsidian"
+			}
+			id: "9F8FEF58EF2D6A89"
+			tasks: [
+				{
+					id: "25D58D91AE0822E4"
+					type: "checkmark"
+				}
+			]
+			x: 8.5d
+			y: 0.0d
+		}
+	]
+}

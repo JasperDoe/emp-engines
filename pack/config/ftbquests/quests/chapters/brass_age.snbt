@@ -1,0 +1,225 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "brass_age"
+	group: "F02A3E854920CEED"
+	icon: {
+		count: 1
+		id: "create:brass_casing"
+	}
+	id: "B9FAA0D099C43966"
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"E0236B653ECE5763"
+				"7557F1786D6F0996"
+			]
+			icon: {
+				count: 1
+				id: "create:brass_casing"
+			}
+			id: "7DB10E1CD04D87D0"
+			rewards: [
+				{
+					command: "/chapters add {p} skybound:brass_age"
+					id: "C728327BECE04833"
+					permission_level: 2
+					silent: true
+					type: "command"
+				}
+			]
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "1B5F0EF215194332"
+					points: true
+					type: "xp"
+					value: 1395L
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "DA2FEC2BA7F0EBFA"
+					item: {
+						count: 1
+						id: "create:brass_ingot"
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "47AFF4A9AA78C327"
+					item: {
+						count: 1
+						id: "immersiveengineering:ingot_steel"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"7DB10E1CD04D87D0"
+			]
+			id: "2251A18945B19799"
+			tasks: [
+				{
+					count: 8L
+					id: "C31A5A97528F6FC6"
+					item: {
+						count: 1
+						id: "create:brass_casing"
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"2251A18945B19799"
+			]
+			id: "909F688C9015F0C6"
+			tasks: [
+				{
+					count: 4L
+					id: "B5FDB52020C1B7AF"
+					item: {
+						count: 1
+						id: "create:electron_tube"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"2251A18945B19799"
+			]
+			id: "0618566213779297"
+			tasks: [
+				{
+					count: 9L
+					id: "FF54DE68833A9147"
+					item: {
+						count: 1
+						id: "create:mechanical_crafter"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"2251A18945B19799"
+			]
+			id: "AD88A160457BA96D"
+			tasks: [
+				{
+					count: 2L
+					id: "3FD9ECB3ECBFC540"
+					item: {
+						count: 1
+						id: "create:crushing_wheel"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"909F688C9015F0C6"
+			]
+			id: "FA5E2AA3C9E46332"
+			tasks: [
+				{
+					id: "1C9EB9C3C020F548"
+					item: {
+						count: 1
+						id: "create:deployer"
+					}
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"909F688C9015F0C6"
+				"0618566213779297"
+			]
+			id: "E17A9DE819FE4B0D"
+			tasks: [
+				{
+					id: "5C79F2B8C4204A46"
+					item: {
+						count: 1
+						id: "create:mechanical_arm"
+					}
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"FA5E2AA3C9E46332"
+			]
+			id: "D1D85BFBAF44A09D"
+			rewards: [
+				{
+					id: "D7DF2FE3F8DE471A"
+					type: "xp"
+					xp: 100
+				}
+			]
+			shape: "hexagon"
+			tasks: [
+				{
+					count: 4L
+					id: "1E2744B2C644828F"
+					item: {
+						count: 1
+						id: "create:precision_mechanism"
+					}
+					type: "item"
+				}
+			]
+			x: 8.5d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"E17A9DE819FE4B0D"
+			]
+			id: "1D408503336B6F94"
+			tasks: [
+				{
+					id: "D6672C2D9E28937C"
+					item: {
+						count: 1
+						id: "create:rotation_speed_controller"
+					}
+					type: "item"
+				}
+			]
+			x: 8.5d
+			y: 1.0d
+		}
+	]
+}

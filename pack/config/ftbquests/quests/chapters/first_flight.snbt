@@ -1,0 +1,257 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "first_flight"
+	group: "9692EDFE2DE3589D"
+	icon: {
+		count: 1
+		id: "aeronautics:propeller_bearing"
+	}
+	id: "A283E56064A7D2C3"
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			icon: {
+				count: 1
+				id: "minecraft:compass"
+			}
+			id: "402CDE629135F79A"
+			invisible: true
+			rewards: [
+				{
+					id: "FBF61179B69EA904"
+					type: "xp"
+					xp: 100
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [
+				{
+					id: "6D6967DD7C41CD00"
+					structure: "#skybound:wrecks"
+					type: "structure"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"402CDE629135F79A"
+				"7DB10E1CD04D87D0"
+			]
+			icon: {
+				count: 1
+				id: "aeronautics:propeller_bearing"
+			}
+			id: "4023463C3455073F"
+			rewards: [
+				{
+					command: "/chapters add {p} skybound:flight"
+					id: "C245AF29E8C5165F"
+					permission_level: 2
+					silent: true
+					type: "command"
+				}
+			]
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "BCE95B52DA55106D"
+					points: true
+					type: "xp"
+					value: 910L
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "FB58B074B8D058E7"
+					item: {
+						count: 1
+						id: "create:brass_ingot"
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "98CA45E907786228"
+					item: {
+						count: 1
+						id: "create:andesite_alloy"
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"4023463C3455073F"
+			]
+			id: "D258FA6E0B350AD5"
+			tasks: [
+				{
+					id: "BE6A878B939B4644"
+					item: {
+						count: 1
+						id: "simulated:physics_assembler"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"4023463C3455073F"
+			]
+			id: "A51226797E7CF426"
+			tasks: [
+				{
+					count: 16L
+					id: "906F410C897BFDAD"
+					item: {
+						count: 1
+						id: "aeronautics:white_envelope"
+					}
+					type: "item"
+				}
+				{
+					id: "FB099F8116F91F1D"
+					item: {
+						count: 1
+						id: "aeronautics:adjustable_burner"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"4023463C3455073F"
+			]
+			id: "8B5A6B7980D1D2B8"
+			tasks: [
+				{
+					id: "9772F16F4E005C77"
+					item: {
+						count: 1
+						id: "aeronautics:propeller_bearing"
+					}
+					type: "item"
+				}
+				{
+					id: "6E28C8D025A1A8D2"
+					item: {
+						count: 1
+						id: "aeronautics:wooden_propeller"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"D258FA6E0B350AD5"
+				"A51226797E7CF426"
+				"8B5A6B7980D1D2B8"
+			]
+			id: "3A67502FB1B16E8F"
+			tasks: [
+				{
+					id: "F73574F636A783E2"
+					item: {
+						count: 1
+						id: "simulated:steering_wheel"
+					}
+					type: "item"
+				}
+				{
+					id: "B0CEB03D41D93CAD"
+					item: {
+						count: 1
+						id: "simulated:throttle_lever"
+					}
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"D258FA6E0B350AD5"
+			]
+			id: "9F6F46C2189FAF8B"
+			optional: true
+			tasks: [
+				{
+					count: 8L
+					id: "2759DF08551435B2"
+					item: {
+						count: 1
+						id: "aeronautics:levitite"
+					}
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"3A67502FB1B16E8F"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:feather"
+			}
+			id: "EEA9A940BEB15687"
+			rewards: [
+				{
+					id: "C4A8A0EFD47C5D68"
+					type: "xp"
+					xp: 200
+				}
+			]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [
+				{
+					id: "D50C103A92B57470"
+					type: "checkmark"
+				}
+			]
+			x: 8.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"EEA9A940BEB15687"
+			]
+			id: "49CD7CDF44232AC1"
+			tasks: [
+				{
+					id: "F5CF5CF1E2191BB8"
+					item: {
+						count: 1
+						id: "simulated:navigation_table"
+					}
+					type: "item"
+				}
+			]
+			x: 10.5d
+			y: 0.0d
+		}
+	]
+}

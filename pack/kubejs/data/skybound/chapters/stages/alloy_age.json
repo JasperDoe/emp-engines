@@ -1,0 +1,29 @@
+{
+  "restrictions": {
+    "preventCraft": true,
+    "hideInJei": true,
+    "preventPickup": false,
+    "dropFromInventory": false,
+    "preventTransfer": false
+  },
+  "items": [
+    "create:brass_ingot",
+    "create:copper_casing",
+    "create:fluid_pipe",
+    "create:mechanical_pump",
+    "create:fluid_tank",
+    "create:fluid_valve",
+    "create:spout",
+    "create:item_drain",
+    "create:hose_pulley",
+    "create:portable_fluid_interface",
+    "immersiveengineering:cokebrick",
+    "immersiveengineering:blastbrick",
+    "immersiveengineering:alloybrick",
+    "immersiveengineering:hammer",
+    "silentgear:alloy_forge"
+  ],
+  "namespaces": [
+    "productivemetalworks"
+  ]
+}

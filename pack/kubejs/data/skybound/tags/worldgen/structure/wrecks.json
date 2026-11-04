@@ -1,0 +1,9 @@
+{
+  "values": [
+    "cr_aero_structures:crash_airship",
+    "cr_aero_structures:crash_airballoon",
+    "cr_aero_structures:crash_plane",
+    "cr_aero_structures:crash_pillager_airship",
+    "cr_aero_structures:crash_pillager_airballoon"
+  ]
+}

@@ -1,0 +1,206 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "briefing"
+	group: ""
+	icon: {
+		count: 1
+		id: "minecraft:map"
+	}
+	id: "B7D1428F3D1A31CC"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			icon: {
+				count: 1
+				id: "minecraft:map"
+			}
+			id: "D6BFAAAE8DC45F87"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [
+				{
+					id: "E531561831BA08A1"
+					type: "checkmark"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"D6BFAAAE8DC45F87"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:writable_book"
+			}
+			id: "D46561196732649E"
+			tasks: [
+				{
+					id: "071B84808D1FADC6"
+					type: "checkmark"
+				}
+			]
+			x: 0.0d
+			y: -2.5d
+		}
+		{
+			dependencies: [
+				"D6BFAAAE8DC45F87"
+			]
+			id: "61A405F49C73E0AF"
+			tasks: [
+				{
+					id: "B9915C85094139A9"
+					item: {
+						count: 1
+						id: "minecraft:crafting_table"
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"61A405F49C73E0AF"
+			]
+			id: "7E102607245F2767"
+			tasks: [
+				{
+					id: "E5DC252A1976DB84"
+					item: {
+						count: 1
+						id: "minecraft:furnace"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"61A405F49C73E0AF"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:red_bed"
+			}
+			id: "161F773EEFAE0B9E"
+			tasks: [
+				{
+					id: "E8B75FAF3B74EE5C"
+					type: "checkmark"
+				}
+			]
+			x: 4.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"61A405F49C73E0AF"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:bread"
+			}
+			id: "8B0E0F4508CB98E6"
+			tasks: [
+				{
+					id: "97973FE8CEC58F80"
+					type: "checkmark"
+				}
+			]
+			x: 4.5d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"7E102607245F2767"
+			]
+			id: "89E3FED37B09A7DA"
+			rewards: [
+				{
+					id: "EB53551FA8460C2B"
+					type: "xp"
+					xp: 20
+				}
+			]
+			shape: "diamond"
+			tasks: [
+				{
+					id: "1DF33297BB964CFB"
+					item: {
+						count: 1
+						id: "minecraft:iron_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 7.0d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"7E102607245F2767"
+			]
+			id: "CDDC586BD5311E42"
+			shape: "diamond"
+			tasks: [
+				{
+					id: "AE4715F840504CD1"
+					item: {
+						count: 1
+						id: "minecraft:andesite"
+					}
+					type: "item"
+				}
+			]
+			x: 7.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"7E102607245F2767"
+			]
+			id: "8F574400B7F12669"
+			shape: "diamond"
+			tasks: [
+				{
+					id: "E86D0D37E09056B2"
+					item: {
+						count: 1
+						id: "minecraft:lapis_lazuli"
+					}
+					type: "item"
+				}
+			]
+			x: 7.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"89E3FED37B09A7DA"
+				"CDDC586BD5311E42"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:feather"
+			}
+			id: "62E6E8240892B2DF"
+			optional: true
+			tasks: [
+				{
+					id: "CED857BC2409D775"
+					type: "checkmark"
+				}
+			]
+			x: 9.5d
+			y: 0.0d
+		}
+	]
+}

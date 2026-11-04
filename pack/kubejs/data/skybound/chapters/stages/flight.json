@@ -1,0 +1,15 @@
+{
+  "restrictions": {
+    "preventCraft": true,
+    "hideInJei": true,
+    "preventPickup": false,
+    "dropFromInventory": false,
+    "preventTransfer": false
+  },
+  "items": [],
+  "namespaces": [
+    "aeronautics",
+    "simulated",
+    "offroad"
+  ]
+}

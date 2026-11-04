@@ -1,0 +1,354 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "alloy_age"
+	group: "F02A3E854920CEED"
+	icon: {
+		count: 1
+		id: "immersiveengineering:ingot_steel"
+	}
+	id: "1FF88932C1EC4636"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"754DF6051A9C62C4"
+				"A7103F6D54C8870C"
+			]
+			icon: {
+				count: 1
+				id: "immersiveengineering:ingot_steel"
+			}
+			id: "E0236B653ECE5763"
+			rewards: [
+				{
+					command: "/chapters add {p} skybound:alloy_age"
+					id: "A74FB0BF07BFF051"
+					permission_level: 2
+					silent: true
+					type: "command"
+				}
+			]
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "EE90FCAFE5BDD02C"
+					points: true
+					type: "xp"
+					value: 550L
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "66D934D393B516AF"
+					item: {
+						count: 1
+						id: "create:andesite_alloy"
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "1839417D1D67FED2"
+					item: {
+						count: 1
+						id: "minecraft:copper_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"E0236B653ECE5763"
+			]
+			id: "0B632D1E4278637F"
+			tasks: [
+				{
+					id: "5D74E823ABC5F2CE"
+					item: {
+						count: 1
+						id: "immersiveengineering:hammer"
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"0B632D1E4278637F"
+			]
+			id: "6D79E5BD18B1DCA9"
+			tasks: [
+				{
+					count: 27L
+					id: "D5974B8892835D68"
+					item: {
+						count: 1
+						id: "immersiveengineering:cokebrick"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"6D79E5BD18B1DCA9"
+			]
+			id: "3B9F503039519367"
+			tasks: [
+				{
+					count: 16L
+					id: "AAB830EADED3F611"
+					item: {
+						count: 1
+						id: "immersiveengineering:coal_coke"
+					}
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"3B9F503039519367"
+			]
+			id: "B618FBDD4DC45E32"
+			tasks: [
+				{
+					count: 27L
+					id: "204F6A677679EF2B"
+					item: {
+						count: 1
+						id: "immersiveengineering:blastbrick"
+					}
+					type: "item"
+				}
+			]
+			x: 8.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"B618FBDD4DC45E32"
+			]
+			id: "5226AD7C7CCFF81E"
+			rewards: [
+				{
+					id: "3F0EE1C3FCB8D244"
+					type: "xp"
+					xp: 50
+				}
+			]
+			shape: "hexagon"
+			tasks: [
+				{
+					count: 8L
+					id: "6F71D9A951972D83"
+					item: {
+						count: 1
+						id: "immersiveengineering:ingot_steel"
+					}
+					type: "item"
+				}
+			]
+			x: 10.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"E0236B653ECE5763"
+			]
+			id: "085E83B071D5B549"
+			tasks: [
+				{
+					count: 8L
+					id: "BA37E41CF9D41D26"
+					item: {
+						count: 1
+						id: "create:fluid_pipe"
+					}
+					type: "item"
+				}
+				{
+					id: "40D451DF342CBE75"
+					item: {
+						count: 1
+						id: "create:mechanical_pump"
+					}
+					type: "item"
+				}
+				{
+					id: "CA2088C4E951E30E"
+					item: {
+						count: 1
+						id: "create:fluid_tank"
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"085E83B071D5B549"
+			]
+			id: "B00685259C307645"
+			tasks: [
+				{
+					id: "E3CC4109084F8BFB"
+					item: {
+						count: 1
+						id: "create:spout"
+					}
+					type: "item"
+				}
+				{
+					id: "5F7E8470B28376D2"
+					item: {
+						count: 1
+						id: "create:item_drain"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"E0236B653ECE5763"
+			]
+			id: "0635FFA2161C851C"
+			tasks: [
+				{
+					count: 32L
+					id: "6D636F401C959B38"
+					item: {
+						count: 1
+						id: "productivemetalworks:fire_brick"
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"0635FFA2161C851C"
+			]
+			id: "9974DE548ABA45E5"
+			rewards: [
+				{
+					id: "E1B934FC873C1E3B"
+					type: "xp"
+					xp: 100
+				}
+			]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [
+				{
+					id: "32030FECD2789B26"
+					item: {
+						count: 1
+						id: "productivemetalworks:black_foundry_controller"
+					}
+					type: "item"
+				}
+				{
+					id: "F46562322BB5EB03"
+					item: {
+						count: 1
+						id: "productivemetalworks:black_foundry_drain"
+					}
+					type: "item"
+				}
+				{
+					id: "78FB84DD1A2F8915"
+					item: {
+						count: 1
+						id: "productivemetalworks:black_foundry_tank"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"9974DE548ABA45E5"
+			]
+			id: "52C6999E0CE31C24"
+			tasks: [
+				{
+					id: "5F5B708B0CFDBFC0"
+					item: {
+						count: 1
+						id: "productivemetalworks:foundry_tap"
+					}
+					type: "item"
+				}
+				{
+					id: "331D0CE1F88435DD"
+					item: {
+						count: 1
+						id: "productivemetalworks:casting_table"
+					}
+					type: "item"
+				}
+				{
+					id: "4B284D033EDBDCDB"
+					item: {
+						count: 1
+						id: "productivemetalworks:casting_basin"
+					}
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"52C6999E0CE31C24"
+				"B00685259C307645"
+			]
+			id: "7557F1786D6F0996"
+			rewards: [
+				{
+					id: "8880D8E398C0E323"
+					type: "xp"
+					xp: 50
+				}
+			]
+			shape: "hexagon"
+			tasks: [
+				{
+					count: 8L
+					id: "D7FE7E1B3185DD14"
+					item: {
+						count: 1
+						id: "create:brass_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 8.5d
+			y: 0.0d
+		}
+	]
+}

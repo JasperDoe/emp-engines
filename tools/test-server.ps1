@@ -55,6 +55,8 @@ function Get-Hits([string[]]$lines, [string]$pattern, [int]$max = 50) {
     $hits = $lines | Select-String -Pattern $pattern | ForEach-Object { $_.Line.Trim() } | Select-Object -Unique -First $max
     if ($hits) { $hits } else { '  none' }
 }
+$kjsLog = Join-Path $srv 'logs\kubejs\server.log'
+$kjs = if (Test-Path $kjsLog) { Get-Content $kjsLog } else { @() }
 $done = [bool]($text | Select-String 'Done \(')
 $crashes = Get-ChildItem (Join-Path $srv 'crash-reports') -ErrorAction SilentlyContinue
 $report = @(
@@ -74,6 +76,15 @@ $report = @(
     ''
     '== ERROR lines (first 80) =='
     Get-Hits $text '/ERROR\]|\[ERROR\]' 80
+    ''
+    '== Skybound checks (world height, nether scale) =='
+    Get-Hits ($text + $kjs) '\[Skybound\]'
+    ''
+    '== Quests and research stages (expect 11 chapters, 9 stages) =='
+    Get-Hits $text 'datapack stage definitions|Ignoring non-object stage|ftbquests.*(error|exception|failed|chapters)|Loaded .* quests' 20
+    ''
+    '== KubeJS script errors =='
+    Get-Hits $kjs 'ERROR|Error in|error:' 40
     ''
     '== Crash reports =='
     $(if ($crashes) { $crashes.FullName } else { '  none' })

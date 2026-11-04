@@ -1,0 +1,110 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "into_the_sky"
+	group: "9692EDFE2DE3589D"
+	icon: {
+		count: 1
+		id: "minecraft:emerald"
+	}
+	id: "61D8A432A17E8B0C"
+	order_index: 8
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"EEA9A940BEB15687"
+			]
+			hide_until_deps_complete: true
+			icon: {
+				count: 1
+				id: "minecraft:emerald"
+			}
+			id: "D11F451A37DE5F06"
+			rewards: [
+				{
+					id: "F09FEE89D460CD30"
+					type: "xp"
+					xp: 300
+				}
+			]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [
+				{
+					id: "69246CC9CC17266B"
+					structure: "#skybound:sky_villages"
+					type: "structure"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"D11F451A37DE5F06"
+			]
+			id: "2F252DBFBEB84507"
+			rewards: [
+				{
+					id: "201C42600DCD0260"
+					type: "xp"
+					xp: 300
+				}
+			]
+			tasks: [
+				{
+					id: "2BB6B64DD502CA95"
+					structure: "create_sky_village:highwind_village"
+					type: "structure"
+				}
+			]
+			x: 2.5d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"D11F451A37DE5F06"
+			]
+			id: "907F06D7468A6531"
+			rewards: [
+				{
+					id: "458F4B96EA64D22A"
+					type: "xp"
+					xp: 200
+				}
+			]
+			tasks: [
+				{
+					id: "3566F5274E791299"
+					structure: "aeronauticsdiscovery:balloon_loot"
+					type: "structure"
+				}
+			]
+			x: 2.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"D11F451A37DE5F06"
+			]
+			id: "39445CA3841B2487"
+			rewards: [
+				{
+					id: "B0CBE049AE789129"
+					type: "xp"
+					xp: 400
+				}
+			]
+			tasks: [
+				{
+					id: "33F59083746A593D"
+					structure: "cr_aero_structures:pillager_airship"
+					type: "structure"
+				}
+			]
+			x: 4.5d
+			y: 0.0d
+		}
+	]
+}

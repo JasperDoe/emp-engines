@@ -1,0 +1,130 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "the_nether"
+	group: "9692EDFE2DE3589D"
+	icon: {
+		count: 1
+		id: "minecraft:crying_obsidian"
+	}
+	id: "C4D74B3E227DE5F4"
+	order_index: 9
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"93299B5B7C65FC23"
+			]
+			hide_until_deps_complete: true
+			icon: {
+				count: 1
+				id: "minecraft:crying_obsidian"
+			}
+			id: "375C93965E524F70"
+			rewards: [
+				{
+					command: "/skybound unlock nether"
+					id: "4B069759459F299D"
+					permission_level: 2
+					silent: true
+					type: "command"
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [
+				{
+					consume_items: true
+					count: 2000L
+					id: "C2F48835D9FDA21C"
+					item: {
+						count: 1
+						id: "minecraft:obsidian"
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 5000L
+					id: "699BA99C132D3A2A"
+					item: {
+						count: 1
+						id: "immersiveengineering:ingot_steel"
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 500L
+					id: "174C0FB9A4AE014C"
+					item: {
+						count: 1
+						id: "create:precision_mechanism"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"375C93965E524F70"
+			]
+			id: "1C9F2F26F3CA7CA5"
+			rewards: [
+				{
+					id: "958F9FCB113617AC"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [
+				{
+					dimension: "minecraft:the_nether"
+					id: "8F1F4312157C12C6"
+					type: "dimension"
+				}
+			]
+			x: 2.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"1C9F2F26F3CA7CA5"
+			]
+			id: "86654732C380E293"
+			tasks: [
+				{
+					count: 8L
+					id: "09F8298AAB1EB1A4"
+					item: {
+						count: 1
+						id: "minecraft:blaze_rod"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"1C9F2F26F3CA7CA5"
+			]
+			id: "422E48930EA981A8"
+			tasks: [
+				{
+					id: "AC32DBBFF14A1F5D"
+					item: {
+						count: 1
+						id: "create:blaze_burner"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 1.5d
+		}
+	]
+}

@@ -1,0 +1,8 @@
+{
+  "restrictions": {
+    "preventTravel": true
+  },
+  "dimensions": [
+    "minecraft:the_nether"
+  ]
+}

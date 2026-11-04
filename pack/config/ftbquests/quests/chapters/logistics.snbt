@@ -1,0 +1,235 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "logistics"
+	group: ""
+	icon: {
+		count: 1
+		id: "create:item_vault"
+	}
+	id: "66B4B1125F512FAD"
+	order_index: 10
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"754DF6051A9C62C4"
+			]
+			icon: {
+				count: 1
+				id: "create:item_vault"
+			}
+			id: "6C3417D5F820F147"
+			rewards: [
+				{
+					command: "/chapters add {p} skybound:logistics"
+					id: "C8ED9F6E92AEA9A6"
+					permission_level: 2
+					silent: true
+					type: "command"
+				}
+			]
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "EFF627F1114308BD"
+					points: true
+					type: "xp"
+					value: 315L
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "CE8E904D558B58C5"
+					item: {
+						count: 1
+						id: "create:andesite_alloy"
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "F10DDE5186386042"
+					item: {
+						count: 1
+						id: "minecraft:chest"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"6C3417D5F820F147"
+			]
+			id: "2528654F1E81EF97"
+			tasks: [
+				{
+					count: 4L
+					id: "995E1291C91B4C16"
+					item: {
+						count: 1
+						id: "create:item_vault"
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"6C3417D5F820F147"
+			]
+			id: "01EB4F8E964E4A05"
+			tasks: [
+				{
+					count: 4L
+					id: "407FDC6449516D95"
+					item: {
+						count: 1
+						id: "create:andesite_funnel"
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"01EB4F8E964E4A05"
+				"2528654F1E81EF97"
+			]
+			id: "ACB3E347E1F626CF"
+			tasks: [
+				{
+					id: "4E799FF9584C7CB9"
+					item: {
+						count: 1
+						id: "create:packager"
+					}
+					type: "item"
+				}
+				{
+					id: "D62DE1951B3E2963"
+					item: {
+						count: 1
+						id: "create:package_frogport"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"ACB3E347E1F626CF"
+			]
+			id: "85A8A025C5D4688B"
+			tasks: [
+				{
+					id: "5BE36E7A0B50C149"
+					item: {
+						count: 1
+						id: "create:stock_link"
+					}
+					type: "item"
+				}
+				{
+					id: "471EFEEFD357AC4A"
+					item: {
+						count: 1
+						id: "create:stock_ticker"
+					}
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"2528654F1E81EF97"
+			]
+			id: "7B8E1EA53DCC1054"
+			tasks: [
+				{
+					count: 2L
+					id: "E598BC7F9842CAF0"
+					item: {
+						count: 1
+						id: "create:portable_storage_interface"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"7B8E1EA53DCC1054"
+				"4023463C3455073F"
+			]
+			id: "C498BC94A5589DF8"
+			tasks: [
+				{
+					id: "24A0F9E0FAE8A4F6"
+					item: {
+						count: 1
+						id: "simulated:docking_connector"
+					}
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"6C3417D5F820F147"
+				"7DB10E1CD04D87D0"
+			]
+			icon: {
+				count: 1
+				id: "create:track"
+			}
+			id: "72AA908A48110531"
+			tasks: [
+				{
+					count: 32L
+					id: "173F345C770C3185"
+					item: {
+						count: 1
+						id: "create:track"
+					}
+					type: "item"
+				}
+				{
+					id: "BE51B26ED32B0108"
+					item: {
+						count: 1
+						id: "create:track_station"
+					}
+					type: "item"
+				}
+				{
+					id: "13FA0494E67FF7BB"
+					item: {
+						count: 1
+						id: "create:controls"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 2.5d
+		}
+	]
+}

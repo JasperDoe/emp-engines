@@ -1,0 +1,515 @@
+{
+	chapter.1FF88932C1EC4636.chapter_subtitle: [
+		"Steel, brass and the foundry"
+	]
+	chapter.1FF88932C1EC4636.title: "2 · Alloy Age"
+	chapter.3485FE85BE704691.chapter_subtitle: [
+		"Blaze and knowledge"
+	]
+	chapter.3485FE85BE704691.title: "5 · Exotic Age"
+	chapter.3F13798D760407BD.chapter_subtitle: [
+		"Power from rotation"
+	]
+	chapter.3F13798D760407BD.title: "4 · Electricity Age"
+	chapter.61D8A432A17E8B0C.chapter_subtitle: [
+		"Above Y 250"
+	]
+	chapter.61D8A432A17E8B0C.title: "2 · Into the Sky"
+	chapter.644E4C89C5C7E80E.chapter_subtitle: [
+		"Rotation and stress"
+	]
+	chapter.644E4C89C5C7E80E.title: "1 · Andesite Age"
+	chapter.66B4B1125F512FAD.chapter_subtitle: [
+		"Side chapter"
+	]
+	chapter.66B4B1125F512FAD.title: "Logistics & Transport"
+	chapter.A283E56064A7D2C3.chapter_subtitle: [
+		"Leave the ground"
+	]
+	chapter.A283E56064A7D2C3.title: "1 · First Flight"
+	chapter.B7D1428F3D1A31CC.chapter_subtitle: [
+		"Start here"
+	]
+	chapter.B7D1428F3D1A31CC.title: "Briefing"
+	chapter.B9FAA0D099C43966.chapter_subtitle: [
+		"Smarter machines"
+	]
+	chapter.B9FAA0D099C43966.title: "3 · Brass Age"
+	chapter.C4D74B3E227DE5F4.chapter_subtitle: [
+		"A server project"
+	]
+	chapter.C4D74B3E227DE5F4.title: "2.5 · The Nether"
+	chapter.DC9E4321F3FC141C.chapter_subtitle: [
+		"Silent Gear"
+	]
+	chapter.DC9E4321F3FC141C.title: "Gears & Metals"
+	chapter_group.9692EDFE2DE3589D.title: "Into the Unknown"
+	chapter_group.F02A3E854920CEED.title: "March of Industry"
+	file.0000000000000001.title: "Skybound SMP"
+	quest.017976F9830C816D.quest_desc: [
+		"Your first power source. Put it in flowing water."
+	]
+	quest.017976F9830C816D.title: "Water Wheel"
+	quest.01EB4F8E964E4A05.quest_desc: [
+		"Pull items in and out of anything."
+	]
+	quest.01EB4F8E964E4A05.title: "Funnels"
+	quest.0618566213779297.quest_desc: [
+		"Big recipes, done by machines."
+	]
+	quest.0618566213779297.title: "Mechanical Crafters"
+	quest.0635FFA2161C851C.quest_desc: [
+		"Fire clay bakes into fire bricks, the walls of the foundry."
+	]
+	quest.0635FFA2161C851C.title: "Fire Clay"
+	quest.085E83B071D5B549.quest_desc: [
+		"Pipes, pumps and tanks move liquids. Copper casing opens fluid machines."
+	]
+	quest.085E83B071D5B549.title: "Copper and Fluids"
+	quest.0B632D1E4278637F.quest_desc: [
+		"IE multiblocks are built by hand, then struck with the hammer to form."
+	]
+	quest.0B632D1E4278637F.title: "Engineer's Hammer"
+	quest.0D238CF563B75DAD.quest_desc: [
+		"Pay the XP and hand in the samples to learn this tier's recipes."
+		""
+		"&eUnlocks:&r Create: Enchantment Industry (liquid XP, blaze enchanting). Exotic material chains come in a later update."
+		""
+		"&7Research is per player. Each team member has to claim the reward to learn it."
+	]
+	quest.0D238CF563B75DAD.quest_subtitle: "Research"
+	quest.0D238CF563B75DAD.title: "Research: Exotic Age"
+	quest.14C07CE62313C72B.quest_desc: [
+		"Load a repair kit with materials and use it on worn gear."
+	]
+	quest.14C07CE62313C72B.title: "Repairs"
+	quest.161F773EEFAE0B9E.quest_desc: [
+		"Get through your first night."
+	]
+	quest.161F773EEFAE0B9E.title: "A Roof and a Bed"
+	quest.1C789AEAC04A0DB7.quest_desc: [
+		"A new material for your gear. Check its stats with Shift."
+	]
+	quest.1C789AEAC04A0DB7.title: "Azure Electrum"
+	quest.1C9F2F26F3CA7CA5.quest_desc: [
+		"The Nether is 1:1. Every block there is a block here."
+	]
+	quest.1C9F2F26F3CA7CA5.title: "Through the Portal"
+	quest.1D408503336B6F94.quest_desc: [
+		"Set an exact RPM."
+	]
+	quest.1D408503336B6F94.title: "Rotation Speed Controller"
+	quest.20BF147E65051B14.quest_desc: [
+		"Break old gear back down into parts and materials."
+	]
+	quest.20BF147E65051B14.title: "Salvager"
+	quest.2129501A6E232B1F.quest_desc: [
+		"Rotation travels through shafts and cogs. Large cogs change speed."
+	]
+	quest.2129501A6E232B1F.title: "Shafts and Cogs"
+	quest.2251A18945B19799.quest_desc: [
+		"The shell for smarter machines."
+	]
+	quest.2251A18945B19799.title: "Brass Casing"
+	quest.2528654F1E81EF97.quest_desc: [
+		"Bulk storage that grows with size."
+	]
+	quest.2528654F1E81EF97.title: "Item Vault"
+	quest.2F252DBFBEB84507.quest_desc: [
+		"A rarer, windier village."
+	]
+	quest.2F252DBFBEB84507.title: "Highwind"
+	quest.33B02D03094CCD4D.quest_desc: [
+		"Build a farm that harvests and collects on its own."
+	]
+	quest.33B02D03094CCD4D.title: "First Automated Farm"
+	quest.375C93965E524F70.quest_desc: [
+		"The Nether is sealed. Opening it takes the whole server."
+		""
+		"Deliver the materials (Task Screens accept items from funnels and belts). When it's done, the Nether opens for &eeveryone&r, including players who are offline."
+		""
+		"&7Amounts are first drafts and will be tuned."
+	]
+	quest.375C93965E524F70.quest_subtitle: "Server project"
+	quest.375C93965E524F70.title: "The Nether Key"
+	quest.38E272BEC301C853.quest_desc: [
+		"Mixing recipes. Some need heat underneath the basin."
+	]
+	quest.38E272BEC301C853.title: "Mixer and Basin"
+	quest.39445CA3841B2487.quest_desc: [
+		"They fly too. Board it."
+	]
+	quest.39445CA3841B2487.title: "Pillager Airship"
+	quest.3A1DD46ED306379D.quest_desc: [
+		"A mod kit lets you swap parts on a tool without starting over."
+	]
+	quest.3A1DD46ED306379D.title: "Swapping Parts"
+	quest.3A67502FB1B16E8F.quest_desc: [
+		"Steer and throttle from the deck."
+	]
+	quest.3A67502FB1B16E8F.title: "At the Helm"
+	quest.3B9F503039519367.quest_desc: [
+		"Hot enough to make steel."
+	]
+	quest.3B9F503039519367.title: "Coal Coke"
+	quest.3D89B36A28B15DD4.quest_desc: [
+		"A new material for your gear. Check its stats with Shift."
+	]
+	quest.3D89B36A28B15DD4.title: "Azure Silver"
+	quest.4023463C3455073F.quest_desc: [
+		"Pay the XP and hand in the samples to learn this tier's recipes."
+		""
+		"&eUnlocks:&r Create Aeronautics: envelopes, burners, propellers, levitite, the physics assembler and controls."
+		""
+		"&7Research is per player. Each team member has to claim the reward to learn it."
+	]
+	quest.4023463C3455073F.quest_subtitle: "Research"
+	quest.4023463C3455073F.title: "Research: Flight"
+	quest.402CDE629135F79A.quest_desc: [
+		"Something came down here. Someone was flying."
+		"Search the wreck. There may be a map."
+	]
+	quest.402CDE629135F79A.title: "A Wreck in the Hills"
+	quest.422E48930EA981A8.quest_desc: [
+		"Catch a blaze in an empty blaze burner. Superheated mixing needs it."
+	]
+	quest.422E48930EA981A8.title: "Capture a Blaze"
+	quest.474E0AF0EE3B1761.quest_desc: [
+		"Copy written books and enchanted books."
+	]
+	quest.474E0AF0EE3B1761.title: "Printer"
+	quest.49CD7CDF44232AC1.quest_desc: [
+		"Plot a course."
+	]
+	quest.49CD7CDF44232AC1.title: "Navigation Table"
+	quest.5226AD7C7CCFF81E.quest_desc: [
+		"The metal every later age is built on."
+	]
+	quest.5226AD7C7CCFF81E.title: "Steel"
+	quest.52C6999E0CE31C24.quest_desc: [
+		"Pour metal into casts for ingots, blocks and Silent Gear parts."
+	]
+	quest.52C6999E0CE31C24.title: "Casting"
+	quest.55B4E304EAA31AC8.quest_desc: [
+		"A new material for your gear. Check its stats with Shift."
+	]
+	quest.55B4E304EAA31AC8.title: "Netherite"
+	quest.61A405F49C73E0AF.quest_desc: [
+		"Punch a tree and make a crafting table."
+	]
+	quest.61A405F49C73E0AF.title: "Getting Started"
+	quest.62E6E8240892B2DF.quest_desc: [
+		"Climb a mountain and look up. Sky villages, wrecks and loot drift above &bY 250&r."
+		"You can't pillar up there. You'll have to fly."
+	]
+	quest.62E6E8240892B2DF.title: "The Sky Is Off-Limits"
+	quest.6970297A89A93F61.quest_desc: [
+		"Rolls ingots into rods and wire."
+	]
+	quest.6970297A89A93F61.title: "Rolling Mill"
+	quest.6C3417D5F820F147.quest_desc: [
+		"Pay the XP and hand in the samples to learn this tier's recipes."
+		""
+		"&eUnlocks:&r item vaults, portable storage interfaces, packagers, frogports and stock tickers."
+		""
+		"&7Research is per player. Each team member has to claim the reward to learn it."
+	]
+	quest.6C3417D5F820F147.quest_subtitle: "Research"
+	quest.6C3417D5F820F147.title: "Research: Logistics"
+	quest.6D79E5BD18B1DCA9.quest_desc: [
+		"A 3x3x3 of coke bricks. Bakes coal into coke and gives creosote."
+	]
+	quest.6D79E5BD18B1DCA9.title: "Coke Oven"
+	quest.72AA908A48110531.quest_desc: [
+		"Rail lines for heavy freight. Needs the Brass Age."
+	]
+	quest.72AA908A48110531.title: "Trains"
+	quest.754DF6051A9C62C4.quest_desc: [
+		"Pay the XP and hand in the samples to learn this tier's recipes."
+		""
+		"&eUnlocks:&r andesite alloy, shafts and cogs, water wheels, the millstone, press, mixer, fans, drills, saws and belts."
+		""
+		"&7Research is per player. Each team member has to claim the reward to learn it."
+	]
+	quest.754DF6051A9C62C4.quest_subtitle: "Research"
+	quest.754DF6051A9C62C4.title: "Research: Andesite Age"
+	quest.7557F1786D6F0996.quest_desc: [
+		"Copper and zinc, alloyed in the foundry or a heated mixer. Brass opens the next age and the sky."
+	]
+	quest.7557F1786D6F0996.title: "Brass"
+	quest.766D007B2DE59619.quest_desc: [
+		"The backbone of every early machine. Andesite plus iron nuggets."
+	]
+	quest.766D007B2DE59619.title: "Andesite Alloy"
+	quest.77B9096FC74E3799.quest_desc: [
+		"A new material for your gear. Check its stats with Shift."
+	]
+	quest.77B9096FC74E3799.title: "Blaze Gold"
+	quest.79D8FB17B60C3C5E.quest_desc: [
+		"A new material for your gear. Check its stats with Shift."
+	]
+	quest.79D8FB17B60C3C5E.title: "Crimson Iron"
+	quest.7B8E1EA53DCC1054.quest_desc: [
+		"Load and unload moving contraptions and ships."
+	]
+	quest.7B8E1EA53DCC1054.title: "Ship Cargo"
+	quest.7DB10E1CD04D87D0.quest_desc: [
+		"Pay the XP and hand in the samples to learn this tier's recipes."
+		""
+		"&eUnlocks:&r brass machines, mechanical crafters, deployers and arms, precision mechanisms, crushing wheels, steam engines and trains."
+		""
+		"&7Research is per player. Each team member has to claim the reward to learn it."
+	]
+	quest.7DB10E1CD04D87D0.quest_subtitle: "Research"
+	quest.7DB10E1CD04D87D0.title: "Research: Brass Age"
+	quest.7E102607245F2767.quest_desc: [
+		"Stone tools and a furnace. Your tools are made of parts. You'll learn what that means soon."
+	]
+	quest.7E102607245F2767.title: "Stone Age"
+	quest.814A0EAEBA710452.quest_desc: [
+		"Electricity only comes from rotation. An alternator turns RPM into power."
+	]
+	quest.814A0EAEBA710452.title: "Alternator"
+	quest.85A8A025C5D4688B.quest_desc: [
+		"Order from your whole network at one counter."
+	]
+	quest.85A8A025C5D4688B.title: "Stock Ticker"
+	quest.86654732C380E293.quest_desc: [
+		"Blaze power for the Exotic Age."
+	]
+	quest.86654732C380E293.title: "Blaze Rods"
+	quest.89E3FED37B09A7DA.quest_desc: [
+		"Your first iron ingot. Look closer at your tools."
+	]
+	quest.89E3FED37B09A7DA.quest_subtitle: "Opens: Gears & Metals"
+	quest.89E3FED37B09A7DA.title: "Iron"
+	quest.8B0E0F4508CB98E6.quest_desc: [
+		"Find a steady food source before you go far."
+	]
+	quest.8B0E0F4508CB98E6.title: "Something to Eat"
+	quest.8B5A6B7980D1D2B8.quest_desc: [
+		"Rotation into thrust."
+	]
+	quest.8B5A6B7980D1D2B8.title: "Propellers"
+	quest.8B960D393A5F7F6C.quest_desc: [
+		"A new material for your gear. Check its stats with Shift."
+	]
+	quest.8B960D393A5F7F6C.title: "Tyrian Steel"
+	quest.8DE13429C2DED363.quest_desc: [
+		"Store power for later."
+	]
+	quest.8DE13429C2DED363.title: "Accumulator"
+	quest.8F574400B7F12669.quest_desc: [
+		"Lapis is the key to research."
+		""
+		"Every recipe beyond vanilla has to be researched. Research costs &eXP&r plus a few sample items, and it's per player. One person can learn machines and supply the rest of the team."
+		""
+		"For now research is done in this book. A research bench replaces it later."
+	]
+	quest.8F574400B7F12669.quest_subtitle: "Opens: Research"
+	quest.8F574400B7F12669.title: "The Price of Knowledge"
+	quest.907F06D7468A6531.quest_desc: [
+		"Lost cargo, still floating."
+	]
+	quest.907F06D7468A6531.title: "Drifting Cargo"
+	quest.909F688C9015F0C6.quest_desc: [
+		"Polished rose quartz in an iron sheet."
+	]
+	quest.909F688C9015F0C6.title: "Electron Tubes"
+	quest.93299B5B7C65FC23.quest_desc: [
+		"Pay the XP and hand in the samples to learn this tier's recipes."
+		""
+		"&eUnlocks:&r Crafts & Additions (alternators, motors, rolling mill, wires) and IE's powered machines."
+		""
+		"&7Research is per player. Each team member has to claim the reward to learn it."
+	]
+	quest.93299B5B7C65FC23.quest_subtitle: "Research"
+	quest.93299B5B7C65FC23.title: "Research: Electricity Age"
+	quest.94BBFA5581DD8AEB.quest_desc: [
+		"Machines that break blocks for you."
+	]
+	quest.94BBFA5581DD8AEB.title: "Drills and Saws"
+	quest.96790FA4E2D5231E.quest_desc: [
+		"The building blocks of IE's powered machines, like the arc furnace."
+	]
+	quest.96790FA4E2D5231E.title: "Engineering Blocks"
+	quest.9974DE548ABA45E5.quest_desc: [
+		"A multiblock that melts metal. Raw ore melts into &etwice&r the metal."
+		"Open the Productive Metalworks guide for the build."
+	]
+	quest.9974DE548ABA45E5.title: "The Foundry"
+	quest.9D2A3276DE5365BC.quest_desc: [
+		"A new material for your gear. Check its stats with Shift."
+	]
+	quest.9D2A3276DE5365BC.title: "Gold"
+	quest.9E17EC2B80200F11.quest_desc: [
+		"Grind ores, flowers and gravel."
+	]
+	quest.9E17EC2B80200F11.title: "Millstone"
+	quest.9F6F46C2189FAF8B.quest_desc: [
+		"A block that wants to float."
+	]
+	quest.9F6F46C2189FAF8B.title: "Levitite"
+	quest.9F8FEF58EF2D6A89.quest_desc: [
+		"The next age needs blaze power. The Nether opens through a server-wide project."
+		"See &eInto the Unknown: The Nether&r."
+	]
+	quest.9F8FEF58EF2D6A89.title: "The Nether Is Calling"
+	quest.A0C4D919AA3197C5.quest_desc: [
+		"A new material for your gear. Check its stats with Shift."
+	]
+	quest.A0C4D919AA3197C5.title: "Copper"
+	quest.A51226797E7CF426.quest_desc: [
+		"A burner under an envelope. The simplest way up."
+	]
+	quest.A51226797E7CF426.title: "Hot Air"
+	quest.A7103F6D54C8870C.quest_desc: [
+		"Presses ingots into sheets."
+	]
+	quest.A7103F6D54C8870C.title: "Mechanical Press"
+	quest.ACB3E347E1F626CF.quest_desc: [
+		"Box up items and send them by frog."
+	]
+	quest.ACB3E347E1F626CF.title: "Packages"
+	quest.AD88A160457BA96D.quest_desc: [
+		"Automated ore processing. The foundry was the first upgrade. This is the next."
+	]
+	quest.AD88A160457BA96D.title: "Crushing Wheels"
+	quest.B00685259C307645.quest_desc: [
+		"Fill and empty items with liquids."
+	]
+	quest.B00685259C307645.title: "Spout and Drain"
+	quest.B618FBDD4DC45E32.quest_desc: [
+		"Iron plus coal coke makes steel."
+	]
+	quest.B618FBDD4DC45E32.title: "Blast Furnace"
+	quest.B6872F8D80B7F51F.quest_desc: [
+		"Power back into rotation, wherever you need it."
+	]
+	quest.B6872F8D80B7F51F.title: "Electric Motor"
+	quest.BEEEF5D03C97F95E.quest_desc: [
+		"XP as a fluid. Bank it in tanks, trade it, or feed it into factories."
+	]
+	quest.BEEEF5D03C97F95E.title: "Liquid Knowledge"
+	quest.C498BC94A5589DF8.quest_desc: [
+		"Moor your ship at a dock."
+	]
+	quest.C498BC94A5589DF8.title: "Docking"
+	quest.CCD45BF31A4763F2.quest_desc: [
+		"Every machine costs stress units (SU). Goggles show how much your network can handle."
+	]
+	quest.CCD45BF31A4763F2.title: "Stress"
+	quest.CDDC586BD5311E42.quest_desc: [
+		"A grey stone with a future. Andesite is the start of every machine."
+	]
+	quest.CDDC586BD5311E42.quest_subtitle: "Opens: March of Industry"
+	quest.CDDC586BD5311E42.title: "Andesite"
+	quest.D11F451A37DE5F06.quest_desc: [
+		"Villages float high above the build limit. Land, trade, and see what they sell."
+	]
+	quest.D11F451A37DE5F06.title: "Sky Village"
+	quest.D1D85BFBAF44A09D.quest_desc: [
+		"Your first sequenced assembly line: deploy, press, repeat."
+	]
+	quest.D1D85BFBAF44A09D.title: "Precision Mechanism"
+	quest.D258FA6E0B350AD5.quest_desc: [
+		"Turns a build into a moving physics object."
+	]
+	quest.D258FA6E0B350AD5.title: "Physics Assembler"
+	quest.D46561196732649E.quest_desc: [
+		"&c-&r No building or breaking at or above &bY 250&r."
+		"&c-&r The Nether is &b1:1&r with the Overworld. It's a destination, not a shortcut."
+		"&c-&r No elytra and no teleporting."
+		"&c-&r Mob farms don't work. XP comes from exploring."
+		"&c-&r XP is &eknowledge&r: you spend it to research new recipes."
+	]
+	quest.D46561196732649E.title: "Server Rules"
+	quest.D6BFAAAE8DC45F87.quest_desc: [
+		"The ground is yours to build on. The sky is not."
+		""
+		"Everything valuable floats above &bY 250&r, where nobody can place or break blocks. To reach it you'll need to build something that flies."
+		""
+		"Start like any vanilla world. The book opens new chapters as you find things."
+	]
+	quest.D6BFAAAE8DC45F87.quest_subtitle: "Read me first"
+	quest.D6BFAAAE8DC45F87.title: "Welcome to Skybound"
+	quest.D74E43DBFCECFBCF.quest_desc: [
+		"Carry power between buildings."
+	]
+	quest.D74E43DBFCECFBCF.title: "Wiring"
+	quest.E0236B653ECE5763.quest_desc: [
+		"Pay the XP and hand in the samples to learn this tier's recipes."
+		""
+		"&eUnlocks:&r the IE coke oven, blast furnace and alloy kiln, copper fluid handling, brass, and the foundry."
+		""
+		"&7Research is per player. Each team member has to claim the reward to learn it."
+	]
+	quest.E0236B653ECE5763.quest_subtitle: "Research"
+	quest.E0236B653ECE5763.title: "Research: Alloy Age"
+	quest.E17A9DE819FE4B0D.quest_desc: [
+		"Picks up and places items between machines."
+	]
+	quest.E17A9DE819FE4B0D.title: "Mechanical Arm"
+	quest.E3A677EAB095C8E7.quest_desc: [
+		"More power, no river needed."
+	]
+	quest.E3A677EAB095C8E7.title: "Windmill"
+	quest.E702A41C8850A300.quest_desc: [
+		"Paint your gear any colour you like."
+	]
+	quest.E702A41C8850A300.title: "A Splash of Colour"
+	quest.EBE2E9D7B112391A.quest_desc: [
+		"Blueprints and templates shape the parts. Craft a blueprint for the part you want, then craft it with your material."
+	]
+	quest.EBE2E9D7B112391A.title: "Blueprints"
+	quest.ECC25586EC50AADA.quest_desc: [
+		"Every tool and piece of armour here is built from &eparts&r: a head, a rod, sometimes a binding or grip."
+		"Each part's material decides the stats. Hover a tool and hold Shift to see them."
+		""
+		"Better materials come from exploring. You won't know which metal is best until you find it."
+	]
+	quest.ECC25586EC50AADA.title: "Look Closer at Your Pickaxe"
+	quest.EEA9A940BEB15687.quest_desc: [
+		"Take your ship above &bY 250&r and bring it back in one piece."
+	]
+	quest.EEA9A940BEB15687.title: "First Flight"
+	quest.EF3A8F11B527ABAD.quest_desc: [
+		"Blow through fire to smelt, through water to wash."
+	]
+	quest.EF3A8F11B527ABAD.title: "Encased Fan"
+	quest.F0E6D2A6339B8D62.quest_desc: [
+		"Metal quests stay hidden until you hold the metal. Rumours so far:"
+		"&7-&r Something red runs in the walls of the Nether."
+		"&7-&r Blue veins are said to glitter in the End."
+		"&7-&r Black crystals hide deep below the stone."
+		"&7-&r Some of the best metals aren't mined at all. They're alloyed."
+		""
+		"The &eFoundry&r (Alloy Age) casts parts and doubles your ore."
+	]
+	quest.F0E6D2A6339B8D62.quest_subtitle: "Hints for hidden quests"
+	quest.F0E6D2A6339B8D62.title: "Field Notes: Metals"
+	quest.F17E7E05A160CC66.quest_desc: [
+		"A new material for your gear. Check its stats with Shift."
+	]
+	quest.F17E7E05A160CC66.title: "Crimson Steel"
+	quest.F20B642B11B151E9.quest_desc: [
+		"Move items between machines."
+	]
+	quest.F20B642B11B151E9.title: "Belts"
+	quest.F52B627E99FFF93E.quest_desc: [
+		"A new material for your gear. Check its stats with Shift."
+	]
+	quest.F52B627E99FFF93E.title: "Bort"
+	quest.F90E583FB003DD52.quest_desc: [
+		"A new material for your gear. Check its stats with Shift."
+	]
+	quest.F90E583FB003DD52.title: "Diamond"
+	quest.FA5E2AA3C9E46332.quest_desc: [
+		"A hand that uses items for you."
+	]
+	quest.FA5E2AA3C9E46332.title: "Deployers"
+	quest.FE1FC22B01550C40.quest_desc: [
+		"Automated enchanting, fuelled by liquid XP."
+	]
+	quest.FE1FC22B01550C40.title: "Blaze Enchanter"
+}
