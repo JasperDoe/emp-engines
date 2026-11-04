@@ -6,47 +6,47 @@ hash = "b598a1fa8f15245cbad10e998b0394661469b003e5c1f60b021687ba3ceae943"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/alloy_age.snbt"
-hash = "f93e1836d4ac76ea84bfe3f9aecf8e07f408dcca1a5157c0f9928e6e9447803f"
+hash = "4724a387b81f7d646c55aca1c32f3733fa6c8f9c3ffd0130af91d23649a01cc6"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/andesite_age.snbt"
-hash = "ae7efc791317be2a374e0d3cba18fd7f3b012b602791f85be80fb741191b9cff"
+hash = "43388d09b6345857de9245873ea371927acc8baf405054fdeaa09e9b26ce1df2"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/brass_age.snbt"
-hash = "2ce6f4aa748cfcf1ecea75aa95c5dfdd5ecc24dca251c0aa9f28468cd8aba2b9"
+hash = "7ad97a6b85bb41ddda7eeb6af1f6f270f3427f0fd1efcb61013ea894a93d68c9"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/briefing.snbt"
-hash = "38ff5529145432df57579a500c67f59a4c561329a3076419dd8d748c88fb038b"
+hash = "58251e22df454a226a2bef69f0b92a1cb86abfdf50b1e729e82028f90b31a653"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/electricity_age.snbt"
-hash = "30e10f212bd697ca32bd44a6c2aaed55d3d744f1c3d155d7a0dc311c1011bc63"
+hash = "6e8edcd1e6d9e816a2ff16d742d95d78dbc2c44cead085ec914afbbf9db90042"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/exotic_age.snbt"
-hash = "393898e35480f42a56fc588eabc5e9710dbd4c73267de5afc18167bc242d9c30"
+hash = "614f5ffd98c1c26637e5d0386eae03eec8e86fae93908fefb8b359688e98b914"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/first_flight.snbt"
-hash = "2eb303180421c7168c2faa8f2b7942962b8e21d16d26d5c6382e2995e41f8b8b"
+hash = "a938d5c2ba643812625a4013fd6107b269e4e34f1aa1b21e4364f4ab990c7052"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/gears_and_metals.snbt"
-hash = "1a2d4914c569a77f46aa280bdeda69323606dfc2d2631d84e2c19591a3c2cf25"
+hash = "a4e96101c16c1f136d264b28a14c8ebda78e8d007b1429742db775aaa2f25cba"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/into_the_sky.snbt"
-hash = "f0a4ef8218ee3c565a9dfdf8642eb2dbe16c2782007a8d45ab8dea696e1d8142"
+hash = "a6e6d547d1a77977d0bdd5c928f5a11a457d428e45b16eea0ea862897b47b629"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/logistics.snbt"
-hash = "cfc27a0698934db2eabaa0f07de4de0369bbd5581fd736ad7d7d542c4ee49a00"
+hash = "68b309722a23ff5f4d9af18939f80220a6732a401c6e0f00e24e8e32a9732d9b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/the_nether.snbt"
-hash = "34e1df9e98c442e8865b56ca55483b7ab43ffeb96bf59f97dac6e3a3eee0bb5b"
+hash = "5458f3d16a8c8d35c2572e6b14e04c196266cf781e33ecde7c959e0b8181a7f1"
 
 [[files]]
 file = "config/ftbquests/quests/data.snbt"
@@ -54,7 +54,7 @@ hash = "4cb9e0a02ee096dc5985f9809ee77054998044d28a1d1aead24736b7758d760b"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "626f781dba309d50f7d46c33a26570c1ce421e22940a729488edb9335c97bd24"
+hash = "f4becdce6dd1cad6d1ed7e604496d537d16fde2f91e1e03408dc34b7a1cfa9cf"
 
 [[files]]
 file = "config/tectonic.json"
@@ -78,19 +78,19 @@ hash = "3713c8ff5aff6993418c2f6a215a34425d5dc556f5c963b3353aa1a290af31ed"
 
 [[files]]
 file = "kubejs/data/skybound/chapters/stages/alloy_age.json"
-hash = "5cb347796499d2c432c2801c61d8339760842bb694dec50ac60e94ef40d572ce"
+hash = "d52b7341e0cbe8af8d4ff1a9de537f8b143bf301003e36d21b0b1b208dc4fb68"
 
 [[files]]
 file = "kubejs/data/skybound/chapters/stages/andesite_age.json"
-hash = "884fb1f45964fe65f49e69c47ebbb97bedf5ca08447b2fa67bf831c2a7b1c42c"
+hash = "98f3280eea21ef75611bfb53c906cd11284cf417dabbda0d4902d49b07f7e70d"
 
 [[files]]
 file = "kubejs/data/skybound/chapters/stages/brass_age.json"
-hash = "4811def1f40bbe739f3963093cf96135acdd46223a4fdcf305b28d16cd99792d"
+hash = "eb4070469b28b5c31d4e41a9409158b8f94912d84292be04723bd672c0f3ccea"
 
 [[files]]
 file = "kubejs/data/skybound/chapters/stages/electricity_age.json"
-hash = "b86f8a94b69f4782c66bb1fdbf769197cafe05545e51a4024331ab02f316bef3"
+hash = "a3d94f1165e5ce76f5a95680065a5d3a3606be92358c66457092f7520cab68dd"
 
 [[files]]
 file = "kubejs/data/skybound/chapters/stages/end_access.json"
@@ -102,7 +102,7 @@ hash = "b779992501ffd5b92683bbce1cdd8704577425a484091b1f02e070994d97f35e"
 
 [[files]]
 file = "kubejs/data/skybound/chapters/stages/flight.json"
-hash = "d5c17c60f1a1102b15467265e66cbf32485599486a45b214afecdc504af16016"
+hash = "600ce1ec49e293a0a4ebd466e51d2850af8885847d53604d4164bf92ae31ee69"
 
 [[files]]
 file = "kubejs/data/skybound/chapters/stages/logistics.json"

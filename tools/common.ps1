@@ -109,3 +109,26 @@ function Show-ManualDownloads([string]$Log) {
     return $true
 }
 
+
+# True when a mod, resource pack or shader pack with this name is already in the pack.
+function Test-InPack([string]$Name) {
+    foreach ($dir in 'mods', 'resourcepacks', 'shaderpacks') {
+        if (Test-Path (Join-Path $PackDir "$dir\$Name.pw.toml")) { return $true }
+    }
+    return $false
+}
+
+# Points Iris at the pack's Complementary Reimagined zip and puts the pack's
+# shader settings next to it (Iris reads <zip name>.txt). Runs after mods are
+# added, so a new shader version keeps the same settings.
+function Sync-ShaderConfig {
+    $toml = Get-ChildItem (Join-Path $PackDir 'shaderpacks') -Filter *.pw.toml -ErrorAction SilentlyContinue |
+        Where-Object { (Get-Content $_.FullName -Raw) -match 'filename = "(Complementary[^"]+)"' } | Select-Object -First 1
+    if (-not $toml) { return }
+    $null = (Get-Content $toml.FullName -Raw) -match 'filename = "(Complementary[^"]+)"'
+    $zip = $Matches[1]
+    $shaderDir = Join-Path $PackDir 'shaderpacks'
+    Get-ChildItem $shaderDir -Filter 'Complementary*.txt' | Where-Object { $_.Name -ne "$zip.txt" } | Remove-Item
+    Copy-Item (Join-Path $Root 'client\complementary-settings.txt') (Join-Path $shaderDir "$zip.txt") -Force
+    Set-Content (Join-Path $PackDir 'config\iris.properties') @('enableShaders=true', "shaderPack=$zip")
+}

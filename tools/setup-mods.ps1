@@ -20,20 +20,23 @@ try {
         if ($entry -like 'final:*') { $final += $entry.Substring(6); continue }
         if ($entry -like 'remove:*') {
             $name = $entry.Substring(7)
-            if ((Test-Path (Join-Path $PackDir "mods\$name.pw.toml")) -or (Test-Path (Join-Path $PackDir "resourcepacks\$name.pw.toml"))) {
+            if (Test-InPack $name) {
                 Write-Host "==> removing $name"
                 Invoke-Logged $log $packwiz @('-y', 'remove', $name) | Out-Null
             }
             continue
         }
-        $platform = 'any'; $slug = $entry
+        $platform = 'any'; $slug = $entry; $version = $null
         if ($entry -like 'cf:*') { $platform = 'cf'; $slug = $entry.Substring(3) }
         elseif ($entry -like 'mr:*') { $platform = 'mr'; $slug = $entry.Substring(3) }
+        if ($slug -like '*@*') { $slug, $version = $slug -split '@', 2 }
 
-        if ((Test-Path (Join-Path $PackDir "mods\$slug.pw.toml")) -or (Test-Path (Join-Path $PackDir "resourcepacks\$slug.pw.toml"))) { $skipped++; continue }
+        if (Test-InPack $slug) { $skipped++; continue }
         Write-Host "==> $slug"
         $ok = $false
-        if ($platform -ne 'cf') { $ok = (Invoke-Logged $log $packwiz @('-y', 'modrinth', 'add', $slug) 180) -eq 0 }
+        $mrArgs = @('-y', 'modrinth', 'add', $slug)
+        if ($version) { $mrArgs += @('--version-id', $version) }
+        if ($platform -ne 'cf') { $ok = (Invoke-Logged $log $packwiz $mrArgs 180) -eq 0 }
         if (-not $ok -and $platform -ne 'mr') { $ok = (Invoke-Logged $log $packwiz @('-y', 'curseforge', 'add', $slug) 180) -eq 0 }
         if ($ok) { $added++ } else { $failed++; Add-Content $failedFile $slug; Write-Host '    !! not found for 1.21.1 NeoForge' -ForegroundColor Yellow }
     }
@@ -45,6 +48,7 @@ try {
         else { $failed++; Add-Content $failedFile $slug; Write-Host '    !! not found for 1.21.1 NeoForge' -ForegroundColor Yellow }
     }
 
+    Sync-ShaderConfig
     Invoke-Logged $log $packwiz @('refresh') | Out-Null
     # packwiz falls back to a search when a slug doesn't match exactly,
     # so check this list for anything that isn't the mod you meant.

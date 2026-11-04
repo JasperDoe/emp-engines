@@ -56,9 +56,17 @@ foreach ($jar in $want) {
     if (-not (Test-Path $dst) -or (Get-Item $dst).Length -ne $jar.Length) { Copy-Item $jar.FullName $dst -Force; $copied++ }
 }
 
-# 4. Configs, scripts and resource packs from the pack (overwrites the pack's
-#    own files; files you added yourself are left alone)
-foreach ($dir in 'config', 'defaultconfigs', 'kubejs', 'resourcepacks') {
+# 4. Configs, scripts, resource packs and shader packs from the pack (overwrites
+#    the pack's own files; files you added yourself are left alone). Shader
+#    choices and shader settings are only set the first time, so changes made
+#    in-game survive updates. Delete them from the profile to get the defaults back.
+$keep = @('config\iris.properties') + @(Get-ChildItem (Join-Path $src 'shaderpacks') -Filter *.txt -ErrorAction SilentlyContinue | ForEach-Object { "shaderpacks\$($_.Name)" })
+$saved = @{}
+foreach ($rel in $keep) {
+    $p = Join-Path $target $rel
+    if (Test-Path $p) { $saved[$p] = Get-Content $p -Raw }
+}
+foreach ($dir in 'config', 'defaultconfigs', 'kubejs', 'resourcepacks', 'shaderpacks') {
     $from = Join-Path $src $dir
     if (Test-Path $from) {
         $to = Join-Path $target $dir
@@ -66,13 +74,15 @@ foreach ($dir in 'config', 'defaultconfigs', 'kubejs', 'resourcepacks') {
         Copy-Item (Join-Path $from '*') $to -Recurse -Force
     }
 }
+foreach ($p in $saved.Keys) { Set-Content $p $saved[$p] -NoNewline }
 
 # 5. Switch on the pack's resource packs in the profile's settings
 #    (options.txt line: resourcePacks:["vanilla",...,"file/<name>.zip"])
 $packs = Get-ChildItem (Join-Path $src 'resourcepacks') -File -ErrorAction SilentlyContinue | ForEach-Object { "file/$($_.Name)" }
 if ($packs) {
     $opt = Join-Path $target 'options.txt'
-    $lines = if (Test-Path $opt) { @(Get-Content $opt) } else { @() }
+    [string[]]$lines = @()
+    if (Test-Path $opt) { [string[]]$lines = @(Get-Content $opt) }
     $i = -1
     for ($n = 0; $n -lt $lines.Count; $n++) { if ($lines[$n] -like 'resourcePacks:*') { $i = $n; break } }
     $current = @()

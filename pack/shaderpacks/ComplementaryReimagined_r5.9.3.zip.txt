@@ -1,0 +1,35 @@
+# Skybound SMP defaults for Complementary Reimagined.
+# Light performance (between the Low and Medium profiles), a soft haze that
+# hides low-detail Distant Horizons terrain, and volumetric clouds below the
+# sky villages. Players can change any of this in-game (Esc > Options >
+# Video Settings > Shader Packs > Shader Pack Settings); their changes are kept.
+
+# --- Performance: light ---
+SHADOW_QUALITY=1
+shadowDistance=96.0
+LIGHTSHAFT_QUALI_DEFINE=1
+SSAO_QUALI_DEFINE=2
+DETAIL_QUALITY=2
+FXAA_DEFINE=1
+WATER_REFLECT_QUALITY=2
+BLOCK_REFLECT_QUALITY=1
+COLORED_LIGHTING=0
+WORLD_SPACE_REFLECTIONS=-1
+ENTITY_SHADOW=-1
+RAIN_PUDDLES=0
+ANISOTROPIC_FILTER=0
+
+# --- Fog: slight, mostly in the distance ---
+ATM_FOG_MULT=0.80
+ATM_FOG_DISTANCE=160
+ATM_FOG_ALTITUDE=70
+LIGHTSHAFT_BEHAVIOUR=1
+LIGHTSHAFT_NOON_I=70
+LIGHTSHAFT_SUNSET_I=90
+
+# --- Clouds: volumetric layer just under the Y 250 build limit ---
+CLOUD_STYLE_DEFINE=3
+CLOUD_QUALITY=2
+CLOUD_ALT1=224
+CLOUD_UNBOUND_AMOUNT=1.10
+CLOUD_SHADOWS=true

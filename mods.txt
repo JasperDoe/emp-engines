@@ -6,6 +6,7 @@
 #                           block automatic CurseForge downloads)
 #          cf:slug         (CurseForge only)
 #          mr:slug         (Modrinth only)
+#          mr:slug@versionId  (Modrinth, pinned to one version)
 # Anything after "#" is a comment. Dependencies (libraries) are pulled in
 # automatically by packwiz, so libraries are not listed here.
 # Slugs marked (?) are my best guess: if setup-mods.ps1 can't find one, it goes
@@ -93,6 +94,8 @@ simple-voice-chat
 
 # --- Client only (packwiz marks these client-side automatically) ---
 sodium
+mr:iris@KduFYu4t                         # shaders; pinned to the Iris build made for Sodium 0.8.13
+mr:complementary-reimagined              # shader pack, on by default (settings: client/complementary-settings.txt)
 distanthorizons                          # far terrain (also on the server, sends LODs to players)
 
 # --- Resource packs (client) ---
