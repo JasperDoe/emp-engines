@@ -4,6 +4,7 @@ tools/bin/
 
 # Downloaded mod jars (never committed: licences + size)
 mod-files/
+manual-mods/*.jar
 
 # Logs from tool runs
 *.log

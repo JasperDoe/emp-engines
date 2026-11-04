@@ -1,5 +1,8 @@
 # Skybound SMP mod list
 # Format:  slug            (tries Modrinth first, then CurseForge)
+#          final:slug      (Modrinth, re-added at the very end so a CurseForge
+#                           dependency can't replace it; for mods whose authors
+#                           block automatic CurseForge downloads)
 #          cf:slug         (CurseForge only)
 #          mr:slug         (Modrinth only)
 # Anything after "#" is a comment. Dependencies (libraries) are pulled in
@@ -9,10 +12,10 @@
 
 # --- Core ---
 create
-create-aeronautics                       # pulls in Sable
+final:oWaK0Q19                           # Create Aeronautics (pulls in Sable)
 cf:create-aeroportals                    # ships through Nether/End portals
 dimensional-sable                        # (?) scripted warps for the Sky Gate
-cf:sable-cleanup                         # (?) admin tool for lost ships
+cf:sable-cleanup                         # MANUAL download, see manual-mods\README.txt
 cf:create-aeronautics-ftb-chunks         # (?) claims on ships
 create-aeroworks                         # (?) extra ship parts
 # cf:create-upgraded-portable-engines-for-aeronautics   # not found under this slug; optional, fix later
@@ -36,14 +39,14 @@ cf:restage                               # pulls in ModernUI
 cf:silent-gear                           # pulls in Silent Lib (Modrinth only has old betas)
 cf:productive-metalworks
 cf:silent-gear-metalworks
-cf:kubejs-metalworks                     # (?) KubeJS helpers for the foundry
+# cf:kubejs-metalworks                   # not on CurseForge/Modrinth under this name; foundry recipes can be written as datapack JSON instead
 curios
 artifacts
 
 # --- Worldgen and structures ---
 tectonic
 cf:sky-archipelago                       # see COMPATIBILITY.md, may change
-cf:create-sky-village
+cf:create-sky-village                    # MANUAL download, see manual-mods\README.txt
 lootr
 yungs-better-dungeons
 yungs-better-mineshafts

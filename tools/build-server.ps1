@@ -7,11 +7,16 @@
 . "$PSScriptRoot\common.ps1"
 Assert-Java21
 $bootstrap = Get-Bootstrap
+$packwiz = Get-Packwiz
 $version = Get-PackValue 'version'
 $neo = Get-PackValue 'neoforge'
 $out = Join-Path $Build 'server-pack'
 $log = Join-Path $Build 'build-server.log'
 Set-Content $log ''
+
+# Make sure the pack index matches the files (needed after any manual edit)
+Push-Location $PackDir
+try { Invoke-Logged $log $packwiz @('refresh') | Out-Null } finally { Pop-Location }
 
 # Fresh folder each build so removed mods don't linger
 if (Test-Path $out) { Remove-Item $out -Recurse -Force }
@@ -20,10 +25,11 @@ New-Item -ItemType Directory $out | Out-Null
 # 1. Server-side mods and shared files (packwiz skips client-only mods)
 Write-Host 'Collecting server-side mods...'
 $packUri = ([Uri](Join-Path $PackDir 'pack.toml')).AbsoluteUri
+Copy-ManualMods $out
 Push-Location $out
 try {
     $code = Invoke-Logged $log 'java' @('-jar', $bootstrap, '-g', '-s', 'server', $packUri) 3600
-    if ($code -ne 0) { throw "Mod download failed, see $log" }
+    if ($code -ne 0) { if (Show-ManualDownloads $log) { exit 1 }; throw "Mod download failed, see $log" }
 } finally { Pop-Location }
 Remove-Item (Join-Path $out 'packwiz.json') -ErrorAction SilentlyContinue
 

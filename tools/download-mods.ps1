@@ -17,10 +17,11 @@ try { Invoke-Logged $log $packwiz @('refresh') | Out-Null } finally { Pop-Locati
 
 Write-Host 'Downloading mod files (this can take a while the first time)...'
 $packUri = ([Uri](Join-Path $PackDir 'pack.toml')).AbsoluteUri
+Copy-ManualMods $out
 Push-Location $out
 try {
     $code = Invoke-Logged $log 'java' @('-jar', $bootstrap, '-g', '-s', 'both', $packUri) 3600
-    if ($code -ne 0) { throw "Download failed, see $log" }
+    if ($code -ne 0) { if (Show-ManualDownloads $log) { exit 1 }; throw "Download failed, see $log" }
 } finally { Pop-Location }
 
 $jars = Get-ChildItem (Join-Path $out 'mods') -Filter *.jar -ErrorAction SilentlyContinue

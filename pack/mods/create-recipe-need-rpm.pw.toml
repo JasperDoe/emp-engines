@@ -1,0 +1,13 @@
+name = "Create: Recipe Need RPM"
+filename = "createrecipeneedrpm-1.0.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "8c83a3cf86b9a9d99b494affb5a388f36a6c1425"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8996102
+project-id = 1651968

@@ -1,0 +1,13 @@
+name = "Silent Updated"
+filename = "Silent Updated.zip"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/S2licSjd/versions/z1FCbuGz/Silent%20Updated.zip"
+hash-format = "sha512"
+hash = "66f3a2625f9c713b67d948629825473dd0f5f0a84102adddc2814843365f67b687053589030777964f34d9f86249cca0904ee1bbd60f102ca4c2916319d30214"
+
+[update]
+[update.modrinth]
+mod-id = "S2licSjd"
+version = "z1FCbuGz"

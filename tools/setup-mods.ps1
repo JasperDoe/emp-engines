@@ -20,7 +20,7 @@ try {
         if ($entry -like 'cf:*') { $platform = 'cf'; $slug = $entry.Substring(3) }
         elseif ($entry -like 'mr:*') { $platform = 'mr'; $slug = $entry.Substring(3) }
 
-        if (Test-Path (Join-Path $PackDir "mods\$slug.pw.toml")) { $skipped++; continue }
+        if ((Test-Path (Join-Path $PackDir "mods\$slug.pw.toml")) -or (Test-Path (Join-Path $PackDir "resourcepacks\$slug.pw.toml"))) { $skipped++; continue }
         Write-Host "==> $slug"
         $ok = $false
         if ($platform -ne 'cf') { $ok = (Invoke-Logged $log $packwiz @('-y', 'modrinth', 'add', $slug) 180) -eq 0 }

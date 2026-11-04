@@ -6,10 +6,8 @@ pack-format = "packwiz:1.1.0"
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = ""
+hash = "442a83c9c5372f00f18bc4509fbf26b75a96146db6561f93e8a65308d2d2cd19"
 
 [versions]
 minecraft = "1.21.1"
-# 21.1.228+ is the floor set by Sable CleanUp and Upgraded Portable Engines.
-# Use the newest 21.1.x build when you run setup.
-neoforge = "21.1.228"
+neoforge = "21.1.265"
