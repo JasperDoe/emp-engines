@@ -1,0 +1,85 @@
+# Skybound SMP mod list
+# Format:  slug            (tries Modrinth first, then CurseForge)
+#          cf:slug         (CurseForge only)
+#          mr:slug         (Modrinth only)
+# Anything after "#" is a comment. Dependencies (libraries) are pulled in
+# automatically by packwiz, so libraries are not listed here.
+# Slugs marked (?) are my best guess: if setup-mods.ps1 can't find one, it goes
+# into failed.txt and you look up the right slug on the mod's page.
+
+# --- Core ---
+create
+create-aeronautics                       # pulls in Sable
+cf:create-aeroportals                    # ships through Nether/End portals
+dimensional-sable                        # (?) scripted warps for the Sky Gate
+cf:sable-cleanup                         # (?) admin tool for lost ships
+cf:create-aeronautics-ftb-chunks         # (?) claims on ships
+create-aeroworks                         # (?) extra ship parts
+# cf:create-upgraded-portable-engines-for-aeronautics   # not found under this slug; optional, fix later
+
+# --- Speed tiers ---
+cf:create-tiers
+cf:create-recipe-need-rpm
+
+# --- Steel and power ---
+cf:immersive-engineering
+createaddition                           # Crafts & Additions: rotation -> power
+
+# --- XP and enchanting ---
+create-enchantment-industry              # pulls in Create: Dragons Plus
+apothic-enchanting
+
+# --- Research ---
+cf:restage                               # pulls in ModernUI
+
+# --- Gear ---
+cf:silent-gear                           # pulls in Silent Lib (Modrinth only has old betas)
+cf:productive-metalworks
+cf:silent-gear-metalworks
+cf:kubejs-metalworks                     # (?) KubeJS helpers for the foundry
+curios
+artifacts
+
+# --- Worldgen and structures ---
+tectonic
+cf:sky-archipelago                       # see COMPATIBILITY.md, may change
+cf:create-sky-village
+lootr
+yungs-better-dungeons
+yungs-better-mineshafts
+
+# --- Navigation ---
+explorers-compass
+xaeros-minimap
+xaeros-world-map
+compass-to-map-xaeros                    # (?)
+
+# --- Scripting and quests ---
+kubejs
+kubejs-create
+lootjs
+cf:ftb-quests-forge
+cf:ftb-teams-forge
+cf:ftb-chunks-forge
+
+# --- Anti-cheese ---
+no-mob-farms
+disabler
+
+# --- Economy ---
+numismatics                              # (?) check for a 1.21.1 build
+
+# --- Quality of life ---
+jei
+jade
+
+# --- Server ---
+spark
+simple-voice-chat
+
+# --- Client only (packwiz marks these client-side automatically) ---
+sodium
+distanthorizons
+
+# --- Resource packs (client) ---
+mr:silent-updated                        # (?) Silent Gear / Metalworks retexture

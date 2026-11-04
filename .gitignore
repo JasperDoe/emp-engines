@@ -1,0 +1,18 @@
+# Build outputs and test servers
+build/
+tools/bin/
+
+# Downloaded mod jars (never committed: licences + size)
+mod-files/
+
+# Logs from tool runs
+*.log
+failed.txt
+resolved-mods.txt
+compat-report.txt
+
+# OS and editor junk
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/

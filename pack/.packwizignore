@@ -1,0 +1,2 @@
+# Files packwiz should not put in the pack index
+.gitkeep

@@ -1,0 +1,15 @@
+name = "Skybound SMP"
+author = "Jasper"
+version = "0.1.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = ""
+
+[versions]
+minecraft = "1.21.1"
+# 21.1.228+ is the floor set by Sable CleanUp and Upgraded Portable Engines.
+# Use the newest 21.1.x build when you run setup.
+neoforge = "21.1.228"
