@@ -57,6 +57,10 @@ file = "config/ftbquests/quests/lang/en_us.snbt"
 hash = "f4becdce6dd1cad6d1ed7e604496d537d16fde2f91e1e03408dc34b7a1cfa9cf"
 
 [[files]]
+file = "config/iris.properties"
+hash = "ec4a4f736922d82180cda445b03ce8540cd3dd2d13c78e5b9146c477d4d6d7d1"
+
+[[files]]
 file = "config/tectonic.json"
 hash = "2d820f65378fdd27635e06cbefcecdba7d757956f51593c70dafa57d2e177fe8"
 
@@ -283,6 +287,11 @@ hash = "901106fc6fcb4dcb86c13dd8c1dfb0d26e048387fec5bd610d06082242bd786a"
 metafile = true
 
 [[files]]
+file = "mods/iris.pw.toml"
+hash = "db1c1e6382878b78e994dba1b9026935f8d1c5ca685c89d2437858e0a0dcab58"
+metafile = true
+
+[[files]]
 file = "mods/jade.pw.toml"
 hash = "4de3e4a1a49e332c1ad313283e0403c4273b628d634c17a9ff0c9da3d6b67f9a"
 metafile = true
@@ -440,4 +449,13 @@ metafile = true
 [[files]]
 file = "resourcepacks/silent-updated.pw.toml"
 hash = "68aad318a14b20f199e6b36487f7b0e20f12118ac21a0c47af51adadea593a8a"
+metafile = true
+
+[[files]]
+file = "shaderpacks/ComplementaryReimagined_r5.9.3.zip.txt"
+hash = "e99ca941a426f15bc5e096abdc90b7e0a78006f0358f90033b6c7a6350b65181"
+
+[[files]]
+file = "shaderpacks/complementary-reimagined.pw.toml"
+hash = "507cb3963240110bc71ed7c75cac1682e66d3609536b0bc5ef90a01db3cce21f"
 metafile = true

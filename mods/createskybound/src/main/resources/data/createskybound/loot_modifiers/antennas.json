@@ -1,0 +1,8 @@
+{
+  "type": "createskybound:antennas",
+  "conditions": [],
+  "t1_chance": 0.04,
+  "t2_chance": 0.35,
+  "t2_min_distance": 3000,
+  "t3_chance": 0.08
+}

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "chunkupkeep:block/claim_ledger" },
+    "facing=east": { "model": "chunkupkeep:block/claim_ledger", "y": 90 },
+    "facing=south": { "model": "chunkupkeep:block/claim_ledger", "y": 180 },
+    "facing=west": { "model": "chunkupkeep:block/claim_ledger", "y": 270 }
+  }
+}

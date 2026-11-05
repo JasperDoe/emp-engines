@@ -1,0 +1,37 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="expresearch"
+version="0.1.0"
+displayName="EXP Research"
+description='''Research tree that spends XP and sample items to unlock recipes for you and your FTB team.'''
+
+[[dependencies.expresearch]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.expresearch]]
+modId="chapters"
+type="required"
+versionRange="*"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.expresearch]]
+modId="ftbteams"
+type="required"
+versionRange="*"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.expresearch]]
+modId="emi"
+type="optional"
+versionRange="*"
+ordering="NONE"
+side="CLIENT"

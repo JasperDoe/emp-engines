@@ -5,7 +5,7 @@ ServerEvents.loaded(event => {
   console.info(`[Skybound] Overworld build height: ${ow.getMinBuildHeight()} to ${ow.getMaxBuildHeight()} (expect -64 to 448)`)
   event.server.getAllLevels().forEach(level => {
     if (String(level.dimension().location()) == 'minecraft:the_nether')
-      console.info(`[Skybound] Nether coordinate scale: ${level.dimensionType().coordinateScale()} (expect 1.0)`)
+      console.info(`[Skybound] Nether build height: ${level.getMinBuildHeight()} to ${level.getMaxBuildHeight()} (Amplified Nether sets this)`)
   })
   try {
     const QuestFile = Java.loadClass('dev.ftb.mods.ftbquests.quest.ServerQuestFile')

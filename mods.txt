@@ -63,6 +63,9 @@ remove:when-dungeons-arise               # OFF: oversized, not vanilla-styled
 yungs-better-dungeons
 yungs-better-mineshafts
 
+amplified-nether                         # taller, open Nether for airships
+yungs-better-nether-fortresses
+
 # --- Navigation ---
 explorers-compass
 xaeros-minimap
@@ -85,7 +88,8 @@ disabler
 numismatics                              # (?) check for a 1.21.1 build
 
 # --- Quality of life ---
-jei
+emi                                      # recipe viewer (EXP Research hides locked items here)
+remove:jei
 jade
 
 # --- Server ---

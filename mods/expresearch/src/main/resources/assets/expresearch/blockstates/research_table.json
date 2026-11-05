@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "expresearch:block/research_table" },
+    "facing=east": { "model": "expresearch:block/research_table", "y": 90 },
+    "facing=south": { "model": "expresearch:block/research_table", "y": 180 },
+    "facing=west": { "model": "expresearch:block/research_table", "y": 270 }
+  }
+}

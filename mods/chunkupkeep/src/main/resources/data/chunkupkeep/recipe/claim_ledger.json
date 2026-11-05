@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [" P ", " C ", "III"],
+  "key": {
+    "P": { "item": "minecraft:paper" },
+    "C": { "item": "minecraft:chest" },
+    "I": { "tag": "c:ingots/iron" }
+  },
+  "result": { "id": "chunkupkeep:claim_ledger", "count": 1 }
+}

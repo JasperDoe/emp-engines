@@ -1,0 +1,2 @@
+{ "parent": "minecraft:block/cube_bottom_top",
+  "textures": { "top": "minecraft:block/budding_amethyst", "bottom": "create:block/brass_block", "side": "create:block/brass_casing" } }

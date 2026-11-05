@@ -1,0 +1,37 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="createskybound"
+version="0.1.0"
+displayName="Create: Skybound"
+description='''The Skyward Launcher, Resonance Pylons and the Chaotic Skies.'''
+
+[[dependencies.createskybound]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.createskybound]]
+modId="create"
+type="required"
+versionRange="[6.0,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.createskybound]]
+modId="sable"
+type="required"
+versionRange="*"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.createskybound]]
+modId="dimensional_sable"
+type="required"
+versionRange="*"
+ordering="AFTER"
+side="BOTH"

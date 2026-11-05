@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": ["D", "P"],
+  "key": {
+    "D": { "item": "minecraft:blue_dye" },
+    "P": { "item": "minecraft:paper" }
+  },
+  "result": { "id": "expresearch:blueprint", "count": 2 }
+}

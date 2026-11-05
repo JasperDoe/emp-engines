@@ -17,3 +17,8 @@ Thumbs.db
 .DS_Store
 .vscode/
 .idea/
+mods/.gradle/
+mods/build/
+mods/*/build/
+mods/*/run/
+pack/mods/*.jar

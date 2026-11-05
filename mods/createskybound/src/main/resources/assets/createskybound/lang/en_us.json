@@ -1,0 +1,11 @@
+{
+  "itemGroup.createskybound": "Create: Skybound",
+  "item.createskybound.resonant_antenna_t1": "Resonant Antenna",
+  "item.createskybound.resonant_antenna_t2": "Tuned Resonant Antenna",
+  "item.createskybound.resonant_antenna_t3": "Chaotic Resonant Antenna",
+  "block.createskybound.resonance_pylon_t1": "Resonance Pylon",
+  "block.createskybound.resonance_pylon_t2": "Tuned Resonance Pylon",
+  "block.createskybound.resonance_pylon_t3": "Chaotic Resonance Pylon",
+  "block.createskybound.vector_planar_computer": "Vector Planar Computer",
+  "block.createskybound.return_anchor": "Return Anchor"
+}

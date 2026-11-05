@@ -1,0 +1,7 @@
+{
+  "category": "skybound:automation", "title": "Brass Age", "icon": "create:brass_casing", "x": 2, "y": 0,
+  "description": "Brass machines, mechanical crafters, deployers and arms, precision mechanisms, crushing wheels, steam engines and trains.",
+  "parents": ["skybound:andesite_age", "skybound:alloy_age"],
+  "xp": 1395, "samples": [{ "item": "create:brass_ingot", "count": 16 }, { "item": "immersiveengineering:ingot_steel", "count": 8 }],
+  "stages": ["skybound:brass_age"]
+}

@@ -1,0 +1,74 @@
+// Shared setup for the three Skybound mods.
+//
+// The mods compile against the exact jars the pack uses: mod-files\mods
+// (filled by tools\download-mods.ps1) plus the libraries bundled inside them
+// (extracted to build\jij). Nothing is downloaded from mod Mavens, so the
+// versions always match the pack.
+plugins {
+    id 'net.neoforged.moddev' version '2.0.148' apply false
+}
+
+def modFiles = file('../mod-files/mods')
+def jijDir = layout.buildDirectory.dir("jij").get().asFile
+def ownMods = ['expresearch', 'chunkupkeep', 'createskybound']
+
+// Extract jar-in-jar libraries (Create's Flywheel and Ponder, Sable's companion, ...)
+if (modFiles.exists()) {
+    jijDir.mkdirs()
+    def queue = []
+    modFiles.eachFileMatch(~/.*\.jar/) { queue << it }
+    def seen = [] as Set
+    while (!queue.isEmpty()) {
+        def jar = queue.remove(0)
+        def zip = new java.util.zip.ZipFile(jar)
+        try {
+            zip.entries().findAll { !it.directory && it.name.startsWith('META-INF/jarjar/') && it.name.endsWith('.jar') }.each { e ->
+                def name = e.name.substring(e.name.lastIndexOf('/') + 1)
+                if (seen.add(name)) {
+                    def out = new File(jijDir, name)
+                    if (!out.exists()) { zip.getInputStream(e).withStream { s -> out.bytes = s.bytes } }
+                    queue << out
+                }
+            }
+        } finally { zip.close() }
+    }
+}
+
+subprojects {
+    apply plugin: 'java-library'
+    apply plugin: 'net.neoforged.moddev'
+
+    group = 'dev.skybound'
+    version = '0.1.0'
+    base { archivesName = project.name }
+    java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+    neoForge {
+        version = rootProject.neo_version
+        mods {
+            "${project.name}" { sourceSet(sourceSets.main) }
+        }
+    }
+
+    dependencies {
+        if (modFiles.exists()) {
+            compileOnly fileTree(dir: modFiles, include: '*.jar', exclude: ownMods.collect { "${it}-*.jar" })
+            compileOnly fileTree(dir: jijDir, include: '*.jar')
+        }
+    }
+
+    tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+
+    // Copy the finished jar into the pack, replacing older versions.
+    tasks.register('installToPack') {
+        dependsOn 'jar'
+        doLast {
+            def dest = rootProject.file('../pack/mods')
+            dest.mkdirs()
+            dest.eachFileMatch(~/${project.name}-.*\.jar/) { it.delete() }
+            copy { from tasks.jar.archiveFile; into dest }
+            println "Installed ${tasks.jar.archiveFileName.get()} into pack/mods"
+        }
+    }
+    tasks.named('build') { finalizedBy 'installToPack' }
+}

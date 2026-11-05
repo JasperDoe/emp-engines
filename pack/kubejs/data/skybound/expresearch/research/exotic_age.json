@@ -1,0 +1,7 @@
+{
+  "category": "skybound:automation", "title": "Exotic Age", "icon": "create_enchantment_industry:experience_bucket", "x": 6, "y": 0,
+  "description": "Create: Enchantment Industry (liquid XP, blaze enchanting).",
+  "parents": ["skybound:electricity_age"],
+  "xp": 5345, "samples": [{ "item": "minecraft:blaze_rod", "count": 16 }, { "item": "createaddition:electric_motor", "count": 4 }],
+  "stages": ["skybound:exotic_age"]
+}

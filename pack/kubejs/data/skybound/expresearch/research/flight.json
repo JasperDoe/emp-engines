@@ -1,0 +1,7 @@
+{
+  "category": "skybound:flight", "title": "Flight", "icon": "aeronautics:propeller_bearing", "x": 0, "y": 0,
+  "description": "Create Aeronautics: envelopes, burners, propellers, levitite, the physics assembler and controls.",
+  "parents": ["skybound:brass_age"],
+  "xp": 910, "samples": [{ "item": "create:brass_ingot", "count": 8 }, { "item": "create:andesite_alloy", "count": 16 }],
+  "stages": ["skybound:flight"]
+}

@@ -1,0 +1,37 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="chunkupkeep"
+version="0.1.0"
+displayName="Chunk Upkeep"
+description='''Claim Ledger: pay Numismatics coins to claim and force-load FTB Chunks claims. Join and daily login bonuses.'''
+
+[[dependencies.chunkupkeep]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.chunkupkeep]]
+modId="ftbchunks"
+type="required"
+versionRange="*"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.chunkupkeep]]
+modId="ftbteams"
+type="required"
+versionRange="*"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.chunkupkeep]]
+modId="numismatics"
+type="required"
+versionRange="*"
+ordering="AFTER"
+side="BOTH"

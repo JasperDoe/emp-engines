@@ -1,0 +1,21 @@
+{
+  "itemGroup.expresearch": "EXP Research",
+  "block.expresearch.research_table": "Research Table",
+  "item.expresearch.blueprint": "Blank Blueprint",
+  "item.expresearch.researched_blueprint": "Researched Blueprint",
+  "item.expresearch.researched_blueprint.named": "Blueprint: %s",
+  "container.expresearch.research_table": "Research Table",
+  "expresearch.tooltip.use": "Right-click to learn it for you and your team",
+  "expresearch.screen.pick": "Pick a research in the tree",
+  "expresearch.screen.known": "Already researched",
+  "expresearch.screen.xp": "Cost: %s XP points + samples",
+  "expresearch.screen.research": "Research",
+  "expresearch.msg.unlocked": "%s learned: %s",
+  "expresearch.msg.already_known": "Your team already knows this",
+  "expresearch.msg.needs_parents": "Research the earlier steps first",
+  "expresearch.msg.needs_blueprint": "Put a blank blueprint in the left slot",
+  "expresearch.msg.output_full": "Take the finished blueprint out first",
+  "expresearch.msg.needs_xp": "Not enough XP (needs %s points)",
+  "expresearch.msg.needs_samples": "Missing sample items",
+  "expresearch.msg.unknown": "This blueprint's research no longer exists"
+}
