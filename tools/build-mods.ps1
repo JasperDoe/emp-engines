@@ -29,11 +29,14 @@ $modsDir = Join-Path $Root 'mods'
 $log = Join-Path $Root 'build-mods.log'
 Write-Host 'Building the mods (first run downloads NeoForge and Minecraft; be patient)...'
 Push-Location $modsDir
+$oldPref = $ErrorActionPreference
 try {
+    # Java prints warnings on stderr; don't let PowerShell treat them as a failure.
+    $ErrorActionPreference = 'Continue'
     $global:LASTEXITCODE = 0
-    & .\gradlew.bat build --console=plain *>&1 | Tee-Object -FilePath $log
+    & .\gradlew.bat build --console=plain 2>&1 | ForEach-Object { "$_" } | Tee-Object -FilePath $log
     $code = $LASTEXITCODE
-} finally { Pop-Location }
+} finally { $ErrorActionPreference = $oldPref; Pop-Location }
 
 $errors = Join-Path $Root 'mods-errors.txt'
 if ($code -ne 0) {

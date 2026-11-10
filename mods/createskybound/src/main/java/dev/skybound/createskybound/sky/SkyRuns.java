@@ -66,6 +66,7 @@ public final class SkyRuns extends SavedData {
         long endTick;             // server game time when it collapses
         int tier;
         transient ServerBossEvent bar;
+        transient int settleTicks;    // hold the ship still for a moment after it arrives
     }
 
     private final List<Run> runs = new ArrayList<>();
@@ -105,10 +106,12 @@ public final class SkyRuns extends SavedData {
         List<Vec3> offsets = new ArrayList<>();
         for (ServerPlayer p : crew) offsets.add(p.position().subtract(shipPos));
         SableBridge.warp(ship, sky, target);
+        run.settleTicks = 60;
         for (int i = 0; i < crew.size(); i++) {
             ServerPlayer p = crew.get(i);
             Vec3 at = target.add(offsets.get(i));
             p.teleportTo(sky, at.x, at.y, at.z, p.getYRot(), p.getXRot());
+            p.resetFallDistance();
             run.players.add(p.getUUID());
             title(p, Component.literal("THE CHAOTIC SKIES").withStyle(ChatFormatting.AQUA),
                     Component.literal(Config.runMinutes(run.tier) + " minutes until the dimension destabilises"));
@@ -226,6 +229,11 @@ public final class SkyRuns extends SavedData {
             int warn = Config.WARNING_SECONDS.get();
             for (Iterator<Run> it = data.runs.iterator(); it.hasNext(); ) {
                 Run run = it.next();
+                if (run.settleTicks > 0) {
+                    run.settleTicks--;
+                    ServerSubLevel arrived = SableBridge.findShip(sky, new AABB(run.arrival).inflate(24, 32, 24));
+                    if (arrived != null) SableBridge.holdStill(arrived);
+                }
                 long left = run.endTick - now;
                 List<ServerPlayer> inside = new ArrayList<>();
                 for (UUID id : run.players) {

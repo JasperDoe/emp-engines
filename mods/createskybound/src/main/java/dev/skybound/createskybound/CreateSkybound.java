@@ -21,8 +21,10 @@ public final class CreateSkybound {
         container.registerConfig(ModConfig.Type.SERVER, Config.SPEC);
         ModRegistry.register(modBus);
         modBus.addListener((FMLCommonSetupEvent e) -> e.enqueueWork(() ->
-                BlockStressValues.IMPACTS.register(ModRegistry.VECTOR_PLANAR_COMPUTER.get(), () -> Config.COMPUTER_STRESS.get())));
+                BlockStressValues.IMPACTS.register(ModRegistry.LAUNCHER_INPUT.get(), () -> Config.INPUT_STRESS.get())));
         NeoForge.EVENT_BUS.register(SkyRuns.Events.class);
+        NeoForge.EVENT_BUS.register(dev.skybound.createskybound.launch.LauncherWrench.class);
+        NeoForge.EVENT_BUS.register(dev.skybound.createskybound.raid.RaidManager.class);
     }
 
     public static ResourceLocation id(String path) {

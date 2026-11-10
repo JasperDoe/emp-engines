@@ -1,6 +1,8 @@
 package dev.skybound.createskybound;
 
 import com.mojang.serialization.MapCodec;
+import dev.skybound.createskybound.block.LauncherInputBlock;
+import dev.skybound.createskybound.block.LauncherInputBlockEntity;
 import dev.skybound.createskybound.block.PylonBlock;
 import dev.skybound.createskybound.block.ReturnAnchorBlock;
 import dev.skybound.createskybound.block.VectorPlanarComputerBlock;
@@ -53,13 +55,24 @@ public final class ModRegistry {
     // The launcher controller
     public static final DeferredBlock<VectorPlanarComputerBlock> VECTOR_PLANAR_COMPUTER = BLOCKS.register("vector_planar_computer",
             () -> new VectorPlanarComputerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW)
-                    .strength(3f, 6f).sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops().noOcclusion()));
+                    .strength(3f, 6f).sound(SoundType.NETHERITE_BLOCK).requiresCorrectToolForDrops().noOcclusion()
+                    .lightLevel(s -> 4)));
     public static final DeferredItem<BlockItem> VECTOR_PLANAR_COMPUTER_ITEM = ITEMS.registerSimpleBlockItem(VECTOR_PLANAR_COMPUTER, new Item.Properties().rarity(Rarity.RARE));
 
     @SuppressWarnings("DataFlowIssue")
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<VectorPlanarComputerBlockEntity>> VECTOR_PLANAR_COMPUTER_BE =
             BLOCK_ENTITIES.register("vector_planar_computer", () -> BlockEntityType.Builder
                     .of(VectorPlanarComputerBlockEntity::new, VECTOR_PLANAR_COMPUTER.get()).build(null));
+
+    // A ring casing wrenched open into a shaft input (no item: it is made in place and drops brass casing)
+    public static final DeferredBlock<LauncherInputBlock> LAUNCHER_INPUT = BLOCKS.register("launcher_input",
+            () -> new LauncherInputBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BROWN)
+                    .strength(2f, 6f).sound(SoundType.WOOD).noOcclusion()));
+
+    @SuppressWarnings("DataFlowIssue")
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<LauncherInputBlockEntity>> LAUNCHER_INPUT_BE =
+            BLOCK_ENTITIES.register("launcher_input", () -> BlockEntityType.Builder
+                    .of((pos, state) -> new LauncherInputBlockEntity(ModRegistry.LAUNCHER_INPUT_BE.get(), pos, state), LAUNCHER_INPUT.get()).build(null));
 
     // The way home, placed at the arrival point in the Chaotic Skies
     public static final DeferredBlock<ReturnAnchorBlock> RETURN_ANCHOR = BLOCKS.register("return_anchor",

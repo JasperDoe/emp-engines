@@ -7,5 +7,21 @@
   "block.createskybound.resonance_pylon_t2": "Tuned Resonance Pylon",
   "block.createskybound.resonance_pylon_t3": "Chaotic Resonance Pylon",
   "block.createskybound.vector_planar_computer": "Vector Planar Computer",
-  "block.createskybound.return_anchor": "Return Anchor"
+  "block.createskybound.return_anchor": "Return Anchor",
+  "createskybound.ponder.launcher.header": "Building a Skyward Launcher",
+  "createskybound.ponder.launcher.text_1": "Fill a square with blocks of quartz. The ship will rest over it.",
+  "createskybound.ponder.launcher.text_2": "Surround it with a ring of brass casing",
+  "createskybound.ponder.launcher.text_3": "Each corner takes a Resonance Pylon. The weakest pylon decides how long the run in the Chaotic Skies lasts.",
+  "createskybound.ponder.launcher.text_4": "Place the Vector Planar Computer on top of the ring. Right-click it to check the platform and charge.",
+  "createskybound.ponder.launcher.text_5": "Wrench a face of the ring to open that casing into a shaft input, then feed it rotation",
+  "createskybound.ponder.launcher.text_6": "Rotation charges the launcher. Heavier ships need more charge, and every input on the ring adds to the rate.",
+  "createskybound.ponder.launcher.text_7": "Bring a ship over the platform",
+  "createskybound.ponder.launcher.text_8": "When it is fully charged, a redstone signal starts the countdown",
+  "createskybound.ponder.launcher.text_9": "The ship is thrown up through the clouds and on into the Chaotic Skies. The charge is spent, ready for the next launch.",
+  "block.createskybound.launcher_input": "Launcher Shaft Input",
+  "biome.createskybound.amethyst_expanse": "Amethyst Expanse",
+  "biome.createskybound.azure_wilds": "Azure Wilds",
+  "biome.createskybound.twilight_shards": "Twilight Shards",
+  "biome.createskybound.pale_remnant": "Pale Remnant",
+  "biome.createskybound.cherry_rift": "Cherry Rift"
 }

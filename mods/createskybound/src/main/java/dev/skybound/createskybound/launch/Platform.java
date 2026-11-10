@@ -2,6 +2,7 @@ package dev.skybound.createskybound.launch;
 
 import com.simibubi.create.AllBlocks;
 import dev.skybound.createskybound.Config;
+import dev.skybound.createskybound.ModRegistry;
 import dev.skybound.createskybound.block.PylonBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -9,11 +10,13 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * A launch platform: a flat rectangle with a brass casing ring, quartz blocks filling the
- * centre and a Resonance Pylon on each corner. The computer sits next to the ring.
+ * centre and a Resonance Pylon on each corner. The computer sits on top of the ring, and
+ * wrenched ring casings ({@link dev.skybound.createskybound.block.LauncherInputBlock}) take rotation in.
  */
 public record Platform(int minX, int minZ, int maxX, int maxZ, int y, int tier) {
 
@@ -23,31 +26,69 @@ public record Platform(int minX, int minZ, int maxX, int maxZ, int y, int tier) 
         return List.of(new BlockPos(minX, y, minZ), new BlockPos(maxX, y, minZ), new BlockPos(minX, y, maxZ), new BlockPos(maxX, y, maxZ));
     }
 
-    /** Finds and checks the platform next to the computer, or returns null with the reason in {@code why[0]}. */
+    /** True for ring blocks (edge, not corner). */
+    public boolean isEdge(BlockPos p) {
+        if (p.getY() != y || p.getX() < minX || p.getX() > maxX || p.getZ() < minZ || p.getZ() > maxZ) return false;
+        boolean ex = p.getX() == minX || p.getX() == maxX, ez = p.getZ() == minZ || p.getZ() == maxZ;
+        return ex != ez;
+    }
+
+    public List<BlockPos> edges() {
+        List<BlockPos> out = new ArrayList<>();
+        for (int x = minX + 1; x < maxX; x++) { out.add(new BlockPos(x, y, minZ)); out.add(new BlockPos(x, y, maxZ)); }
+        for (int z = minZ + 1; z < maxZ; z++) { out.add(new BlockPos(minX, y, z)); out.add(new BlockPos(maxX, y, z)); }
+        return out;
+    }
+
+    static int maxSize() {
+        try { return Config.MAX_PLATFORM.get(); } catch (IllegalStateException e) { return 33; }   // e.g. in a Ponder scene
+    }
+
+    /** Finds and checks the platform under the computer, or returns null with the reason in {@code why[0]}. */
     public static Platform find(Level level, BlockPos computer, String[] why) {
-        int max = Config.MAX_PLATFORM.get();
-        for (Direction d : Direction.Plane.HORIZONTAL) {
-            BlockPos start = computer.relative(d);
-            if (!isRing(level.getBlockState(start))) continue;
-            // Walk the ring edge in both directions along the side we touched.
-            Direction along = d.getClockWise();
-            int a = 0, b = 0;
-            while (a < max && isRingOrPylon(level.getBlockState(start.relative(along, a + 1)))) a++;
-            while (b < max && isRingOrPylon(level.getBlockState(start.relative(along.getOpposite(), b + 1)))) b++;
-            BlockPos end1 = start.relative(along, a), end2 = start.relative(along.getOpposite(), b);
-            if (!(level.getBlockState(end1).getBlock() instanceof PylonBlock) || !(level.getBlockState(end2).getBlock() instanceof PylonBlock)) continue;
-            // Walk inward from one corner to find the depth.
-            int depth = 0;
-            while (depth < max && isRingOrPylon(level.getBlockState(end1.relative(d, depth + 1)))) depth++;
-            BlockPos far = end1.relative(d, depth);
-            int minX = Math.min(Math.min(end1.getX(), end2.getX()), far.getX());
-            int maxX = Math.max(Math.max(end1.getX(), end2.getX()), far.getX());
-            int minZ = Math.min(Math.min(end1.getZ(), end2.getZ()), far.getZ());
-            int maxZ = Math.max(Math.max(end1.getZ(), end2.getZ()), far.getZ());
-            Platform p = validate(level, minX, minZ, maxX, maxZ, start.getY(), why);
-            if (p != null) return p;
+        BlockPos start = computer.below();
+        if (!isRing(level.getBlockState(start))) {
+            why[0] = "Place the computer on top of the brass casing ring of a launch platform.";
+            return null;
         }
-        if (why[0] == null) why[0] = "Place the computer next to the brass casing ring of a launch platform.";
+        int max = maxSize();
+        for (Direction along : new Direction[]{Direction.EAST, Direction.SOUTH}) {
+            // Walk the edge both ways until we reach the corner pylons.
+            int a = 0, b = 0;
+            while (a < max && isRing(level.getBlockState(start.relative(along, a + 1)))) a++;
+            while (b < max && isRing(level.getBlockState(start.relative(along.getOpposite(), b + 1)))) b++;
+            BlockPos end1 = start.relative(along, a + 1), end2 = start.relative(along.getOpposite(), b + 1);
+            if (!isPylon(level.getBlockState(end1)) || !isPylon(level.getBlockState(end2))) continue;
+            // Then walk inwards from a corner, trying both sides of the edge.
+            for (Direction in : new Direction[]{along.getClockWise(), along.getCounterClockWise()}) {
+                int depth = 0;
+                while (depth < max && isRing(level.getBlockState(end1.relative(in, depth + 1)))) depth++;
+                BlockPos far = end1.relative(in, depth + 1);
+                if (depth < 1 || !isPylon(level.getBlockState(far))) continue;
+                int minX = Math.min(Math.min(end1.getX(), end2.getX()), far.getX());
+                int maxX = Math.max(Math.max(end1.getX(), end2.getX()), far.getX());
+                int minZ = Math.min(Math.min(end1.getZ(), end2.getZ()), far.getZ());
+                int maxZ = Math.max(Math.max(end1.getZ(), end2.getZ()), far.getZ());
+                Platform p = validate(level, minX, minZ, maxX, maxZ, start.getY(), why);
+                if (p != null) return p;
+            }
+        }
+        if (why[0] == null) why[0] = "The ring under the computer needs a Resonance Pylon on every corner.";
+        return null;
+    }
+
+    /** The assembled platform whose ring contains {@code ringPos}, found through a computer standing on it. */
+    public static Platform containing(Level level, BlockPos ringPos) {
+        int max = maxSize();
+        BlockPos.MutableBlockPos m = new BlockPos.MutableBlockPos();
+        for (int dx = -max; dx <= max; dx++) {
+            for (int dz = -max; dz <= max; dz++) {
+                m.set(ringPos.getX() + dx, ringPos.getY() + 1, ringPos.getZ() + dz);
+                if (!level.getBlockState(m).is(ModRegistry.VECTOR_PLANAR_COMPUTER.get())) continue;
+                Platform p = find(level, m.immutable(), new String[1]);
+                if (p != null && p.isEdge(ringPos)) return p;
+            }
+        }
         return null;
     }
 
@@ -71,7 +112,10 @@ public record Platform(int minX, int minZ, int maxX, int maxZ, int y, int tier) 
         return new Platform(minX, minZ, maxX, maxZ, y, tier);
     }
 
-    private static boolean isRing(BlockState s) { return s.is(AllBlocks.BRASS_CASING.get()); }
+    /** Brass casing, or a casing that has been wrenched into a shaft input. */
+    public static boolean isRing(BlockState s) {
+        return s.is(AllBlocks.BRASS_CASING.get()) || s.is(ModRegistry.LAUNCHER_INPUT.get());
+    }
 
-    private static boolean isRingOrPylon(BlockState s) { return isRing(s) || s.getBlock() instanceof PylonBlock; }
+    private static boolean isPylon(BlockState s) { return s.getBlock() instanceof PylonBlock; }
 }

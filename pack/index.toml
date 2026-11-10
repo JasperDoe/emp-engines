@@ -77,10 +77,6 @@ file = "kubejs/data/minecraft/dimension_type/overworld.json"
 hash = "8799d35f1d441726e4462840446301e25db743b72219ea48f14fc8acce61645c"
 
 [[files]]
-file = "kubejs/data/minecraft/dimension_type/the_nether.json"
-hash = "3713c8ff5aff6993418c2f6a215a34425d5dc556f5c963b3353aa1a290af31ed"
-
-[[files]]
 file = "kubejs/data/skybound/chapters/stages/alloy_age.json"
 hash = "d52b7341e0cbe8af8d4ff1a9de537f8b143bf301003e36d21b0b1b208dc4fb68"
 
@@ -117,6 +113,50 @@ file = "kubejs/data/skybound/chapters/stages/nether_access.json"
 hash = "95efedd863c6f6e202c2cee4684c116b85d38c176ac1059590981ebcf9d57000"
 
 [[files]]
+file = "kubejs/data/skybound/expresearch/category/automation.json"
+hash = "32900fec651a0a35f782793ea8c17791f813fcc27c260866fb9f3a2a0208547f"
+
+[[files]]
+file = "kubejs/data/skybound/expresearch/category/flight.json"
+hash = "254d57b48f8d3ebb15c17bf5c459e5617f9d46e92eeb91fb679e4bba48e425cc"
+
+[[files]]
+file = "kubejs/data/skybound/expresearch/category/logistics.json"
+hash = "c87ce7b5089bec9af2c9313acee1a950b287c70598810adf9cdbe9736212aa4d"
+
+[[files]]
+file = "kubejs/data/skybound/expresearch/category/metallurgy.json"
+hash = "56a9643ec97f487ee20ef820dcb62bb761ea9146b2d51f13ee0265c3848cd7f8"
+
+[[files]]
+file = "kubejs/data/skybound/expresearch/research/alloy_age.json"
+hash = "1f000f235a5cb8bb3e57ba8ee170e08f6f5f4af0dd491e83d298398bb2399465"
+
+[[files]]
+file = "kubejs/data/skybound/expresearch/research/andesite_age.json"
+hash = "ae07088539198cf1a8965604dc1d27f2d408e4392da3fb82040d01d63f212672"
+
+[[files]]
+file = "kubejs/data/skybound/expresearch/research/brass_age.json"
+hash = "0177d5183c73cb84aaecbe6d86f2e9b909164e4a9f1945952a53bb728a896509"
+
+[[files]]
+file = "kubejs/data/skybound/expresearch/research/electricity_age.json"
+hash = "2a81f7a302b601562142faba8bb259d9fe61f154a8416b28ee0ee2bdbc0ca374"
+
+[[files]]
+file = "kubejs/data/skybound/expresearch/research/exotic_age.json"
+hash = "054caef6e9f3044929b2b0f742497cd7b7dc60fdae6f6e876302ff6ee324c2f5"
+
+[[files]]
+file = "kubejs/data/skybound/expresearch/research/flight.json"
+hash = "1c91245f7b06a37199ada0544c00048b25a8ad4b4117af923e69a36875f8ea8b"
+
+[[files]]
+file = "kubejs/data/skybound/expresearch/research/logistics.json"
+hash = "057e51c5bb8e0b114517e44c9ea895ea5a4d01e274f0e891ae89c97f9f4c23e2"
+
+[[files]]
 file = "kubejs/data/skybound/tags/worldgen/structure/sky_villages.json"
 hash = "9af2cf78d6b8c690351b0b429e185d5375dd05e5073897e7614f81002689f973"
 
@@ -134,7 +174,12 @@ hash = "d8c6e47a9bf820ebbeffd346e1f768b2dceb4af219f23e9a74cdb70413a91759"
 
 [[files]]
 file = "kubejs/server_scripts/startup_checks.js"
-hash = "9953adbf4df706c457dc33b0ec2f0db70a919da7af23d5b179f57eee1e9b6c48"
+hash = "99c2acbf7790743275b8017845815bc9ab637b763afcf3466167ea7a56249e0e"
+
+[[files]]
+file = "mods/amplified-nether.pw.toml"
+hash = "9efd2467725934e660f256346950d4e10ca44f034475ce8909a29fe0790dd5cc"
+metafile = true
 
 [[files]]
 file = "mods/apothic-attributes.pw.toml"
@@ -165,6 +210,10 @@ metafile = true
 file = "mods/chapters.pw.toml"
 hash = "9fa3eff2ed40627ffc33d07f79c83838dee2b801cf5516c04812d13d40270a96"
 metafile = true
+
+[[files]]
+file = "mods/chunkupkeep-0.1.0.jar"
+hash = "d2f8c767786aa3f5cb144c691752fa81d92398c9dd5f29c4f7ac59a121ed0513"
 
 [[files]]
 file = "mods/compass-to-map-xaeros.pw.toml"
@@ -232,6 +281,10 @@ hash = "e5052e0fcba9af1e3c6c0734829b441bc5a23012108bf203ca01825ca12ff6b1"
 metafile = true
 
 [[files]]
+file = "mods/createskybound-0.1.0.jar"
+hash = "7269d1c1baf7163f39b1f1e118dd41d92fc9d21a4057f0eb0d4f8434ae1064f3"
+
+[[files]]
 file = "mods/curios.pw.toml"
 hash = "36debf7653e95a855b4fedacc19027cf2e01960fc0b6d55ef2ffbffbcb455690"
 metafile = true
@@ -252,9 +305,18 @@ hash = "0c20fea3407ed0db85b4b171f1820a24987f2659946fadd30bae044205041b09"
 metafile = true
 
 [[files]]
+file = "mods/emi.pw.toml"
+hash = "67bb77eae0b644960be3b1074178ceb5d54facbb42f326981b9d94625238a54a"
+metafile = true
+
+[[files]]
 file = "mods/explorers-compass.pw.toml"
 hash = "0670ca65c7208aa8211883fae30c935f53cad38196aac46723b10e7bbc695113"
 metafile = true
+
+[[files]]
+file = "mods/expresearch-0.1.0.jar"
+hash = "eda7d8e7223d3e38928068b95f8629bbe88e677d00a52cc3dbe27a2e592ae0ef"
 
 [[files]]
 file = "mods/ftb-chunks-forge.pw.toml"
@@ -294,11 +356,6 @@ metafile = true
 [[files]]
 file = "mods/jade.pw.toml"
 hash = "4de3e4a1a49e332c1ad313283e0403c4273b628d634c17a9ff0c9da3d6b67f9a"
-metafile = true
-
-[[files]]
-file = "mods/jei.pw.toml"
-hash = "b0c37ca9826781a6bf1373ae02a141b4202037515eb071ec2327410771de6ea5"
 metafile = true
 
 [[files]]
@@ -444,6 +501,11 @@ metafile = true
 [[files]]
 file = "mods/yungs-better-mineshafts.pw.toml"
 hash = "e839608ebc974e9e7819adc7bf29132ea86fc41b46af540fe0fa39b2007b2439"
+metafile = true
+
+[[files]]
+file = "mods/yungs-better-nether-fortresses.pw.toml"
+hash = "50c1731148d91a4ef05cfc47f759ca8fb3dad254e15ce4ecc5732d6fbfa68637"
 metafile = true
 
 [[files]]

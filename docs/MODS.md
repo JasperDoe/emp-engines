@@ -37,6 +37,40 @@ builds all three, and copies the jars into `pack\mods`. If it fails, send
 }
 ```
 
+## Building a launcher (Create: Skybound)
+
+1. Lay a flat rectangle (3x3 up to 33x33): quartz blocks in the middle, brass casing round the edge, a Resonance Pylon on each corner.
+2. Put the Vector Planar Computer on top of the ring (any edge block, not a corner).
+3. Hit a ring casing with a Create wrench. It opens into a Launcher Shaft Input on the axis of the face you hit (wrench again to turn it, sneak-wrench to get the casing back). Only works once the computer sees a finished platform.
+4. Feed rotation into the input(s). Each input costs stress (inputStressImpact per RPM) and adds its speed / 8 to the charge every tick.
+5. Right-click the computer for platform size, pylon tier, inputs, ship mass and charge. When charged, give the computer a redstone signal.
+
+In game: hold W over the computer or a pylon for the Ponder scene. The scene's schematic and lang lines come from `tools/art/ponder_launcher.py`; the terminal textures from `tools/art/terminal_textures.py` (both need Python with Pillow / nbtlib).
+
+The launch: the ship lifts and levels (5 s), beams come down onto the pylons (4 s), spin in (4 s), then the ship is thrown. It leaves at full speed and eases out over 3.5 s to `launchApex` (default Y 256, just above the cloud layer at `cloudHeight` 224), drifts upwards for 5 s above the clouds, and the crew's view fades to white before the jump. Charging is a quiet, low portal hum that swells with the charge; nothing explodes.
+
+## Shattered Skies terrain
+
+The run dimension (still `createskybound:chaotic_skies` until the rename) generates big floating islands far apart: about 60-290 blocks across (median ~155), 450-500 blocks apart, tops between Y 105 and 190, jagged teardrop undersides and broken shards around the edges. Five biomes tint grass and leaves and set their own sky, fog, water, particles and rock: Amethyst Expanse (violet), Azure Wilds (teal and blue, dark-oak forest), Twilight Shards (indigo, ash), Pale Remnant (snow and ice), Cherry Rift (pink).
+
+All of it is vanilla world-generation data written by `tools/worldgen/build_shattered.py`; change the numbers at the top (island octave, threshold, heights) or the biome colours and re-run it. Runs always generate fresh chunks, so a change shows on the next launch after a restart.
+
+## Sky Raiders (prototype)
+
+Boarding raids against player ships. For now they only start by command, so each piece can be tested in game before natural raids are switched on. Design and feasibility: https://claude.ai/artifact/HrC4hwoWzD4H23NTJRCbto
+
+    /skyraid start [crew] [ship]   raid the ship you are standing on (default 4 raiders: brutes and looters alternate)
+                                   ship = a structure id, e.g. cr_aero_structures:pillager_airballoon
+    /skyraid overwhelm      make the looters go for the chests now
+    /skyraid status         phase, ropes up, raiders alive
+    /skyraid stop           end the raid and remove the raider ship and raiders
+
+Raider ships are real airships from the pack's structure mods, loaded from the installed mods at runtime (nothing copied): cr_aero_structures' pillager_airballoon and pillager_airship, and Aeronautics Discovery's airplane_pillager (config raidShips). If none can be placed, a small sloop built in code is used.
+
+What happens: the raider ship is placed out of view and assembled, closes in over 10 seconds and holds 5 blocks off your starboard side (+X of the ship as it was built). It fires 2 rope connectors onto open deck spots that walk to a chest or barrel, ties Create Aeronautics ropes to them, and raiders (vindicators, pillagers) walk across one by one. Break a deck anchor to cut its rope; anyone on it falls. If raiders on deck outnumber players aboard by 3, or nobody is aboard for 20 s, pillagers take up to 3 stacks each from your inventories and carry them back along the ropes into the sloop's barrel; kill them first and they drop it. Then the sloop flees: fast if repelled, slowly if it got loot (catch it and the barrel is yours).
+
+Config (createskybound-server.toml): raidShips, raidRopes, raidGap, raidStacks, raidOverwhelmMargin.
+
 ## Admin commands
 
     /expresearch grant <player> <research>
@@ -47,11 +81,11 @@ builds all three, and copies the jars into `pack\mods`. If it fails, send
 ## Configs (server, per world: `serverconfig/`)
 
 - `chunkupkeep-server.toml`: claim price, refund, rent, reach (48), ledgers per team (1), join and daily bonus.
-- `createskybound-server.toml`: computer stress, charge needed (base + per ship mass), platform size, run length per pylon tier (30/50/70 minutes), warning time, exit height.
+- `createskybound-server.toml`: input stress, charge needed (base + per ship mass), platform size, cloud height and launch apex, run length per pylon tier (30/50/70 minutes), warning time, exit height.
 
 ## Known gaps in this first version
 
-- Launch visuals are particles and sounds; the custom beam renderer comes later.
+- Launch visuals: soft additive beams drawn by LaunchRenderer, a fading trail, a ripple on the cloud tops, camera shake and a white-out. Post-processing effects (distortion, bloom) are left out because they break under Iris shaderpacks.
 - Every launch uses its own far-away region of one shared Chaotic Skies dimension, not a separate dimension.
 - The team treasury is not in yet: claims are paid by the clicking player, rent by the team owner.
 - Players who log out in the Chaotic Skies and come back after it collapsed are not yet killed.

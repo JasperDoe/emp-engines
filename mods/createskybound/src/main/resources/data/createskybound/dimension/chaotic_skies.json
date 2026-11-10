@@ -2,10 +2,101 @@
   "type": "createskybound:chaotic_skies",
   "generator": {
     "type": "minecraft:noise",
-    "settings": "minecraft:floating_islands",
+    "settings": "createskybound:shattered_skies",
     "biome_source": {
       "type": "minecraft:multi_noise",
-      "preset": "minecraft:overworld"
+      "biomes": [
+        {
+          "biome": "createskybound:pale_remnant",
+          "parameters": {
+            "temperature": [
+              -1.0,
+              -0.35
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "createskybound:twilight_shards",
+          "parameters": {
+            "temperature": [
+              -0.35,
+              0.1
+            ],
+            "humidity": [
+              -1.0,
+              0.0
+            ],
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "createskybound:amethyst_expanse",
+          "parameters": {
+            "temperature": [
+              -0.35,
+              0.1
+            ],
+            "humidity": [
+              0.0,
+              1.0
+            ],
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "createskybound:azure_wilds",
+          "parameters": {
+            "temperature": [
+              0.1,
+              1.0
+            ],
+            "humidity": [
+              0.0,
+              1.0
+            ],
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "createskybound:cherry_rift",
+          "parameters": {
+            "temperature": [
+              0.1,
+              1.0
+            ],
+            "humidity": [
+              -1.0,
+              0.0
+            ],
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        }
+      ]
     }
   }
 }
