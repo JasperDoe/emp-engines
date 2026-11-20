@@ -1,0 +1,106 @@
+{
+  "has_precipitation": true,
+  "temperature": -0.5,
+  "downfall": 0.4,
+  "effects": {
+    "grass_color": 10470358,
+    "foliage_color": 12113123,
+    "sky_color": 11126760,
+    "fog_color": 14477557,
+    "water_color": 4020182,
+    "water_fog_color": 329011,
+    "particle": {
+      "options": {
+        "type": "minecraft:snowflake"
+      },
+      "probability": 0.004
+    },
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    },
+    "additions_sound": {
+      "sound": "minecraft:ambient.basalt_deltas.additions",
+      "tick_chance": 0.0011
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "minecraft:zombie",
+        "weight": 95,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:skeleton",
+        "weight": 100,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:spider",
+        "weight": 90,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:creeper",
+        "weight": 90,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:enderman",
+        "weight": 15,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
+    "creature": [
+      {
+        "type": "minecraft:fox",
+        "weight": 4,
+        "minCount": 1,
+        "maxCount": 2
+      }
+    ],
+    "ambient": [],
+    "axolotls": [],
+    "underground_water_creature": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "emp_engines:etheric/ore_coal",
+      "emp_engines:etheric/ore_iron",
+      "emp_engines:etheric/ore_copper",
+      "emp_engines:etheric/ore_emerald"
+    ],
+    [
+      "minecraft:glow_lichen",
+      "emp_engines:etheric/icicles"
+    ],
+    [],
+    [
+      "minecraft:ice_spike",
+      "minecraft:trees_grove",
+      "minecraft:patch_grass_taiga"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ]
+}

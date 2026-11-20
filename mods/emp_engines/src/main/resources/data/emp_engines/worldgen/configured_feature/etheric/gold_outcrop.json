@@ -1,0 +1,43 @@
+{
+  "type": "emp_engines:crystal_spike",
+  "config": {
+    "body": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 3,
+          "data": {
+            "Name": "minecraft:yellow_terracotta"
+          }
+        },
+        {
+          "weight": 2,
+          "data": {
+            "Name": "minecraft:gold_ore"
+          }
+        },
+        {
+          "weight": 1,
+          "data": {
+            "Name": "minecraft:raw_gold_block"
+          }
+        }
+      ]
+    },
+    "core": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:gold_ore"
+      }
+    },
+    "tip": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:gold_ore"
+      }
+    },
+    "min_height": 3,
+    "max_height": 6,
+    "giant_chance": 0
+  }
+}

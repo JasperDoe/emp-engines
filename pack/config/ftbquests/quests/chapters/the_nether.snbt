@@ -26,9 +26,11 @@
 			tasks: [
 				{
 					id: "7423D2CA2B92277D"
-					stage: "skybound:nether_access"
-					team_stage: false
-					type: "gamestage"
+					item: {
+						count: 1
+						id: "emp_engines:obsidian_key"
+					}
+					type: "item"
 				}
 			]
 			x: 0.0d
@@ -39,6 +41,16 @@
 				"84B0E8F0A2AF6216"
 			]
 			id: "1C9F2F26F3CA7CA5"
+			rewards: [
+				{
+					id: "958F9FCB113617AC"
+					item: {
+						count: 1
+						id: "apotheosis:sigil_of_socketing"
+					}
+					type: "item"
+				}
+			]
 			tasks: [
 				{
 					dimension: "minecraft:the_nether"

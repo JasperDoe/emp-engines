@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "charge=0": {
+      "model": "emp_engines:block/resonance_pylon_t2"
+    },
+    "charge=1": {
+      "model": "emp_engines:block/resonance_pylon_t2"
+    },
+    "charge=2": {
+      "model": "emp_engines:block/resonance_pylon_t2"
+    },
+    "charge=3": {
+      "model": "emp_engines:block/resonance_pylon_t2"
+    },
+    "charge=4": {
+      "model": "emp_engines:block/resonance_pylon_t2"
+    }
+  }
+}

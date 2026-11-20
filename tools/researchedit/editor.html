@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Empyrean Engines Research Editor</title>
+<style>
+:root {
+  --bg: #16171c; --panel: #1e2027; --panel2: #262932; --line: #343846; --text: #e6e6ea; --dim: #9a9db0;
+  --accent: #e0b04a; --accent2: #6aa9ff; --bad: #ff6b6b; --ok: #5fd38a; --node: #2c303c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font: 13px/1.4 system-ui, "Segoe UI", sans-serif; }
+button, input, select, textarea { font: inherit; color: var(--text); background: var(--panel2); border: 1px solid var(--line); border-radius: 5px; }
+button { padding: 4px 10px; cursor: pointer; }
+button:hover { border-color: var(--dim); }
+button.primary { background: var(--accent); color: #1a1500; border-color: var(--accent); font-weight: 600; }
+button.danger { color: var(--bad); }
+button:disabled { opacity: .45; cursor: default; }
+input, select, textarea { padding: 4px 6px; width: 100%; }
+textarea { resize: vertical; min-height: 70px; }
+input[type=checkbox] { width: auto; }
+label { display: block; color: var(--dim); font-size: 11px; margin: 10px 0 3px; text-transform: uppercase; letter-spacing: .04em; }
+.row { display: flex; gap: 6px; align-items: center; }
+.row > * { flex: 1; }
+.row > .shrink { flex: 0 0 auto; }
+.note { color: var(--dim); font-size: 12px; margin-top: 4px; }
+.warn { color: var(--accent); font-size: 12px; margin-top: 4px; }
+
+#app { display: grid; grid-template-columns: 240px 1fr 340px; grid-template-rows: 44px 1fr; height: 100vh; }
+header { grid-column: 1 / 4; display: flex; align-items: center; gap: 8px; padding: 0 12px; background: var(--panel); border-bottom: 1px solid var(--line); }
+header h1 { font-size: 14px; margin: 0 12px 0 0; font-weight: 600; }
+header .spacer { flex: 1; }
+#status { color: var(--dim); white-space: pre-line; overflow: hidden; text-overflow: ellipsis; max-width: 42vw; max-height: 40px; }
+#status.bad { color: var(--bad); } #status.ok { color: var(--ok); }
+#dirty { color: var(--accent); display: none; }
+
+#tabs { background: var(--panel); border-right: 1px solid var(--line); overflow-y: auto; padding: 8px; }
+#tabs h2 { color: var(--dim); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; margin: 6px 4px 6px; font-weight: 600; }
+.tab { display: flex; align-items: center; gap: 8px; padding: 5px 6px; border-radius: 5px; cursor: pointer; }
+.tab:hover { background: var(--panel2); }
+.tab.on { background: #3a3220; outline: 1px solid var(--accent); }
+.tab .n { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tab .c { color: var(--dim); font-size: 11px; }
+.stage { display: flex; justify-content: space-between; gap: 6px; padding: 2px 4px; font-size: 12px; }
+.stage.free { color: var(--bad); }
+.ic { width: 24px; height: 24px; image-rendering: pixelated; flex: 0 0 auto; background: #0002; border-radius: 3px; }
+.ic.missing { outline: 1px dashed var(--bad); }
+
+#canvasWrap { position: relative; overflow: hidden; background: #111216; }
+#canvas { width: 100%; height: 100%; display: block; user-select: none; }
+#canvas.panning { cursor: grabbing; }
+#hint { position: absolute; left: 10px; top: 8px; color: var(--dim); font-size: 11px; cursor: pointer; background: #111216cc; padding: 3px 6px; border-radius: 4px; }
+#zoomBox { position: absolute; right: 10px; bottom: 8px; display: flex; gap: 4px; }
+#empty { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--dim); pointer-events: none; text-align: center; }
+.n-box { fill: var(--node); stroke: #555b6e; stroke-width: 2; }
+.n.sel .n-box { stroke: var(--accent); stroke-width: 3; }
+.n.bad .n-box { stroke: var(--bad); }
+.n { cursor: pointer; }
+.n-label { fill: #e6e6ea; font-size: 11px; text-anchor: middle; pointer-events: none; paint-order: stroke; stroke: #111216; stroke-width: 3px; }
+.link { stroke: #d8d8de; stroke-width: 2; fill: none; }
+.link.hot { stroke: var(--accent2); stroke-width: 3; }
+.ext { fill: var(--accent2); font-size: 10px; pointer-events: none; }
+.view { fill: none; stroke: #6aa9ff55; stroke-dasharray: 5 4; }
+image { image-rendering: pixelated; }
+
+#inspector { background: var(--panel); border-left: 1px solid var(--line); overflow-y: auto; padding: 10px 12px 40px; }
+#inspector h3 { margin: 4px 0 6px; font-size: 13px; }
+.iconBtn { display: flex; align-items: center; gap: 8px; text-align: left; width: 100%; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.chip { display: inline-flex; align-items: center; gap: 4px; background: var(--panel2); border: 1px solid var(--line); border-radius: 12px; padding: 1px 4px 1px 8px; font-size: 12px; }
+.chip button { border: 0; background: none; padding: 0 4px; color: var(--dim); }
+.sample { display: grid; grid-template-columns: 1fr 64px auto auto; gap: 4px; align-items: center; margin-bottom: 4px; }
+.stagePick { max-height: 180px; overflow-y: auto; border: 1px solid var(--line); border-radius: 5px; padding: 4px 6px; }
+.stagePick label { display: flex; gap: 6px; align-items: center; text-transform: none; letter-spacing: 0; font-size: 12px; color: var(--text); margin: 2px 0; }
+
+#modal { position: fixed; inset: 0; background: #000a; display: none; align-items: center; justify-content: center; z-index: 10; }
+#modal.on { display: flex; }
+#picker { width: min(900px, 92vw); height: min(640px, 86vh); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; display: flex; flex-direction: column; overflow: hidden; }
+#picker .top { display: flex; gap: 8px; padding: 10px; border-bottom: 1px solid var(--line); }
+#picker .top input { flex: 2; } #picker .top select { flex: 1; }
+#grid { flex: 1; overflow-y: auto; padding: 8px; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 4px; align-content: start; }
+#grid .it { display: flex; align-items: center; gap: 8px; padding: 4px 6px; border-radius: 5px; cursor: pointer; border: 1px solid transparent; }
+#grid .it:hover, #grid .it.first { background: var(--panel2); border-color: var(--line); }
+#grid .it .nm { overflow: hidden; } #grid .it .nm small { display: block; color: var(--dim); font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#picker .foot { padding: 8px 10px; border-top: 1px solid var(--line); color: var(--dim); display: flex; gap: 8px; align-items: center; }
+#stageView { position: absolute; inset: 0; overflow-y: auto; padding: 16px 20px 60px; background: var(--bg); display: none; }
+#stageView.on { display: block; }
+#stageView h2 { margin: 0 0 4px; font-size: 16px; }
+#stageView section { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin-top: 12px; max-width: 760px; }
+#stageView section h3 { margin: 0 0 2px; font-size: 13px; }
+.mode button.on { background: #3a3220; border-color: var(--accent); }
+.locklist { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 2px 8px; margin-top: 6px; }
+.locklist div { display: flex; gap: 6px; align-items: center; font-size: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.locklist .ic { width: 18px; height: 18px; }
+.stage.on { background: #3a3220; outline: 1px solid var(--accent); border-radius: 5px; }
+.stage { cursor: pointer; }
+#problems { position: absolute; top: 8px; left: 8px; right: 8px; max-height: 40%; overflow: auto; background: #2a1618ee; border: 1px solid var(--bad); border-radius: 6px; padding: 8px 10px; display: none; }
+#problems.on { display: block; }
+#problems div { cursor: pointer; padding: 2px 0; } #problems div:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>Empyrean Engines Research Editor</h1>
+    <span class="mode row" style="gap:4px"><button id="modeResearch" class="on">Research</button><button id="modeStages">Stage locks</button></span>
+    <button id="undoBtn" title="Ctrl+Z">Undo</button>
+    <button id="redoBtn" title="Ctrl+Y">Redo</button>
+    <button id="checkBtn">Problems</button>
+    <span class="spacer"></span>
+    <span id="status">Loading…</span>
+    <span id="dirty">● unsaved</span>
+    <button id="saveBtn" class="primary" title="Ctrl+S: writes the research files into pack/kubejs">Save</button>
+  </header>
+  <aside id="tabs"></aside>
+  <div id="canvasWrap">
+    <svg id="canvas"></svg>
+    <div id="empty"></div>
+    <div id="stageView"></div>
+    <div id="problems"></div>
+    <div id="hint" title="Click to hide" onclick="this.remove()">Double-click: new research · Ctrl+click: selected needs this one · Drag: move · Drag space: pan · Wheel: zoom · Del: delete · ✕</div>
+    <div id="zoomBox"><button id="zoomOut">−</button><button id="fitBtn">Fit</button><button id="zoomIn">+</button></div>
+  </div>
+  <aside id="inspector"></aside>
+</div>
+<div id="modal"><div id="picker">
+  <div class="top"><input id="pickQ" placeholder="Search items by name or id (e.g. 'brass', 'create:cog')" autocomplete="off"><select id="pickMod"></select></div>
+  <div id="grid"></div>
+  <div class="foot"><span id="pickCount"></span><span style="flex:1"></span><button id="pickTyped">Use typed id</button><button id="pickCancel">Cancel</button></div>
+</div></div>
+
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const U = 64;                 // pixels per grid cell at zoom 1 (in game a cell is 30 px)
+const NODE = 44;              // node box size
+let NS = "emp_engines";
+let doc = { categories: {}, nodes: {} }, stageList = [];
+let mode = "research";
+let stageCfg = { order: [], stages: {} }, summary = null, selStage = null, stagesDirty = false, researchDirty = false;
+let items = [], itemMap = new Map(), mods = {}, knownNs = new Set();
+let tab = null;               // selected category id
+let sel = null;               // selected node id (null: the tab itself is selected)
+let dirty = false, undoStack = [], redoStack = [];
+let view = { x: 80, y: 80, s: 1 };
+
+function esc(s) { return String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function texUrl(t) { return "/api/tex?id=" + encodeURIComponent(t); }
+function itemIcon(id) { const it = itemMap.get(id); return it && it.icon ? texUrl(it.icon) : null; }
+function itemName(id) { const it = itemMap.get(id); return it ? it.name : (id || "—"); }
+function unknownItem(id) { if (!id) return true; const ns = id.split(":")[0]; return items.length > 0 && knownNs.has(ns) && !itemMap.has(id); }
+function icHtml(id) { const u = id && itemIcon(id); return u ? `<img class="ic" src="${u}">` : `<span class="ic ${unknownItem(id) ? "missing" : ""}"></span>`; }
+function slug(s) { return String(s).toLowerCase().replace(/&./g, "").replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "").slice(0, 40) || "research"; }
+function short(id) { return id.split(":")[1]; }
+function uniqueId(base, taken) { let k = `${NS}:${base}`, n = 2; while (taken[k]) k = `${NS}:${base}_${n++}`; return k; }
+function nodesIn(cid) { return Object.entries(doc.nodes).filter(([, n]) => n.category === cid); }
+function status(msg, kind) { const s = $("status"); s.textContent = msg; s.className = kind || ""; }
+function setDirty(d) { dirty = d; $("dirty").style.display = d ? "inline" : "none"; }
+
+function snapshot() { return JSON.stringify({ doc, tab, sel, stageCfg, selStage }); }
+function change(fn) {
+  undoStack.push(snapshot()); if (undoStack.length > 200) undoStack.shift();
+  redoStack = [];
+  fn(); if (mode === "stages") stagesDirty = true; else researchDirty = true;
+  refreshStageList(); setDirty(true); renderAll();
+}
+function restore(s) { const o = JSON.parse(s); doc = o.doc; tab = o.tab; sel = o.sel && doc.nodes[o.sel] ? o.sel : null;
+  stageCfg = o.stageCfg; selStage = o.selStage && stageCfg.stages[o.selStage] ? o.selStage : null; refreshStageList();
+  researchDirty = stagesDirty = true; setDirty(true); renderAll(); }
+function undo() { if (!undoStack.length) return; redoStack.push(snapshot()); restore(undoStack.pop()); }
+function redo() { if (!redoStack.length) return; undoStack.push(snapshot()); restore(redoStack.pop()); }
+
+// ---------------------------------------------------------------------------------------------
+// Loading and saving
+// ---------------------------------------------------------------------------------------------
+async function load() {
+  const d = await (await fetch("/api/research")).json();
+  NS = d.ns; doc = { categories: d.categories, nodes: d.nodes };
+  const st = await (await fetch("/api/stages")).json();
+  stageCfg = { order: st.order, stages: st.stages }; summary = st.summary; refreshStageList();
+  selStage = stageCfg.order[0] || null;
+  for (const n of Object.values(doc.nodes)) { n.parents = n.parents || []; n.samples = n.samples || []; n.stages = n.stages || []; }
+  tab = sortedTabs()[0] || null;
+  renderAll(); fit();
+  status("Reading items from the mod jars…");
+  const it = await (await fetch("/api/items")).json();
+  items = it.items; mods = it.mods || {};
+  itemMap = new Map(items.map(i => [i.id, i]));
+  knownNs = new Set(items.map(i => i.mod));
+  status(it.error ? "Item scan failed: " + it.error : `${items.length} items from ${it.jars} jars`, it.error ? "bad" : "");
+  $("pickMod").innerHTML = `<option value="">All mods</option>` + [...knownNs].sort((a, b) => (mods[a] || a).localeCompare(mods[b] || b))
+    .map(ns => `<option value="${esc(ns)}">${esc(mods[ns] || ns)}</option>`).join("");
+  renderAll();
+}
+
+async function post(url, body) {
+  const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  return r.json();
+}
+async function save() {
+  const bad = problems();
+  if (bad.length) { showProblems(); status("Fix the problems first.", "bad"); return; }
+  const msgs = [];
+  try {
+    if (researchDirty || !stagesDirty) {
+      status("Saving research…");
+      const d = await post("/api/research", doc);
+      if (!d.ok) { status(d.message, "bad"); return; }
+      researchDirty = false; msgs.push(d.message);
+    }
+    if (stagesDirty) {
+      status("Rebuilding the stage locks from every recipe in the jars (the first time takes a while)…");
+      const d = await post("/api/stages", stageCfg);
+      if (!d.ok) { status(d.message, "bad"); return; }
+      stagesDirty = false; summary = d.summary; refreshStageList(); msgs.push(d.message);
+    }
+    setDirty(false); status(msgs.join("\n"), "ok"); renderAll();
+  } catch (e) { status("Save failed: is the editor window still open? " + e, "bad"); }
+}
+
+// ---------------------------------------------------------------------------------------------
+// Problems
+// ---------------------------------------------------------------------------------------------
+function problems() {
+  const out = [];
+  for (const [cid, c] of Object.entries(doc.categories)) {
+    if (!c.title || !c.title.trim()) out.push({ msg: `Tab ${short(cid)}: no title`, tab: cid });
+    if (!c.icon) out.push({ msg: `Tab ${short(cid)}: no icon`, tab: cid });
+  }
+  for (const [id, n] of Object.entries(doc.nodes)) {
+    if (!doc.categories[n.category]) out.push({ msg: `${n.title || short(id)}: its tab is gone`, node: id });
+    if (!n.title || !n.title.trim()) out.push({ msg: `${short(id)}: no title`, node: id });
+    if (!n.icon) out.push({ msg: `${n.title || short(id)}: no icon`, node: id });
+    for (const p of n.parents) if (!doc.nodes[p]) out.push({ msg: `${n.title}: needs ${short(p)}, which is gone`, node: id });
+    for (const s of n.samples) if (!s.item) out.push({ msg: `${n.title}: a sample has no item`, node: id });
+    for (const st of n.stages) if (!stageList.some(s => s.id === st)) out.push({ msg: `${n.title}: unlocks ${st}, which isn't a stage`, node: id });
+    if (loopFrom(id)) out.push({ msg: `${n.title}: part of a loop of requirements`, node: id });
+  }
+  return out;
+}
+function loopFrom(start) {
+  const seen = new Set(), stack = [...(doc.nodes[start]?.parents || [])];
+  while (stack.length) { const k = stack.pop(); if (k === start) return true; if (seen.has(k)) continue; seen.add(k); stack.push(...(doc.nodes[k]?.parents || [])); }
+  return false;
+}
+function wouldLoop(child, parent) {
+  if (child === parent) return true;
+  const seen = new Set(), stack = [parent];
+  while (stack.length) { const k = stack.pop(); if (k === child) return true; if (seen.has(k)) continue; seen.add(k); stack.push(...(doc.nodes[k]?.parents || [])); }
+  return false;
+}
+function showProblems() {
+  const p = problems(), box = $("problems");
+  if (!p.length) { box.classList.remove("on"); status("No problems.", "ok"); return; }
+  box.innerHTML = `<b>${p.length} problem${p.length > 1 ? "s" : ""}</b> (click to go there, click here to hide)` + p.map((x, i) => `<div data-i="${i}">• ${esc(x.msg)}</div>`).join("");
+  box.classList.add("on");
+  box.onclick = e => { const d = e.target.closest("div[data-i]"); if (!d) { box.classList.remove("on"); return; } const x = p[+d.dataset.i];
+    if (x.node) { tab = doc.nodes[x.node].category; sel = x.node; } else { tab = x.tab; sel = null; } renderAll(); };
+}
+
+// ---------------------------------------------------------------------------------------------
+// Left: tabs and stages
+// ---------------------------------------------------------------------------------------------
+function refreshStageList() {
+  stageList = stageCfg.order.filter(n => stageCfg.stages[n]).map(n => {
+    const c = stageCfg.stages[n], sm = summary && summary.stages[n];
+    const count = sm && sm.kind === "lock" ? sm.listed.length + sm.derived.length + sm.mod_items.length : 0;
+    return { id: `${NS}:${n}`, name: n, kind: c.kind || "lock", items: count, namespaces: c.namespaces || [], dimensions: c.dimensions || [] };
+  });
+}
+function sortedTabs() { return Object.keys(doc.categories).sort((a, b) => (doc.categories[a].order || 0) - (doc.categories[b].order || 0) || a.localeCompare(b)); }
+function grantedStages() { const s = new Set(); for (const n of Object.values(doc.nodes)) for (const st of n.stages) s.add(st); return s; }
+function renderTabs() {
+  const granted = grantedStages();
+  const tabs = sortedTabs().map(cid => { const c = doc.categories[cid];
+    return `<div class="tab ${cid === tab ? "on" : ""}" data-c="${esc(cid)}">${icHtml(c.icon)}<span class="n">${esc(c.title || short(cid))}</span><span class="c">${nodesIn(cid).length}</span></div>`; }).join("");
+  const stages = stageList.map(s => `<div data-gostage="${esc(s.name)}" class="stage ${granted.has(s.id) || s.dimensions.length ? "" : "free"}" title="${granted.has(s.id) ? "Granted by research" : s.dimensions.length ? "A dimension lock, opened with /empyrean unlock" : "No research grants this stage: what it locks can't be made in survival"}"><span>${esc(short(s.id))}</span><span>${s.kind === "dimension" ? "dimension" : (s.items ? s.items + " items" : "")}</span></div>`).join("");
+  $("tabs").innerHTML = `<h2>Tabs</h2>${tabs || `<div class="note" style="padding:4px">No tabs yet.</div>`}
+    <div class="row" style="margin-top:8px"><button id="addTab">+ New tab</button></div>
+    <h2 style="margin-top:18px">Stage locks</h2>
+    <div class="note" style="margin:0 4px 6px">Red: no research grants it yet, so what it locks can't be made.</div>${stages}`;
+  $("tabs").querySelectorAll(".tab").forEach(d => d.onclick = () => { tab = d.dataset.c; sel = null; renderAll(); fit(); });
+  $("tabs").querySelectorAll("[data-gostage]").forEach(d => d.onclick = () => { selStage = d.dataset.gostage; setMode("stages"); });
+  $("addTab").onclick = () => change(() => {
+    const id = uniqueId("tab", doc.categories);
+    doc.categories[id] = { title: "New tab", icon: "minecraft:book", order: Object.keys(doc.categories).length };
+    tab = id; sel = null;
+  });
+}
+
+// ---------------------------------------------------------------------------------------------
+// Centre: the tree
+// ---------------------------------------------------------------------------------------------
+const svg = $("canvas");
+function sx(x) { return view.x + x * U * view.s; }
+function sy(y) { return view.y + y * U * view.s; }
+function renderCanvas() {
+  const empty = $("empty");
+  if (!tab) { svg.innerHTML = ""; empty.textContent = "Make a tab on the left to start."; return; }
+  const nodes = nodesIn(tab);
+  empty.textContent = nodes.length ? "" : "Double-click to add the first research in this tab.";
+  const s = view.s, half = NODE * s / 2;
+  let h = "";
+  // grid dots
+  const r = svg.getBoundingClientRect();
+  const x0 = Math.floor(-view.x / (U * s)) - 1, x1 = Math.ceil((r.width - view.x) / (U * s)) + 1;
+  const y0 = Math.floor(-view.y / (U * s)) - 1, y1 = Math.ceil((r.height - view.y) / (U * s)) + 1;
+  if ((x1 - x0) * (y1 - y0) < 6000) for (let gx = x0; gx <= x1; gx++) for (let gy = y0; gy <= y1; gy++)
+    h += `<circle cx="${sx(gx) + half}" cy="${sy(gy) + half}" r="1.2" fill="${gx === 0 && gy === 0 ? "#6aa9ff" : "#2c2f3a"}"/>`;
+  // what fits in the game's tree panel at once (162 x 78 px, 30 px cells)
+  if (nodes.length) {
+    const minX = Math.min(...nodes.map(([, n]) => n.x)), minY = Math.min(...nodes.map(([, n]) => n.y));
+    h += `<rect class="view" x="${sx(minX) - 0.3 * U * s}" y="${sy(minY) - 0.3 * U * s}" width="${162 / 30 * U * s}" height="${78 / 30 * U * s}"><title>Roughly what the in-game panel shows at once; players drag to see the rest</title></rect>`;
+  }
+  // links, the same elbow shape as in game
+  for (const [id, n] of nodes) for (const p of n.parents) {
+    const pn = doc.nodes[p]; if (!pn) continue;
+    const hot = sel === id || sel === p;
+    if (pn.category !== tab) { h += `<text class="ext" x="${sx(n.x) + half}" y="${sy(n.y) - 6}" text-anchor="middle">needs ${esc(pn.title)} (${esc(doc.categories[pn.category]?.title || "?")})</text>`; continue; }
+    const ax = sx(pn.x) + half, ay = sy(pn.y) + half, bx = sx(n.x) + half, by = sy(n.y) + half, mx = (ax + bx) / 2;
+    h += `<path class="link ${hot ? "hot" : ""}" d="M${ax} ${ay} H${mx} V${by} H${bx}"/>`;
+  }
+  const bad = new Set(problems().filter(p => p.node).map(p => p.node));
+  for (const [id, n] of nodes) {
+    const x = sx(n.x), y = sy(n.y), w = NODE * s, u = n.icon && itemIcon(n.icon);
+    h += `<g class="n ${id === sel ? "sel" : ""} ${bad.has(id) ? "bad" : ""}" data-id="${esc(id)}">
+      <rect class="n-box" x="${x}" y="${y}" width="${w}" height="${w}" rx="${5 * s}"/>
+      ${u ? `<image href="${u}" x="${x + 6 * s}" y="${y + 6 * s}" width="${w - 12 * s}" height="${w - 12 * s}"/>` : ""}
+      <text class="n-label" x="${x + w / 2}" y="${y + w + 13 * s}" style="font-size:${11 * Math.max(.8, s)}px">${esc(n.title)}</text></g>`;
+  }
+  svg.innerHTML = h;
+}
+function fit() {
+  if (!tab) return;
+  const nodes = nodesIn(tab).map(([, n]) => n), r = svg.getBoundingClientRect();
+  if (!nodes.length) { view = { x: r.width / 2 - NODE / 2, y: r.height / 2 - NODE / 2, s: 1 }; renderCanvas(); return; }
+  const minX = Math.min(...nodes.map(n => n.x)), maxX = Math.max(...nodes.map(n => n.x));
+  const minY = Math.min(...nodes.map(n => n.y)), maxY = Math.max(...nodes.map(n => n.y));
+  const w = (maxX - minX) * U + NODE, hh = (maxY - minY) * U + NODE + 20;
+  const s = Math.max(0.4, Math.min(1.6, Math.min((r.width - 120) / w, (r.height - 120) / hh)));
+  view = { s, x: r.width / 2 - ((minX + maxX) / 2 * U + NODE / 2) * s, y: r.height / 2 - ((minY + maxY) / 2 * U + NODE / 2) * s };
+  renderCanvas();
+}
+function toCell(cx, cy) { const r = svg.getBoundingClientRect(); return { x: (cx - r.left - view.x) / view.s / U, y: (cy - r.top - view.y) / view.s / U }; }
+
+let drag = null;
+svg.addEventListener("mousedown", e => {
+  if (e.button !== 0) return;
+  const g = e.target.closest(".n");
+  if (g) {
+    const id = g.dataset.id;
+    if ((e.ctrlKey || e.metaKey) && sel && sel !== id) { toggleParent(sel, id); return; }
+    sel = id; renderAll();
+    const c = toCell(e.clientX, e.clientY), n = doc.nodes[id];
+    drag = { kind: "node", id, ox: c.x - n.x, oy: c.y - n.y, start: snapshot(), moved: false };
+    return;
+  }
+  drag = { kind: "pan", x: e.clientX, y: e.clientY, vx: view.x, vy: view.y, moved: false };
+  svg.classList.add("panning");
+});
+window.addEventListener("mousemove", e => {
+  if (!drag) return;
+  if (drag.kind === "pan") {
+    view.x = drag.vx + e.clientX - drag.x; view.y = drag.vy + e.clientY - drag.y;
+    drag.moved = drag.moved || Math.abs(e.clientX - drag.x) + Math.abs(e.clientY - drag.y) > 3;
+    renderCanvas();
+  } else {
+    const c = toCell(e.clientX, e.clientY), n = doc.nodes[drag.id];
+    const nx = Math.round(c.x - drag.ox), ny = Math.round(c.y - drag.oy);
+    if (nx !== n.x || ny !== n.y) {
+      if (!drag.moved) { undoStack.push(drag.start); redoStack = []; drag.moved = true; }
+      n.x = nx; n.y = ny; setDirty(true); renderCanvas();
+    }
+  }
+});
+window.addEventListener("mouseup", e => {
+  if (!drag) return;
+  const d = drag; drag = null; svg.classList.remove("panning");
+  if (d.kind === "pan" && !d.moved && e.target.closest && e.target.closest("#canvas")) { sel = null; renderAll(); }
+  if (d.kind === "node" && d.moved) renderAll();
+});
+svg.addEventListener("dblclick", e => {
+  if (!tab || e.target.closest(".n")) return;
+  const c = toCell(e.clientX, e.clientY);
+  addNode(Math.floor(c.x), Math.floor(c.y));
+});
+svg.addEventListener("wheel", e => {
+  e.preventDefault();
+  const r = svg.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top;
+  const f = Math.exp(-e.deltaY * 0.0015), s = Math.max(0.3, Math.min(3, view.s * f));
+  view.x = mx - (mx - view.x) * s / view.s; view.y = my - (my - view.y) * s / view.s; view.s = s;
+  renderCanvas();
+}, { passive: false });
+$("zoomIn").onclick = () => { view.s = Math.min(3, view.s * 1.25); renderCanvas(); };
+$("zoomOut").onclick = () => { view.s = Math.max(0.3, view.s / 1.25); renderCanvas(); };
+$("fitBtn").onclick = fit;
+window.addEventListener("resize", renderCanvas);
+
+function addNode(x, y) {
+  change(() => {
+    const id = uniqueId("research", doc.nodes);
+    const parents = sel && doc.nodes[sel] ? [sel] : [];
+    doc.nodes[id] = { category: tab, title: "New research", description: "", icon: "minecraft:book", x, y, parents, xp: 100, samples: [], stages: [] };
+    sel = id;
+  });
+}
+function toggleParent(child, parent) {
+  const c = doc.nodes[child];
+  if (c.parents.includes(parent)) change(() => { c.parents = c.parents.filter(p => p !== parent); });
+  else if (wouldLoop(child, parent)) status("That would make a loop.", "bad");
+  else change(() => c.parents.push(parent));
+}
+function deleteNode(id) {
+  change(() => {
+    delete doc.nodes[id];
+    for (const n of Object.values(doc.nodes)) n.parents = n.parents.filter(p => p !== id);
+    sel = null;
+  });
+}
+function renameNode(id, newShort) {
+  const s = slug(newShort), nid = `${NS}:${s}`;
+  if (nid === id) return;
+  if (doc.nodes[nid]) { status(`${s} is taken.`, "bad"); renderInspector(); return; }
+  change(() => {
+    doc.nodes[nid] = doc.nodes[id]; delete doc.nodes[id];
+    for (const n of Object.values(doc.nodes)) n.parents = n.parents.map(p => p === id ? nid : p);
+    sel = nid;
+  });
+}
+
+// ---------------------------------------------------------------------------------------------
+// Right: the inspector
+// ---------------------------------------------------------------------------------------------
+function iconButton(id, field) {
+  return `<button class="iconBtn" data-pick="${field}">${icHtml(id)}<span>${esc(itemName(id))}<br><small style="color:var(--dim)">${esc(id || "pick an item")}</small></span></button>`;
+}
+function renderInspector() {
+  const box = $("inspector");
+  if (!tab) { box.innerHTML = `<div class="note">Nothing selected.</div>`; return; }
+  if (!sel) { renderTabInspector(box); return; }
+  const n = doc.nodes[sel], others = Object.entries(doc.nodes).filter(([k]) => k !== sel);
+  const granted = grantedStages();
+  box.innerHTML = `<h3>Research</h3>
+    <label>Title</label><input id="fTitle" value="${esc(n.title)}">
+    <label>Id</label><input id="fId" value="${esc(short(sel))}">
+    <div class="note">The file name. Renaming after players have researched it makes them research it again.</div>
+    <label>Icon</label>${iconButton(n.icon, "icon")}
+    <label>Description (shown when hovering the node)</label><textarea id="fDesc">${esc(n.description || "")}</textarea>
+    <label>Tab</label><select id="fTab">${sortedTabs().map(c => `<option value="${esc(c)}" ${c === n.category ? "selected" : ""}>${esc(doc.categories[c].title)}</option>`).join("")}</select>
+    <div class="row"><div><label>Column</label><input id="fX" type="number" value="${n.x}"></div><div><label>Row</label><input id="fY" type="number" value="${n.y}"></div></div>
+    <label>Needs first</label>
+    <div class="chips">${n.parents.map(p => `<span class="chip">${esc(doc.nodes[p]?.title || short(p))}<button data-unparent="${esc(p)}">✕</button></span>`).join("") || `<span class="note">Nothing: open from the start.</span>`}</div>
+    <select id="fAddParent" style="margin-top:4px"><option value="">+ needs…</option>${others.filter(([k]) => !n.parents.includes(k) && !wouldLoop(sel, k))
+      .map(([k, o]) => `<option value="${esc(k)}">${esc(o.title)} (${esc(doc.categories[o.category]?.title || "?")})</option>`).join("")}</select>
+    <label>XP points</label><input id="fXp" type="number" min="0" value="${n.xp}">
+    <div class="note">Experience points, not levels (level 30 is 1395 points).</div>
+    <label>Samples (taken from the researcher)</label>
+    ${n.samples.map((s, i) => `<div class="sample">${iconButton(s.item, "sample:" + i)}<input type="number" min="1" data-count="${i}" value="${s.count || 1}">
+      <label style="margin:0;display:flex;gap:3px;align-items:center;text-transform:none" title="Only has to be shown, not used up"><input type="checkbox" data-keep="${i}" ${s.keep ? "checked" : ""}>keep</label>
+      <button class="danger" data-rmsample="${i}">✕</button></div>`).join("")}
+    <button id="fAddSample">+ Sample</button>
+    <label>Unlocks (stage locks granted to the whole team)</label>
+    <div class="stagePick">${stageList.map(s => `<label><input type="checkbox" data-stage="${esc(s.id)}" ${n.stages.includes(s.id) ? "checked" : ""}>${esc(short(s.id))}
+      <span class="note" style="margin:0">${s.items ? s.items + " items" : ""}${!n.stages.includes(s.id) && granted.has(s.id) ? " · also granted elsewhere" : ""}</span></label>`).join("")}
+      ${n.stages.filter(st => !stageList.some(s => s.id === st)).map(st => `<label><input type="checkbox" data-stage="${esc(st)}" checked>${esc(st)} <span class="warn" style="margin:0">not a stage: add it under Stage locks</span></label>`).join("")}</div>
+    <div class="note">New stages are made under Stage locks (top bar).</div>
+    <div class="row" style="margin-top:18px"><button class="danger" id="fDelete">Delete research</button></div>`;
+  const bind = (id, fn) => { const el = $(id); el.onchange = () => change(() => fn(el)); };
+  bind("fTitle", el => n.title = el.value);
+  $("fId").onchange = () => renameNode(sel, $("fId").value);
+  bind("fDesc", el => n.description = el.value);
+  bind("fTab", el => { n.category = el.value; tab = el.value; });
+  bind("fX", el => n.x = parseInt(el.value) || 0);
+  bind("fY", el => n.y = parseInt(el.value) || 0);
+  bind("fXp", el => n.xp = Math.max(0, parseInt(el.value) || 0));
+  $("fAddParent").onchange = e => { if (e.target.value) toggleParent(sel, e.target.value); };
+  box.querySelectorAll("[data-unparent]").forEach(b => b.onclick = () => toggleParent(sel, b.dataset.unparent));
+  box.querySelectorAll("[data-count]").forEach(i => i.onchange = () => change(() => n.samples[+i.dataset.count].count = Math.max(1, parseInt(i.value) || 1)));
+  box.querySelectorAll("[data-keep]").forEach(i => i.onchange = () => change(() => n.samples[+i.dataset.keep].keep = i.checked));
+  box.querySelectorAll("[data-rmsample]").forEach(b => b.onclick = () => change(() => n.samples.splice(+b.dataset.rmsample, 1)));
+  $("fAddSample").onclick = () => pick("", id => change(() => n.samples.push({ item: id, count: 1 })));
+  box.querySelectorAll("[data-stage]").forEach(i => i.onchange = () => change(() => {
+    n.stages = i.checked ? [...new Set([...n.stages, i.dataset.stage])] : n.stages.filter(s => s !== i.dataset.stage); }));
+  $("fDelete").onclick = () => { if (confirm(`Delete ${n.title}?`)) deleteNode(sel); };
+  box.querySelectorAll("[data-pick]").forEach(b => b.onclick = () => {
+    const f = b.dataset.pick;
+    if (f === "icon") pick(n.icon, id => change(() => n.icon = id));
+    else { const i = +f.split(":")[1]; pick(n.samples[i].item, id => change(() => n.samples[i].item = id)); }
+  });
+}
+function renderTabInspector(box) {
+  const c = doc.categories[tab], count = nodesIn(tab).length;
+  box.innerHTML = `<h3>Tab</h3>
+    <label>Title</label><input id="tTitle" value="${esc(c.title)}">
+    <label>Id</label><input value="${esc(short(tab))}" disabled>
+    <label>Icon</label>${iconButton(c.icon, "icon")}
+    <label>Order (left to right)</label><input id="tOrder" type="number" value="${c.order || 0}">
+    <div class="note" style="margin-top:14px">Select a research to edit it, or double-click empty space to add one. In game the tabs sit above the Research Table's window; about five fit.</div>
+    <div class="row" style="margin-top:18px"><button class="danger" id="tDelete">Delete tab${count ? ` and its ${count} research` : ""}</button></div>`;
+  $("tTitle").onchange = () => change(() => c.title = $("tTitle").value);
+  $("tOrder").onchange = () => change(() => c.order = parseInt($("tOrder").value) || 0);
+  box.querySelector("[data-pick]").onclick = () => pick(c.icon, id => change(() => c.icon = id));
+  $("tDelete").onclick = () => {
+    if (!confirm(`Delete the tab ${c.title}${count ? ` and its ${count} research` : ""}?`)) return;
+    change(() => {
+      for (const [id] of nodesIn(tab)) { delete doc.nodes[id]; for (const n of Object.values(doc.nodes)) n.parents = n.parents.filter(p => p !== id); }
+      delete doc.categories[tab]; tab = sortedTabs()[0] || null; sel = null;
+    });
+  };
+}
+
+// ---------------------------------------------------------------------------------------------
+// Item picker
+// ---------------------------------------------------------------------------------------------
+let pickCb = null, pickResults = [];
+function pick(current, cb) { pickCb = cb; $("modal").classList.add("on"); const q = $("pickQ"); q.value = current || ""; q.focus(); q.select(); runPick(); }
+function closePick() { $("modal").classList.remove("on"); pickCb = null; }
+function runPick() {
+  const words = $("pickQ").value.toLowerCase().split(/\s+/).filter(Boolean), mod = $("pickMod").value;
+  pickResults = items.filter(i => (!mod || i.mod === mod) && words.every(w => i.id.includes(w) || i.name.toLowerCase().includes(w)));
+  const q = $("pickQ").value.toLowerCase();
+  pickResults.sort((a, b) => (b.id === q) - (a.id === q) || (b.name.toLowerCase().startsWith(q)) - (a.name.toLowerCase().startsWith(q)) || a.name.length - b.name.length);
+  const shown = pickResults.slice(0, 400);
+  $("grid").innerHTML = shown.map((i, n) => `<div class="it ${n === 0 ? "first" : ""}" data-id="${esc(i.id)}">${icHtml(i.id)}<span class="nm">${esc(i.name)}<small>${esc(i.id)} · ${esc(mods[i.mod] || i.mod)}</small></span></div>`).join("")
+    || `<div class="note" style="padding:10px">${items.length ? "No items match." : "Items are still loading (or none were found: see the editor window)."}</div>`;
+  $("pickCount").textContent = pickResults.length > 400 ? `${pickResults.length} matches (showing 400: type more)` : `${pickResults.length} matches`;
+  $("grid").querySelectorAll(".it").forEach(d => d.onclick = () => choose(d.dataset.id));
+}
+function choose(id) { const cb = pickCb; closePick(); if (cb && id) cb(id); }
+$("pickQ").addEventListener("input", runPick);
+$("pickMod").addEventListener("change", runPick);
+$("pickQ").addEventListener("keydown", e => { if (e.key === "Enter" && pickResults[0]) choose(pickResults[0].id); if (e.key === "Escape") closePick(); });
+$("pickCancel").onclick = closePick;
+$("pickTyped").onclick = () => { const v = $("pickQ").value.trim(); if (/^[a-z0-9_.-]+:[a-z0-9_./-]+$/.test(v)) choose(v); else status("Type a full id like create:cogwheel", "bad"); };
+$("modal").addEventListener("mousedown", e => { if (e.target.id === "modal") closePick(); });
+
+// ---------------------------------------------------------------------------------------------
+function renderAll() {
+  if (mode === "stages") { renderStageList(); renderStageView(); renderStagePreview(); return; }
+  renderTabs(); renderCanvas(); renderInspector();
+}
+function setMode(m) {
+  mode = m;
+  $("modeResearch").classList.toggle("on", m === "research"); $("modeStages").classList.toggle("on", m === "stages");
+  $("stageView").classList.toggle("on", m === "stages");
+  for (const id of ["canvas", "hint", "zoomBox", "empty"]) { const el = $(id); if (el) el.style.visibility = m === "stages" ? "hidden" : ""; }
+  renderAll(); if (m === "research") fit();
+}
+$("modeResearch").onclick = () => setMode("research");
+$("modeStages").onclick = () => setMode("stages");
+
+// ---------------------------------------------------------------------------------------------
+// Stage locks
+// ---------------------------------------------------------------------------------------------
+function grantedBy(name) { const id = `${NS}:${name}`; return Object.values(doc.nodes).filter(n => n.stages.includes(id)).map(n => n.title); }
+function renderStageList() {
+  const rows = stageCfg.order.filter(n => stageCfg.stages[n]).map((n, i) => {
+    const c = stageCfg.stages[n], sm = summary && summary.stages[n], g = grantedBy(n);
+    const count = c.kind === "dimension" ? "dimension" : sm && sm.kind === "lock" ? `${sm.listed.length + sm.derived.length + sm.mod_items.length} items` : "";
+    return `<div class="tab ${n === selStage ? "on" : ""}" data-s="${esc(n)}"><span class="n" style="${!g.length && c.kind !== "dimension" ? "color:var(--bad)" : ""}">${i + 1}. ${esc(n)}</span><span class="c">${count}</span></div>`;
+  }).join("");
+  $("tabs").innerHTML = `<h2>Stages, first to last</h2>${rows || `<div class="note" style="padding:4px">No stages yet.</div>`}
+    <div class="row" style="margin-top:8px"><button id="addStage">+ Lock stage</button><button id="addDim">+ Dimension</button></div>
+    <div class="note" style="margin:10px 4px">Red: no research unlocks it, so what it locks can't be made in survival. An item that needs things from several stages goes to the latest one.</div>`;
+  $("tabs").querySelectorAll("[data-s]").forEach(d => d.onclick = () => { selStage = d.dataset.s; renderAll(); });
+  const add = kind => change(() => {
+    let n = kind === "lock" ? "new_stage" : "new_dimension", k = 2; while (stageCfg.stages[n]) n = (kind === "lock" ? "new_stage_" : "new_dimension_") + k++;
+    stageCfg.stages[n] = kind === "lock" ? { kind, items: [], tags: [], namespaces: [], except: [] } : { kind, dimensions: [] };
+    stageCfg.order.push(n); selStage = n;
+  });
+  $("addStage").onclick = () => add("lock"); $("addDim").onclick = () => add("dimension");
+}
+function chipList(list, kind) {
+  return `<div class="chips" style="margin-top:6px">${list.map((v, i) => `<span class="chip">${kind === "item" ? icHtml(v).replace('class="ic', 'style="width:18px;height:18px" class="ic') : ""}${esc(kind === "item" ? itemName(v) : kind === "mod" ? (mods[v] || v) : v)}<small style="color:var(--dim)">${kind === "item" ? " " + esc(v) : ""}</small><button data-rm="${i}">✕</button></span>`).join("") || `<span class="note">None.</span>`}</div>`;
+}
+function renderStageView() {
+  const box = $("stageView");
+  const n = selStage, c = n && stageCfg.stages[n];
+  if (!c) { box.innerHTML = `<div class="note">Pick or add a stage on the left.</div>`; return; }
+  const i = stageCfg.order.indexOf(n), g = grantedBy(n);
+  let h = `<h2>${esc(n)}</h2>
+    <div class="row" style="max-width:760px"><div><label>Name (id: ${esc(NS)}:…)</label><input id="sName" value="${esc(n)}"></div>
+      <div class="shrink" style="padding-top:22px"><button id="sUp" ${i <= 0 ? "disabled" : ""}>↑ Earlier</button> <button id="sDown" ${i >= stageCfg.order.length - 1 ? "disabled" : ""}>↓ Later</button> <button class="danger" id="sDel">Delete</button></div></div>
+    <div class="${g.length ? "note" : "warn"}">${g.length ? "Unlocked by research: " + g.map(esc).join(", ") : "No research unlocks this stage yet (tick it under Unlocks on a research)."}</div>`;
+  if (c.kind === "dimension") {
+    h += `<section><h3>Dimensions</h3><div class="note">Players can't travel to these until the stage is unlocked (or a server admin runs /empyrean unlock).</div>
+      ${chipList(c.dimensions, "dim")}<div class="row" style="margin-top:6px"><input id="sDimNew" placeholder="minecraft:the_end"><button class="shrink" id="sDimAdd">Add</button></div></section>`;
+  } else {
+    h += `<section><h3>Materials</h3><div class="note">Locks the item (no crafting, hidden in EMI) and everything crafted from it, all the way down. An item that also has a recipe made only from unlocked things stays free. Modded items only.</div>
+        ${chipList(c.items, "item")}<div class="row" style="margin-top:6px"><button class="shrink" id="sItemAdd">+ Material</button></div></section>
+      <section><h3>Tags</h3><div class="note">The same, for every modded item in a tag, e.g. c:ingots/steel.</div>
+        ${chipList(c.tags, "tag")}<div class="row" style="margin-top:6px"><input id="sTagNew" placeholder="c:ingots/steel"><button class="shrink" id="sTagAdd">Add</button></div></section>
+      <section><h3>Whole mods</h3><div class="note">Every item the mod adds: no crafting, hidden in EMI.</div>
+        ${chipList(c.namespaces, "mod")}<div class="row" style="margin-top:6px"><select id="sModNew"><option value="">+ mod…</option>${Object.keys(mods).filter(m => m !== "minecraft" && !c.namespaces.includes(m)).sort((a, b) => (mods[a] || a).localeCompare(mods[b] || b)).map(m => `<option value="${esc(m)}">${esc(mods[m] || m)} (${esc(m)})</option>`).join("")}</select></div></section>
+      <section><h3>Never lock</h3><div class="note">Items this stage leaves free even when they're made from locked things; the spread stops at them.</div>
+        ${chipList(c.except, "item")}<div class="row" style="margin-top:6px"><button class="shrink" id="sExAdd">+ Exception</button></div></section>`;
+  }
+  box.innerHTML = h;
+  $("sName").onchange = () => renameStage(n, $("sName").value);
+  $("sUp").onclick = () => change(() => { const o = stageCfg.order; [o[i - 1], o[i]] = [o[i], o[i - 1]]; });
+  $("sDown").onclick = () => change(() => { const o = stageCfg.order; [o[i + 1], o[i]] = [o[i], o[i + 1]]; });
+  $("sDel").onclick = () => { if (!confirm(`Delete the stage ${n}?${g.length ? " Research that unlocks it loses it." : ""}`)) return;
+    change(() => { delete stageCfg.stages[n]; stageCfg.order = stageCfg.order.filter(x => x !== n);
+      for (const nd of Object.values(doc.nodes)) nd.stages = nd.stages.filter(x => x !== `${NS}:${n}`); researchDirty = true; selStage = stageCfg.order[0] || null; }); };
+  const sections = box.querySelectorAll("section");
+  const lists = c.kind === "dimension" ? ["dimensions"] : ["items", "tags", "namespaces", "except"];
+  sections.forEach((sec, k) => sec.querySelectorAll("[data-rm]").forEach(b => b.onclick = () => change(() => c[lists[k]].splice(+b.dataset.rm, 1))));
+  const addTo = (key, v) => { if (v && !c[key].includes(v)) change(() => c[key].push(v)); };
+  if (c.kind === "dimension") {
+    $("sDimAdd").onclick = () => { const v = $("sDimNew").value.trim(); if (/^[a-z0-9_.-]+:[a-z0-9_./-]+$/.test(v)) addTo("dimensions", v); else status("Type a dimension id like minecraft:the_end", "bad"); };
+  } else {
+    const modded = id => { if (id.startsWith("minecraft:")) { status("Vanilla items are never locked.", "bad"); return false; } return true; };
+    $("sItemAdd").onclick = () => pick("", id => { if (modded(id)) addTo("items", id); });
+    $("sExAdd").onclick = () => pick("", id => addTo("except", id));
+    $("sTagAdd").onclick = () => { const v = $("sTagNew").value.trim().replace(/^#/, ""); if (/^[a-z0-9_.-]+:[a-z0-9_./-]+$/.test(v)) addTo("tags", v); else status("Type a tag id like c:ingots/steel", "bad"); };
+    $("sModNew").onchange = e => addTo("namespaces", e.target.value);
+  }
+}
+function renameStage(old, name) {
+  const n = slug(name);
+  if (n === old) return;
+  if (stageCfg.stages[n]) { status(`${n} is taken.`, "bad"); renderAll(); return; }
+  change(() => {
+    stageCfg.stages[n] = stageCfg.stages[old]; delete stageCfg.stages[old];
+    stageCfg.order = stageCfg.order.map(x => x === old ? n : x);
+    for (const nd of Object.values(doc.nodes)) nd.stages = nd.stages.map(x => x === `${NS}:${old}` ? `${NS}:${n}` : x);
+    researchDirty = true; selStage = n;
+  });
+}
+function renderStagePreview() {
+  const box = $("inspector"), n = selStage, sm = summary && n && summary.stages[n];
+  if (!n) { box.innerHTML = ""; return; }
+  if (stagesDirty) { box.innerHTML = `<h3>What it locks</h3><div class="warn">Save to rebuild the locks and see the result.</div>`; return; }
+  if (!sm) { box.innerHTML = `<h3>What it locks</h3><div class="note">No build yet: save once to see what every stage locks.</div>`; return; }
+  if (sm.kind === "dimension") { box.innerHTML = `<h3>What it locks</h3><div class="note">Travel to: ${sm.dimensions.map(esc).join(", ") || "nothing"}</div>`; return; }
+  const list = ids => `<div class="locklist">${ids.map(i => `<div title="${esc(i)}">${icHtml(i)}${esc(itemName(i))}</div>`).join("")}</div>`;
+  box.innerHTML = `<h3>What it locks</h3>
+    <label>Materials (${sm.listed.length})</label>${sm.listed.length ? list(sm.listed) : `<div class="note">None.</div>`}
+    <label>Crafted from them (${sm.derived.length})</label>${sm.derived.length ? list(sm.derived) : `<div class="note">None.</div>`}
+    <label>Whole mods (${sm.mod_items.length} items)</label><div class="note">${sm.namespaces.map(m => esc(mods[m] || m)).join(", ") || "None."}</div>
+    <div class="note" style="margin-top:12px">From the last save. In game, run /reload (or restart) to pick up new locks.</div>`;
+}
+window.addEventListener("keydown", e => {
+  const mod = e.ctrlKey || e.metaKey, typing = /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName);
+  if (mod && e.key.toLowerCase() === "s") { e.preventDefault(); document.activeElement.blur(); setTimeout(save, 0); return; }
+  if (typing || $("modal").classList.contains("on")) return;
+  if (mod && e.key.toLowerCase() === "z") { e.preventDefault(); e.shiftKey ? redo() : undo(); }
+  else if (mod && e.key.toLowerCase() === "y") { e.preventDefault(); redo(); }
+  else if ((e.key === "Delete" || e.key === "Backspace") && sel && mode === "research") { e.preventDefault(); deleteNode(sel); }
+  else if (e.key.toLowerCase() === "f") fit();
+});
+$("undoBtn").onclick = undo; $("redoBtn").onclick = redo; $("saveBtn").onclick = save; $("checkBtn").onclick = showProblems;
+window.addEventListener("beforeunload", e => { if (dirty) { e.preventDefault(); e.returnValue = ""; } });
+if (location.protocol === "file:") status("Open this through ResearchEditor.bat, not as a file.", "bad");
+else load().catch(e => status("Couldn't load: " + e, "bad"));
+</script>
+</body>
+</html>

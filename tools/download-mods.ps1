@@ -30,6 +30,24 @@ try {
     }
 } finally { Pop-Location }
 
+# Drop jars the pack no longer has: packwiz only deletes files it installed itself, so a jar put in mod-files\mods
+# by hand (an old fix, a test build) would otherwise be installed forever. Keeps everything packwiz tracks and
+# everything in manual-mods\.
+$manifest = Join-Path $out 'packwiz.json'
+if (Test-Path $manifest) {
+    $tracked = @{}
+    (Get-Content $manifest -Raw | ConvertFrom-Json).cachedFiles.PSObject.Properties | ForEach-Object {
+        $loc = $_.Value.cachedLocation
+        if ($loc) { $tracked[(Split-Path $loc -Leaf).ToLower()] = $true }
+    }
+    Get-ChildItem (Join-Path $Root 'manual-mods') -Filter *.jar -ErrorAction SilentlyContinue | ForEach-Object { $tracked[$_.Name.ToLower()] = $true }
+    if ($tracked.Count -gt 20) {   # only with a real manifest
+        Get-ChildItem (Join-Path $out 'mods') -Filter *.jar -ErrorAction SilentlyContinue |
+            Where-Object { -not $tracked.ContainsKey($_.Name.ToLower()) } |
+            ForEach-Object { Write-Host "Removing $($_.Name) (no longer in the pack)"; Remove-Item $_.FullName -Force }
+    }
+}
+
 $jars = Get-ChildItem (Join-Path $out 'mods') -Filter *.jar -ErrorAction SilentlyContinue
 $mb = [math]::Round((($jars | Measure-Object Length -Sum).Sum) / 1MB)
 Write-Host "Done: $($jars.Count) mod files ($mb MB) in $out\mods"

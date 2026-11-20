@@ -60,7 +60,7 @@ $kjs = if (Test-Path $kjsLog) { Get-Content $kjsLog } else { @() }
 $done = [bool]($text | Select-String 'Done \(')
 $crashes = Get-ChildItem (Join-Path $srv 'crash-reports') -ErrorAction SilentlyContinue
 $report = @(
-    "Skybound SMP compatibility report  $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
+    "Empyrean Engines compatibility report  $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
     "Pack $(Get-PackValue 'version'), NeoForge $(Get-PackValue 'neoforge'), $((Get-ChildItem (Join-Path $srv 'mods') -Filter *.jar).Count) server mods"
     ''
     "RESULT: $(if ($done) { 'PASS - server finished loading' } else { 'FAIL - server did not finish loading' })"
@@ -77,8 +77,8 @@ $report = @(
     '== ERROR lines (first 80) =='
     Get-Hits $text '/ERROR\]|\[ERROR\]' 80
     ''
-    '== Skybound checks (world height, nether scale) =='
-    Get-Hits ($text + $kjs) '\[Skybound\]'
+    '== Empyrean Engines checks (world height, nether scale) =='
+    Get-Hits ($text + $kjs) '\[Empyrean\]'
     ''
     '== Quests and research stages (expect 11 chapters, 9 stages) =='
     Get-Hits $text 'datapack stage definitions|registered as FTB Library stage provider|failed to register FTB Library|Ignoring non-object stage|ftbquests.*(error|exception|failed|chapters)|Loaded .* quests' 20

@@ -1,0 +1,13 @@
+{
+  "type": "tieredfoundry:casting",
+  "block": "table",
+  "pattern": "ingot",
+  "fluid": {
+    "tag": "c:molten_gold",
+    "amount": 90
+  },
+  "result": {
+    "id": "minecraft:gold_ingot",
+    "count": 1
+  }
+}

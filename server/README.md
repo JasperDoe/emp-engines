@@ -15,7 +15,7 @@ settings and admin-only configs.
 
 ## Uploading to a host
 
-Upload the contents of `build\skybound-server-<version>.zip`. On a panel
+Upload the contents of `build\emp-engines-server-<version>.zip`. On a panel
 host, either point the start command at `start.sh`, or pick NeoForge with
 the version in `neoforge-version.txt` and upload only `mods`, `config`,
 `defaultconfigs`, `kubejs` and `server.properties`.

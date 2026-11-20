@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "lit=false,tier=1": {
+      "model": "tieredfoundry:block/lava_heater_t1_off"
+    },
+    "lit=true,tier=1": {
+      "model": "tieredfoundry:block/lava_heater_t1_on"
+    },
+    "lit=false,tier=2": {
+      "model": "tieredfoundry:block/lava_heater_t2_off"
+    },
+    "lit=true,tier=2": {
+      "model": "tieredfoundry:block/lava_heater_t2_on"
+    }
+  }
+}

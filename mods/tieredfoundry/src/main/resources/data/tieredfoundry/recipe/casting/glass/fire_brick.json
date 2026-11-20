@@ -1,0 +1,15 @@
+{
+  "type": "tieredfoundry:casting",
+  "block": "table",
+  "cast": {
+    "item": "tieredfoundry:fire_clay"
+  },
+  "fluid": {
+    "fluid": "tieredfoundry:molten_glass",
+    "amount": 250
+  },
+  "result": {
+    "id": "tieredfoundry:fire_brick",
+    "count": 1
+  }
+}

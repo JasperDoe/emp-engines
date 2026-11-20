@@ -1,0 +1,10 @@
+{
+  "type": "emp_engines:on_island",
+  "biomes": "#emp_engines:etheric",
+  "step": "surface_structures",
+  "terrain_adaptation": "none",
+  "spawn_overrides": {},
+  "structure": "minecraft:jungle_pyramid",
+  "min_radius": 18,
+  "max_slope": 14
+}

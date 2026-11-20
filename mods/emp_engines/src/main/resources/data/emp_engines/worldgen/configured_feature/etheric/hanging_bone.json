@@ -1,0 +1,50 @@
+{
+  "type": "emp_engines:crystal_spike",
+  "config": {
+    "body": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 2,
+          "data": {
+            "Name": "minecraft:white_terracotta"
+          }
+        },
+        {
+          "weight": 2,
+          "data": {
+            "Name": "minecraft:calcite"
+          }
+        },
+        {
+          "weight": 1,
+          "data": {
+            "Name": "minecraft:bone_block",
+            "Properties": {
+              "axis": "y"
+            }
+          }
+        }
+      ]
+    },
+    "core": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:bone_block",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    },
+    "tip": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:calcite"
+      }
+    },
+    "min_height": 8,
+    "max_height": 26,
+    "giant_chance": 10,
+    "hanging": true
+  }
+}

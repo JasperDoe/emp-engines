@@ -1,0 +1,104 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.5,
+  "downfall": 0.4,
+  "effects": {
+    "grass_color": 9469106,
+    "foliage_color": 8089502,
+    "sky_color": 8748198,
+    "fog_color": 10260670,
+    "water_color": 8024486,
+    "water_fog_color": 1314606,
+    "particle": {
+      "options": {
+        "type": "minecraft:white_ash"
+      },
+      "probability": 0.006
+    },
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    },
+    "additions_sound": {
+      "sound": "minecraft:ambient.basalt_deltas.additions",
+      "tick_chance": 0.0011
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "minecraft:zombie",
+        "weight": 95,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:skeleton",
+        "weight": 100,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:spider",
+        "weight": 90,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:creeper",
+        "weight": 90,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:enderman",
+        "weight": 15,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
+    "creature": [],
+    "ambient": [],
+    "axolotls": [],
+    "underground_water_creature": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [
+      "emp_engines:etheric/open_geode"
+    ],
+    [],
+    [
+      "emp_engines:etheric/crystal_spikes",
+      "emp_engines:etheric/basalt_columns"
+    ],
+    [],
+    [
+      "emp_engines:etheric/ore_coal",
+      "emp_engines:etheric/ore_iron",
+      "emp_engines:etheric/ore_copper",
+      "emp_engines:etheric/ore_emerald"
+    ],
+    [
+      "minecraft:glow_lichen",
+      "emp_engines:etheric/hanging_crystal"
+    ],
+    [],
+    [
+      "minecraft:trees_savanna",
+      "minecraft:patch_dead_bush_2",
+      "minecraft:patch_grass_badlands"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ]
+}

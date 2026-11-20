@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:storage_blocks/diamond"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_diamond",
+    "amount": 810
+  },
+  "temperature": 1450
+}

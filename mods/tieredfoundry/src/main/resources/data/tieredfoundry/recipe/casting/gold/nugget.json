@@ -1,0 +1,13 @@
+{
+  "type": "tieredfoundry:casting",
+  "block": "table",
+  "pattern": "nugget",
+  "fluid": {
+    "tag": "c:molten_gold",
+    "amount": 10
+  },
+  "result": {
+    "id": "minecraft:gold_nugget",
+    "count": 1
+  }
+}

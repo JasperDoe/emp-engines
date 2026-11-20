@@ -1,0 +1,13 @@
+{
+  "type": "tieredfoundry:casting",
+  "block": "table",
+  "pattern": "gem",
+  "fluid": {
+    "tag": "c:molten_diamond",
+    "amount": 90
+  },
+  "result": {
+    "id": "minecraft:diamond",
+    "count": 1
+  }
+}

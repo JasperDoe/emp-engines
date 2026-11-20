@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.empengines.engines.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ServerGamePacketListenerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

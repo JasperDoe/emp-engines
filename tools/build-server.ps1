@@ -1,7 +1,7 @@
 # Builds the server pack: server-side mods + shared files from pack\,
 # with the server\ layer copied on top. Output:
 #   build\server-pack\                       (ready-to-run folder)
-#   build\skybound-server-<version>.zip      (upload this to your host)
+#   build\emp-engines-server-<version>.zip      (upload this to your host)
 #
 # Usage:  .\tools\build-server.ps1
 . "$PSScriptRoot\common.ps1"
@@ -62,10 +62,24 @@ Copy-Item (Join-Path $Root 'server\*') $out -Recurse -Force -Exclude 'README.md'
 Set-Content (Join-Path $out 'neoforge-version.txt') $neo -NoNewline
 
 # 3. Zip for upload
-$zip = Join-Path $Build "skybound-server-$version.zip"
+$zip = Join-Path $Build "emp-engines-server-$version.zip"
 if (Test-Path $zip) { Remove-Item $zip }
+# Compress-Archive (PowerShell 5) stores paths with backslashes, which Linux
+# hosts unpack as flat files named "config\fml.toml". Write entries with '/'.
+Add-Type -AssemblyName System.IO.Compression, System.IO.Compression.FileSystem
 $items = Get-ChildItem $out | Where-Object { $_.Name -notin 'packwiz.json', 'packwiz-installer.jar' }
-Compress-Archive -Path $items.FullName -DestinationPath $zip
+$stream = [IO.File]::Open($zip, [IO.FileMode]::Create)
+$archive = New-Object IO.Compression.ZipArchive($stream, [IO.Compression.ZipArchiveMode]::Create)
+try {
+    $base = (Resolve-Path $out).Path.TrimEnd('\') + '\'
+    foreach ($item in $items) {
+        $files = if ($item.PSIsContainer) { Get-ChildItem $item.FullName -Recurse -File } else { @($item) }
+        foreach ($f in $files) {
+            $name = $f.FullName.Substring($base.Length).Replace('\', '/')
+            [IO.Compression.ZipFileExtensions]::CreateEntryFromFile($archive, $f.FullName, $name, [IO.Compression.CompressionLevel]::Optimal) | Out-Null
+        }
+    }
+} finally { $archive.Dispose(); $stream.Dispose() }
 $mods = (Get-ChildItem (Join-Path $out 'mods') -Filter *.jar -ErrorAction SilentlyContinue).Count
 Write-Host "Server pack built: $mods mods, NeoForge $neo"
 Write-Host "  folder: $out"

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "tieredfoundry:block/tier1/controller_on",
+    "side": "minecraft:block/bricks",
+    "top": "minecraft:block/bricks"
+  }
+}

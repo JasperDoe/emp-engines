@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.empengines.silentraids.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "SalvagerMixin"
+  ],
+  "client": [
+    "client.LevelRendererMixin",
+    "client.ClientLevelMixin",
+    "client.GearArmorItemMixin",
+    "client.ItemRendererMixin",
+    "client.ItemColorsMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

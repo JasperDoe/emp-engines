@@ -1,0 +1,16 @@
+# Spice of Life: Carrot Edition, Empyrean Engines settings.
+# One extra heart for every 5 different foods eaten, up to +10 hearts (20 in total) at 50 foods.
+
+[milestones]
+	baseHearts = 10
+	heartsPerMilestone = 1
+	milestones = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+
+[filtering]
+	blacklist = []
+	whitelist = []
+	minimumFoodValue = 1
+
+[miscellaneous]
+	resetOnDeath = false
+	limitProgressionToSurvival = false

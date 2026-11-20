@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:cache_2d",
+  "argument": {
+    "type": "minecraft:mul",
+    "argument1": 22.0,
+    "argument2": "emp_engines:etheric/weight_twilight_shards"
+  }
+}

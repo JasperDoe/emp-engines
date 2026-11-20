@@ -1,20 +1,68 @@
 hash-format = "sha256"
 
 [[files]]
+file = "cloudworks/console_seeker/config.json"
+hash = "1f3a6570a41c74cb88381916693f2e105ba245376ed6b6d7f248c1351d907422"
+
+[[files]]
+file = "config/DistantHorizons.toml"
+hash = "b47375ca5420615d9fbc777c79ee31831cf043dccbddbf7c979a691774a78beb"
+
+[[files]]
+file = "config/aeronauticsdiscovery-common.toml"
+hash = "bfd72b481e4fdce37072a97c72012dbcf89434cd73deb0b8af04d4a6928171ca"
+
+[[files]]
+file = "config/almostunified/placeholders.json"
+hash = "09d45cd954f0daea986fc8613474effc5c1294405a44daa40de01b4f62b01ecb"
+
+[[files]]
+file = "config/almostunified/unification/materials.json"
+hash = "41a0519daae10535d2159f88be1034e3a22bb9804e2c1b7364a8eba8f877fccb"
+
+[[files]]
+file = "config/apotheosis/apotheosis.cfg"
+hash = "6819e269cc4e5063346d3fb41fe2dfca45dbd8a4a18826c9d3097f1e8af0ba34"
+
+[[files]]
+file = "config/appleseed-common.toml"
+hash = "f4d6336bf7920d29dc0f204d367a972391b6c11f69fc1e757e2e65ba5d01869a"
+
+[[files]]
+file = "config/emp_engines/raider_ships/pillager_airballoon.json"
+hash = "dc718455ff76c4d306bd5cfd92740302f57d3136371aab6d7401df0fd7300dbb"
+
+[[files]]
+file = "config/emp_engines/raider_ships/pillager_airship.json"
+hash = "e385b313f1e78dd1009218efe8f9f54e43c165df5d6365371ba8ad92c20efe2f"
+
+[[files]]
+file = "config/emp_engines/raider_ships/pillager_airship.nbt"
+hash = "c97c884890230e83f2ff038a1a8e81798a9e193772eb8149a6cb57fab23998e8"
+
+[[files]]
+file = "config/fml.toml"
+hash = "f75cf80606593ad60e1bd9b26c820ce6f16baf00bd914111dafa877faa8b00d8"
+
+[[files]]
 file = "config/ftbquests/quests/chapter_groups.snbt"
 hash = "b598a1fa8f15245cbad10e998b0394661469b003e5c1f60b021687ba3ceae943"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/alloy_age.snbt"
-hash = "4724a387b81f7d646c55aca1c32f3733fa6c8f9c3ffd0130af91d23649a01cc6"
+hash = "de91947a1478f3fda6d8356f3d60558e3043cadb9a7d7860d21bc1376809ee29"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/andesite_age.snbt"
-hash = "43388d09b6345857de9245873ea371927acc8baf405054fdeaa09e9b26ce1df2"
+hash = "ae559d20cae2cf0abec456e71faf9dad4e6d065bc71a1d0e7dfd3c42004db697"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/blood_moons.snbt"
+hash = "ece1b7760586795be5b0226a430f2c82c6909f532158568c3034d3567261f7be"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/brass_age.snbt"
-hash = "7ad97a6b85bb41ddda7eeb6af1f6f270f3427f0fd1efcb61013ea894a93d68c9"
+hash = "a62994110c95ad6e4913510deb647b1b407d3c17f1efff5417dddbdc9f470cde"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/briefing.snbt"
@@ -22,15 +70,15 @@ hash = "58251e22df454a226a2bef69f0b92a1cb86abfdf50b1e729e82028f90b31a653"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/electricity_age.snbt"
-hash = "6e8edcd1e6d9e816a2ff16d742d95d78dbc2c44cead085ec914afbbf9db90042"
+hash = "529feba2fb2d7e2b2ab155fbd53ca6a427e635d79a702f7111f30c1240eb0331"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/exotic_age.snbt"
-hash = "614f5ffd98c1c26637e5d0386eae03eec8e86fae93908fefb8b359688e98b914"
+hash = "9b234009a0837da91d90a38a21dc7c7d8f9e8c112bfb394273c2338d7ea74a2d"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/first_flight.snbt"
-hash = "a938d5c2ba643812625a4013fd6107b269e4e34f1aa1b21e4364f4ab990c7052"
+hash = "2d7fcce0302100f053de3274e85ddc9b7e4de9dc9fa0032e5403c4f5d3a19625"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/gears_and_metals.snbt"
@@ -38,15 +86,15 @@ hash = "a4e96101c16c1f136d264b28a14c8ebda78e8d007b1429742db775aaa2f25cba"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/into_the_sky.snbt"
-hash = "a6e6d547d1a77977d0bdd5c928f5a11a457d428e45b16eea0ea862897b47b629"
+hash = "8bff23dd6ec1c82f94f3eec3b8da32e7e1aa4ea4800975d23c59d46f8a4f1573"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/logistics.snbt"
-hash = "68b309722a23ff5f4d9af18939f80220a6732a401c6e0f00e24e8e32a9732d9b"
+hash = "e892cc3cceb8db190e11d6e53a6641628dffe4ea9dd255ef2326e36b15d0e73a"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/the_nether.snbt"
-hash = "5458f3d16a8c8d35c2572e6b14e04c196266cf781e33ecde7c959e0b8181a7f1"
+hash = "b416eb06ffb79c31af95e060aaf47cfd85faf8746f3537d51686e96053bac1da"
 
 [[files]]
 file = "config/ftbquests/quests/data.snbt"
@@ -54,15 +102,103 @@ hash = "4cb9e0a02ee096dc5985f9809ee77054998044d28a1d1aead24736b7758d760b"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "f4becdce6dd1cad6d1ed7e604496d537d16fde2f91e1e03408dc34b7a1cfa9cf"
+hash = "a1441cdc8e4303009593c6f05bae8ed061fca263ea93c5fa7c21b0e36d42bc1c"
 
 [[files]]
 file = "config/iris.properties"
 hash = "ec4a4f736922d82180cda445b03ce8540cd3dd2d13c78e5b9146c477d4d6d7d1"
 
 [[files]]
+file = "config/notenoughanimations.json"
+hash = "cb8a16a24eb5065df0eb890a32a6c4d3f12561a2f7f7ae3e6df66774f8caf4c6"
+
+[[files]]
+file = "config/streamsreflowing-client.properties"
+hash = "a13d1eb7dd4360d55d44944088adbd4f208821ee5211c6f736c913116364148e"
+
+[[files]]
 file = "config/tectonic.json"
 hash = "2d820f65378fdd27635e06cbefcecdba7d757956f51593c70dafa57d2e177fe8"
+
+[[files]]
+file = "config/tmrv_plugins.json5"
+hash = "4c54701e19c6aedab9923b16b79b2228a7bf71b4ea966e4fda0b239c0b80e500"
+
+[[files]]
+file = "defaultconfigs/emp_engines-server.toml"
+hash = "1bca70790732e2f496475f97764ee128a39f522d685c09397ede78001e5da3fd"
+
+[[files]]
+file = "defaultconfigs/solcarrot-server.toml"
+hash = "144655905feea851a574060850e358e81967bdaa87a9b039f551afdfdfb14272"
+
+[[files]]
+file = "kubejs/data/apotheosis/loot_modifiers/affix_conversion.json"
+hash = "bce7ff86235e6bc8568142c67691f2bcef915d1f0085f62239b302f9884e5fc3"
+
+[[files]]
+file = "kubejs/data/apotheosis/loot_modifiers/affix_loot_injection.json"
+hash = "e54b49258b1be66125551f79d39054238ca8a3871fb2bff0a46aeefeeb0c637a"
+
+[[files]]
+file = "kubejs/data/apotheosis/loot_table/chests/chest_valuable.json"
+hash = "506978a85a1a7bf0f663495b55de1931b7d2a55f35c29eca534d8456a0a7413a"
+
+[[files]]
+file = "kubejs/data/apotheosis/loot_table/chests/tome_tower.json"
+hash = "11a022a2c26465831e25cd3f895352f2ac44b4eee9367f819ac2a30ce73c7007"
+
+[[files]]
+file = "kubejs/data/apotheosis/loot_table/entity/treasure_goblin.json"
+hash = "c9b50261cc83d9190f176858ed529d4925718655190c39dc11bf416ebd9504b6"
+
+[[files]]
+file = "kubejs/data/apotheosis/recipe/augmenting_table.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/apotheosis/recipe/reforging/common.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/apotheosis/recipe/reforging/epic.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/apotheosis/recipe/reforging/mythic.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/apotheosis/recipe/reforging/rare.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/apotheosis/recipe/reforging/uncommon.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/apotheosis/recipe/reforging_table.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/apotheosis/recipe/sigil_add_sockets.json"
+hash = "3f76fe04344198b60dc1fa8fd407b8e3b6563e03491f1cc58b737967a619772a"
+
+[[files]]
+file = "kubejs/data/apotheosis/recipe/sigil_of_socketing.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/apotheosis/recipe/simple_reforging_table.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/c/tags/item/hidden_from_recipe_viewers.json"
+hash = "cb85bee5329be7eb1a5ff05e877bb673a037aa2cea07c3f006bc42732664d91d"
+
+[[files]]
+file = "kubejs/data/create/recipe/mixing/brass_ingot.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
 file = "kubejs/data/create_sky_village/worldgen/structure/highwind_village.json"
@@ -73,108 +209,1452 @@ file = "kubejs/data/create_sky_village/worldgen/structure/skyvillage.json"
 hash = "55fd7a3c3975a835c71d959ea2da7c37c0a46ea5471400709eaeac34991b9687"
 
 [[files]]
+file = "kubejs/data/createaddition/recipe/compat/immersiveengineering/constantan.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/createaddition/recipe/mixing/electrum.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/emp_engines/chapters/stages/alloy_age.json"
+hash = "d0cba54214615c86c410424067522f30fc883c649833efe91bf719d16c0a45c9"
+
+[[files]]
+file = "kubejs/data/emp_engines/chapters/stages/andesite_age.json"
+hash = "d0cba54214615c86c410424067522f30fc883c649833efe91bf719d16c0a45c9"
+
+[[files]]
+file = "kubejs/data/emp_engines/chapters/stages/brass_age.json"
+hash = "d0cba54214615c86c410424067522f30fc883c649833efe91bf719d16c0a45c9"
+
+[[files]]
+file = "kubejs/data/emp_engines/chapters/stages/electricity_age.json"
+hash = "d0cba54214615c86c410424067522f30fc883c649833efe91bf719d16c0a45c9"
+
+[[files]]
+file = "kubejs/data/emp_engines/chapters/stages/end_access.json"
+hash = "cbe6e6e6b23b26365bdc235a822af1cc04df5d69b0e00e895abecc338e3610e6"
+
+[[files]]
+file = "kubejs/data/emp_engines/chapters/stages/exotic_age.json"
+hash = "d0cba54214615c86c410424067522f30fc883c649833efe91bf719d16c0a45c9"
+
+[[files]]
+file = "kubejs/data/emp_engines/chapters/stages/flight.json"
+hash = "d0cba54214615c86c410424067522f30fc883c649833efe91bf719d16c0a45c9"
+
+[[files]]
+file = "kubejs/data/emp_engines/chapters/stages/logistics.json"
+hash = "d0cba54214615c86c410424067522f30fc883c649833efe91bf719d16c0a45c9"
+
+[[files]]
+file = "kubejs/data/emp_engines/chapters/stages/nether_access.json"
+hash = "cb9aa5277468ba08cfbe0f6562cabfc2716610a43430671804501c084f76cccb"
+
+[[files]]
+file = "kubejs/data/emp_engines/chapters/stages/obsidian_key.json"
+hash = "d0cba54214615c86c410424067522f30fc883c649833efe91bf719d16c0a45c9"
+
+[[files]]
+file = "kubejs/data/emp_engines/expresearch/category/automation.json"
+hash = "dd895bdb09dc9b500207cf5bdae93f09653d67926c935b190d6e0ea4d96b12b6"
+
+[[files]]
+file = "kubejs/data/emp_engines/expresearch/category/flight.json"
+hash = "dd895bdb09dc9b500207cf5bdae93f09653d67926c935b190d6e0ea4d96b12b6"
+
+[[files]]
+file = "kubejs/data/emp_engines/expresearch/category/logistics.json"
+hash = "dd895bdb09dc9b500207cf5bdae93f09653d67926c935b190d6e0ea4d96b12b6"
+
+[[files]]
+file = "kubejs/data/emp_engines/expresearch/category/metallurgy.json"
+hash = "dd895bdb09dc9b500207cf5bdae93f09653d67926c935b190d6e0ea4d96b12b6"
+
+[[files]]
+file = "kubejs/data/emp_engines/expresearch/research/alloy_age.json"
+hash = "dd895bdb09dc9b500207cf5bdae93f09653d67926c935b190d6e0ea4d96b12b6"
+
+[[files]]
+file = "kubejs/data/emp_engines/expresearch/research/andesite_age.json"
+hash = "dd895bdb09dc9b500207cf5bdae93f09653d67926c935b190d6e0ea4d96b12b6"
+
+[[files]]
+file = "kubejs/data/emp_engines/expresearch/research/brass_age.json"
+hash = "dd895bdb09dc9b500207cf5bdae93f09653d67926c935b190d6e0ea4d96b12b6"
+
+[[files]]
+file = "kubejs/data/emp_engines/expresearch/research/electricity_age.json"
+hash = "dd895bdb09dc9b500207cf5bdae93f09653d67926c935b190d6e0ea4d96b12b6"
+
+[[files]]
+file = "kubejs/data/emp_engines/expresearch/research/exotic_age.json"
+hash = "dd895bdb09dc9b500207cf5bdae93f09653d67926c935b190d6e0ea4d96b12b6"
+
+[[files]]
+file = "kubejs/data/emp_engines/expresearch/research/flight.json"
+hash = "dd895bdb09dc9b500207cf5bdae93f09653d67926c935b190d6e0ea4d96b12b6"
+
+[[files]]
+file = "kubejs/data/emp_engines/expresearch/research/logistics.json"
+hash = "dd895bdb09dc9b500207cf5bdae93f09653d67926c935b190d6e0ea4d96b12b6"
+
+[[files]]
+file = "kubejs/data/emp_engines/expresearch/research/obsidian_key.json"
+hash = "dd895bdb09dc9b500207cf5bdae93f09653d67926c935b190d6e0ea4d96b12b6"
+
+[[files]]
+file = "kubejs/data/emp_engines/recipe/diet/feast_gleaming_salad.json"
+hash = "8df6ec02a128e7916eb87ff79f8b0f2c24742a5f7a29e10ee24402e87067c940"
+
+[[files]]
+file = "kubejs/data/emp_engines/recipe/diet/feast_honey_glazed_ham.json"
+hash = "ebb4cd4e6eaa6da6ea73c24f8f3b5c7fbd12f2bae6ff5203ea28c10eb491e5e7"
+
+[[files]]
+file = "kubejs/data/emp_engines/recipe/diet/feast_roast_chicken.json"
+hash = "ba7660c95b098563a34829f4c018490948dd188174f4c0b079f3e5dcd35b127a"
+
+[[files]]
+file = "kubejs/data/emp_engines/recipe/diet/feast_shepherds_pie.json"
+hash = "96a95f51d7f9f2803f9efdd32e612cdb4497e48f8d5affe864ac35a475546f93"
+
+[[files]]
+file = "kubejs/data/emp_engines/recipe/diet/feast_stuffed_pumpkin.json"
+hash = "a12a460ac527f7b46bf03d9091bff97c8bc4b4a73babf85faed76d6bc5a86e58"
+
+[[files]]
+file = "kubejs/data/emp_engines/recipe/sg_direct/axe.json"
+hash = "b67837afc96a73c4a03e8c511a625e5f06840fd4813dc9703aef4792545b9a9c"
+
+[[files]]
+file = "kubejs/data/emp_engines/recipe/sg_direct/boots.json"
+hash = "2b97b7de567d4b439137407e734e9abe0dee25243579d96f983cafc5ea75bc3d"
+
+[[files]]
+file = "kubejs/data/emp_engines/recipe/sg_direct/chestplate.json"
+hash = "114a8ffdaa342a0206a88347da06c45884528b2534441701c7243e90e1f3ce12"
+
+[[files]]
+file = "kubejs/data/emp_engines/recipe/sg_direct/helmet.json"
+hash = "27d4308bd2ed645aec1455df9c0f495796761cb22d4dc08ff76f06502c353577"
+
+[[files]]
+file = "kubejs/data/emp_engines/recipe/sg_direct/hoe.json"
+hash = "be4e2f5c33f96bf077f1b253ef776321cd2c1b57266d38327f1b2ead1f13bb17"
+
+[[files]]
+file = "kubejs/data/emp_engines/recipe/sg_direct/leggings.json"
+hash = "f741e17a95e6bea7710dde6d61b1e77e32e5094960f4e14104e2d4f3d2b81d35"
+
+[[files]]
+file = "kubejs/data/emp_engines/recipe/sg_direct/pickaxe.json"
+hash = "83f9f13b2cf23948aab62d0d609d7d01d43eba8178684444aeb9aef9addfb8e5"
+
+[[files]]
+file = "kubejs/data/emp_engines/recipe/sg_direct/shovel.json"
+hash = "54ba19e44af5bdd55b610f7521f3ed0b87646b20db863c4a5fa68e7909144f42"
+
+[[files]]
+file = "kubejs/data/emp_engines/recipe/sg_direct/sword.json"
+hash = "db263f90886e289ad09548d58a00f230d59699697c3264fca4e8526b7af1d580"
+
+[[files]]
+file = "kubejs/data/emp_engines/tags/worldgen/structure/sky_villages.json"
+hash = "9af2cf78d6b8c690351b0b429e185d5375dd05e5073897e7614f81002689f973"
+
+[[files]]
+file = "kubejs/data/emp_engines/tags/worldgen/structure/wrecks.json"
+hash = "bb2a63e5fce4b162e6326b9d78033fb42ba0826b4002d53baca92733b37164ba"
+
+[[files]]
+file = "kubejs/data/immersiveengineering/recipe/alloysmelter/brass.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/immersiveengineering/recipe/alloysmelter/bronze.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/immersiveengineering/recipe/alloysmelter/constantan.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/immersiveengineering/recipe/alloysmelter/electrum.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/immersiveengineering/recipe/alloysmelter/invar.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/immersiveengineering/recipe/alloysmelter/rose_gold.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/immersiveengineering/recipe/arcfurnace/alloy_brass.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/immersiveengineering/recipe/arcfurnace/alloy_bronze.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/immersiveengineering/recipe/arcfurnace/alloy_constantan.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/immersiveengineering/recipe/arcfurnace/alloy_electrum.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/immersiveengineering/recipe/arcfurnace/alloy_invar.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/immersiveengineering/recipe/arcfurnace/alloy_rose_gold.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/immersiveengineering/recipe/crafting/alloybrick.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/immersiveengineering/recipe/crafting/alloybrick_from_slab.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/immersiveengineering/recipe/crafting/alloybrick_to_slab.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
 file = "kubejs/data/minecraft/dimension_type/overworld.json"
 hash = "8799d35f1d441726e4462840446301e25db743b72219ea48f14fc8acce61645c"
 
 [[files]]
-file = "kubejs/data/skybound/chapters/stages/alloy_age.json"
-hash = "d52b7341e0cbe8af8d4ff1a9de537f8b143bf301003e36d21b0b1b208dc4fb68"
+file = "kubejs/data/minecraft/recipe/diamond_axe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/chapters/stages/andesite_age.json"
-hash = "98f3280eea21ef75611bfb53c906cd11284cf417dabbda0d4902d49b07f7e70d"
+file = "kubejs/data/minecraft/recipe/diamond_boots.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/chapters/stages/brass_age.json"
-hash = "eb4070469b28b5c31d4e41a9409158b8f94912d84292be04723bd672c0f3ccea"
+file = "kubejs/data/minecraft/recipe/diamond_chestplate.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/chapters/stages/electricity_age.json"
-hash = "a3d94f1165e5ce76f5a95680065a5d3a3606be92358c66457092f7520cab68dd"
+file = "kubejs/data/minecraft/recipe/diamond_helmet.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/chapters/stages/end_access.json"
-hash = "ceab34dd54c35aecc0b6852424883208934cdcce185ca8d1fa859df36b8fdd53"
+file = "kubejs/data/minecraft/recipe/diamond_hoe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/chapters/stages/exotic_age.json"
-hash = "b779992501ffd5b92683bbce1cdd8704577425a484091b1f02e070994d97f35e"
+file = "kubejs/data/minecraft/recipe/diamond_leggings.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/chapters/stages/flight.json"
-hash = "600ce1ec49e293a0a4ebd466e51d2850af8885847d53604d4164bf92ae31ee69"
+file = "kubejs/data/minecraft/recipe/diamond_pickaxe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/chapters/stages/logistics.json"
-hash = "84a0dc6c6328daea0dabe5cb4b1c564cfb25ffd1535f26471cd8b896ecec591c"
+file = "kubejs/data/minecraft/recipe/diamond_shovel.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/chapters/stages/nether_access.json"
-hash = "95efedd863c6f6e202c2cee4684c116b85d38c176ac1059590981ebcf9d57000"
+file = "kubejs/data/minecraft/recipe/diamond_sword.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/expresearch/category/automation.json"
-hash = "32900fec651a0a35f782793ea8c17791f813fcc27c260866fb9f3a2a0208547f"
+file = "kubejs/data/minecraft/recipe/golden_axe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/expresearch/category/flight.json"
-hash = "254d57b48f8d3ebb15c17bf5c459e5617f9d46e92eeb91fb679e4bba48e425cc"
+file = "kubejs/data/minecraft/recipe/golden_boots.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/expresearch/category/logistics.json"
-hash = "c87ce7b5089bec9af2c9313acee1a950b287c70598810adf9cdbe9736212aa4d"
+file = "kubejs/data/minecraft/recipe/golden_chestplate.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/expresearch/category/metallurgy.json"
-hash = "56a9643ec97f487ee20ef820dcb62bb761ea9146b2d51f13ee0265c3848cd7f8"
+file = "kubejs/data/minecraft/recipe/golden_helmet.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/expresearch/research/alloy_age.json"
-hash = "1f000f235a5cb8bb3e57ba8ee170e08f6f5f4af0dd491e83d298398bb2399465"
+file = "kubejs/data/minecraft/recipe/golden_hoe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/expresearch/research/andesite_age.json"
-hash = "ae07088539198cf1a8965604dc1d27f2d408e4392da3fb82040d01d63f212672"
+file = "kubejs/data/minecraft/recipe/golden_leggings.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/expresearch/research/brass_age.json"
-hash = "0177d5183c73cb84aaecbe6d86f2e9b909164e4a9f1945952a53bb728a896509"
+file = "kubejs/data/minecraft/recipe/golden_pickaxe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/expresearch/research/electricity_age.json"
-hash = "2a81f7a302b601562142faba8bb259d9fe61f154a8416b28ee0ee2bdbc0ca374"
+file = "kubejs/data/minecraft/recipe/golden_shovel.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/expresearch/research/exotic_age.json"
-hash = "054caef6e9f3044929b2b0f742497cd7b7dc60fdae6f6e876302ff6ee324c2f5"
+file = "kubejs/data/minecraft/recipe/golden_sword.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/expresearch/research/flight.json"
-hash = "1c91245f7b06a37199ada0544c00048b25a8ad4b4117af923e69a36875f8ea8b"
+file = "kubejs/data/minecraft/recipe/iron_axe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/expresearch/research/logistics.json"
-hash = "057e51c5bb8e0b114517e44c9ea895ea5a4d01e274f0e891ae89c97f9f4c23e2"
+file = "kubejs/data/minecraft/recipe/iron_boots.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/tags/worldgen/structure/sky_villages.json"
-hash = "9af2cf78d6b8c690351b0b429e185d5375dd05e5073897e7614f81002689f973"
+file = "kubejs/data/minecraft/recipe/iron_chestplate.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
 [[files]]
-file = "kubejs/data/skybound/tags/worldgen/structure/wrecks.json"
-hash = "bb2a63e5fce4b162e6326b9d78033fb42ba0826b4002d53baca92733b37164ba"
+file = "kubejs/data/minecraft/recipe/iron_helmet.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/iron_hoe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/iron_leggings.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/iron_pickaxe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/iron_shovel.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/iron_sword.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/leather_boots.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/leather_chestplate.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/leather_helmet.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/leather_leggings.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/netherite_axe_smithing.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/netherite_boots_smithing.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/netherite_chestplate_smithing.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/netherite_helmet_smithing.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/netherite_hoe_smithing.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/netherite_ingot.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/netherite_leggings_smithing.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/netherite_pickaxe_smithing.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/netherite_shovel_smithing.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/netherite_sword_smithing.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/stone_axe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/stone_hoe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/stone_pickaxe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/stone_shovel.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/stone_sword.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/wooden_axe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/wooden_hoe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/wooden_pickaxe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/wooden_shovel.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/minecraft/recipe/wooden_sword.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/alloy_forge.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/alloying/gem/custom_gem.dimerald.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/alloying/metal/azure_electrum_ingot.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/alloying/metal/blaze_gold_ingot.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/alloying/metal/crimson_steel_ingot.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/alloying/metal/custom_ingot.high_carbon_steel.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/alloying/metal/tyrian_steel_ingot.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/azure_electrum_ingot.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/blaze_gold_ingot.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/coating_blueprint.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/coating_smithing_template.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/coating_smithing_template_duplication.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/coating_template.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/crimson_steel_ingot.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/arrow_head.json"
+hash = "88bee571aca0b8ca1bb07e7cc1709cc7e10f0b5f5a452249c53bc43c315971f2"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/arrow_quick.json"
+hash = "508de4cf13d2e516c7baf8e021acf66aa8210e0d2aae236f3bf3dde06accf90b"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/axe_head.json"
+hash = "3a4bc92f00dfa20242ec457baa7eec0270bf77742fdff5e73c796e189344bca4"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/axe_quick.json"
+hash = "545b601164580809814bcf66202bc1634e8cc91d7e595db939cab7c0d46d780d"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/boot_plates.json"
+hash = "48004eb79c51f4e7c351d6e4bdea58a9146be72a0655caa7a1659b4e41bd7ead"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/bow_main.json"
+hash = "76d683263ea1d1052d7598d3dc83a691ab234ae991186575e863b3f3fbe37832"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/bow_quick.json"
+hash = "844069e6d1964d210b99ffd6b4d794b39cc1bf2c7831d5e9208077f9643e665b"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/bracelet_main_only.json"
+hash = "f50bae5c01b5b29ee0645a4542af3e6851d913ecd8b7cc189dc33b6845564d15"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/bracelet_quick.json"
+hash = "43545e18235f911097cd9ffc0f7c2c5ba37ca05b27c67e1e2189cf64a31d0421"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/chestplate_plates.json"
+hash = "5c5df42ad4be7494873edf6c521c88c855e9b55c23055f80fd7a19cfa296e736"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/diamond_axe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/diamond_boots.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/diamond_chestplate.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/diamond_helmet.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/diamond_hoe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/diamond_leggings.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/diamond_pickaxe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/diamond_shovel.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/diamond_sword.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/golden_axe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/golden_boots.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/golden_chestplate.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/golden_helmet.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/golden_hoe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/golden_leggings.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/golden_pickaxe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/golden_shovel.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/golden_sword.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/iron_axe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/iron_boots.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/iron_chestplate.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/iron_helmet.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/iron_hoe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/iron_leggings.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/iron_pickaxe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/iron_shovel.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/iron_sword.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/leather_boots.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/leather_chestplate.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/leather_helmet.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/leather_leggings.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/netherite_axe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/netherite_boots.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/netherite_chestplate.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/netherite_helmet.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/netherite_hoe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/netherite_leggings.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/netherite_pickaxe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/netherite_shovel.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/netherite_sword.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/stone_axe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/stone_hoe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/stone_pickaxe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/stone_shovel.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/stone_sword.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/wooden_axe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/wooden_hoe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/wooden_pickaxe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/wooden_shovel.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/convert/wooden_sword.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/crossbow_main.json"
+hash = "116277e0ad4b4b8a82ec02f3ffe0dd5542ade5096fa278cf13de2f667bdb4a76"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/crossbow_quick.json"
+hash = "4c15b8171944d438dbd4cfed92ac3c0459297ab5980cccf509c7def1b77137b4"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/dagger_head.json"
+hash = "cb0fadd2d325fb4ebc5d9451aebc9c3be5e79fee6e191fa6f1f058579c08a605"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/dagger_quick.json"
+hash = "7ed781c359d3657142402717f49850fa8b998e40a93455ea98377efffd028b9e"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/elytra_wings.json"
+hash = "9242fab66f4538f0714268da4c9a8a45a3bcd7b46449bba9f99ade2942d65318"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/excavator_head.json"
+hash = "f9614d8203104d57012af980ca522a6909d38390dee61793a546759fe5e4de0a"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/excavator_quick.json"
+hash = "6f7d4943026862deea030b42caa875dbf3398358a7c4100364104a766b1b358c"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/fishing_rod_main.json"
+hash = "517c1e1839527a27479c9557c0206a3aa2245d89444b14cd575d128dca06c6a8"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/fishing_rod_quick.json"
+hash = "47bd414fe79b697b8befa711c3859517c4b9ca61760383a993985135bf9ac004"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/hammer_head.json"
+hash = "7ceadf5d2767e79261746f5d33d7969c2a57370fbeee4af85a9ee0703f661820"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/hammer_quick.json"
+hash = "de7e0bc494c7cedfc9aa2003a30e8b7f7db2f4a284fdeaf7f3c2786fc4fc1eb8"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/helmet_plates.json"
+hash = "e57cd45c3dfa3d96d50f07ec6e40f3dba396a1aac6973bf3ca02e22a58492fd9"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/hoe_head.json"
+hash = "b524d40a20db8a418890d328c44071429fb65a04df61d24052240b19e4e5d848"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/hoe_quick.json"
+hash = "e7a805a90eed22a816074e2e6cd989227a605bb30dbcc7ff6165ea49485c0e1d"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/katana_head.json"
+hash = "78fe528ad6bfa1ebdf24558314ac040ea2261353a93e11fd4fccaaf76194c2fb"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/katana_quick.json"
+hash = "635fa984cca8bac4f154f1b526317043566974541f83fd89ec0710422461e648"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/knife_head.json"
+hash = "9c5452218602c6253db5eb5b52b4ea46b6b2fbe0ec2d1b12a80b4d8797940c85"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/knife_quick.json"
+hash = "89d5f9f625a7f8c6f33c6f3a207a02f012a64d130b0176ecfa475769c54e0c16"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/legging_plates.json"
+hash = "9f7a442bca90206659cf376c719401664bde57dca2bffc086e4f5386f132d0ae"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/mace_core.json"
+hash = "316623a9d9a29ea6f0319ae3a832650937f2a94975fbc97ba56a9c78fc6e774d"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/mace_quick.json"
+hash = "897f93ef2fd5596118bd013397c64505385ad857b201cd67c0b9c474b25c81b1"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/machete_head.json"
+hash = "3cc976ca65582eab203b4c0f59f13ee2d564364998cd416a07a3c02e4d23997f"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/machete_quick.json"
+hash = "4a0879b8bd044d172c62d310ec3642f5f0e0d3ce191ca8a6cf708d19ea421f4e"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/mattock_head.json"
+hash = "c18ccad22584c3f9f17bf7062ae4e027b293910ba24663b201035b0819be6800"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/mattock_quick.json"
+hash = "33730f376387131e0d04c6f5c52317051e39af81088b99d0a3cccbed7d72f64a"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/necklace_main_only.json"
+hash = "d2191bffbf243a0397cdcecbd65dd8bc04bc8a0f240d1bf5aec9a8a1a078469f"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/necklace_quick.json"
+hash = "3c4b24b098744c8011b441258e4a5d3c338fc22fb411a0beb6f2da441d841f23"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/paxel_head.json"
+hash = "a0e9817025ded21c0c8df8382a37b46ab98d1d1e24978f38fd30a66f9377ffa7"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/paxel_quick.json"
+hash = "2b6f42859cce0aca3ed480527555824cffff6fa0598f99d5f06685c39a5f35cd"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/pickaxe_head.json"
+hash = "e8abd1e84cd1bc1a45d4661af0faaf1fd171e771de1098b8cc610942449626fe"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/pickaxe_quick.json"
+hash = "8ce017f12c79f017f60fe56053f57b6cea25cb4390bb723dfa6dc85f6eca4d16"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/prospector_hammer_head.json"
+hash = "8542bccc2eb627a964144e726d8a2553165e53abfea7b35f3412ab2109fd016a"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/prospector_hammer_quick.json"
+hash = "ba7e225e9a1d668d04716059587be8ce8ebe7a36cc7042ca5768af70cf90522d"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/ring_main_only.json"
+hash = "db0f8213d6a42b97736efd0312c8dc3d8c282b9038ca9468cfd333a7234f682b"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/ring_quick.json"
+hash = "cc6cf37d86f53d303149b0ef4e2184057cb3a2bde63163c8afc24a9e8c6b62f9"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/rough/axe.json"
+hash = "b49d7dfcf394ea3bc4ee83f3b737e97aa9c25bf5170d7490611b709d87cd9308"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/rough/dagger.json"
+hash = "4febf7e9de26c8dcd55cfec4b90f35193dd4a6659fee13918e2b0be9d1890e74"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/rough/knife.json"
+hash = "5b4f50ac3016b861abfeefc0ec7604a84e1321a5c6b0e1a2facdb6daa65876c4"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/rough/pickaxe.json"
+hash = "0220da961e2a6ca18d34c119180b45bdf6e3edd5ee0a302c1e908ba6503e6585"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/rough/shovel.json"
+hash = "df60bb3f220661c441ad9224dbd236dbf5d855391abe9dd5aa8cd205ab1a6620"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/rough/sword.json"
+hash = "03d74a804984b83dea43ebdb300282df36bfc97bec4a90588d864fb78e2208ce"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/saw_head.json"
+hash = "7e7dfd04d638956aa5d5a2c2d6adc9cbfee2fd50ceef410cbec91ef3c5e6e8d6"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/saw_quick.json"
+hash = "cbcf08fe944441024cf84a22eb79fd2f4b46054f1ca221da43f3e4eda5aaaa3d"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/shears_head.json"
+hash = "a259e9e90209a4aa70f93704482c3b69b3b9274cb66ad15a25323f48784ce75b"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/shears_quick.json"
+hash = "1312e2b36010a331ec6000881395de66e89a364f55fd8e9df5362700e19c6d49"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/shield_plate.json"
+hash = "878757227f33d2859044b162084f6d1f58673bd1e0e57d6915ed00d88b9a53e4"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/shield_quick.json"
+hash = "6fe231c6cb42a835ff12bc449572f96376cf282ed806443469a0ada09f59b438"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/shovel_head.json"
+hash = "d37160ef5824046d066d0cf1c9427f62abc96ff0e879c7bfd875cf3ab6e90487"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/shovel_quick.json"
+hash = "cb1ce710594fba0b1c4a0c0cdc7f2b69296ed08dbaf252c4a231779ee02057ba"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/sickle_head.json"
+hash = "2e4389d7a808c45d8e294e2a1c357caacaaa54a400800eebbce4c92b1e5750a9"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/sickle_quick.json"
+hash = "a3b1c95cb43bc8934d8d0dd00d94ed80d580e1d8009e97cb5c6ee2870ff4fcec"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/slingshot_main.json"
+hash = "bc3b7bc453b4ee07f0eae02c7082fe19e7182ed7a6607cdc4fa6f3d7cd1d16e0"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/slingshot_quick.json"
+hash = "d601fef227c290b4b4afe6eda2a255d813a0a6e02bb99c12568d6bbcb8efa6aa"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/spear_head.json"
+hash = "9153a24e1c8aef1fb9fd156e634e6f4a179e564eb493eeeec1f24802ac0e6557"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/spear_quick.json"
+hash = "242e619cfc4e37c0bdaf47d46759a43af6ab17e4287e7a074a9048c0e15de5ff"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/sword_head.json"
+hash = "b944d7c81228065de644361657b2572006aae94a53b7bb2e5b37a2c00039bd42"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/sword_quick.json"
+hash = "2e3cdeba4b99173d1cd42fc9a32dd3d417f9f91739dca78793afa0575f6ec620"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/trident_head.json"
+hash = "e4554d7661398df9b5432bd5919ac36a0a394990b1a7ae97d0e14921e1a6bc1e"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/gear/trident_quick.json"
+hash = "cb7a2f7822f7bc894f03fe332f396e58e137fcf5fa129df594f6f2e1e2e6650b"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/part/coating.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/part/rod.json"
+hash = "6db40ecd6034f12f30d37d66781d5b5e490e74ee0f28ed4b0a073d98b891021e"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/part/tip.json"
+hash = "826e052b2729df172f0702e0ef58497b36426034502ed6e1a5c3bb082c120067"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/recrystallizer.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/arrow.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/axe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/boots.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/bow.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/bracelet.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/chestplate.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/crossbow.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/dagger.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/excavator.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/fishing_rod.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/hammer.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/helmet.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/hoe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/katana.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/knife.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/leggings.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/mace.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/machete.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/mattock.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/necklace.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/paxel.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/pickaxe.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/prospector_hammer.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/ring.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/saw.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/shears.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/shield.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/shovel.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/sickle.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/slingshot.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/spear.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/sword.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/recipe/smithing/coating/trident.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "kubejs/data/silentgear/silentgear_materials/aluminum_steel.json"
+hash = "cbfadc0b157fb1fa330dc4382df32bd13d8b07f93bb605ccf0667319f839b6a1"
+
+[[files]]
+file = "kubejs/data/silentgear/silentgear_materials/azure_electrum.json"
+hash = "83c850817afaa886ecde32b5c6b2f8a06527bc79f7f421d0b5c81cb445f98011"
+
+[[files]]
+file = "kubejs/data/silentgear/silentgear_materials/azure_silver.json"
+hash = "5a4e3fc0938b398450190bff441c5e3dee6b331a488e694b702fdb5ba0fa43f9"
+
+[[files]]
+file = "kubejs/data/silentgear/silentgear_materials/bismuth_steel.json"
+hash = "370675a385afd288a136422b4029145b723ccd7d6a86c610a3189eed45122de5"
+
+[[files]]
+file = "kubejs/data/silentgear/silentgear_materials/compressed_iron.json"
+hash = "a869f06628a2e81e7b368a9424d86dcc497f721bc2c5fd785d89e8dc3295c798"
+
+[[files]]
+file = "kubejs/data/silentgear/silentgear_materials/crimson_iron.json"
+hash = "565a332b8a25d3baccd11b367d9760da5fbd36c171adb6dd86cf956981875bf1"
+
+[[files]]
+file = "kubejs/data/silentgear/silentgear_materials/crimson_steel.json"
+hash = "0d1de719c0a0b816066d9fadf045d060cf4fbe3754f0b5aaaae0e8df1792b707"
+
+[[files]]
+file = "kubejs/data/silentgear/silentgear_materials/diamond.json"
+hash = "acfec80fd6bee23523c08e5cbeb92d0ea27d0f4bc455a7313e614cfb0cbfcb3b"
+
+[[files]]
+file = "kubejs/data/silentgear/silentgear_materials/dimerald.json"
+hash = "5dca649e7bbe0a81be698c8c00484ee6c8ab572b9ef92f9dcc606ace63e02cbb"
+
+[[files]]
+file = "kubejs/data/silentgear/silentgear_materials/enderium.json"
+hash = "a465e54ae0a2c67ce2fbc550e152e299d2cd46c2dbb667cea23a142d45fba405"
+
+[[files]]
+file = "kubejs/data/silentgear/silentgear_materials/lumium.json"
+hash = "94be471c7c6e00dc78eaaca4b9b6476519a14e4c68038254ae6d2cb1af4b3e89"
+
+[[files]]
+file = "kubejs/data/silentgear/silentgear_materials/netherite.json"
+hash = "be20a2e49836b78867d73f04a81cd8c705b9208ccc221b77ec77bb380c6dfbef"
+
+[[files]]
+file = "kubejs/data/silentgear/silentgear_materials/platinum.json"
+hash = "cd042c39132305a05267af422d4cf16ae3178862dc0dc5334414ed978c657c1a"
+
+[[files]]
+file = "kubejs/data/silentgear/silentgear_materials/refined_obsidian.json"
+hash = "882a4fa5f9aad9009274d38af6b6f7439a95fd395477262a0bcdf7840c8dd233"
+
+[[files]]
+file = "kubejs/data/silentgear/silentgear_materials/signalum.json"
+hash = "72b9af95389ee91d262dd697547663715f0977a944fe4c87a4b9127dbba7f6e2"
+
+[[files]]
+file = "kubejs/data/silentgear/silentgear_materials/titanium.json"
+hash = "786f0b69e1b4a86cbcbda72533b353649deb0b90143992d6c8ea11663391111b"
+
+[[files]]
+file = "kubejs/data/silentgear/silentgear_materials/tyrian_steel.json"
+hash = "d9f624498f66e81dd7d9c19a7191004f4f24926fd9f407392727605674dda5db"
+
+[[files]]
+file = "kubejs/data/silentgear/silentgear_materials/uranium.json"
+hash = "1d8c614b69aef39674b0876373cbfdadb4ffcbb6ffa3b0f336dc01662e4c15f7"
+
+[[files]]
+file = "kubejs/data/silentraids/apothic_elites/raids/ashen_knight.json"
+hash = "65a4a0cea54c838a5e3653670632c4ad02ef4b0d988104d441fb6b8f1b275824"
+
+[[files]]
+file = "kubejs/data/silentraids/apothic_elites/raids/bone_sentry.json"
+hash = "cf11a05792006de1a1295d52d87d7c45fab5a4415d7e5cba1f14747a8873f33a"
+
+[[files]]
+file = "kubejs/data/silentraids/apothic_elites/raids/broodmother.json"
+hash = "949b45e95f6ffe8e00b2c226e20b924dc3e585d9b32a14b786f6690d27e53a3b"
+
+[[files]]
+file = "kubejs/data/silentraids/apothic_elites/raids/grave_warden.json"
+hash = "5c3b7ee1ce16b9a3d662a3d846ea024cfa6b2c74a129149c253284ce9cc0989a"
+
+[[files]]
+file = "kubejs/data/silentraids/apothic_elites/raids/hedge_witch.json"
+hash = "c1036f79d523e000b34f538e020e1a13874856057b667f8d04f1bcfcf7552253"
+
+[[files]]
+file = "kubejs/data/silentraids/apothic_elites/raids/illager_warlord.json"
+hash = "273b9ba2f6da88b8d0640ebfe871c3619f53a8720d13f7b93f3c6ae0755726ac"
+
+[[files]]
+file = "kubejs/data/silentraids/apothic_elites/raids/ravager_alpha.json"
+hash = "f3cc1bf332502e6cfb8a02c520ec35eb0c13720d4180717b3e409df3a615f609"
+
+[[files]]
+file = "kubejs/data/silentraids/apothic_elites/raids/volatile_creeper.json"
+hash = "20a7cbd3adf3fa326df1bd1bb06663ce91993ffe66b5afd9b11099738989e310"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/diamond_axe.json"
+hash = "23236f85dc59703f68e163a11ed5a1a3feb9d736c6dfa2b328e50eb21dbb4a9b"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/diamond_boots.json"
+hash = "ca3f30f5022c7a3822e670540fde3f9880bb0f97d2cb23f9ff13197297fbf5a4"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/diamond_chestplate.json"
+hash = "cf1ed43998d9c33b42c8205fa13574c360e1d7f4440ac2e78c6cd005074b5aef"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/diamond_helmet.json"
+hash = "ec04a947b0e439002f0179ed79a67ad62e19f4df195890c702273fd6fa741717"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/diamond_hoe.json"
+hash = "41c5e72197370d69b81cbf8af94d04f7b53f088d7fbf90f1466826c11fd7681b"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/diamond_leggings.json"
+hash = "68e9ae48e5f243e9904f6e59e4af223306c0608be5655833f4b23865e7e8300e"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/diamond_pickaxe.json"
+hash = "049ef388eab8b88aee97847fe853adaf04cfe728dc8822c8d26ef55742227565"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/diamond_shovel.json"
+hash = "cb8553439424eb4bfac2bf9c9a7bc2b776c28cba949312c3cf51f1801dee0979"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/diamond_sword.json"
+hash = "bd7a0996aa66fcf38588a51ac3b9c3bc8d7d6ff961ea2a9262f5731fdf42a5cd"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/golden_axe.json"
+hash = "db54d6c4ae3fb849848b7397d253da192ba847739e5888eae55fbb3bb5fa363a"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/golden_boots.json"
+hash = "ba563b7652ae1e9c22ae48753e1098be95fe6e84be638418a66234e6aed8039a"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/golden_chestplate.json"
+hash = "681d742eb13cd20f0d2e7f4200d07d22184be87b01ba75b33e24b103e9896b53"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/golden_helmet.json"
+hash = "1bd3e44a5df1ea18e82e9af69dcfddcc4369835115d0ffca78777810daf5a900"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/golden_hoe.json"
+hash = "47c9fa8ee5aad1bdecf3eaf0b91b5471973e7f5745f323803eaaa8a5307e629a"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/golden_leggings.json"
+hash = "db16fb3c70e9c27815f66a5572b2c7b7eb141277317bd11e13950754cc11a04d"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/golden_pickaxe.json"
+hash = "e6c0e851bf5927f85401353ec76cc7e234399e76daf1df2bb7a23bd5314f4254"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/golden_shovel.json"
+hash = "c54e3b796b2a08919dbb2a91db9f6e4c5a23f906a4a39bb42a19eb8adf201831"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/golden_sword.json"
+hash = "bfb000d6b5459c8c484271919518d505e74ccf654dcc0e725315ad471741e343"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/iron_axe.json"
+hash = "5f0479451800d8fadd59f9d78ba757424c7b890984603b60dcf3a4868cbebbc5"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/iron_boots.json"
+hash = "48a769dd90c226d126c7e13434dc6666d19b37a950a070f647b817e3985aa600"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/iron_chestplate.json"
+hash = "0e78d5e3a264752e9fdfeed9bd95080364f6543b8dd9015d49635f366be1acb8"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/iron_helmet.json"
+hash = "c711ccb8e24ddbb44f48f93ecc7012b806c32b8646f5b1fd9ea7c39c3c152fef"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/iron_hoe.json"
+hash = "d4948bf383064d481b53bc60bbd40f3e3beb57554f7d214a073bee1c6cd984b2"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/iron_leggings.json"
+hash = "b4733f55340c12cb25598a16ae5e061ca6b5f159bf6422185873682b8cb26362"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/iron_pickaxe.json"
+hash = "cbf0bf0c14ec5de20b0b86c9c03f434375ec87d68b996dfe157e14b49ff3ddec"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/iron_shovel.json"
+hash = "ce94bcf3fccf6a189cd180c8a93eaa28d2b83c0481e95c6102dfbc3daa6eece5"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/iron_sword.json"
+hash = "539f02066996d94913c5d5724aeafe18e537810d398911249c63c37ae7d78488"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/leather_boots.json"
+hash = "608995feded82a2d6c8c88ff6086db584260946ea4ee7d8ac6bd258461921b41"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/leather_chestplate.json"
+hash = "140ec58f84cfec57320937a55b4be7ce83af4cab1ba8931354f62577af3a7e9a"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/leather_helmet.json"
+hash = "96648a0d7e14ceddebb70baa5bc1327bec115f7dc7d5678606d3e45587a290ff"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/leather_leggings.json"
+hash = "dcb5949d7adff0101ada129ba1bb950b72f49fda0d4f585a82834cbe3593fcd4"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/netherite_axe.json"
+hash = "4b023381aa520047cf3118a893e44127b92ff4fb9846cd4dae3bdcd5576a393c"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/netherite_boots.json"
+hash = "17b1d99bff2c35d6aa61bcf726ff21873141ab33a64501e5c55a2cff8f4bf2b1"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/netherite_chestplate.json"
+hash = "0493b4af3851a33831066f401df051edbfe72b2b2fd6d0447a8bc1818831d145"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/netherite_helmet.json"
+hash = "b4f2f56c0ad3a4bc2032666968f63dcde048df837397fde7a7b65c8a2407b941"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/netherite_hoe.json"
+hash = "2bf8ad452e8ad3d98b00b4e77719de97804a5222c4f25423138a6950aae75ec0"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/netherite_leggings.json"
+hash = "2a58f1a67883ac7c1c9f1e1c5fd8b4bc2d5ea13a2ecf1760693c77e89e2fbd18"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/netherite_pickaxe.json"
+hash = "330e4e0f2049322e9a2c315864c0f9c5039557d914acb0ca71cc79efcdbb8209"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/netherite_shovel.json"
+hash = "70157ec13798bbcfa16d049af52973853573c499c1d9a0ef7893aa517f4e5f35"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/netherite_sword.json"
+hash = "fa979da85b4bec4cbfdb9ac655d7fd640b33653f1dfab0957d27ff69413ee8e3"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/stone_axe.json"
+hash = "b275af345331090e9c0df00405fa7e36941e0cbfb2a11070414ccb3eaedfcd3d"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/stone_hoe.json"
+hash = "75508f109544e710cf7c47a57d0ba058fc0d9b4791e82ad5632c12db80666dc0"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/stone_pickaxe.json"
+hash = "ed848411ae22430966be12002631f2567f5c6a51770bccad9b33d29539d421ef"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/stone_shovel.json"
+hash = "e43932a3e3d1f83c1f2e43064dea9ab00fc8f5a467bf1d46fada266a969c8385"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/stone_sword.json"
+hash = "5c2c341d906d2157ad08c7dcac109b378a9f3ef8ec30240bc7cf80af539a6dbe"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/wooden_axe.json"
+hash = "742c00a5fb3b3d886746793960529f71ee069f482cb0695e903cc26cb48e9e10"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/wooden_hoe.json"
+hash = "0bbc177d3cd94a6a9fb13e18eb1a4c585d1d7064d467fd4e23da97cc2a2b09e5"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/wooden_pickaxe.json"
+hash = "d1416a8ea37e72b75031af1bca9b7f5bb41d062c2f7653a7afc4d9aed0313cfd"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/wooden_shovel.json"
+hash = "3c22df116fe268e79dd009d0ae6b13e537e36aeffe880b69443488f810aa421f"
+
+[[files]]
+file = "kubejs/data/silentraids/gear_conversion/wooden_sword.json"
+hash = "0413a2242e252a52dc69bc99244b4e1dd3d4e3eefd360efa8815f7a1382ff3b4"
 
 [[files]]
 file = "kubejs/server_scripts/build_limit.js"
-hash = "dd583542bb1aa8af323f96ae96518effbe3b34700e1e283f3e1ced6e8f71df60"
+hash = "ed7cee4b785ecf2c1c6806ec84ad4f69593eb8db74d09eb09925046b499fcd89"
+
+[[files]]
+file = "kubejs/server_scripts/foundry_overrides.js"
+hash = "25292a3ec7d49506e3a999eddd15140abe10bef4fe5b639945acd5eab4ca33c4"
 
 [[files]]
 file = "kubejs/server_scripts/global_unlocks.js"
-hash = "d8c6e47a9bf820ebbeffd346e1f768b2dceb4af219f23e9a74cdb70413a91759"
+hash = "fa39fbb9fbb7a4f29b9d6dd25a7efd562bffb95eadbf96bfffc823df690dd0df"
 
 [[files]]
 file = "kubejs/server_scripts/startup_checks.js"
-hash = "99c2acbf7790743275b8017845815bc9ab637b763afcf3466167ea7a56249e0e"
+hash = "304133a80ae374b0ff944b3ccec2713092b1c3f00c3798644437873164a713bf"
+
+[[files]]
+file = "mods/accessories.pw.toml"
+hash = "ee096237cb56c7923b21340657cf9e041230875c837ff5ce02bf8e747dcccd7c"
+metafile = true
+
+[[files]]
+file = "mods/akashic-tome.pw.toml"
+hash = "18a5b572a9afdb84b24f5c58c4a53022158f8db746dde95531b780d4713f3fc8"
+metafile = true
+
+[[files]]
+file = "mods/alltheleaks.pw.toml"
+hash = "086cb09b402389a49e01f984e1898dd688b490fba4c42fef9ca274b5dc5f648a"
+metafile = true
+
+[[files]]
+file = "mods/almostunified.pw.toml"
+hash = "3805fe2877cffdae5e7bf74d85069a2535daa39a0f3ed766755be49294a07680"
+metafile = true
 
 [[files]]
 file = "mods/amplified-nether.pw.toml"
@@ -182,23 +1662,23 @@ hash = "9efd2467725934e660f256346950d4e10ca44f034475ce8909a29fe0790dd5cc"
 metafile = true
 
 [[files]]
-file = "mods/apothic-attributes.pw.toml"
-hash = "8f5f05a72596ecc0dd11be483785c8a521e987dc2fe6d2fef212c2a382a0c779"
+file = "mods/apotheosis.pw.toml"
+hash = "b2e1d98c6778c0c4fcbff4afad1a5c944478d56b24326c8c549b0e484f89a803"
 metafile = true
 
 [[files]]
-file = "mods/apothic-enchanting.pw.toml"
-hash = "0d3ca07f510b7674932be8e109f394ab23aa4cd1aee04020ea0d509a0d1dd619"
+file = "mods/apothic-attributes.pw.toml"
+hash = "39c77ded3382f9ccd9c93e3953f7426c27cd9f16e93224125f061ea7b519e087"
+metafile = true
+
+[[files]]
+file = "mods/apothic-spawners.pw.toml"
+hash = "781fe924f8038f4b54d326b6d90104e56b4639e6d7439ea361165c8d22c97113"
 metafile = true
 
 [[files]]
 file = "mods/architectury-api.pw.toml"
-hash = "657a01a86bbf8617e4726c77df08f708e43a3db12db74b837eebd8eb1d93faae"
-metafile = true
-
-[[files]]
-file = "mods/artifacts.pw.toml"
-hash = "416b7f130791397fb2ceb9e89ce3fd0e870f207c8e40b759c069cb58b7544314"
+hash = "187eafde5974beee1263538b462b7b8fe2fc8948c5d413980d9796d55928580b"
 metafile = true
 
 [[files]]
@@ -212,12 +1692,43 @@ hash = "9fa3eff2ed40627ffc33d07f79c83838dee2b801cf5516c04812d13d40270a96"
 metafile = true
 
 [[files]]
-file = "mods/chunkupkeep-0.1.0.jar"
-hash = "d2f8c767786aa3f5cb144c691752fa81d92398c9dd5f29c4f7ac59a121ed0513"
+file = "mods/charms.pw.toml"
+hash = "7e7ad919d76ab722c7ea77eb470bf5c77aff26dfd200fadfa253dcf8710dcf41"
+metafile = true
+
+[[files]]
+file = "mods/chunky.pw.toml"
+hash = "40d64156d669ea34e3b3a70c0fc7d6568023c0d2e9d8aa2ced83c4856657d41d"
+metafile = true
+
+[[files]]
+file = "mods/clientsort.pw.toml"
+hash = "bc8f73d505924c9e0f05da43e0a232532b845287b26aa27abde2410971b0e278"
+metafile = true
+
+[[files]]
+file = "mods/cloth-config.pw.toml"
+hash = "75181b55e0407d1fca1e2f346c6501f919f5109545990ddfb66db9cd1b771f8a"
+metafile = true
+
+[[files]]
+file = "mods/cloudworks-api.pw.toml"
+hash = "4caf3cd133704b9a631b0d46de21cba7bcad102f4aec79598b270a6a37673381"
+metafile = true
+
+[[files]]
+file = "mods/clumps.pw.toml"
+hash = "2acaff560bbda5741538528a2967355ec86a8f7564adba0b2316989c66892374"
+metafile = true
 
 [[files]]
 file = "mods/compass-to-map-xaeros.pw.toml"
 hash = "5f2392473cc76d2d92fade93480b4141030627572143eba506fa62c2fe27a1d3"
+metafile = true
+
+[[files]]
+file = "mods/continuity-neoforged.pw.toml"
+hash = "52f66b4a07ed67b7129ab6a6238eb6d9fb472f451e778309405543011888a77f"
 metafile = true
 
 [[files]]
@@ -251,8 +1762,8 @@ hash = "dcbb37e828a2f915e64a2ef839a742761a553a2e3b923b000ffba95db7503ac3"
 metafile = true
 
 [[files]]
-file = "mods/create-enchantment-industry.pw.toml"
-hash = "5f76bdf0fe120e62cc3ae298e911727fa45c70dd191fd9c2b213029c7601576c"
+file = "mods/create-estrogen.pw.toml"
+hash = "2e6b4b91ba3df20af4e4ff370a1ee2cd97211b066cd09c2c9f801ec96d592b63"
 metafile = true
 
 [[files]]
@@ -281,12 +1792,28 @@ hash = "e5052e0fcba9af1e3c6c0734829b441bc5a23012108bf203ca01825ca12ff6b1"
 metafile = true
 
 [[files]]
-file = "mods/createskybound-0.1.0.jar"
-hash = "7269d1c1baf7163f39b1f1e118dd41d92fc9d21a4057f0eb0d4f8434ae1064f3"
+file = "mods/createloconautics.pw.toml"
+hash = "075bbff94d93dc64557e5b4439402e98c46ca0444f7e779d66ef81070f25a4d0"
+metafile = true
+
+[[files]]
+file = "mods/critters-and-companions.pw.toml"
+hash = "b065a8cb99a887abb2c434b84e3fa84f1e62cf500b1b9f50c86a4b48e4bdcc4f"
+metafile = true
 
 [[files]]
 file = "mods/curios.pw.toml"
 hash = "36debf7653e95a855b4fedacc19027cf2e01960fc0b6d55ef2ffbffbcb455690"
+metafile = true
+
+[[files]]
+file = "mods/cynosure.pw.toml"
+hash = "a7597b3a9fb7eeabede31287082fc8b5274e2ec3b42a0ce3672c4a867f09c9c5"
+metafile = true
+
+[[files]]
+file = "mods/diegesis.pw.toml"
+hash = "cf25480b6f6207fff8b1d60b041ff8b7a03717a39fcce734a7c4139fac861a75"
 metafile = true
 
 [[files]]
@@ -301,12 +1828,56 @@ metafile = true
 
 [[files]]
 file = "mods/distanthorizons.pw.toml"
-hash = "0c20fea3407ed0db85b4b171f1820a24987f2659946fadd30bae044205041b09"
+hash = "6d37de7b436e094a7834d51b5d9d803653ab445e1041853f32a61599b054c7bf"
+metafile = true
+
+[[files]]
+file = "mods/dynamic-fps.pw.toml"
+hash = "ae6fd52d8bdcbeca5bbe6db840f22f92c1928fe0fda22017b19612b9b00a245a"
+metafile = true
+
+[[files]]
+file = "mods/eating-animation-forge.pw.toml"
+hash = "36ca501773cbda3b0df3ab3fec5188337fe4f4dd7918dcf0a7fbb5965b1c41c8"
+metafile = true
+
+[[files]]
+file = "mods/emf-compat-core.pw.toml"
+hash = "02da0e08e5e62158b20f6c613562a273d5561d0e55340885049d4d09d701b94e"
 metafile = true
 
 [[files]]
 file = "mods/emi.pw.toml"
 hash = "67bb77eae0b644960be3b1074178ceb5d54facbb42f326981b9d94625238a54a"
+metafile = true
+
+[[files]]
+file = "mods/emp_engines-0.1.0.jar"
+hash = "d14a58ef6304f71584114539972bda0659243327f3b1781278cd7f35fb5b0482"
+
+[[files]]
+file = "mods/entity-model-features.pw.toml"
+hash = "c875585a3269432ba23b379665cb287bd88517c7dbc1a22d0b5df9294f0a2ba4"
+metafile = true
+
+[[files]]
+file = "mods/entity-texture-features-fabric.pw.toml"
+hash = "eae10750ed0a056674afed95c354d75da1e9213eaacaa0201d25bdcbe315a1cc"
+metafile = true
+
+[[files]]
+file = "mods/entityculling.pw.toml"
+hash = "d518db51c2502b5b04d6ca4add6a2b3e862a0af15e7a65f0ab83180778adb604"
+metafile = true
+
+[[files]]
+file = "mods/entitytexturefeatures.pw.toml"
+hash = "ed1b9c3018ec4e6afbaafd1544138a4f11bc211683ecf9c5d28b42553f60e8c7"
+metafile = true
+
+[[files]]
+file = "mods/estrogen.pw.toml"
+hash = "e46517fc2ddee220b180b7d628d6e0e3c757a3461d0329696fdb491ad8c98b23"
 metafile = true
 
 [[files]]
@@ -316,7 +1887,17 @@ metafile = true
 
 [[files]]
 file = "mods/expresearch-0.1.0.jar"
-hash = "eda7d8e7223d3e38928068b95f8629bbe88e677d00a52cc3dbe27a2e592ae0ef"
+hash = "9eb221798e38d890ddb37bfce293728d5a6dd8bf48059a6cf1446f464f691795"
+
+[[files]]
+file = "mods/farmers-delight.pw.toml"
+hash = "d9ed9ac8e0db9db29078dafa22bc2d86ac702f10863ae7cb1d5245111c5ea17b"
+metafile = true
+
+[[files]]
+file = "mods/ferrite-core.pw.toml"
+hash = "73360e397134d238ee8fd21d33fd7f9275e9441f74f8f1b6ed92278877c0b9f1"
+metafile = true
 
 [[files]]
 file = "mods/ftb-chunks-forge.pw.toml"
@@ -339,13 +1920,33 @@ hash = "c21c2308684a75cda7dd9d557d129c9f89f49be527da3d5aa675fff444c11f5e"
 metafile = true
 
 [[files]]
+file = "mods/fwa.pw.toml"
+hash = "39b1386f97b42b00b047b9496feb13f2f7d407b2d4acecf3b51b35860fe54d2d"
+metafile = true
+
+[[files]]
+file = "mods/fzzy-config.pw.toml"
+hash = "f2849c357f9c82d017ff71c6d5e91ac8e51d6b0f2de9e7ae8d95bfb81759cd63"
+metafile = true
+
+[[files]]
 file = "mods/geckolib.pw.toml"
 hash = "35779b39ddc06059ec483b33de2ecfdc3adb95c0a49e69b6701fb0024827e2f5"
 metafile = true
 
 [[files]]
-file = "mods/immersive-engineering.pw.toml"
-hash = "901106fc6fcb4dcb86c13dd8c1dfb0d26e048387fec5bd610d06082242bd786a"
+file = "mods/gml.pw.toml"
+hash = "892c3b85c8a0c86e799a5dd2a97f016db9f71ae8b30f893908d1cf6e57cb7acc"
+metafile = true
+
+[[files]]
+file = "mods/hands-on-delight.pw.toml"
+hash = "6d13bcb7c696ab85c5dd29d1de7d75f922416f47b949d017e67dcf300d3d0541"
+metafile = true
+
+[[files]]
+file = "mods/immediatelyfast.pw.toml"
+hash = "4601b9be31b6e131dca8a148c974d015444bcac7c82fcb66fbd8751a67933a5d"
 metafile = true
 
 [[files]]
@@ -359,6 +1960,11 @@ hash = "4de3e4a1a49e332c1ad313283e0403c4273b628d634c17a9ff0c9da3d6b67f9a"
 metafile = true
 
 [[files]]
+file = "mods/kotlin-for-forge.pw.toml"
+hash = "712a69b3569a8055979de6eea262068535fe182dffb3833e53e5833e9cbf9766"
+metafile = true
+
+[[files]]
 file = "mods/kubejs-create.pw.toml"
 hash = "531aa276b74eabc24566c57412527767238c74ee16b9c646dff511f56dba990c"
 metafile = true
@@ -369,8 +1975,18 @@ hash = "be9f3f981dd69822b4a3e5ab6fd677ec69a4e01dcf66c62e239b6ef65f31f0fd"
 metafile = true
 
 [[files]]
+file = "mods/lithium.pw.toml"
+hash = "51e129832b04acd57da470fc41725bad5e101b6a6b1d4901fd8ea7a92b14e13d"
+metafile = true
+
+[[files]]
 file = "mods/lithostitched.pw.toml"
 hash = "c0611d8448bc043f372a008a435e14aa238ba8fca52fd1d79634424576ea9e12"
+metafile = true
+
+[[files]]
+file = "mods/longwings.pw.toml"
+hash = "378ac3708928c86c03d7e8f1436b8d7c8dbef65ee00c905a79b73aedfa1fbb05"
 metafile = true
 
 [[files]]
@@ -394,24 +2010,78 @@ hash = "1bf9a73f7f3879aeed5e6d482a5e864b036e5659cc0e2d0c1f8a8ac8d67507c0"
 metafile = true
 
 [[files]]
+file = "mods/mmr-moogs-mineshafts-reimagined.pw.toml"
+hash = "d86ad4b0537118170ee50ffda8e8638cad932febd06b33ca920166d7c51ea67b"
+metafile = true
+
+[[files]]
+file = "mods/modernfix.pw.toml"
+hash = "ef65836e005bd42a0f40df30a94eba1ad7ee5ed3194b11eafbeadc64edb44252"
+metafile = true
+
+[[files]]
+file = "mods/moogs-structure-lib.pw.toml"
+hash = "ebd63b777dae82396b65a4e63b1a6fbb285ce365036437d48fd65d0868a9e4de"
+metafile = true
+
+[[files]]
+file = "mods/moonlight.pw.toml"
+hash = "b14b3d7f88512f23bccca8e2f133e52e84307679b6eba4e818ce13e8f87e503d"
+metafile = true
+
+[[files]]
+file = "mods/naturalist.pw.toml"
+hash = "607da40a1b301721af35c07c3ee5eb06f82c2a13722037d0cd7d2584ab2dbe57"
+metafile = true
+
+[[files]]
 file = "mods/no-mob-farms.pw.toml"
 hash = "76e79a6e34f2ae55f447e470bbd290bc561e515c668115b7223b8d09228ca216"
 metafile = true
 
 [[files]]
-file = "mods/numismatics.pw.toml"
-hash = "840eb517a83c586b9f543ab9781d4c8529b6fedf2d679f411577c7a583e50fe5"
+file = "mods/noisium.pw.toml"
+hash = "b3e831b3e4d6ddbf23806b0fec6087eca264af1ebc04e747c89024972aaa8607"
+metafile = true
+
+[[files]]
+file = "mods/not-enough-animations-emf-compat.pw.toml"
+hash = "6cf7b5e139890e94b43c6e78a1c1e65f6595055c58b92e2daf8119923d8e5278"
+metafile = true
+
+[[files]]
+file = "mods/not-enough-animations.pw.toml"
+hash = "fd84fcf376910b659fdfbcc2401aa545400b0d7c65834eb2fe22bae3a3c921c2"
+metafile = true
+
+[[files]]
+file = "mods/owo-lib.pw.toml"
+hash = "a7fd33e3171967cf90314c3a1147769b051315b7db4f30e7c51304d0d3ef4dee"
+metafile = true
+
+[[files]]
+file = "mods/particle-rain.pw.toml"
+hash = "7d1d55e398c4c02a4845969bddadf890d57d95d970b67fb36338e28af593733d"
+metafile = true
+
+[[files]]
+file = "mods/particular-reforged.pw.toml"
+hash = "943b9f94381ecbf519e5d8530d6eae804e8e6d284bcde27fb7b5e242cefe5d5f"
+metafile = true
+
+[[files]]
+file = "mods/patchouli.pw.toml"
+hash = "3718e8a37d0dc2939cc350cce74bcb9c36b59f48baf4560e62804f7ca6478185"
 metafile = true
 
 [[files]]
 file = "mods/placebo.pw.toml"
-hash = "d94791108548d174758d587440c656f1a56884083fa3151bf90b515126482435"
+hash = "1762970777e293ba6d7a6a7b43dde2ac87604820e0fd90dd712beb744d068266"
 metafile = true
 
 [[files]]
-file = "mods/productive-metalworks.pw.toml"
-hash = "694d12649998576224bbaa1b13939e1fd6e099320d73a0c5304e442f3c037652"
-metafile = true
+file = "mods/researchenchanting-0.1.0.jar"
+hash = "b03be9aac06caaea912375bbc0cf096c2f4a0982ffb999d11ef9c9298e151d71"
 
 [[files]]
 file = "mods/rhino.pw.toml"
@@ -429,8 +2099,8 @@ hash = "fadb5c9cfe145e51992894fe57209fc8f1696ef892ee9702a24c6205f042e9b2"
 metafile = true
 
 [[files]]
-file = "mods/silent-gear-metalworks.pw.toml"
-hash = "07ef9dc9aaec17f47b839b3a1063744b89a7a859177e8fc208c4e2b3223c718a"
+file = "mods/shatterbyte-lib.pw.toml"
+hash = "919deaa10fc414f61ffe85af18100cbd169e1535b6a822eddb18ed19b5cbacf2"
 metafile = true
 
 [[files]]
@@ -444,8 +2114,17 @@ hash = "c69dcffbc7e5fd5a78a8292d696d589be53e9a6c3edbb8317d9fc441b54589f9"
 metafile = true
 
 [[files]]
+file = "mods/silentraids-0.1.0.jar"
+hash = "b90894399d7233a902ba2ff80b2eca71ee7ee05abd460623ab4722384695684d"
+
+[[files]]
 file = "mods/simple-voice-chat.pw.toml"
 hash = "6f9502735fcac7a35468358e2aa0fd9333b12df885db3325c472d298ce315a72"
+metafile = true
+
+[[files]]
+file = "mods/slice-and-dice.pw.toml"
+hash = "3c24accda8011a6a5e04c49c40e39617bb04ab3a549d8f2e8180d3246fddac39"
 metafile = true
 
 [[files]]
@@ -459,6 +2138,21 @@ hash = "593fa7b30ab016aa45be07bd6bef3a9f160ed0f24689850d60bf84995d69b843"
 metafile = true
 
 [[files]]
+file = "mods/spice-of-life-carrot-edition.pw.toml"
+hash = "e520ad446364dff7dd50896108a96140f3f5598b72003dade5b17308fa9ef2a9"
+metafile = true
+
+[[files]]
+file = "mods/streams-reflowing.pw.toml"
+hash = "dd16193072c2e3eb2f44946c71e60c014f24b26906d361194ec71237fa9c4aa0"
+metafile = true
+
+[[files]]
+file = "mods/supplementaries.pw.toml"
+hash = "6b7fe7dddd1ae7b41e2de7ef622981a2a1daad26c9a164e084c8aeffb47e8c30"
+metafile = true
+
+[[files]]
 file = "mods/tectonic.pw.toml"
 hash = "dd46fad79cf33a00123be0a74c73581da72cd98503ef23822a624a08f4b10ff2"
 metafile = true
@@ -469,13 +2163,56 @@ hash = "da7ee99189ad35aac094919fe33cac647d98533b23c228f10d4811f08989e2b8"
 metafile = true
 
 [[files]]
+file = "mods/the-roads-more-travelled.pw.toml"
+hash = "5a73fcc5300216f4495215fa182638c01771e916dbd6eef4da16953786b0cd6e"
+metafile = true
+
+[[files]]
+file = "mods/tieredfoundry-0.1.0.jar"
+hash = "943da100574a8b4cf32be26d10bbd44ea02c67d76a05644d88ce9e7d21c2255d"
+
+[[files]]
+file = "mods/tmrv.pw.toml"
+hash = "40f7d1c072b54e11492e7774835901d4f5d757b01cac54947657695f580afd3a"
+metafile = true
+
+[[files]]
+file = "mods/touch-and-motion.pw.toml"
+hash = "861df11a57a8c81ba253e1a14953a2310f6d04ea7c3eb9fdfb3e29b02deccfaa"
+metafile = true
+
+[[files]]
 file = "mods/trek.pw.toml"
 hash = "856519bd5d0f0736c86a2ebbc833b8499075be4b1d6613988f4e5104ba2d9a32"
 metafile = true
 
 [[files]]
+file = "mods/vercte-satchels.pw.toml"
+hash = "ead79d2832279b9349eac8ef5279e52c66bb3360f4b59754ab2806ba4fa8e16d"
+metafile = true
+
+[[files]]
+file = "mods/vics-point-blank.pw.toml"
+hash = "4b11f8fdedd3b99842f6d9d99334955c2aafebe6a8d7f4d4e2521b74c07e01d9"
+metafile = true
+
+[[files]]
+file = "mods/vortylib.pw.toml"
+hash = "5c5fa1367d21c666d0c211883b7e1c16ccfe605f1de8f999b600f806cfdd6e7a"
+metafile = true
+
+[[files]]
 file = "mods/wabi-sabi-structures.pw.toml"
 hash = "6d054c36efe3925eb6309abd10f46cf3672790353af8d6e53cc45a33acac274f"
+metafile = true
+
+[[files]]
+file = "mods/weatheredmaps-0.1.0.jar"
+hash = "4d8bf05621e91f314bc990ba5aa0af370a286dedaaa7ed6cafa72fbf4c0acac5"
+
+[[files]]
+file = "mods/weavers-paradise.pw.toml"
+hash = "1a63086a3cbbf23f7d7ca5378551c45ca1750c42a7d360bfa6c76a7bf0b017ad"
 metafile = true
 
 [[files]]
@@ -489,6 +2226,16 @@ hash = "3a8e91aecdb602039ba1f7445bbf6b64cc5a46344339a3ffaf3b2e3eb2f5bcbc"
 metafile = true
 
 [[files]]
+file = "mods/yacl.pw.toml"
+hash = "539f362e9e192cf3b2813e0dfdfc51a5e6814129c6e82a9733842529beea6242"
+metafile = true
+
+[[files]]
+file = "mods/yagm.pw.toml"
+hash = "4e9ac463ab407f9282c8c43355d94af0f1768bff9b157acb7877bdf64805dca6"
+metafile = true
+
+[[files]]
 file = "mods/yungs-api.pw.toml"
 hash = "dde31f05114c72cb2f58e522417487730b872e456f77fdd02c032c9235791f6c"
 metafile = true
@@ -499,13 +2246,38 @@ hash = "1496ffa30020676979e65921b91e583a2fdc77e50001e2ed55f99edf1a0ae880"
 metafile = true
 
 [[files]]
-file = "mods/yungs-better-mineshafts.pw.toml"
-hash = "e839608ebc974e9e7819adc7bf29132ea86fc41b46af540fe0fa39b2007b2439"
+file = "mods/yungs-better-nether-fortresses.pw.toml"
+hash = "50c1731148d91a4ef05cfc47f759ca8fb3dad254e15ce4ecc5732d6fbfa68637"
 metafile = true
 
 [[files]]
-file = "mods/yungs-better-nether-fortresses.pw.toml"
-hash = "50c1731148d91a4ef05cfc47f759ca8fb3dad254e15ce4ecc5732d6fbfa68637"
+file = "resourcepacks/create-new-age-retexture.pw.toml"
+hash = "35cd9caf8478225d77e8e817be0800d4361bf935b9c976bf0d329a874975656f"
+metafile = true
+
+[[files]]
+file = "resourcepacks/fa-player-extension.pw.toml"
+hash = "b10943dd0c7472c8782d27e1239a851dfa41ee21608dff9207b84c0a81b56e20"
+metafile = true
+
+[[files]]
+file = "resourcepacks/fresh-animations.pw.toml"
+hash = "6a489b37b949921beffb24adb91d6f572c4ee82668b7dc15b8aaedd767476aad"
+metafile = true
+
+[[files]]
+file = "resourcepacks/pmweather-connected-glass.pw.toml"
+hash = "5b0acb0b585c9e2310d41b06780c11bb55cd9b18075ab0470546ddad3bf1435b"
+metafile = true
+
+[[files]]
+file = "resourcepacks/recolourful-containers-gui-hud-dark.pw.toml"
+hash = "c3570d82441d4a9cd56555a4fe3cf311ad0f28782a1c87acc7ea5dce9fe4210a"
+metafile = true
+
+[[files]]
+file = "resourcepacks/recolourful-containers-gui.pw.toml"
+hash = "a7bb93f1051b25e4be582fa618f0c16571cb4892c10aafefc6bc1a23c20c694b"
 metafile = true
 
 [[files]]
@@ -515,7 +2287,7 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/ComplementaryReimagined_r5.9.3.zip.txt"
-hash = "e99ca941a426f15bc5e096abdc90b7e0a78006f0358f90033b6c7a6350b65181"
+hash = "31e9a1eb2011e810345f3ca0ba0079edd4f4c3a4666302cf9bfd20b73a446711"
 
 [[files]]
 file = "shaderpacks/complementary-reimagined.pw.toml"

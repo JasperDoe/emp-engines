@@ -1,5 +1,5 @@
 @echo off
-rem Skybound SMP server start (Windows). Installs NeoForge on first run.
+rem Empyrean Engines server start (Windows). Installs NeoForge on first run.
 setlocal
 cd /d "%~dp0"
 set /p NEO=<neoforge-version.txt

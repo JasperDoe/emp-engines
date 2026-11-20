@@ -1,0 +1,58 @@
+{
+  "type": "apotheosis:elite",
+  "basic_data": {
+    "constraints": {
+      "dimensions": [
+        "minecraft:overworld"
+      ]
+    },
+    "name": "Bone Sentry",
+    "valid_gear_sets": {
+      "haven": [
+        "#haven_ranged"
+      ]
+    },
+    "weights": {
+      "haven": {
+        "quality": 0.1,
+        "weight": 100
+      }
+    }
+  },
+  "entities": [
+    "minecraft:skeleton",
+    "minecraft:stray",
+    "minecraft:bogged"
+  ],
+  "stats": {
+    "attribute_modifiers": [
+      {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "add_value",
+        "value": {
+          "min": 6,
+          "max": 14
+        }
+      },
+      {
+        "attribute": "apothic_attributes:arrow_damage",
+        "operation": "add_multiplied_total",
+        "value": {
+          "min": 0.2,
+          "max": 0.35
+        }
+      },
+      {
+        "attribute": "minecraft:generic.knockback_resistance",
+        "operation": "add_value",
+        "value": 0.3
+      }
+    ],
+    "enchant_chance": 0.25,
+    "enchantment_levels": {
+      "primary": 15,
+      "secondary": 8
+    }
+  },
+  "success_chance": 0.0
+}

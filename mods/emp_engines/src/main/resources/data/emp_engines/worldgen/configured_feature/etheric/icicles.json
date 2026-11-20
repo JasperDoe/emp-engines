@@ -1,0 +1,38 @@
+{
+  "type": "emp_engines:crystal_spike",
+  "config": {
+    "body": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 5,
+          "data": {
+            "Name": "minecraft:packed_ice"
+          }
+        },
+        {
+          "weight": 1,
+          "data": {
+            "Name": "minecraft:blue_ice"
+          }
+        }
+      ]
+    },
+    "core": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:blue_ice"
+      }
+    },
+    "tip": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:packed_ice"
+      }
+    },
+    "min_height": 6,
+    "max_height": 20,
+    "giant_chance": 10,
+    "hanging": true
+  }
+}

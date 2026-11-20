@@ -8,7 +8,7 @@
   "expresearch.tooltip.use": "Right-click to learn it for you and your team",
   "expresearch.screen.pick": "Pick a research in the tree",
   "expresearch.screen.known": "Already researched",
-  "expresearch.screen.xp": "Cost: %s XP points + samples",
+  "expresearch.screen.xp": "Cost: %s XP",
   "expresearch.screen.research": "Research",
   "expresearch.msg.unlocked": "%s learned: %s",
   "expresearch.msg.already_known": "Your team already knows this",

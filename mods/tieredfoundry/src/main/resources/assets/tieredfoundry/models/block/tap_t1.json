@@ -1,0 +1,6 @@
+{
+  "parent": "tieredfoundry:block/template/faucet",
+  "textures": {
+    "tex": "tieredfoundry:block/tier1/tap"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "gear": "armour",
+  "icon": "minecraft:iron_chestplate",
+  "lines": [
+    {
+      "enchantment": "minecraft:protection",
+      "max_level": 4,
+      "resource": "minecraft:iron_ingot",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "enchantment": "minecraft:fire_protection",
+      "max_level": 4,
+      "resource": "minecraft:blaze_powder",
+      "x": 1,
+      "y": 1,
+      "requires": {
+        "enchantment": "minecraft:protection",
+        "level": 1
+      }
+    },
+    {
+      "enchantment": "minecraft:blast_protection",
+      "max_level": 4,
+      "resource": "minecraft:gunpowder",
+      "x": 1,
+      "y": 2,
+      "requires": {
+        "enchantment": "minecraft:protection",
+        "level": 1
+      }
+    },
+    {
+      "enchantment": "minecraft:projectile_protection",
+      "max_level": 4,
+      "resource": "minecraft:arrow",
+      "x": 1,
+      "y": 3,
+      "requires": {
+        "enchantment": "minecraft:protection",
+        "level": 1
+      }
+    },
+    {
+      "enchantment": "minecraft:thorns",
+      "max_level": 3,
+      "resource": "minecraft:cactus",
+      "x": 2,
+      "y": 4,
+      "requires": {
+        "enchantment": "minecraft:protection",
+        "level": 2
+      }
+    }
+  ]
+}

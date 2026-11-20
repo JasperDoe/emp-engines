@@ -1,0 +1,12 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "item": "minecraft:ancient_debris"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_ancient_debris",
+    "amount": 100
+  },
+  "temperature": 1500,
+  "ore": true
+}

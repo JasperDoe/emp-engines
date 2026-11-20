@@ -1,7 +1,0 @@
-{
-  "category": "skybound:automation", "title": "Electricity Age", "icon": "createaddition:alternator", "x": 4, "y": 0,
-  "description": "Crafts & Additions (alternators, motors, rolling mill, wires) and Immersive Engineering's powered machines.",
-  "parents": ["skybound:brass_age"],
-  "xp": 2920, "samples": [{ "item": "create:precision_mechanism", "count": 4 }, { "item": "minecraft:copper_ingot", "count": 32 }],
-  "stages": ["skybound:electricity_age"]
-}

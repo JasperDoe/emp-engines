@@ -1,0 +1,22 @@
+{
+  "type": "silentgear:shaped_gear_crafting",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "type": "silentgear:material",
+      "gear_type": "silentgear:boots",
+      "not_categories": [
+        "emp_cast_only"
+      ],
+      "part_type": "silentgear:main"
+    }
+  },
+  "pattern": [
+    "# #",
+    "# #"
+  ],
+  "result": {
+    "count": 1,
+    "id": "silentgear:boots"
+  }
+}

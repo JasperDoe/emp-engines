@@ -1,0 +1,13 @@
+name = "CloudWorks API"
+filename = "CloudWorksAPI-1.1.0-1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/tcetgI0m/versions/Yo3zjD7p/CloudWorksAPI-1.1.0-1.21.1.jar"
+hash-format = "sha512"
+hash = "671e0b96ba85ed88267c058311abecea5b93d804e9d3b5d6f480c7f3b0836bf7e81229a3864ab652915f6047cdbb5c6a252aa8d2778353fc5e7a7ccdb9346dc8"
+
+[update]
+[update.modrinth]
+mod-id = "tcetgI0m"
+version = "Yo3zjD7p"

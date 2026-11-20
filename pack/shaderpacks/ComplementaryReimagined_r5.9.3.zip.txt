@@ -1,4 +1,4 @@
-# Skybound SMP defaults for Complementary Reimagined.
+# Empyrean Engines defaults for Complementary Reimagined.
 # Light performance (between the Low and Medium profiles), a soft haze that
 # hides low-detail Distant Horizons terrain, and volumetric clouds below the
 # sky villages. Players can change any of this in-game (Esc > Options >

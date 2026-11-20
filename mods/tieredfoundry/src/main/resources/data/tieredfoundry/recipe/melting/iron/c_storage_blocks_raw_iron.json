@@ -1,0 +1,12 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:storage_blocks/raw_iron"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_iron",
+    "amount": 810
+  },
+  "temperature": 950,
+  "ore": true
+}

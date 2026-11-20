@@ -1,0 +1,13 @@
+name = "Weavers Paradise"
+filename = "weaversparadise-1.6.4.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Q5xngUCT/versions/ua1037dF/weaversparadise-1.6.4.jar"
+hash-format = "sha512"
+hash = "c1d959c89e156e7d0a3678f0424d2c2326acc84129582ab33b369dba5a02fcf44176c63ad980920ae4c0f77f1aee6b4831c794135d0dd279780a3d23e5c749ca"
+
+[update]
+[update.modrinth]
+mod-id = "Q5xngUCT"
+version = "ua1037dF"

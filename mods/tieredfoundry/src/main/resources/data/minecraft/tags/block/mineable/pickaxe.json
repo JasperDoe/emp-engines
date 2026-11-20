@@ -1,0 +1,14 @@
+{
+  "values": [
+    "tieredfoundry:fire_bricks",
+    "tieredfoundry:fire_brick_wall",
+    "tieredfoundry:foundry_controller",
+    "tieredfoundry:solid_fuel_heater",
+    "tieredfoundry:lava_heater",
+    "tieredfoundry:air_duct",
+    "tieredfoundry:foundry_drain",
+    "tieredfoundry:foundry_tap",
+    "tieredfoundry:casting_table",
+    "tieredfoundry:casting_basin"
+  ]
+}

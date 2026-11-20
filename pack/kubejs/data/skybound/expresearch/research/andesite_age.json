@@ -1,6 +1,0 @@
-{
-  "category": "skybound:automation", "title": "Andesite Age", "icon": "create:andesite_alloy", "x": 0, "y": 0,
-  "description": "Andesite alloy, shafts and cogs, water wheels, the millstone, press, mixer, fans, drills, saws and belts.",
-  "xp": 160, "samples": [{ "item": "minecraft:andesite", "count": 32 }, { "item": "minecraft:iron_nugget", "count": 16 }],
-  "stages": ["skybound:andesite_age"]
-}

@@ -1,0 +1,44 @@
+{
+  "type": "emp_engines:crystal_spike",
+  "config": {
+    "body": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 3,
+          "data": {
+            "Name": "minecraft:moss_block"
+          }
+        },
+        {
+          "weight": 2,
+          "data": {
+            "Name": "minecraft:mossy_cobblestone"
+          }
+        },
+        {
+          "weight": 2,
+          "data": {
+            "Name": "minecraft:dirt"
+          }
+        }
+      ]
+    },
+    "core": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:mossy_cobblestone"
+      }
+    },
+    "tip": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:moss_block"
+      }
+    },
+    "min_height": 6,
+    "max_height": 16,
+    "giant_chance": 10,
+    "hanging": true
+  }
+}

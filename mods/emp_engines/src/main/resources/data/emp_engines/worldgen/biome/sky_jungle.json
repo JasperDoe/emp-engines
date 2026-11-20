@@ -1,0 +1,126 @@
+{
+  "has_precipitation": true,
+  "temperature": 0.95,
+  "downfall": 0.9,
+  "effects": {
+    "sky_color": 7842047,
+    "fog_color": 12638463,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "particle": {
+      "options": {
+        "type": "minecraft:white_ash"
+      },
+      "probability": 0.0
+    },
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    },
+    "additions_sound": {
+      "sound": "minecraft:ambient.basalt_deltas.additions",
+      "tick_chance": 0.0011
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "minecraft:zombie",
+        "weight": 95,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:skeleton",
+        "weight": 100,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:spider",
+        "weight": 90,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:creeper",
+        "weight": 90,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:enderman",
+        "weight": 15,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
+    "creature": [
+      {
+        "type": "minecraft:parrot",
+        "weight": 40,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "minecraft:chicken",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:ocelot",
+        "weight": 2,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "minecraft:panda",
+        "weight": 1,
+        "minCount": 1,
+        "maxCount": 2
+      }
+    ],
+    "ambient": [],
+    "axolotls": [],
+    "underground_water_creature": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "emp_engines:etheric/ore_coal",
+      "emp_engines:etheric/ore_iron",
+      "emp_engines:etheric/ore_copper"
+    ],
+    [
+      "minecraft:glow_lichen",
+      "emp_engines:etheric/hanging_jungle"
+    ],
+    [
+      "emp_engines:etheric/waterfall"
+    ],
+    [
+      "minecraft:bamboo_light",
+      "minecraft:trees_jungle",
+      "minecraft:flower_warm",
+      "minecraft:patch_grass_jungle",
+      "minecraft:patch_melon",
+      "emp_engines:etheric/underside_moss"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ]
+}

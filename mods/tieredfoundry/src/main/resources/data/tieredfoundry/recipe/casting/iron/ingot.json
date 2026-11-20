@@ -1,0 +1,13 @@
+{
+  "type": "tieredfoundry:casting",
+  "block": "table",
+  "pattern": "ingot",
+  "fluid": {
+    "tag": "c:molten_iron",
+    "amount": 90
+  },
+  "result": {
+    "id": "minecraft:iron_ingot",
+    "count": 1
+  }
+}

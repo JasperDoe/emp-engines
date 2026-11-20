@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:plates/brass"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_brass",
+    "amount": 90
+  },
+  "temperature": 900
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "tieredfoundry:block/tier1/drain_on",
+    "end": "minecraft:block/bricks"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "tieredfoundry:casting",
+  "block": "table",
+  "pattern": "plate",
+  "fluid": {
+    "tag": "c:molten_copper",
+    "amount": 90
+  },
+  "result": {
+    "id": "create:copper_sheet",
+    "count": 1
+  }
+}

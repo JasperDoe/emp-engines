@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="All Rights Reserved (placeholder textures from Tinkers' Construct, MIT, see LICENSE-tinkers.txt)"
+
+[[mods]]
+modId="tieredfoundry"
+version="0.1.0"
+displayName="Tiered Foundry"
+credits="Placeholder block, cast and molten fluid textures from Tinkers' Construct by SlimeKnights (MIT License)."
+description='''A foundry that grows in tiers: vanilla bricks and solid fuel heaters, a Create fan blowing into an air intake for alloying, fire bricks glazed with molten glass and lava heaters fed by Create pipes. Melts raw and crushed ores with a bonus per tier, casts ingots, nuggets, plates and blocks, with gold and sand casts and fluid filters.'''
+
+[[dependencies.tieredfoundry]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.tieredfoundry]]
+modId="create"
+type="required"
+versionRange="*"
+ordering="AFTER"
+side="BOTH"

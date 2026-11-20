@@ -1,0 +1,16 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="weatheredmaps"
+version="0.1.0"
+displayName="Weathered Maps"
+description='''Sealed treasure maps found in villages, crashed airships and other peaceful places. Unroll one and it marks the nearest unclaimed dungeon, pillager base or hostile fort.'''
+
+[[dependencies.weatheredmaps]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="BOTH"

@@ -1,0 +1,8 @@
+// TooManyRecipeViewers. TMRV rewrites this file with its full settings on each start.
+{
+	// Chapters hides locked items through JEI at runtime, which TMRV doesn't allow (and EXP Research's
+	// own EMI plugin already hides them), so its JEI plugin is switched off.
+	typeOverrides: {
+		"chapters:chapters_main": "DISABLED"
+	}
+}

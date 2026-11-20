@@ -5,7 +5,7 @@
 	group: "F02A3E854920CEED"
 	icon: {
 		count: 1
-		id: "immersiveengineering:ingot_steel"
+		id: "create:brass_ingot"
 	}
 	id: "1FF88932C1EC4636"
 	order_index: 3
@@ -17,7 +17,7 @@
 			]
 			icon: {
 				count: 1
-				id: "immersiveengineering:ingot_steel"
+				id: "create:brass_ingot"
 			}
 			id: "99B23FA3B8E06D0D"
 			shape: "gear"
@@ -25,108 +25,13 @@
 			tasks: [
 				{
 					id: "A782936E5BFF376D"
-					stage: "skybound:alloy_age"
+					stage: "emp_engines:alloy_age"
 					team_stage: false
 					type: "gamestage"
 				}
 			]
 			x: 0.0d
 			y: 0.0d
-		}
-		{
-			dependencies: [
-				"99B23FA3B8E06D0D"
-			]
-			id: "0B632D1E4278637F"
-			tasks: [
-				{
-					id: "5D74E823ABC5F2CE"
-					item: {
-						count: 1
-						id: "immersiveengineering:hammer"
-					}
-					type: "item"
-				}
-			]
-			x: 2.5d
-			y: -2.0d
-		}
-		{
-			dependencies: [
-				"0B632D1E4278637F"
-			]
-			id: "6D79E5BD18B1DCA9"
-			tasks: [
-				{
-					count: 27L
-					id: "D5974B8892835D68"
-					item: {
-						count: 1
-						id: "immersiveengineering:cokebrick"
-					}
-					type: "item"
-				}
-			]
-			x: 4.5d
-			y: -2.0d
-		}
-		{
-			dependencies: [
-				"6D79E5BD18B1DCA9"
-			]
-			id: "3B9F503039519367"
-			tasks: [
-				{
-					count: 16L
-					id: "AAB830EADED3F611"
-					item: {
-						count: 1
-						id: "immersiveengineering:coal_coke"
-					}
-					type: "item"
-				}
-			]
-			x: 6.5d
-			y: -2.0d
-		}
-		{
-			dependencies: [
-				"3B9F503039519367"
-			]
-			id: "B618FBDD4DC45E32"
-			tasks: [
-				{
-					count: 27L
-					id: "204F6A677679EF2B"
-					item: {
-						count: 1
-						id: "immersiveengineering:blastbrick"
-					}
-					type: "item"
-				}
-			]
-			x: 8.5d
-			y: -2.0d
-		}
-		{
-			dependencies: [
-				"B618FBDD4DC45E32"
-			]
-			id: "5226AD7C7CCFF81E"
-			shape: "hexagon"
-			tasks: [
-				{
-					count: 8L
-					id: "6F71D9A951972D83"
-					item: {
-						count: 1
-						id: "immersiveengineering:ingot_steel"
-					}
-					type: "item"
-				}
-			]
-			x: 10.5d
-			y: -2.0d
 		}
 		{
 			dependencies: [
@@ -200,7 +105,7 @@
 					id: "6D636F401C959B38"
 					item: {
 						count: 1
-						id: "productivemetalworks:fire_brick"
+						id: "minecraft:bricks"
 					}
 					type: "item"
 				}
@@ -220,7 +125,7 @@
 					id: "32030FECD2789B26"
 					item: {
 						count: 1
-						id: "productivemetalworks:black_foundry_controller"
+						id: "tieredfoundry:foundry_controller"
 					}
 					type: "item"
 				}
@@ -228,7 +133,7 @@
 					id: "F46562322BB5EB03"
 					item: {
 						count: 1
-						id: "productivemetalworks:black_foundry_drain"
+						id: "tieredfoundry:solid_fuel_heater"
 					}
 					type: "item"
 				}
@@ -236,7 +141,7 @@
 					id: "78FB84DD1A2F8915"
 					item: {
 						count: 1
-						id: "productivemetalworks:black_foundry_tank"
+						id: "tieredfoundry:foundry_drain"
 					}
 					type: "item"
 				}
@@ -254,7 +159,7 @@
 					id: "5F5B708B0CFDBFC0"
 					item: {
 						count: 1
-						id: "productivemetalworks:foundry_tap"
+						id: "tieredfoundry:foundry_tap"
 					}
 					type: "item"
 				}
@@ -262,7 +167,7 @@
 					id: "331D0CE1F88435DD"
 					item: {
 						count: 1
-						id: "productivemetalworks:casting_table"
+						id: "tieredfoundry:casting_table"
 					}
 					type: "item"
 				}
@@ -270,7 +175,7 @@
 					id: "4B284D033EDBDCDB"
 					item: {
 						count: 1
-						id: "productivemetalworks:casting_basin"
+						id: "tieredfoundry:casting_basin"
 					}
 					type: "item"
 				}

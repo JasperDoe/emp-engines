@@ -1,0 +1,71 @@
+{
+  "gear": "armour",
+  "icon": "minecraft:feather",
+  "lines": [
+    {
+      "enchantment": "minecraft:feather_falling",
+      "max_level": 4,
+      "resource": "minecraft:feather",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "enchantment": "minecraft:soul_speed",
+      "max_level": 3,
+      "resource": "minecraft:soul_sand",
+      "x": 1,
+      "y": 1,
+      "requires": {
+        "enchantment": "minecraft:feather_falling",
+        "level": 1
+      }
+    },
+    {
+      "enchantment": "minecraft:swift_sneak",
+      "max_level": 3,
+      "resource": "minecraft:leather",
+      "x": 2,
+      "y": 2,
+      "requires": {
+        "enchantment": "minecraft:feather_falling",
+        "level": 2
+      }
+    },
+    {
+      "enchantment": "minecraft:depth_strider",
+      "max_level": 3,
+      "resource": "minecraft:kelp",
+      "x": 0,
+      "y": 3
+    },
+    {
+      "enchantment": "minecraft:frost_walker",
+      "max_level": 2,
+      "resource": "minecraft:snowball",
+      "x": 1,
+      "y": 4,
+      "requires": {
+        "enchantment": "minecraft:depth_strider",
+        "level": 1
+      }
+    },
+    {
+      "enchantment": "minecraft:respiration",
+      "max_level": 3,
+      "resource": "minecraft:prismarine_shard",
+      "x": 0,
+      "y": 5
+    },
+    {
+      "enchantment": "minecraft:aqua_affinity",
+      "max_level": 1,
+      "resource": "minecraft:prismarine_crystals",
+      "x": 1,
+      "y": 6,
+      "requires": {
+        "enchantment": "minecraft:respiration",
+        "level": 1
+      }
+    }
+  ]
+}

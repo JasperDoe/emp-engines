@@ -1,0 +1,18 @@
+{
+  "type": "tieredfoundry:alloying",
+  "inputs": [
+    {
+      "tag": "c:molten_ancient_debris",
+      "amount": 40
+    },
+    {
+      "tag": "c:molten_gold",
+      "amount": 36
+    }
+  ],
+  "result": {
+    "id": "tieredfoundry:molten_netherite",
+    "amount": 9
+  },
+  "temperature": 1500
+}

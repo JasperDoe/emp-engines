@@ -1,0 +1,12 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:storage_blocks/raw_copper"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_copper",
+    "amount": 810
+  },
+  "temperature": 800,
+  "ore": true
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:spring_feature",
+  "config": {
+    "state": {
+      "Name": "minecraft:water",
+      "Properties": {
+        "falling": "true"
+      }
+    },
+    "requires_block_below": true,
+    "rock_count": 4,
+    "hole_count": 1,
+    "valid_blocks": [
+      "minecraft:stone",
+      "minecraft:dirt",
+      "minecraft:grass_block",
+      "minecraft:calcite",
+      "minecraft:moss_block",
+      "minecraft:light_blue_terracotta",
+      "minecraft:pink_terracotta",
+      "minecraft:magenta_terracotta",
+      "minecraft:rooted_dirt"
+    ]
+  }
+}

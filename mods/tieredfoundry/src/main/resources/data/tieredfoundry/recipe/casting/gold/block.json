@@ -1,0 +1,12 @@
+{
+  "type": "tieredfoundry:casting",
+  "block": "basin",
+  "fluid": {
+    "tag": "c:molten_gold",
+    "amount": 810
+  },
+  "result": {
+    "id": "minecraft:gold_block",
+    "count": 1
+  }
+}

@@ -1,0 +1,154 @@
+# ======================================================================================================
+#  Create: Empyrean Engines: server settings
+# ======================================================================================================
+#  Where this file lives:
+#   - pack/defaultconfigs/emp_engines-server.toml  (this file): copied into every NEW world.
+#   - <world>/serverconfig/emp_engines-server.toml: the copy a world actually uses. Edit that one for an
+#     existing world (singleplayer: saves/<world>/serverconfig; server: world/serverconfig). Changes apply
+#     the next time the world loads; most also apply live after a save.
+#  Ranges are enforced: an out-of-range value is reset to its default when the world loads.
+#
+#  Not in this file: the Etheric Skies terrain, biomes, ores and structures. Those are world-generation
+#  data built into the mod; tune them in tools/worldgen/etheric.toml (annotated) and rebuild.
+# ======================================================================================================
+
+
+# ------------------------------------------------------------------------------------------------------
+#  THE SKYWARD LAUNCHER
+# ------------------------------------------------------------------------------------------------------
+[launcher]
+	# Stress (SU) each Launcher Shaft Input takes, per RPM fed into it.
+	# Higher = launchers need bigger kinetic setups to charge. 0 = free.
+	# Range: 0.0 ~ 4096.0
+	inputStressImpact = 32.0
+
+	# Charge every launch needs, before the ship's weight is added.
+	# Each input adds (its RPM / 8) charge every tick: 20000 is ~40 s with one input at 256 RPM,
+	# ~80 s at 128 RPM, ~20 s with two inputs at 256 RPM.
+	# Range: 0 ~ 2147483647
+	baseCharge = 20000
+
+	# Extra charge needed per unit of ship mass (right-click the computer to see the mass).
+	# Higher = big ships take much longer to charge than small ones.
+	# Range: 0.0 ~ 1000000.0
+	chargePerMass = 40.0
+
+	# Weight limit: ship mass (Sable's mass, shown on the Navigation Console) each platform tile lifts.
+	# The limit is the platform's area times this: 6.4 gives 160 on 5 x 5, 518 on 9 x 9, ~7000 on 33 x 33.
+	# A ship over the limit can't launch.
+	# Range: 0.0 ~ 1000000.0
+	massPerTile = 6.4
+
+	# Largest launch platform, in blocks along one side (ring included).
+	# Range: 5 ~ 129
+	maxPlatformSize = 33
+
+	# Height of the cloud layer: where the launch breaks through (with a ripple), and above which the
+	# launch beams are drawn through the clouds. The pack's shader clouds sit at 224.
+	# Range: 0 ~ 2000
+	cloudHeight = 224
+
+	# Height the thrown part of a launch carries the ship to, before it coasts and fades to white.
+	# Keep it a little above cloudHeight. Capped by the world's height either way.
+	# Range: 0 ~ 2000
+	launchApex = 256
+
+
+# ------------------------------------------------------------------------------------------------------
+#  RUNS IN THE ETHERIC SKIES
+# ------------------------------------------------------------------------------------------------------
+[skyRuns]
+	# Minutes a run lasts, set by the WEAKEST pylon on the launcher.
+	# Range: 1 ~ 600
+	runMinutesTier1 = 30
+	runMinutesTier2 = 50
+	runMinutesTier3 = 70
+
+	# When the 'DIMENSION DESTABILISING' warnings start, in seconds before the run collapses.
+	# Range: 10 ~ 3600
+	warningSeconds = 300
+
+	# Falling below this height in the Etheric Skies drops you back into the Overworld sky.
+	# Range: -64 ~ 256
+	exitHeight = 8
+
+	# Height you reappear at in the Overworld after falling out of the Etheric Skies.
+	# Range: 0 ~ 2000
+	overworldDropHeight = 400
+
+
+# ------------------------------------------------------------------------------------------------------
+#  SKY RAIDERS (prototype: start raids with /skyraid start)
+# ------------------------------------------------------------------------------------------------------
+#  Fixed in code for now (ask to make any of these settings):
+#    warning before the ship appears 10 s; the archer at the helm casts off after 10 s;
+#    a derelict is removed 3 min after its ropes are gone; flee time 20 s (90 s with loot);
+#    witch potion every 7 s (Mining Fatigue I, 20 s); boarders' knockback resistance 70%;
+#    about 25% of the crew are archers (at least 1); up to 4 ropes.
+#  Per ship (set in-game with /skyraid config <ship> speed|turn): top speed (default by size:
+#    22 b/s under 600 blocks, 18 under 1500, else 15) and turn rate (default 25 deg/s).
+[raids]
+	# Raider ships offered in the gallery (/skyraid gallery), as structure ids from installed mods.
+	# A ship only raids once it's set up with /skyraid config (saved to config/emp_engines/raider_ships/).
+	# Ships saved there are offered even if they're not listed here.
+	raidShips = ["cr_aero_structures:pillager_airballoon", "cr_aero_structures:pillager_airship"]
+
+	# Gap in blocks between the raider's hull and yours while it's locked alongside.
+	# Smaller = shorter ropes, easier to cross; bigger = a longer rope walk.
+	# Range: 2 ~ 16
+	raidGap = 5
+
+	# Your crew is overwhelmed (looters go for your chests) when boarders on your deck outnumber the
+	# players aboard by this many. (Nobody aboard for 20 s also counts.)
+	# Range: 1 ~ 20
+	raidOverwhelmMargin = 3
+
+	# Stacks each looter carries off per trip. 0 = they never take anything.
+	# Range: 0 ~ 27
+	raidStacks = 3
+
+	# How far a boarding rope dips in the middle, as a fraction of its length (0.06 = a 20 block rope
+	# dips 1.2). Keep it small: players walk the ropes, and a deep dip makes the ends too steep.
+	# Range: 0.0 ~ 0.3
+	raidRopeSag = 0.06
+
+	# Seconds to break a boarding connector (either end of a rope), whatever the tool. Creative: instant.
+	# Range: 0.5 ~ 60.0
+	raidAnchorSeconds = 3.0
+
+	# Seconds to break one with Mining Fatigue on you (the raiders' witch throws it). Milk clears it.
+	# Range: 0.5 ~ 120.0
+	raidAnchorFatigueSeconds = 10.0
+
+	# A raider this many blocks clear of both ships (fallen or knocked off) is no longer part of the
+	# raid: it's removed and counts as dead for the raid bar.
+	# Range: 8 ~ 256
+	raidLostDistance = 32
+	# Raids start on their own against players on a ship high enough (see raidMinY).
+	# false = only by command (and Bad Omen does nothing).
+	naturalRaids = true
+	# Average minutes on a ship, high enough, between raids for one player. The chance starts at zero after a
+	# raid and rises the longer you go without one: rare at first, close to certain after about twice this.
+	# Each player keeps their own clock and any one of a crew brings the raid on the whole ship, so a crew is
+	# raided more often (2 players about every 42 min, 3 about every 35).
+	# Range: 5.0 ~ 1440.0
+	raidAverageMinutes = 60.0
+	# Raids only start on players at or above this height in the Overworld, so low transport and test
+	# flights are left alone. The clouds are at 224.
+	# Range: -64 ~ 448
+	raidMinY = 230
+	# The same height in the Etheric Skies, where the islands sit between Y 60 and 196 (0 = any height).
+	# Range: -64 ~ 448
+	raidMinYEtheric = 0
+	# A player with Bad Omen (an Ominous Bottle) on a ship high enough brings a raid at once, using up the effect.
+	raidBadOmen = true
+	# Most raids at once on the whole server (each raider ship is another physics body).
+	# Range: 1 ~ 16
+	raidMaxActive = 2
+
+# Nether portal keys: a portal frame gets a keyhole and won't light until an Obsidian Key is used on it.
+[netherKeys]
+	# Nether portals need a key. false = portals light as normal.
+	keyholes = true
+	# Portals built in the Nether light without a key (so nobody is stranded there).
+	freeInNether = true

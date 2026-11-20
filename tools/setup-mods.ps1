@@ -37,7 +37,9 @@ try {
         $mrArgs = @('-y', 'modrinth', 'add', $slug)
         if ($version) { $mrArgs = @('-y', 'modrinth', 'add', '--project-id', $slug, '--version-id', $version) }
         if ($platform -ne 'cf') { $ok = (Invoke-Logged $log $packwiz $mrArgs 180) -eq 0 }
-        if (-not $ok -and $platform -ne 'mr') { $ok = (Invoke-Logged $log $packwiz @('-y', 'curseforge', 'add', $slug) 180) -eq 0 }
+        $cfArgs = @('-y', 'curseforge', 'add', $slug)
+        if ($version) { $cfArgs = @('-y', 'curseforge', 'add', $slug, '--file-id', $version) }   # cf:slug@<file id> pins a file
+        if (-not $ok -and $platform -ne 'mr') { $ok = (Invoke-Logged $log $packwiz $cfArgs 180) -eq 0 }
         if ($ok) { $added++ } else { $failed++; Add-Content $failedFile $slug; Write-Host '    !! not found for 1.21.1 NeoForge' -ForegroundColor Yellow }
     }
 

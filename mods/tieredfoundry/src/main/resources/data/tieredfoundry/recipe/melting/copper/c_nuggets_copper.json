@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:nuggets/copper"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_copper",
+    "amount": 10
+  },
+  "temperature": 800
+}

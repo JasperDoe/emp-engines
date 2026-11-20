@@ -1,0 +1,46 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.25
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "emp_engines:navigational_data",
+          "functions": [
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{\"target\": \"emp_engines:dungeon/astral_sanctum\", \"target_name\": \"Astral Sanctum\"}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "emp_engines:navigational_data",
+          "functions": [
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{\"target\": \"emp_engines:dungeon/umbral_crypt\", \"target_name\": \"Umbral Crypt\"}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "emp_engines:navigational_data",
+          "functions": [
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{\"target\": \"emp_engines:dungeon/gilded_reliquary\", \"target_name\": \"Gilded Reliquary\"}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

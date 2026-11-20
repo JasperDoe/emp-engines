@@ -1,0 +1,18 @@
+{
+  "type": "tieredfoundry:alloying",
+  "inputs": [
+    {
+      "tag": "c:molten_copper",
+      "amount": 30
+    },
+    {
+      "tag": "c:molten_zinc",
+      "amount": 10
+    }
+  ],
+  "result": {
+    "id": "tieredfoundry:molten_brass",
+    "amount": 40
+  },
+  "temperature": 900
+}

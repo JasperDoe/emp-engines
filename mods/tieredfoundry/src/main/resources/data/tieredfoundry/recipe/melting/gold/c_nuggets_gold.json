@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:nuggets/gold"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_gold",
+    "amount": 10
+  },
+  "temperature": 850
+}

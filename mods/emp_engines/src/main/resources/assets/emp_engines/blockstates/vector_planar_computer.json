@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "emp_engines:block/vector_planar_computer"
+  },
+  "facing=east": {
+   "model": "emp_engines:block/vector_planar_computer",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "emp_engines:block/vector_planar_computer",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "emp_engines:block/vector_planar_computer",
+   "y": 270
+  }
+ }
+}

@@ -1,0 +1,35 @@
+{
+  "type": "emp_engines:crystal_spike",
+  "config": {
+    "body": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:bone_block",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    },
+    "core": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:bone_block",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    },
+    "tip": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:bone_block",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    },
+    "min_height": 5,
+    "max_height": 12,
+    "giant_chance": 0
+  }
+}

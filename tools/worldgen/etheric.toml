@@ -1,0 +1,372 @@
+# =====================================================================================================
+#  Etheric Skies world generation settings  (Create: Empyrean Engines)
+# =====================================================================================================
+#
+#  Edit the numbers here, then rebuild:
+#      python tools\worldgen\build_etheric.py      (writes the worldgen data into the emp_engines mod)
+#      .\tools\build-mods.ps1 -SkipSetup            (builds the mod)
+#      .\tools\install-client.ps1                   (puts it in your CurseForge profile)
+#  Every sky run generates fresh chunks, so a change shows on the next launch after a restart.
+#
+#  Units: blocks unless it says otherwise. "Chunk" = 16 x 16 blocks.
+#  Tip: change one thing at a time. The comments say which way to turn each number.
+# =====================================================================================================
+
+
+# -----------------------------------------------------------------------------------------------------
+#  ISLANDS: size, spacing and shape
+# -----------------------------------------------------------------------------------------------------
+#  layout = "cells" (default): one island per cell of a jittered grid, so islands are spread evenly with
+#  no clumps and no huge voids, and neighbours always keep at least min_gap of sky between them.
+#  Measured with the noise simulator (8 x 8 km): islands' longest span ~50-290 (median ~135, 1 in 10 over ~235),
+#  sky between neighbouring islands at least ~20 and at most ~245, ~16% island.
+#  The widest gap mostly follows spacing: 240 -> ~160, 270 -> ~220, 285 -> ~235, 295 -> ~250.
+#  Big islands are capped by max_diameter AND by their share of the grid (spacing): a big island
+#  grows until it is min_gap from the line halfway to its neighbour, so raising spacing lets them grow.
+#
+#  layout = "noise": the older layout (overlapping noise layers). Uses octave, layers, threshold, split_large.
+[islands]
+layout = "cells"
+
+# --- "cells" layout ---
+spacing = 285          # Grid cell size: the average distance between island centres. Bigger = fewer, further apart.
+jitter = 0.6           # 0 to 1. How far each island is pushed off its grid point (0 = perfect grid, 1 = very irregular).
+min_diameter = 50      # Smallest island across.
+max_diameter = 240     # Largest island across (big ones are trimmed so they keep min_gap from their neighbours).
+size_curve = 1.8       # How sizes are spread: 1 = evenly between min and max; higher = mostly small/medium, rare giants.
+min_gap = 15           # Sky always left between neighbouring islands (before edge roughness).
+edge_roughness = 22    # How far the coastline wanders in and out, in blocks. 0 = round/smooth islands.
+warp = 35              # How much the layout is bent, in blocks, so the lines between close neighbours curve. 0 = straight cuts.
+
+# --- "noise" layout (only used if layout = "noise") ---
+octave = -8            # -8 normal. -9 = everything twice as big and twice as far apart; -7 = half. (Also sets how gently island heights vary, in both layouts.)
+layers = 3             # 1 to 7. Each extra layer packs in more islands.
+threshold = 0.40       # 0.25 to 0.55. Higher = smaller islands with more sky between; lower = bigger, they start to merge.
+split_large = 0.05     # 0.0 to 0.1. Where two layers' islands overlap they're cut apart instead of merging.
+
+# --- both layouts ---
+base_y = 140           # Middle height of the island band.
+height_spread = 35     # Islands sit at base_y +/- this (so tops between ~105 and ~190 with the defaults).
+                       #   Keep base_y + height_spread + hill_height + soil_depth below 200 (the arrival pad).
+soil_depth = 6         # How thick the flat top is above an island's base level.
+hill_height = 10       # How high the bumps on top go.
+underside_depth = 60   # How far the teardrop underside hangs below an island's middle (at its heart).
+underside_jag = 30     # How much the underside varies (stalactite look). 0 = smooth bowl.
+edge_crack = 0.08      # How broken the island edges are. 0 = clean edges, 0.2 = very ragged.
+
+
+# -----------------------------------------------------------------------------------------------------
+#  SHAPE BY BIOME: each biome shapes its islands its own way
+# -----------------------------------------------------------------------------------------------------
+#  Worked out from the same climate values that pick the biome, so the shape changes smoothly where one
+#  biome meets the next (an island across a border has both). All in blocks unless it says otherwise.
+#    hills      height of the bumps on top (replaces hill_height for that biome)
+#    dome       how much the middle of an island is raised, rounding it like a dome
+#    plateau    how much the whole top is raised once in from the edge, giving cliffs all round
+#    spires     height of jagged peaks on top
+#    rift       depth of ravines cut across islands (deep ones split an island in two)
+#    underside  how far the underside hangs, times underside_depth (1 = normal, 0.5 = thin shelf)
+#    jag        how jagged the underside is, times underside_jag (2 = long hanging points)
+#    shards     how far out the floating shards go, times the shard band (0 = hardly any, 2 = a wide ring)
+[shape]
+blend = 0.06           # How wide the change from one biome's shape to the next is (climate units; 0.02 sharp, 0.1 soft)
+cap_y = 196            # Tops never go above this (the arrival pad is at 200)
+
+[shape.amethyst_expanse]   # smooth rounded domes
+hills = 5
+dome = 14
+underside = 1.0
+jag = 0.5
+shards = 1.0
+
+[shape.azure_wilds]        # rolling hills, deep lush undersides
+hills = 14
+underside = 1.3
+jag = 1.0
+shards = 0.6
+
+[shape.twilight_shards]    # broken and jagged: peaks on top, ragged underside, a wide ring of debris
+hills = 6
+spires = 22
+underside = 0.9
+jag = 1.6
+shards = 2.0
+
+[shape.pale_remnant]       # flat thin ice shelves with icicle-like undersides
+hills = 1.5
+underside = 0.55
+jag = 1.4
+shards = 0.8
+
+[shape.cherry_rift]        # rolling hills like a vanilla cherry grove
+hills = 10
+underside = 1.0
+jag = 0.8
+shards = 0.7
+
+[shape.sky_desert]          # low rolling dunes
+hills = 7
+underside = 0.9
+jag = 0.6
+shards = 0.5
+
+[shape.sky_jungle]          # tall lumpy hills, heavy undersides
+hills = 12
+underside = 1.3
+jag = 1.1
+shards = 0.6
+
+[shape.sky_meadow]         # vanilla-looking: gentle and flat
+hills = 4
+underside = 1.0
+jag = 0.7
+shards = 0.6
+
+[shape.sky_oakwood]        # vanilla-looking: rolling forest
+hills = 8
+underside = 1.1
+jag = 0.9
+shards = 0.6
+
+[shape.gilded_grove]       # raised flat mesas with cliffs
+hills = 3
+plateau = 10
+underside = 1.1
+jag = 0.5
+shards = 0.5
+
+[shape.pale_forest]        # low and even on top, long hanging points underneath
+hills = 4
+underside = 1.2
+jag = 1.8
+shards = 0.6
+
+
+# -----------------------------------------------------------------------------------------------------
+#  SHARDS: the small floating chunks around island edges
+# -----------------------------------------------------------------------------------------------------
+[shards]
+band = 0.13            # How far out from an island they float (in noise units; 0.05 = hugging the edge, 0.25 = far out).
+scale = 1.5            # Size of each shard. 1 = small chunks, 1.5 = current, 2.5 = boulders.
+
+
+# -----------------------------------------------------------------------------------------------------
+#  BIOMES: how big each biome patch is
+# -----------------------------------------------------------------------------------------------------
+#  Eleven biomes (Amethyst Expanse, Azure Wilds, Twilight Shards, Pale Remnant, Cherry Rift, Gilded Grove,
+#  Pale Forest, and the vanilla-looking Sky Meadow, Sky Oakwood, Sky Desert and Sky Jungle) are picked from two climate noises. Raising an octave by 1 halves the biome size; lowering
+#  by 1 doubles it. (How soft the colour change between biomes looks is the client's Biome Blend video
+#  setting; install-client sets it to 11x11.)
+[biomes]
+temperature_octave = -9   # was -10 (biomes were twice as big)
+humidity_octave = -8      # was -9
+
+# Colour strength of the coloured biomes: 0 = their full colours, 0.35 = mixed 35% towards a soft white
+# (lighter, gentler). Grass, leaves, sky, fog and water.
+lighten_purple = 0.35     # Amethyst Expanse and Twilight Shards
+lighten_blue = 0.35       # Azure Wilds
+
+# Biome features (per chunk unless it says otherwise)
+cherry_trees_per_chunk = 2         # Cherry Rift's normal cherry trees (vanilla cherry grove: ~10)
+giant_cherry_chance = 30           # A giant cherry tree in 1 of this many chunks, only near the middle of a Cherry Rift
+crystal_spike_chance = 3           # Obsidian-amethyst shards in Amethyst Expanse and Twilight Shards: 1 in this many chunks
+crystal_spike_height = [10, 24]    # Their height range (now and then one is nearly twice as tall)
+open_geode_chance = 6              # Half-open amethyst geodes at the surface: 1 in this many chunks (same biomes)
+gold_trees_per_chunk = 6           # Gilded Grove's white-barked golden trees
+pale_trees_per_chunk = 7           # Pale Forest's white trees
+beehive_chance = 0.04              # Chance a Gilded Grove tree carries a beehive
+amethyst_clusters_per_chunk = 2    # Patches of amethyst clusters on the ground in Amethyst Expanse (they glow faintly)
+basalt_chance = 3                  # Basalt column clusters in Twilight Shards: 1 in this many chunks
+powder_snow = 0.55                 # Powder snow traps in the Pale Remnant's snow: 0.3 = lots, 0.8 = rare, 9 = none
+gold_outcrop_chance = 3           # Small gold-ore outcrops on Gilded Grove islands: 1 in this many chunks
+pond_chance = 5                    # Small ponds (with lily pads) on Cherry Rift islands: 1 in this many chunks
+waterfall_tries = 4                # Waterfalls pouring off cliffs into the void (Azure Wilds, Cherry Rift, Sky Jungle): tries a chunk
+bone_ribs_chance = 4               # Giant bones sticking out of the ground in Pale Forest: 1 in this many chunks
+cobweb_chance = 3                  # Cobwebs in Pale Forest: 1 in this many chunks
+desert_well_chance = 40            # A desert well on Sky Desert islands: 1 in this many chunks
+
+# Points hanging from island undersides, in each biome's own material.
+#   per_chunk: tries a chunk (under 1 = a chance: 0.5 = every other chunk). Only where the island is 6+ thick.
+#   height:    how far down they hang (now and then one is nearly twice as long)
+[hanging_spikes]
+amethyst_expanse = { per_chunk = 0.6, height = [8, 22] }   # obsidian and amethyst crystal
+twilight_shards  = { per_chunk = 0.8, height = [8, 24] }   # obsidian and amethyst crystal
+pale_remnant     = { per_chunk = 1.5, height = [6, 20] }   # icicles of packed and blue ice
+azure_wilds      = { per_chunk = 0.7, height = [5, 14] }   # rooted dirt and moss, hanging roots
+cherry_rift      = { per_chunk = 0.4, height = [5, 15] }   # pink terracotta
+gilded_grove     = { per_chunk = 0.5, height = [5, 16] }   # yellow terracotta with a gold-ore core
+pale_forest      = { per_chunk = 0.8, height = [8, 26] }   # white rock and bone
+sky_desert       = { per_chunk = 0.4, height = [5, 14] }   # sandstone, orange terracotta tip
+sky_jungle       = { per_chunk = 0.6, height = [6, 16] }   # moss and mossy cobblestone
+
+
+# -----------------------------------------------------------------------------------------------------
+#  ORES: what generates in the islands' rock
+# -----------------------------------------------------------------------------------------------------
+#  Ores are placed in a height band where island rock is, most often in the middle of the band
+#  (a trapezoid), and replace stone plus the islands' coloured rock (calcite, tuff, packed ice,
+#  terracottas; deepslate gets the deepslate ore).
+#
+#    vein_size        blocks per vein (vanilla: coal 17, iron 9, copper 10, gold 9, diamond 8, emerald 3)
+#    veins_per_chunk  tries per chunk. Most land in empty sky (islands cover ~23% of the map and are thin),
+#                     so these are higher than vanilla's to give similar ore per island block.
+#    min_y / max_y    the band (optional per ore; defaults to [ores] band_min / band_max)
+#
+#  Add an ore by copying a block: [ores.list.<name>] with block (and deepslate if it has one).
+#  Only coal, iron, copper go in every biome; emerald only in Twilight Shards and Pale Remnant.
+[ores]
+band_min = 60          # Lowest island rock (undersides reach down to ~60)
+band_max = 190         # Highest island rock
+
+[ores.list.coal]
+block = "minecraft:coal_ore"
+deepslate = "minecraft:deepslate_coal_ore"
+vein_size = 17
+veins_per_chunk = 30
+
+[ores.list.iron]
+block = "minecraft:iron_ore"
+deepslate = "minecraft:deepslate_iron_ore"
+vein_size = 9
+veins_per_chunk = 24
+
+[ores.list.copper]
+block = "minecraft:copper_ore"
+deepslate = "minecraft:deepslate_copper_ore"
+vein_size = 10
+veins_per_chunk = 16
+
+[ores.list.gold]                    # Gilded Grove only: rich gold
+block = "minecraft:gold_ore"
+deepslate = "minecraft:deepslate_gold_ore"
+vein_size = 9
+veins_per_chunk = 14
+biomes = ["gilded_grove"]
+
+[ores.list.emerald]                 # Twilight Shards and Pale Remnant only
+block = "minecraft:emerald_ore"
+deepslate = "minecraft:deepslate_emerald_ore"
+vein_size = 3
+veins_per_chunk = 20
+biomes = ["twilight_shards", "pale_remnant"]
+
+
+# -----------------------------------------------------------------------------------------------------
+#  SILENT GEAR ORES (testing only; only generate when Silent Gear is installed)
+# -----------------------------------------------------------------------------------------------------
+[silent_gear_test_ores]
+enabled = true
+
+[silent_gear_test_ores.list.crimson_iron_ore]
+vein_size = 8
+veins_per_chunk = 16
+
+[silent_gear_test_ores.list.azure_silver_ore]
+vein_size = 6
+veins_per_chunk = 12
+
+[silent_gear_test_ores.list.bort_ore]
+deepslate = "silentgear:deepslate_bort_ore"
+vein_size = 4
+veins_per_chunk = 8
+
+
+# -----------------------------------------------------------------------------------------------------
+#  STRUCTURES: vanilla buildings on islands, any biome
+# -----------------------------------------------------------------------------------------------------
+#  Each is a vanilla structure that only places where the island ground reaches `min_radius` blocks all
+#  round the spot, and the ground there varies by no more than `max_slope` blocks in height.
+#  Bigger min_radius = only on bigger islands (fewer of them).
+[structures.desert_pyramid]
+structure = "minecraft:desert_pyramid"
+min_radius = 20
+max_slope = 12
+
+[structures.jungle_temple]
+structure = "minecraft:jungle_pyramid"
+min_radius = 18
+max_slope = 14
+
+[structures.igloo]
+structure = "minecraft:igloo"
+min_radius = 12
+max_slope = 10
+
+[structures.witch_hut]
+structure = "minecraft:swamp_hut"
+min_radius = 12
+max_slope = 10
+
+[structures.ruined_portal]
+structure = "minecraft:ruined_portal"
+min_radius = 12
+max_slope = 18
+
+[structures.pillager_outpost]
+structure = "minecraft:pillager_outpost"
+min_radius = 28
+max_slope = 14
+
+[structures.shipwreck]
+structure = "minecraft:shipwreck_beached"
+min_radius = 16
+max_slope = 14
+
+[structures.village_plains]
+structure = "minecraft:village_plains"
+min_radius = 48
+max_slope = 16
+
+[structures.village_desert]
+structure = "minecraft:village_desert"
+min_radius = 48
+max_slope = 16
+
+[structures.village_savanna]
+structure = "minecraft:village_savanna"
+min_radius = 48
+max_slope = 16
+
+[structures.village_snowy]
+structure = "minecraft:village_snowy"
+min_radius = 48
+max_slope = 16
+
+[structures.village_taiga]
+structure = "minecraft:village_taiga"
+min_radius = 48
+max_slope = 16
+
+[structures.mansion]
+structure = "minecraft:mansion"
+min_radius = 56
+max_slope = 14
+
+
+# -----------------------------------------------------------------------------------------------------
+#  STRUCTURE FREQUENCY: how often they're tried
+# -----------------------------------------------------------------------------------------------------
+#  The world is cut into cells of `spacing` x `spacing` chunks; each cell tries once, somewhere at least
+#  `separation` chunks from its edges, picking one structure from the set by weight (if that one doesn't
+#  fit, the others are tried). A try that lands in open sky or on too small an island makes nothing,
+#  so real counts are well under one per cell.
+#    Smaller spacing = more often. separation must be smaller than spacing.
+#    weights: relative chance within the set (2 = twice as likely as 1).
+#    salt: just makes each set's layout different; any unique number.
+[structure_sets.island_ruins]
+spacing = 12
+separation = 4
+salt = 270611701
+weights = { desert_pyramid = 2, jungle_temple = 2, igloo = 2, witch_hut = 2, ruined_portal = 3 }
+
+[structure_sets.island_settlements]
+spacing = 22
+separation = 8
+salt = 270611702
+weights = { pillager_outpost = 3, shipwreck = 3, village_plains = 1, village_desert = 1, village_savanna = 1, village_snowy = 1, village_taiga = 1 }
+
+[structure_sets.island_mansions]
+spacing = 80
+separation = 30
+salt = 270611703
+weights = { mansion = 1 }

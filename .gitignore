@@ -22,3 +22,12 @@ mods/build/
 mods/*/build/
 mods/*/run/
 pack/mods/*.jar
+
+# Quest editor cache and backup
+tools/questedit/.cache/
+tools/questgen/book.json.bak
+__pycache__/
+tools/researchedit/.backup/
+
+# Claude helper launchers (local only)
+_*.bat

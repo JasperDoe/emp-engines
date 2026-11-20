@@ -25,7 +25,7 @@
 			tasks: [
 				{
 					id: "4166EACEC3D791A4"
-					stage: "skybound:brass_age"
+					stage: "emp_engines:brass_age"
 					team_stage: false
 					type: "gamestage"
 				}

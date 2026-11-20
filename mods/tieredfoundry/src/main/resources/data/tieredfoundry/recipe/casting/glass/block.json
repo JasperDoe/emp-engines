@@ -1,0 +1,12 @@
+{
+  "type": "tieredfoundry:casting",
+  "block": "basin",
+  "fluid": {
+    "tag": "c:molten_glass",
+    "amount": 1000
+  },
+  "result": {
+    "id": "minecraft:glass",
+    "count": 1
+  }
+}

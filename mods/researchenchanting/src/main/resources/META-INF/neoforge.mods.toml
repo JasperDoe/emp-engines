@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="researchenchanting"
+version="0.1.0"
+displayName="Does Enchanting Overhaul"
+description='''The enchanting table becomes a research desk. Bind a book into a research focus, research enchantments level by level with farmable resources, shelve the foci in chiseled bookshelves, and enchant items with exactly what you choose.'''
+
+[[mixins]]
+config="researchenchanting.mixins.json"
+
+[[dependencies.researchenchanting]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.researchenchanting]]
+modId="chapters"
+type="optional"
+versionRange="*"
+ordering="AFTER"
+side="BOTH"

@@ -1,0 +1,47 @@
+{
+  "type": "emp_engines:crystal_spike",
+  "config": {
+    "body": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 6,
+          "data": {
+            "Name": "minecraft:obsidian"
+          }
+        },
+        {
+          "weight": 1,
+          "data": {
+            "Name": "minecraft:crying_obsidian"
+          }
+        },
+        {
+          "weight": 3,
+          "data": {
+            "Name": "minecraft:amethyst_block"
+          }
+        }
+      ]
+    },
+    "core": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:amethyst_block"
+      }
+    },
+    "tip": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:amethyst_cluster",
+        "Properties": {
+          "facing": "up",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "min_height": 10,
+    "max_height": 24,
+    "giant_chance": 8
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "type": "emp_engines:crystal_spike",
+  "config": {
+    "body": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 3,
+          "data": {
+            "Name": "minecraft:rooted_dirt"
+          }
+        },
+        {
+          "weight": 2,
+          "data": {
+            "Name": "minecraft:moss_block"
+          }
+        },
+        {
+          "weight": 1,
+          "data": {
+            "Name": "minecraft:dirt"
+          }
+        }
+      ]
+    },
+    "core": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:rooted_dirt"
+      }
+    },
+    "tip": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:hanging_roots",
+        "Properties": {
+          "waterlogged": "false"
+        }
+      }
+    },
+    "min_height": 5,
+    "max_height": 14,
+    "giant_chance": 10,
+    "hanging": true
+  }
+}

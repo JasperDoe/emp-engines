@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ],
+  "type": "tieredfoundry:part_casting",
+  "part": "silentgear:mattock_head",
+  "part_type": "silentgear:main",
+  "gear_type": "silentgear:mattock",
+  "material_count": 4
+}

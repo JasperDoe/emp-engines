@@ -1,0 +1,193 @@
+{
+  "gates_off": true,
+  "order": [
+    "andesite_age",
+    "logistics",
+    "alloy_age",
+    "brass_age",
+    "flight",
+    "electricity_age",
+    "exotic_age",
+    "obsidian_key",
+    "end_access"
+  ],
+  "stages": {
+    "andesite_age": {
+      "kind": "lock",
+      "items": [
+        "create:andesite_alloy",
+        "create:shaft",
+        "create:cogwheel",
+        "create:large_cogwheel",
+        "create:gearbox",
+        "create:vertical_gearbox",
+        "create:clutch",
+        "create:gearshift",
+        "create:encased_chain_drive",
+        "create:hand_crank",
+        "create:water_wheel",
+        "create:large_water_wheel",
+        "create:windmill_bearing",
+        "create:mechanical_bearing",
+        "create:white_sail",
+        "create:sail_frame",
+        "create:millstone",
+        "create:mechanical_press",
+        "create:mechanical_mixer",
+        "create:basin",
+        "create:whisk",
+        "create:propeller",
+        "create:encased_fan",
+        "create:mechanical_drill",
+        "create:mechanical_saw",
+        "create:mechanical_harvester",
+        "create:mechanical_plough",
+        "create:andesite_casing",
+        "create:andesite_funnel",
+        "create:andesite_tunnel",
+        "create:chute",
+        "create:depot",
+        "create:weighted_ejector",
+        "create:goggles",
+        "create:wrench",
+        "create:speedometer",
+        "create:stressometer",
+        "create:cart_assembler",
+        "create:linear_chassis",
+        "create:radial_chassis",
+        "create:super_glue",
+        "create:mechanical_piston",
+        "create:sticky_mechanical_piston",
+        "create:piston_extension_pole",
+        "create:gantry_carriage",
+        "create:gantry_shaft",
+        "create:rope_pulley",
+        "create:belt_connector"
+      ],
+      "tags": [],
+      "namespaces": [],
+      "except": []
+    },
+    "logistics": {
+      "kind": "lock",
+      "items": [
+        "create:item_vault",
+        "create:portable_storage_interface",
+        "create:packager",
+        "create:repackager",
+        "create:package_frogport",
+        "create:package_filter",
+        "create:stock_link",
+        "create:stock_ticker",
+        "create:redstone_requester",
+        "create:factory_gauge"
+      ],
+      "tags": [],
+      "namespaces": [],
+      "except": []
+    },
+    "alloy_age": {
+      "kind": "lock",
+      "items": [
+        "create:brass_ingot",
+        "create:copper_casing",
+        "create:fluid_pipe",
+        "create:mechanical_pump",
+        "create:fluid_tank",
+        "create:fluid_valve",
+        "create:spout",
+        "create:item_drain",
+        "create:hose_pulley",
+        "create:portable_fluid_interface"
+      ],
+      "tags": [],
+      "namespaces": [
+        "tieredfoundry"
+      ],
+      "except": []
+    },
+    "brass_age": {
+      "kind": "lock",
+      "items": [
+        "create:brass_casing",
+        "create:electron_tube",
+        "create:precision_mechanism",
+        "create:mechanical_crafter",
+        "create:deployer",
+        "create:brass_hand",
+        "create:mechanical_arm",
+        "create:brass_funnel",
+        "create:brass_tunnel",
+        "create:smart_chute",
+        "create:smart_fluid_pipe",
+        "create:rotation_speed_controller",
+        "create:sequenced_gearshift",
+        "create:adjustable_chain_gearshift",
+        "create:steam_engine",
+        "create:crushing_wheel",
+        "create:mechanical_roller",
+        "create:schematicannon",
+        "create:schematic_table",
+        "create:elevator_pulley",
+        "create:contraption_controls",
+        "create:display_link",
+        "create:display_board",
+        "create:nixie_tube",
+        "create:content_observer",
+        "create:stockpile_switch",
+        "create:track",
+        "create:track_station",
+        "create:track_signal",
+        "create:track_observer",
+        "create:controls",
+        "create:railway_casing"
+      ],
+      "tags": [],
+      "namespaces": [],
+      "except": []
+    },
+    "flight": {
+      "kind": "lock",
+      "items": [],
+      "tags": [],
+      "namespaces": [
+        "aeronautics",
+        "simulated",
+        "offroad",
+        "aeroworks"
+      ],
+      "except": []
+    },
+    "electricity_age": {
+      "kind": "lock",
+      "items": [],
+      "tags": [],
+      "namespaces": [
+        "createaddition"
+      ],
+      "except": []
+    },
+    "exotic_age": {
+      "kind": "lock",
+      "items": [],
+      "tags": [],
+      "namespaces": [],
+      "except": []
+    },
+    "obsidian_key": {
+      "kind": "lock",
+      "items": [
+        "emp_engines:obsidian_key"
+      ],
+      "tags": [],
+      "namespaces": [],
+      "except": []
+    },
+    "end_access": {
+      "kind": "dimension",
+      "dimensions": [
+        "minecraft:the_end"
+      ]
+    }
+  }
+}

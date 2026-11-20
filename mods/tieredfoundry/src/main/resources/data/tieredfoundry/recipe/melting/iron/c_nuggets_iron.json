@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:nuggets/iron"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_iron",
+    "amount": 10
+  },
+  "temperature": 950
+}

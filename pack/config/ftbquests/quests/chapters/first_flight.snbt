@@ -23,7 +23,7 @@
 			tasks: [
 				{
 					id: "6D6967DD7C41CD00"
-					structure: "#skybound:wrecks"
+					structure: "#emp_engines:wrecks"
 					type: "structure"
 				}
 			]
@@ -44,7 +44,7 @@
 			tasks: [
 				{
 					id: "9502F28EC5D505A6"
-					stage: "skybound:flight"
+					stage: "emp_engines:flight"
 					team_stage: false
 					type: "gamestage"
 				}

@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "emp_engines:amethyst_expanse",
+    "emp_engines:azure_wilds",
+    "emp_engines:twilight_shards",
+    "emp_engines:pale_remnant",
+    "emp_engines:cherry_rift",
+    "emp_engines:gilded_grove",
+    "emp_engines:pale_forest",
+    "emp_engines:sky_desert",
+    "emp_engines:sky_jungle",
+    "emp_engines:sky_meadow",
+    "emp_engines:sky_oakwood"
+  ]
+}

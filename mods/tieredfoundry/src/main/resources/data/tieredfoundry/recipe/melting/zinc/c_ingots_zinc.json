@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:ingots/zinc"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_zinc",
+    "amount": 90
+  },
+  "temperature": 420
+}

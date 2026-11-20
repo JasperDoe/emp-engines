@@ -1,4 +1,4 @@
-# Skybound SMP mod list
+# Empyrean Engines mod list
 # Format:  slug            (tries Modrinth first, then CurseForge)
 #          remove:name     (removes a mod already in the pack; name = its pack\mods\<name>.pw.toml)
 #          final:slug      (Modrinth, re-added at the very end so a CurseForge
@@ -7,6 +7,7 @@
 #          cf:slug         (CurseForge only)
 #          mr:slug         (Modrinth only)
 #          mr:slug@versionId  (Modrinth, pinned to one version)
+#          cf:slug@fileId     (CurseForge, pinned to one file)
 # Anything after "#" is a comment. Dependencies (libraries) are pulled in
 # automatically by packwiz, so libraries are not listed here.
 # Slugs marked (?) are my best guess: if setup-mods.ps1 can't find one, it goes
@@ -20,6 +21,7 @@ dimensional-sable                        # (?) scripted warps for the Sky Gate
 cf:sable-cleanup                         # MANUAL download, see manual-mods\README.txt
 remove:create-aeronautics-ftb-chunks     # OFF: requires exactly Sable 2.0.5, pack has 2.0.6. Re-add when updated
 create-aeroworks                         # (?) extra ship parts
+cf:createloconautics                     # MANUAL download, see manual-mods\README.txt. Loconautics (BETA 0.1.3): Create trains as Sable physics sub-levels, driven by a Bearing Axle; needs Simulated 1.3 (in Aeronautics)
 # cf:create-upgraded-portable-engines-for-aeronautics   # not found under this slug; optional, fix later
 
 # --- Speed tiers ---
@@ -27,12 +29,23 @@ cf:create-tiers
 cf:create-recipe-need-rpm
 
 # --- Steel and power ---
-cf:immersive-engineering
+remove:immersive-engineering             # OFF: replaced by Create: New Age
+remove:immersiveengineering              # (the name packwiz gave it when it came in as a dependency)
+#                                          Create: New Age 1.2.0 (Create electricity: generator coils, motors, energisers, magnets, nuclear):
+#                                          the jar sits in manual-mods; its CurseForge file isn't tagged in a way packwiz can find
 createaddition                           # Crafts & Additions: rotation -> power
+mr:almost-unified                        # one item per metal tag (Create sheets, Crafts & Additions wires/electrum); config in pack/config/almostunified
+remove:almost-unified-ie                 # OFF: Immersive Engineering is gone
 
 # --- XP and enchanting ---
-create-enchantment-industry              # pulls in Create: Dragons Plus
-apothic-enchanting
+#                                          Does Enchanting Overhaul (our own, built from mods/researchenchanting): research-based enchanting at the vanilla table
+remove:create-enchantment-industry       # OFF: replaced by Does Enchanting Overhaul
+remove:apothic-enchanting                # OFF: replaced by Does Enchanting Overhaul
+create-dragons-plus                      # was pulled in by Enchantment Industry; Flight and Alloy Age use its blocks
+
+# --- Apotheosis and raids ---
+cf:apotheosis                            # gems, sockets, world tiers, Elites and Invaders (pulls in Placebo, Apothic Attributes); affix gear is switched off, see pack/config/apotheosis
+#                                          Silent Apotheosis Raids (our own, built from mods/silentraids): night raids (sieges), auto world tier, Silent Gear levels
 
 # --- Research ---
 chapters                                 # per-player recipe locks (replaces Restage)
@@ -41,11 +54,12 @@ remove:modern-ui                         # was only needed by Restage
 
 # --- Gear ---
 cf:silent-gear                           # pulls in Silent Lib (Modrinth only has old betas)
-cf:productive-metalworks
-cf:silent-gear-metalworks
-# cf:kubejs-metalworks                   # not on CurseForge/Modrinth under this name; foundry recipes can be written as datapack JSON instead
+#                                          Tiered Foundry (our own, built from mods/tieredfoundry): the foundry (melting, alloying, casting, Silent Gear parts and coating)
+remove:productive-metalworks              # OFF: replaced by Tiered Foundry
+remove:silent-gear-metalworks             # OFF: Tiered Foundry casts Silent Gear parts
 curios
-artifacts
+remove:artifacts                         # OFF: too strong
+charms                                   # (?) Charms: small potion-effect charms for the Curios slots, base found in loot
 
 # --- Worldgen and structures ---
 tectonic
@@ -61,10 +75,37 @@ geckolib                                 # animation library needed by the Aeron
 mr:MtpVp9HL                              # Create Aeronautics: Discovery (flying events, Soaring Trader with structure maps)
 remove:when-dungeons-arise               # OFF: oversized, not vanilla-styled
 yungs-better-dungeons
-yungs-better-mineshafts
+remove:yungs-better-mineshafts           # OFF: replaced by Moog's Mineshafts Reimagined (both replace vanilla mineshafts)
+cf:mmr-moogs-mineshafts-reimagined       # biome-themed mineshafts (taiga, desert, jungle, mesa, snowy, Nether); alpha on 1.21, rarer than vanilla
 
 amplified-nether                         # taller, open Nether for airships
 yungs-better-nether-fortresses
+
+# --- Food and cooking ---
+farmers-delight
+hands-on-delight                         # (?) cook Farmer's Delight by hand, no menus (pulls in Diegesis)
+slice-and-dice                           # Create Slice & Dice: Slicer + cooking-pot recipes in the Mixer
+mr:uwTJPjNt                              # Diet - AppleSeed Edition: buffs for a balanced diet (positives only, config/appleseed-common.toml)
+spice-of-life-carrot-edition             # (?) +1 heart per 5 new foods, up to +10 (defaultconfigs/solcarrot-server.toml)
+
+# --- Mobs ---
+naturalist                               # vanilla-style wildlife: deer, brown and black bears and more
+cf:skycreep                              # Skycreeps: sky creepers made for airship packs
+critters-and-companions                  # small critters: otters, ferrets, red pandas, dragonflies, koi, leaf insects
+longwings                                # butterflies and moths
+
+# --- World ---
+streams-reflowing                        # flowing streams and waterfalls; its current also pushes Sable ships
+cf:the-roads-more-travelled              # desire paths: grass wears into paths where you walk
+supplementaries                          # way signs near villages pointing to the nearest villages, with distance (plus jars, signposts, sconces, planters...; pulls in Moonlight)
+
+# --- Weapons and clothing ---
+vics-point-blank                         # Vic's Point Blank: guns (Weapons Printer)
+weavers-paradise                         # Weaver's Paradise: spin, weave and dye clothing (check after setup that it didn't pull in Cold Sweat or Legendary Survival Overhaul; they should only be optional)
+
+# --- Estrogen ---
+estrogen
+mr:OEAJaSuI                              # Create: Estrogen (Centrifuge, Create recipes)
 
 # --- Navigation ---
 explorers-compass
@@ -85,22 +126,59 @@ no-mob-farms
 disabler
 
 # --- Economy ---
-numismatics                              # (?) check for a 1.21.1 build
+remove:numismatics                       # OFF: removed with Chunk Upkeep (its bank)
 
 # --- Quality of life ---
 emi                                      # recipe viewer (EXP Research hides locked items here)
-remove:jei
+vercte-satchels                          # Vercte's Satchels: a satchel that adds 6 slots under the hotbar
+remove:jei                               # TMRV (client section) runs JEI plugins inside EMI without JEI
 jade
+yagm                                     # (?) Yet Another Gravestone Mod: items and XP kept in a biome-themed grave, tameable ghosts. NOTE: no Sable fix yet, see MODS.md
 
 # --- Server ---
 spark
 simple-voice-chat
+
+# --- Guide books ---
+mr:akashic-tome                          # one book that holds every mod's guide book (craft a book + bookshelf, add books in a crafting grid)
+
+# --- Performance (both sides) ---
+modernfix                                # faster start-up, less memory, many bug fixes
+ferrite-core                             # less memory for block states and models
+alltheleaks                              # fixes memory leaks
+clumps                                   # merges XP orbs
+lithium                                  # TRIAL: game-logic speed-ups. If a ship launch or a night raid misbehaves, change this line to remove:lithium
+noisium                                  # faster worldgen (check new sky islands still look the same)
 
 # --- Client only (packwiz marks these client-side automatically) ---
 sodium
 mr:iris@KduFYu4t                         # shaders; pinned to the Iris build made for Sodium 0.8.13
 mr:complementary-reimagined              # shader pack, on by default (settings: client/complementary-settings.txt)
 distanthorizons                          # far terrain (also on the server, sends LODs to players)
+immediatelyfast                          # faster text, GUI and item-icon drawing
+entityculling                            # skips entities and block entities you can't see (if blocks on a ship vanish when you look away, change to remove:entityculling)
+dynamic-fps                              # lowers FPS when the game is in the background
+entity-model-features                    # EMF, needed by Fresh Animations
+entitytexturefeatures                    # ETF, needed by Fresh Animations
+mr:tmrv                                  # TooManyRecipeViewers: shows JEI-only recipe screens in EMI (foundry melting/casting/alloying, Silent Gear casting, gear crafting, Stone Anvil); config/tmrv_plugins.json5
+mr:clientsort                            # middle-click (or the Sort button) sorts the inventory under the mouse; client-side
+continuity-neoforged                     # (?) Continuity: NeoForged, connected glass with no lines between blocks or stacked panes (native port, no Sinytra Connector)
+weather-glass                            # (?) rain drops, frost and breath on windows (follows Particle Rain's wind)
+cf:fwa                                   # Fancy World Animations: doors, chests, levers, lecterns etc. animate (blacklist in config/fwa-blacklist.json)
+remove:subtle-effects                    # OFF: replaced by Particular (splashes, fireflies)
+particle-rain                            # rain and snow as particles, with wind (beta on 1.21.1)
+remove:ambient-leaves                    # OFF: replaced by Particular (falling leaves, cave dust)
+cf:particular-reforged                   # MANUAL download, see manual-mods\README.txt. Particular Reforged: 3D water splashes (Aeronautics ships too), waterfall cascades, falling leaves, fireflies, cave dust, rain ripples
+# Player animations: these four are set up to work together
+not-enough-animations                    # third-person eating, maps, ladders, crawling... (config/notenoughanimations.json: the settings NEA EMF Compat needs)
+mr:IGCrWfL7                              # Not Enough Animations: EMF Compat, pauses EMF player animations while an NEA one plays
+cf:touch-and-motion                      # (?) Touch'n Motion: EMF player gestures (levers, Create cranks and valves, leaning); its NEA Compat option is on by default
+eating-animation-forge                   # (?) NeoForge port of Eating Animation: the food in your hand gets bitten as you eat
 
 # --- Resource packs (client) ---
 mr:silent-updated                        # (?) Silent Gear / Metalworks retexture
+mr:fresh-animations                      # animated mobs (needs EMF + ETF above)
+mr:fa-player-extension                   # Fresh Animations: Player Extension, the player in Fresh Animations' style (install-client keeps it above Fresh Animations)
+mr:recolourful-containers-gui-hud-dark   # UI theme "dark" (the default): dark GUIs and HUD, each container tinted to its block (vanilla screens; modded screens keep their own look)
+cf:create-new-age-retexture@5554251      # resource pack: Create-style textures and models for New Age (switched on by install-client); pinned to its 1.21 file, it has none tagged 1.21.1
+mr:recolourful-containers-gui            # UI theme "light": the same, light. Not switched on by install-client; choose with /uitheme grey|light|dark

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Generates the research stage locks (Chapters) from a seed list per tier, then
-locks everything crafted from a locked item as well.
+Generates the research stage locks (Chapters) from the seeds in tools/questgen/stages.json (edited with
+the research editor, tools/researchedit), then locks everything crafted from a locked item as well.
 
     python tools/questgen/build_stages.py <mods folder> [<mods folder> ...]
 
@@ -16,13 +16,15 @@ while an item that also has a recipe from free ingredients stays free.
   Vanilla and NeoForge tags aren't in the mod jars, so a tag they extend is treated
   by its modded members only.
 
-Writes pack/kubejs/data/skybound/chapters/stages/*.json and stages-report.txt.
+Writes pack/kubejs/data/emp_engines/chapters/stages/*.json and stages-report.txt.
+With "gates_off": true at the top of stages.json, every stage file is written empty (nothing locked,
+no dimension blocked); the seeds are kept, and the report still shows what each stage would lock.
 """
 import io, json, os, re, sys, zipfile
 from collections import defaultdict
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-SDIR = os.path.join(ROOT, "pack", "kubejs", "data", "skybound", "chapters", "stages")
+SDIR = os.path.join(ROOT, "pack", "kubejs", "data", "emp_engines", "chapters", "stages")
 
 # --------------------------------------------------------------------------
 # Research tiers -> Chapters stages
@@ -32,70 +34,22 @@ SDIR = os.path.join(ROOT, "pack", "kubejs", "data", "skybound", "chapters", "sta
 LOCK = {"preventCraft": True, "hideInJei": True, "preventPickup": False,
         "dropFromInventory": False, "preventTransfer": False}
 
-STAGES = {
-    "andesite_age": {"items": [
-        "create:andesite_alloy", "create:shaft", "create:cogwheel", "create:large_cogwheel",
-        "create:gearbox", "create:vertical_gearbox", "create:clutch", "create:gearshift",
-        "create:encased_chain_drive", "create:hand_crank", "create:water_wheel",
-        "create:large_water_wheel", "create:windmill_bearing", "create:mechanical_bearing",
-        "create:white_sail", "create:sail_frame", "create:millstone", "create:mechanical_press",
-        "create:mechanical_mixer", "create:basin", "create:whisk", "create:propeller",
-        "create:encased_fan", "create:mechanical_drill", "create:mechanical_saw",
-        "create:mechanical_harvester", "create:mechanical_plough", "create:andesite_casing",
-        "create:andesite_funnel", "create:andesite_tunnel", "create:chute", "create:depot",
-        "create:weighted_ejector", "create:goggles", "create:wrench", "create:speedometer",
-        "create:stressometer", "create:cart_assembler", "create:linear_chassis",
-        "create:radial_chassis", "create:super_glue", "create:mechanical_piston",
-        "create:sticky_mechanical_piston", "create:piston_extension_pole",
-        "create:gantry_carriage", "create:gantry_shaft", "create:rope_pulley",
-        "create:belt_connector"]},
-    "alloy_age": {"items": [
-        "create:brass_ingot", "create:copper_casing", "create:fluid_pipe", "create:mechanical_pump",
-        "create:fluid_tank", "create:fluid_valve", "create:spout", "create:item_drain",
-        "create:hose_pulley", "create:portable_fluid_interface",
-        "immersiveengineering:cokebrick", "immersiveengineering:blastbrick",
-        "immersiveengineering:alloybrick", "immersiveengineering:hammer",
-        "silentgear:alloy_forge"],
-        "namespaces": ["productivemetalworks"]},
-    "brass_age": {"items": [
-        "create:brass_casing", "create:electron_tube", "create:precision_mechanism",
-        "create:mechanical_crafter", "create:deployer", "create:brass_hand", "create:mechanical_arm",
-        "create:brass_funnel", "create:brass_tunnel", "create:smart_chute", "create:smart_fluid_pipe",
-        "create:rotation_speed_controller", "create:sequenced_gearshift",
-        "create:adjustable_chain_gearshift", "create:steam_engine", "create:crushing_wheel",
-        "create:mechanical_roller", "create:schematicannon", "create:schematic_table",
-        "create:elevator_pulley", "create:contraption_controls", "create:display_link",
-        "create:display_board", "create:nixie_tube", "create:content_observer",
-        "create:stockpile_switch",
-        # trains
-        "create:track", "create:track_station", "create:track_signal", "create:track_observer",
-        "create:controls", "create:railway_casing"]},
-    "electricity_age": {"items": [
-        "immersiveengineering:light_engineering", "immersiveengineering:heavy_engineering",
-        "immersiveengineering:blastbrick_reinforced", "immersiveengineering:circuit_table",
-        "immersiveengineering:component_iron", "immersiveengineering:component_steel",
-        "immersiveengineering:component_electronic", "immersiveengineering:component_electronic_adv",
-        "immersiveengineering:circuit_board", "immersiveengineering:logic_circuit",
-        "immersiveengineering:graphite_electrode"],
-        "namespaces": ["createaddition"]},
-    "exotic_age": {"items": [],
-        "namespaces": ["create_enchantment_industry"]},
-    "flight": {"items": [],
-        "namespaces": ["aeronautics", "simulated", "offroad", "aeroworks"]},
-    "logistics": {"items": [
-        "create:item_vault", "create:portable_storage_interface", "create:packager",
-        "create:repackager", "create:package_frogport", "create:package_filter",
-        "create:stock_link", "create:stock_ticker", "create:redstone_requester",
-        "create:factory_gauge"]},
-    # server-wide unlocks, granted by /skybound unlock <name>
-    "nether_access": {"dimensions": ["minecraft:the_nether"], "travel": True},
-    "end_access": {"dimensions": ["minecraft:the_end"], "travel": True},
-}
+# The stage seeds live in tools/questgen/stages.json (edited with tools/researchedit):
+#   "order": lock stages from first to last. An item that needs inputs from several goes in the latest one.
+#   "stages": { name: {"kind": "lock", "items": [...], "tags": [...], "namespaces": [...], "except": [...]}
+#               or {"kind": "dimension", "dimensions": [...]} }
+#   items: locked materials, everything crafted from them is locked too; tags: the same for every modded
+#   member of a tag; namespaces: whole mods; except: items this stage never locks (the spread stops there).
+STAGES_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "stages.json")
 
 
-# Tier order. An item that needs inputs from several tiers goes in the highest one.
-ORDER = ["andesite_age", "logistics", "alloy_age", "brass_age", "flight", "electricity_age", "exotic_age"]
-RANK = {s: i + 1 for i, s in enumerate(ORDER)}
+def load_stages(path=STAGES_JSON):
+    with open(path, encoding="utf-8") as f:
+        cfg = json.load(f)
+    stages = cfg.get("stages", {})
+    order = [n for n in cfg.get("order", []) if n in stages] + [n for n in stages if n not in cfg.get("order", [])]
+    return order, stages
+
 
 # --------------------------------------------------------------------------
 # Jar scanning
@@ -235,8 +189,15 @@ def outputs(r):
     return res
 
 # --------------------------------------------------------------------------
-def build(folders):
-    data = scan(folders)
+def build(folders, data=None, stages_path=STAGES_JSON, quiet=False):
+    """Writes the stage files. Returns a summary per stage for the research editor."""
+    ORDER, STAGES = load_stages(stages_path)
+    with open(stages_path, encoding="utf-8") as f:
+        gates_off = bool(json.load(f).get("gates_off"))
+    ORDER = [n for n in ORDER if STAGES[n].get("kind", "lock") == "lock"]
+    RANK = {s: i + 1 for i, s in enumerate(ORDER)}
+    if data is None:
+        data = scan(folders)
     mods, items = data["mods"], data["items"]
 
     # tags -> members (resolved later, recursively)
@@ -264,16 +225,33 @@ def build(folders):
         for o in outs:
             recipes[o].append(sl)
 
-    # seeds
-    seed = {}
-    for st, s in STAGES.items():
-        if st not in RANK:
-            continue
+    def tag_members(t, seen=()):
+        out = set()
+        for m in tags.get(t, ()):
+            if m.startswith("#"):
+                if m[1:] not in seen:
+                    out |= tag_members(m[1:], seen + (t,))
+            else:
+                out.add(m)
+        return out
+
+    # items each stage must never lock (stops the spread there)
+    excepted = {RANK[st]: set(STAGES[st].get("except", [])) for st in ORDER}
+
+    # seeds: listed materials, modded members of listed tags, every item of listed mods
+    seed, tagged = {}, defaultdict(list)
+    for st in ORDER:
+        s = STAGES[st]
         for i in s.get("items", []):
-            seed[i] = st
+            seed.setdefault(i, st)
+        for t in s.get("tags", []):
+            for i in sorted(tag_members(t.lstrip("#"))):
+                if not i.startswith("minecraft:") and i not in excepted[RANK[st]] and i not in seed:
+                    seed[i] = st
+                    tagged[st].append(i)
         for ns in s.get("namespaces", []):
             for i in items:
-                if i.startswith(ns + ":"):
+                if i.startswith(ns + ":") and i not in excepted[RANK[st]]:
                     seed.setdefault(i, st)
     rank = {i: RANK[st] for i, st in seed.items()}
 
@@ -320,6 +298,8 @@ def build(folders):
             if out in seed or out.startswith("minecraft:"):
                 continue
             r = min(max([slot_rank(s) for s in sl] or [0]) for sl in rs)
+            if r and out in excepted.get(r, ()):
+                continue
             if r > rank.get(out, 0):
                 rank[out] = r
                 changed = True
@@ -334,25 +314,39 @@ def build(folders):
         if f.endswith(".json"):
             os.remove(os.path.join(SDIR, f))
     report = [f"Scanned {len(data['recipes'])} recipes, {len(items)} items, {len(tags)} item tags", ""]
-    for name, s in STAGES.items():
-        if s.get("travel"):
-            out = {"restrictions": {"preventTravel": True}, "dimensions": s["dimensions"]}
+    if gates_off:
+        report[1:1] = ["RESEARCH GATES ARE OFF (\"gates_off\": true in stages.json): the stage files lock nothing.",
+                       "What each stage would lock is listed below.", ""]
+    summary = {"gates_off": gates_off, "recipes": len(data["recipes"]), "items": len(items), "tags": len(tags), "stages": {}}
+    for name in list(ORDER) + [n for n in STAGES if n not in ORDER]:
+        s = STAGES[name]
+        if s.get("kind") == "dimension":
+            out = {"restrictions": {"preventTravel": True}, "dimensions": s.get("dimensions", [])}
+            summary["stages"][name] = {"kind": "dimension", "dimensions": s.get("dimensions", [])}
         else:
             ns = s.get("namespaces", [])
+            listed = list(s.get("items", [])) + tagged.get(name, [])
             extra = sorted(i for i in derived.get(name, []) if i.split(":")[0] not in ns)
-            out = {"restrictions": dict(LOCK), "items": list(s.get("items", [])) + extra}
+            out = {"restrictions": dict(LOCK), "items": listed + extra}
             if ns:
                 out["namespaces"] = ns
-            report.append(f"== {name}: {len(s.get('items', []))} listed + {len(extra)} crafted from them"
+            report.append(f"== {name}: {len(listed)} listed + {len(extra)} crafted from them"
                           + (f", whole mods: {', '.join(ns)}" if ns else ""))
             report += [f"  {i}" for i in extra]
             report.append("")
+            summary["stages"][name] = {"kind": "lock", "listed": listed, "derived": extra, "namespaces": ns,
+                                       "mod_items": sorted(i for i in items if i.split(":")[0] in ns)}
+        if gates_off:
+            out = ({"restrictions": {"preventTravel": True}, "dimensions": []} if "dimensions" in out
+                   else {"restrictions": dict(LOCK), "items": [], "namespaces": []})
         with open(os.path.join(SDIR, name + ".json"), "w", encoding="utf-8", newline="\n") as f:
             json.dump(out, f, indent=2)
             f.write("\n")
     with open(os.path.join(ROOT, "tools", "questgen", "stages-report.txt"), "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(report) + "\n")
-    print("\n".join(l for l in report if not l.startswith("  ")))
+    if not quiet:
+        print("\n".join(l for l in report if not l.startswith("  ")))
+    return summary
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

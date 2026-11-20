@@ -1,0 +1,49 @@
+{
+  "gear": "sword",
+  "icon": "minecraft:chain",
+  "lines": [
+    {
+      "enchantment": "minecraft:knockback",
+      "max_level": 2,
+      "resource": "minecraft:slime_ball",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "enchantment": "researchenchanting:hookshot",
+      "max_level": 3,
+      "resource": "minecraft:chain",
+      "x": 1,
+      "y": 1,
+      "requires": {
+        "enchantment": "minecraft:knockback",
+        "level": 1
+      }
+    },
+    {
+      "enchantment": "minecraft:looting",
+      "max_level": 3,
+      "resource": "minecraft:emerald",
+      "x": 0,
+      "y": 2
+    },
+    {
+      "enchantment": "minecraft:bane_of_arthropods",
+      "max_level": 3,
+      "resource": "minecraft:cobblestone",
+      "x": 1,
+      "y": 3,
+      "requires": {
+        "enchantment": "minecraft:looting",
+        "level": 1
+      }
+    },
+    {
+      "enchantment": "minecraft:wind_burst",
+      "max_level": 3,
+      "resource": "minecraft:breeze_rod",
+      "x": 0,
+      "y": 4
+    }
+  ]
+}

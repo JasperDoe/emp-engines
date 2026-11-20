@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:nuggets/brass"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_brass",
+    "amount": 10
+  },
+  "temperature": 900
+}

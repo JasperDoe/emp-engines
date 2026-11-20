@@ -1,0 +1,12 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:raw_materials/zinc"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_zinc",
+    "amount": 90
+  },
+  "temperature": 420,
+  "ore": true
+}

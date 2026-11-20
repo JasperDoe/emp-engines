@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "item": "tieredfoundry:gold_cast"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_gold",
+    "amount": 180
+  },
+  "temperature": 850
+}

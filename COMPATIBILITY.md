@@ -8,7 +8,7 @@ server run (`tools\test-server.ps1`) confirms or breaks these.
 | Thing | Version | Why |
 | --- | --- | --- |
 | Minecraft | 1.21.1 | Create Aeronautics is 1.21.1-only |
-| NeoForge | 21.1.228 or newer | Floor for Sable CleanUp and Upgraded Portable Engines |
+| NeoForge | 21.1.267 (the server host offers only this one for 1.21.1; the client profile must match) | Floor for Sable CleanUp and Upgraded Portable Engines |
 | Create | 6.0.10 | Required by Aeronautics 1.3.x, Enchantment Industry 2.4.x, Recipe Need RPM, Upgraded Portable Engines |
 | Sable | 2.x | Required by current Aeronautics add-ons |
 | Java | 21 | Required by NeoForge 1.21.1 |
@@ -21,7 +21,6 @@ If packwiz pulls a newer Create than an add-on supports, pin Create to 6.0.10.
 - Create: Enchantment Industry: Create: Dragons Plus
 - Restage: ModernUI
 - Silent Gear: Silent Lib
-- Silent Gear Metalworks: Productive Metalworks
 - Apothic Enchanting: Apothic Attributes, Placebo
 - FTB Quests / Chunks: FTB Library, FTB Teams, Architectury
 - KubeJS: Rhino, Architectury
@@ -39,10 +38,9 @@ If packwiz pulls a newer Create than an add-on supports, pin Create to 6.0.10.
    mod. Decide after the test run.
 3. **Distant Horizons + Sky Archipelago:** ghost structures were fixed in Sky
    Archipelago 1.3.6. Use 1.3.6 or newer if it stays.
-4. **Silent Gear 4.x vs Metalworks:** Silent Gear 4.2 changed gear models
-   and data. Silent Gear Metalworks 1.5.0 was updated for newer Silent Gear
-   and Silent's Gems; make sure the versions packwiz picks are from the same
-   period.
+4. **Silent Gear 4.x and Tiered Foundry:** part casting and coating call
+   Silent Gear's API (CompoundPartItem, PartMaterialIngredient, GearData). After
+   a Silent Gear update, check a cast pickaxe head and a coating in game.
 5. **Silent Updated resource pack** must target Silent Gear 4.x textures;
    check visually in the client test.
 6. **Restage and Create Tiers** are very new with few users. If either

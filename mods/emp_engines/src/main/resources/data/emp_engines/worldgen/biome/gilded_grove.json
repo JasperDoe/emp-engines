@@ -1,0 +1,109 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.8,
+  "downfall": 0.4,
+  "effects": {
+    "grass_color": 14074986,
+    "foliage_color": 15909426,
+    "sky_color": 15325094,
+    "fog_color": 16180924,
+    "water_color": 5941705,
+    "water_fog_color": 1520711,
+    "particle": {
+      "options": {
+        "type": "minecraft:wax_on"
+      },
+      "probability": 0.0015
+    },
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    },
+    "additions_sound": {
+      "sound": "minecraft:ambient.basalt_deltas.additions",
+      "tick_chance": 0.0011
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "minecraft:zombie",
+        "weight": 95,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:skeleton",
+        "weight": 100,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:spider",
+        "weight": 90,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:creeper",
+        "weight": 90,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:enderman",
+        "weight": 15,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
+    "creature": [
+      {
+        "type": "minecraft:rabbit",
+        "weight": 4,
+        "minCount": 2,
+        "maxCount": 3
+      }
+    ],
+    "ambient": [],
+    "axolotls": [],
+    "underground_water_creature": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [
+      "emp_engines:etheric/gold_outcrop"
+    ],
+    [],
+    [
+      "emp_engines:etheric/ore_coal",
+      "emp_engines:etheric/ore_iron",
+      "emp_engines:etheric/ore_copper",
+      "emp_engines:etheric/ore_gold"
+    ],
+    [
+      "minecraft:glow_lichen",
+      "emp_engines:etheric/hanging_gold"
+    ],
+    [],
+    [
+      "emp_engines:etheric/gold_trees",
+      "minecraft:patch_sunflower",
+      "minecraft:patch_grass_plain",
+      "minecraft:flower_meadow"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ]
+}

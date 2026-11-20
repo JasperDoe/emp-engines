@@ -1,7 +1,0 @@
-{
-  "category": "skybound:logistics", "title": "Logistics", "icon": "create:item_vault", "x": 0, "y": 0,
-  "description": "Item vaults, portable storage interfaces, packagers, frogports and stock tickers.",
-  "parents": ["skybound:andesite_age"],
-  "xp": 315, "samples": [{ "item": "create:andesite_alloy", "count": 16 }, { "item": "minecraft:chest", "count": 8 }],
-  "stages": ["skybound:logistics"]
-}

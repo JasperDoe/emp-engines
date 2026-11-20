@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [" A ", " N ", "BRB"],
+  "key": {
+    "A": { "item": "minecraft:amethyst_cluster" },
+    "N": { "item": "emp_engines:resonant_antenna_t1" },
+    "B": { "item": "create:brass_block" },
+    "R": { "item": "minecraft:redstone" }
+  },
+  "result": { "id": "emp_engines:resonance_pylon_t1", "count": 1 }
+}

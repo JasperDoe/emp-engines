@@ -1,0 +1,13 @@
+{
+  "type": "tieredfoundry:casting",
+  "block": "table",
+  "pattern": "ingot",
+  "fluid": {
+    "tag": "c:molten_ancient_debris",
+    "amount": 100
+  },
+  "result": {
+    "id": "minecraft:netherite_scrap",
+    "count": 1
+  }
+}

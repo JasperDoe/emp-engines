@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "item": "minecraft:netherite_scrap"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_ancient_debris",
+    "amount": 100
+  },
+  "temperature": 1500
+}

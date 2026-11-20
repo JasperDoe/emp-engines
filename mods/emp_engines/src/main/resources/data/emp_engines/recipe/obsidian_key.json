@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "tieredfoundry"
+    }
+  ],
+  "type": "tieredfoundry:casting",
+  "block": "table",
+  "cast": {
+    "item": "emp_engines:fragmented_obsidian_key"
+  },
+  "fluid": {
+    "tag": "c:molten_gold",
+    "amount": 360
+  },
+  "result": {
+    "id": "emp_engines:obsidian_key",
+    "count": 1
+  }
+}

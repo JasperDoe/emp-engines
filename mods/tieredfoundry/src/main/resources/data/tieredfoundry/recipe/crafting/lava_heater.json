@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "FFF",
+    "PSP",
+    "FFF"
+  ],
+  "key": {
+    "F": {
+      "item": "tieredfoundry:fire_bricks"
+    },
+    "P": {
+      "item": "create:fluid_pipe"
+    },
+    "S": {
+      "item": "tieredfoundry:solid_fuel_heater"
+    }
+  },
+  "result": {
+    "id": "tieredfoundry:lava_heater",
+    "count": 1
+  }
+}

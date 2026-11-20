@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:storage_blocks/gold"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_gold",
+    "amount": 810
+  },
+  "temperature": 850
+}

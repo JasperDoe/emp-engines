@@ -1,0 +1,42 @@
+{
+  "gear": "trident",
+  "icon": "minecraft:trident",
+  "lines": [
+    {
+      "enchantment": "minecraft:impaling",
+      "max_level": 5,
+      "resource": "minecraft:prismarine_shard",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "enchantment": "minecraft:loyalty",
+      "max_level": 3,
+      "resource": "minecraft:prismarine_crystals",
+      "x": 0,
+      "y": 1
+    },
+    {
+      "enchantment": "minecraft:riptide",
+      "max_level": 3,
+      "resource": "minecraft:kelp",
+      "x": 1,
+      "y": 2,
+      "requires": {
+        "enchantment": "minecraft:loyalty",
+        "level": 1
+      }
+    },
+    {
+      "enchantment": "minecraft:channeling",
+      "max_level": 1,
+      "resource": "minecraft:copper_ingot",
+      "x": 3,
+      "y": 3,
+      "requires": {
+        "enchantment": "minecraft:loyalty",
+        "level": 3
+      }
+    }
+  ]
+}

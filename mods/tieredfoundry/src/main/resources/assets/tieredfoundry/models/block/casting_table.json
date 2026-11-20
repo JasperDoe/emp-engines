@@ -1,0 +1,8 @@
+{
+  "parent": "tieredfoundry:block/template/table",
+  "textures": {
+    "top": "tieredfoundry:block/casting/table_top",
+    "side": "tieredfoundry:block/casting/table_side",
+    "bottom": "tieredfoundry:block/casting/table_bottom"
+  }
+}

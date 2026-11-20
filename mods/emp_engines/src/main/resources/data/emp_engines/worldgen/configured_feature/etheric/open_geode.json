@@ -1,0 +1,8 @@
+{
+  "type": "emp_engines:open_geode",
+  "config": {
+    "geode": "minecraft:amethyst_geode",
+    "depth": 2,
+    "radius": 9
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "tieredfoundry:casting",
+  "block": "table",
+  "pattern": "ingot",
+  "fluid": {
+    "tag": "c:molten_zinc",
+    "amount": 90
+  },
+  "result": {
+    "id": "create:zinc_ingot",
+    "count": 1
+  }
+}

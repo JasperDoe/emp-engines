@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:storage_blocks/brass"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_brass",
+    "amount": 810
+  },
+  "temperature": 900
+}

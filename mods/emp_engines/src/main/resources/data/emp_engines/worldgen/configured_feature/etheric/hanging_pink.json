@@ -1,0 +1,38 @@
+{
+  "type": "emp_engines:crystal_spike",
+  "config": {
+    "body": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 3,
+          "data": {
+            "Name": "minecraft:pink_terracotta"
+          }
+        },
+        {
+          "weight": 1,
+          "data": {
+            "Name": "minecraft:calcite"
+          }
+        }
+      ]
+    },
+    "core": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:magenta_terracotta"
+      }
+    },
+    "tip": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:pink_terracotta"
+      }
+    },
+    "min_height": 5,
+    "max_height": 15,
+    "giant_chance": 10,
+    "hanging": true
+  }
+}

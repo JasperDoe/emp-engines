@@ -1,0 +1,13 @@
+name = "Create: New Age Retexture"
+filename = "Create New Age Retexture.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "48eafa1fe260ab658e8c97e208288b4593e55835"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5554251
+project-id = 1068890

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "unlocked=false": {
+      "model": "emp_engines:block/obsidian_keyhole"
+    },
+    "unlocked=true": {
+      "model": "emp_engines:block/obsidian_keyhole_unlocked"
+    }
+  }
+}

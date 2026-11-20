@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:cache_2d",
+  "argument": {
+    "type": "minecraft:mul",
+    "argument1": 10.0,
+    "argument2": "emp_engines:etheric/weight_gilded_grove"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "tieredfoundry:casting",
+  "block": "basin",
+  "fluid": {
+    "tag": "c:molten_copper",
+    "amount": 810
+  },
+  "result": {
+    "id": "minecraft:copper_block",
+    "count": 1
+  }
+}

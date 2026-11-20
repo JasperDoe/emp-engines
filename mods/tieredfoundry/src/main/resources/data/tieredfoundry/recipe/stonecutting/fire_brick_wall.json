@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "tieredfoundry:fire_bricks"
+  },
+  "result": {
+    "id": "tieredfoundry:fire_brick_wall",
+    "count": 1
+  }
+}

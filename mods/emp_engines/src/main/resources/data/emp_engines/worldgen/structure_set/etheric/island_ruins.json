@@ -1,0 +1,30 @@
+{
+  "structures": [
+    {
+      "structure": "emp_engines:etheric/desert_pyramid",
+      "weight": 2
+    },
+    {
+      "structure": "emp_engines:etheric/jungle_temple",
+      "weight": 2
+    },
+    {
+      "structure": "emp_engines:etheric/igloo",
+      "weight": 2
+    },
+    {
+      "structure": "emp_engines:etheric/witch_hut",
+      "weight": 2
+    },
+    {
+      "structure": "emp_engines:etheric/ruined_portal",
+      "weight": 3
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 12,
+    "separation": 4,
+    "salt": 270611701
+  }
+}

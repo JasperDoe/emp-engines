@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.empengines.researchenchanting.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "EnchantingTableBlockEntityMixin",
+    "EnchantingTableBlockMixin",
+    "MobAccessor"
+  ],
+  "client": [
+    "client.EnchantTableRendererMixin",
+    "client.EnchantingTableTickMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

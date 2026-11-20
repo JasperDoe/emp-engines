@@ -1,0 +1,54 @@
+{
+  "structure": "cr_aero_structures:pillager_airballoon",
+  "front": "south",
+  "helm": [
+    4,
+    1,
+    11
+  ],
+  "hooks": [
+    [
+      6,
+      1,
+      9
+    ],
+    [
+      2,
+      1,
+      9
+    ]
+  ],
+  "posts": [
+    [
+      5,
+      1,
+      10
+    ],
+    [
+      3,
+      1,
+      10
+    ]
+  ],
+  "witches": [
+    [
+      4,
+      1,
+      8
+    ]
+  ],
+  "hold": [
+    3,
+    1,
+    7
+  ],
+  "speed": 22.0,
+  "turn": 25.0,
+  "enabled": true,
+  "blocks": 350,
+  "size": [
+    10,
+    20,
+    17
+  ]
+}

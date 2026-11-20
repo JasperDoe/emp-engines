@@ -5,7 +5,7 @@
 	group: "F02A3E854920CEED"
 	icon: {
 		count: 1
-		id: "create_enchantment_industry:experience_bucket"
+		id: "researchenchanting:research_focus"
 	}
 	id: "3485FE85BE704691"
 	order_index: 6
@@ -17,7 +17,7 @@
 			]
 			icon: {
 				count: 1
-				id: "create_enchantment_industry:experience_bucket"
+				id: "minecraft:blaze_powder"
 			}
 			id: "BAF4C2C8B1FCA99A"
 			shape: "gear"
@@ -25,7 +25,7 @@
 			tasks: [
 				{
 					id: "3B03C34D570D4547"
-					stage: "skybound:exotic_age"
+					stage: "emp_engines:exotic_age"
 					team_stage: false
 					type: "gamestage"
 				}
@@ -37,15 +37,17 @@
 			dependencies: [
 				"BAF4C2C8B1FCA99A"
 			]
-			id: "BEEEF5D03C97F95E"
+			icon: {
+				count: 1
+				id: "researchenchanting:research_focus"
+			}
+			id: "0988524BF2C669CF"
 			tasks: [
 				{
-					id: "6946F8030EFE914A"
-					item: {
-						count: 1
-						id: "create_enchantment_industry:experience_bucket"
-					}
-					type: "item"
+					advancement: "researchenchanting:bind_focus"
+					criterion: ""
+					id: "4FDC24E19FF72C39"
+					type: "advancement"
 				}
 			]
 			x: 2.5d
@@ -53,17 +55,19 @@
 		}
 		{
 			dependencies: [
-				"BEEEF5D03C97F95E"
+				"0988524BF2C669CF"
 			]
-			id: "FE1FC22B01550C40"
+			icon: {
+				count: 1
+				id: "minecraft:chiseled_bookshelf"
+			}
+			id: "321BF1A1BBE4410F"
 			tasks: [
 				{
-					id: "E4C0D4AD9D1D0E38"
-					item: {
-						count: 1
-						id: "create_enchantment_industry:blaze_enchanter"
-					}
-					type: "item"
+					advancement: "researchenchanting:research_node"
+					criterion: ""
+					id: "1115D4830D214A5E"
+					type: "advancement"
 				}
 			]
 			x: 4.5d
@@ -71,22 +75,23 @@
 		}
 		{
 			dependencies: [
-				"BEEEF5D03C97F95E"
+				"321BF1A1BBE4410F"
 			]
-			id: "474E0AF0EE3B1761"
-			optional: true
+			icon: {
+				count: 1
+				id: "minecraft:enchanting_table"
+			}
+			id: "DDBC83D1289E3DB3"
 			tasks: [
 				{
-					id: "AEBC4DC1662D34C6"
-					item: {
-						count: 1
-						id: "create_enchantment_industry:printer"
-					}
-					type: "item"
+					advancement: "researchenchanting:enchant_item"
+					criterion: ""
+					id: "B3872A892EDD4E63"
+					type: "advancement"
 				}
 			]
-			x: 4.5d
-			y: 2.0d
+			x: 6.5d
+			y: 0.0d
 		}
 	]
 }

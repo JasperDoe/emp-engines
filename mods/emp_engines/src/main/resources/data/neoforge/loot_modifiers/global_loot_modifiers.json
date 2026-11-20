@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "entries": [
+    "emp_engines:antennas",
+    "emp_engines:ruined_portal_key",
+    "emp_engines:navigational_data"
+  ]
+}

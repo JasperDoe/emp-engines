@@ -1,0 +1,10 @@
+{
+  "type": "emp_engines:on_island",
+  "biomes": "#emp_engines:etheric",
+  "step": "surface_structures",
+  "terrain_adaptation": "none",
+  "spawn_overrides": {},
+  "structure": "minecraft:igloo",
+  "min_radius": 12,
+  "max_slope": 10
+}

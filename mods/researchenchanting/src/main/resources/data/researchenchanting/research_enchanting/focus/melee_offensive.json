@@ -1,0 +1,53 @@
+{
+  "gear": "sword",
+  "icon": "minecraft:iron_sword",
+  "lines": [
+    {
+      "enchantment": "minecraft:sharpness",
+      "max_level": 5,
+      "resource": "minecraft:iron_ingot",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "enchantment": "minecraft:sweeping_edge",
+      "max_level": 3,
+      "resource": "minecraft:string",
+      "x": 1,
+      "y": 1,
+      "requires": {
+        "enchantment": "minecraft:sharpness",
+        "level": 1
+      }
+    },
+    {
+      "enchantment": "researchenchanting:rending",
+      "max_level": 3,
+      "resource": "minecraft:flint",
+      "x": 2,
+      "y": 2,
+      "requires": {
+        "enchantment": "minecraft:sharpness",
+        "level": 2
+      }
+    },
+    {
+      "enchantment": "minecraft:density",
+      "max_level": 5,
+      "resource": "minecraft:cobbled_deepslate",
+      "x": 0,
+      "y": 3
+    },
+    {
+      "enchantment": "minecraft:breach",
+      "max_level": 4,
+      "resource": "minecraft:quartz",
+      "x": 2,
+      "y": 4,
+      "requires": {
+        "enchantment": "minecraft:density",
+        "level": 2
+      }
+    }
+  ]
+}

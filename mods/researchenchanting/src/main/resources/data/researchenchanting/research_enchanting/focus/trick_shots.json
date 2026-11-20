@@ -1,0 +1,31 @@
+{
+  "gear": "crossbow",
+  "icon": "minecraft:crossbow",
+  "lines": [
+    {
+      "enchantment": "minecraft:multishot",
+      "max_level": 1,
+      "resource": "minecraft:string",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "enchantment": "minecraft:quick_charge",
+      "max_level": 3,
+      "resource": "minecraft:redstone",
+      "x": 1,
+      "y": 1,
+      "requires": {
+        "enchantment": "minecraft:multishot",
+        "level": 1
+      }
+    },
+    {
+      "enchantment": "minecraft:piercing",
+      "max_level": 4,
+      "resource": "minecraft:flint",
+      "x": 0,
+      "y": 2
+    }
+  ]
+}

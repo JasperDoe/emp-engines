@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "item": "minecraft:magma_cream"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_magma_cream",
+    "amount": 100
+  },
+  "temperature": 900
+}

@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "item": "minecraft:blaze_rod"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_blaze",
+    "amount": 400
+  },
+  "temperature": 1000
+}

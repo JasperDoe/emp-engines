@@ -1,0 +1,230 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tieredfoundry:item/sand_cast_ingot"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 1
+      },
+      "model": "tieredfoundry:item/sand_cast_nugget"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 2
+      },
+      "model": "tieredfoundry:item/sand_cast_plate"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 3
+      },
+      "model": "tieredfoundry:item/sand_cast_gem"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 4
+      },
+      "model": "tieredfoundry:item/sand_cast_part_arrow_heads"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 5
+      },
+      "model": "tieredfoundry:item/sand_cast_part_axe_head"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 6
+      },
+      "model": "tieredfoundry:item/sand_cast_part_boot_plates"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 7
+      },
+      "model": "tieredfoundry:item/sand_cast_part_bow_limbs"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 8
+      },
+      "model": "tieredfoundry:item/sand_cast_part_bracelet_band"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 9
+      },
+      "model": "tieredfoundry:item/sand_cast_part_chestplate_plates"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 10
+      },
+      "model": "tieredfoundry:item/sand_cast_part_crossbow_limbs"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 11
+      },
+      "model": "tieredfoundry:item/sand_cast_part_dagger_blade"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 12
+      },
+      "model": "tieredfoundry:item/sand_cast_part_excavator_head"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 13
+      },
+      "model": "tieredfoundry:item/sand_cast_part_fishing_reel_and_hook"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 14
+      },
+      "model": "tieredfoundry:item/sand_cast_part_hammer_head"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 15
+      },
+      "model": "tieredfoundry:item/sand_cast_part_helmet_plates"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 16
+      },
+      "model": "tieredfoundry:item/sand_cast_part_hoe_head"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 17
+      },
+      "model": "tieredfoundry:item/sand_cast_part_katana_blade"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 18
+      },
+      "model": "tieredfoundry:item/sand_cast_part_knife_blade"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 19
+      },
+      "model": "tieredfoundry:item/sand_cast_part_legging_plates"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 20
+      },
+      "model": "tieredfoundry:item/sand_cast_part_machete_blade"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 21
+      },
+      "model": "tieredfoundry:item/sand_cast_part_mattock_head"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 22
+      },
+      "model": "tieredfoundry:item/sand_cast_part_necklace_chain"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 23
+      },
+      "model": "tieredfoundry:item/sand_cast_part_paxel_head"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 24
+      },
+      "model": "tieredfoundry:item/sand_cast_part_pickaxe_head"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 25
+      },
+      "model": "tieredfoundry:item/sand_cast_part_prospector_hammer_head"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 26
+      },
+      "model": "tieredfoundry:item/sand_cast_part_ring_shank"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 27
+      },
+      "model": "tieredfoundry:item/sand_cast_part_saw_blade"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 28
+      },
+      "model": "tieredfoundry:item/sand_cast_part_shear_blades"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 29
+      },
+      "model": "tieredfoundry:item/sand_cast_part_shield_plate"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 30
+      },
+      "model": "tieredfoundry:item/sand_cast_part_shovel_head"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 31
+      },
+      "model": "tieredfoundry:item/sand_cast_part_sickle_blade"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 32
+      },
+      "model": "tieredfoundry:item/sand_cast_part_slingshot_limbs"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 33
+      },
+      "model": "tieredfoundry:item/sand_cast_part_spear_tip"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 34
+      },
+      "model": "tieredfoundry:item/sand_cast_part_sword_blade"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 35
+      },
+      "model": "tieredfoundry:item/sand_cast_part_tip"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 36
+      },
+      "model": "tieredfoundry:item/sand_cast_part_rod"
+    },
+    {
+      "predicate": {
+        "tieredfoundry:pattern": 37
+      },
+      "model": "tieredfoundry:item/sand_cast_part_trident_prongs"
+    }
+  ]
+}

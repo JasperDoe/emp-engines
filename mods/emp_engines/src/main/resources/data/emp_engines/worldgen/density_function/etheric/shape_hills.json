@@ -1,0 +1,88 @@
+{
+  "type": "minecraft:cache_2d",
+  "argument": {
+    "type": "minecraft:add",
+    "argument1": {
+      "type": "minecraft:add",
+      "argument1": {
+        "type": "minecraft:add",
+        "argument1": {
+          "type": "minecraft:add",
+          "argument1": {
+            "type": "minecraft:add",
+            "argument1": {
+              "type": "minecraft:add",
+              "argument1": {
+                "type": "minecraft:add",
+                "argument1": {
+                  "type": "minecraft:add",
+                  "argument1": {
+                    "type": "minecraft:add",
+                    "argument1": {
+                      "type": "minecraft:add",
+                      "argument1": {
+                        "type": "minecraft:mul",
+                        "argument1": 1.5,
+                        "argument2": "emp_engines:etheric/weight_pale_remnant"
+                      },
+                      "argument2": {
+                        "type": "minecraft:mul",
+                        "argument1": 6.0,
+                        "argument2": "emp_engines:etheric/weight_twilight_shards"
+                      }
+                    },
+                    "argument2": {
+                      "type": "minecraft:mul",
+                      "argument1": 8.0,
+                      "argument2": "emp_engines:etheric/weight_sky_oakwood"
+                    }
+                  },
+                  "argument2": {
+                    "type": "minecraft:mul",
+                    "argument1": 4.0,
+                    "argument2": "emp_engines:etheric/weight_pale_forest"
+                  }
+                },
+                "argument2": {
+                  "type": "minecraft:mul",
+                  "argument1": 3.0,
+                  "argument2": "emp_engines:etheric/weight_gilded_grove"
+                }
+              },
+              "argument2": {
+                "type": "minecraft:mul",
+                "argument1": 4.0,
+                "argument2": "emp_engines:etheric/weight_sky_meadow"
+              }
+            },
+            "argument2": {
+              "type": "minecraft:mul",
+              "argument1": 5.0,
+              "argument2": "emp_engines:etheric/weight_amethyst_expanse"
+            }
+          },
+          "argument2": {
+            "type": "minecraft:mul",
+            "argument1": 7.0,
+            "argument2": "emp_engines:etheric/weight_sky_desert"
+          }
+        },
+        "argument2": {
+          "type": "minecraft:mul",
+          "argument1": 10.0,
+          "argument2": "emp_engines:etheric/weight_cherry_rift"
+        }
+      },
+      "argument2": {
+        "type": "minecraft:mul",
+        "argument1": 14.0,
+        "argument2": "emp_engines:etheric/weight_azure_wilds"
+      }
+    },
+    "argument2": {
+      "type": "minecraft:mul",
+      "argument1": 12.0,
+      "argument2": "emp_engines:etheric/weight_sky_jungle"
+    }
+  }
+}

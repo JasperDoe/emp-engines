@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Empyrean Engines Quest Editor</title>
+<style>
+:root {
+  --bg: #16171c; --panel: #1e2027; --panel2: #262932; --line: #343846; --text: #e6e6ea; --dim: #9a9db0;
+  --accent: #e0b04a; --accent2: #6aa9ff; --bad: #ff6b6b; --ok: #5fd38a; --node: #2c303c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font: 13px/1.4 system-ui, "Segoe UI", sans-serif; }
+button, input, select, textarea { font: inherit; color: var(--text); background: var(--panel2); border: 1px solid var(--line); border-radius: 5px; }
+button { padding: 4px 10px; cursor: pointer; }
+button:hover { border-color: var(--dim); }
+button.primary { background: var(--accent); color: #1a1500; border-color: var(--accent); font-weight: 600; }
+button.danger { color: var(--bad); }
+button:disabled { opacity: .45; cursor: default; }
+input, select, textarea { padding: 4px 6px; width: 100%; }
+textarea { resize: vertical; min-height: 90px; font-family: ui-monospace, Consolas, monospace; font-size: 12px; }
+input[type=checkbox] { width: auto; }
+label { display: block; color: var(--dim); font-size: 11px; margin: 8px 0 2px; text-transform: uppercase; letter-spacing: .04em; }
+.row { display: flex; gap: 6px; align-items: center; }
+.row > * { flex: 1; }
+.row > .shrink { flex: 0 0 auto; }
+
+#app { display: grid; grid-template-columns: 220px 1fr 340px; grid-template-rows: 44px 1fr; height: 100vh; }
+header { grid-column: 1 / 4; display: flex; align-items: center; gap: 8px; padding: 0 12px; background: var(--panel); border-bottom: 1px solid var(--line); }
+header h1 { font-size: 14px; margin: 0 12px 0 0; font-weight: 600; }
+header .spacer { flex: 1; }
+#status { color: var(--dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 42vw; }
+#status.bad { color: var(--bad); } #status.ok { color: var(--ok); }
+#dirty { color: var(--accent); display: none; }
+
+#chapters { background: var(--panel); border-right: 1px solid var(--line); overflow-y: auto; padding: 8px; }
+#chapters .group { color: var(--dim); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; margin: 12px 4px 4px; }
+.chap { display: flex; align-items: center; gap: 8px; padding: 5px 6px; border-radius: 5px; cursor: pointer; }
+.chap:hover { background: var(--panel2); }
+.chap.on { background: #3a3220; outline: 1px solid var(--accent); }
+.chap .n { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chap .c { color: var(--dim); font-size: 11px; }
+
+#canvasWrap { position: relative; overflow: hidden; background: #111216; }
+#canvas { width: 100%; height: 100%; display: block; cursor: default; user-select: none; }
+#canvas.panning { cursor: grabbing; }
+#hint { position: absolute; left: 10px; top: 8px; color: var(--dim); font-size: 11px; cursor: pointer; background: #111216cc; padding: 3px 6px; border-radius: 4px; }
+#zoomBox { position: absolute; right: 10px; bottom: 8px; display: flex; gap: 4px; }
+.q-label { fill: #e6e6ea; font-size: 11px; text-anchor: middle; pointer-events: none; paint-order: stroke; stroke: #111216; stroke-width: 3px; }
+.q-shape { fill: var(--node); stroke: #555b6e; stroke-width: 1.5; }
+.q.sel .q-shape { stroke: var(--accent); stroke-width: 3; }
+.q.bad .q-shape { stroke: var(--bad); }
+.q.optional .q-shape { stroke-dasharray: 4 3; }
+.q.invisible { opacity: .5; }
+.q { cursor: pointer; }
+.dep { stroke: #7d8396; stroke-width: 2; fill: none; }
+.dep.hot { stroke: var(--accent2); stroke-width: 3; }
+.ext { fill: var(--accent2); font-size: 10px; pointer-events: none; }
+image { image-rendering: pixelated; }
+
+#inspector { background: var(--panel); border-left: 1px solid var(--line); overflow-y: auto; padding: 10px 12px 40px; }
+#inspector h2 { font-size: 13px; margin: 2px 0 6px; }
+#inspector .note { color: var(--dim); font-size: 12px; }
+#inspector .warn { color: var(--accent); font-size: 11px; }
+.box { background: var(--panel2); border: 1px solid var(--line); border-radius: 6px; padding: 6px; margin-top: 4px; }
+.task { display: grid; grid-template-columns: 1fr auto; gap: 4px; padding: 6px; border: 1px solid var(--line); border-radius: 5px; margin-top: 4px; background: #23262e; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.chip { display: inline-flex; align-items: center; gap: 4px; background: #2c3140; border: 1px solid var(--line); border-radius: 12px; padding: 1px 4px 1px 8px; font-size: 12px; cursor: pointer; }
+.chip b { font-weight: 400; color: var(--dim); }
+.chip .x { border: none; background: none; padding: 0 4px; color: var(--dim); }
+.itembtn { display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; padding: 3px 6px; }
+.itembtn .nm { flex: 1; overflow: hidden; }
+.itembtn .nm small { display: block; color: var(--dim); font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.itembtn.bad { border-color: var(--bad); }
+.ic { width: 28px; height: 28px; flex: 0 0 28px; background: #0006 no-repeat top center / 100% auto; image-rendering: pixelated; border-radius: 3px; display: flex; align-items: center; justify-content: center; color: var(--dim); font-size: 10px; overflow: hidden; }
+.preview { background: #0d0d10; border: 1px solid var(--line); border-radius: 5px; padding: 8px; margin-top: 4px; white-space: pre-wrap; font-family: "Minecraft", ui-monospace, Consolas, monospace; font-size: 12px; min-height: 30px; }
+
+#modal { position: fixed; inset: 0; background: #000a; display: none; align-items: center; justify-content: center; z-index: 10; }
+#modal.on { display: flex; }
+#picker { width: min(900px, 92vw); height: min(640px, 86vh); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; display: flex; flex-direction: column; overflow: hidden; }
+#picker .top { display: flex; gap: 8px; padding: 10px; border-bottom: 1px solid var(--line); }
+#picker .top input { flex: 2; } #picker .top select { flex: 1; }
+#grid { flex: 1; overflow-y: auto; padding: 8px; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 4px; align-content: start; }
+#grid .it { display: flex; align-items: center; gap: 8px; padding: 4px 6px; border-radius: 5px; cursor: pointer; border: 1px solid transparent; }
+#grid .it:hover, #grid .it.first { background: var(--panel2); border-color: var(--line); }
+#grid .it .nm { overflow: hidden; } #grid .it .nm small { display: block; color: var(--dim); font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#picker .foot { padding: 8px 10px; border-top: 1px solid var(--line); color: var(--dim); display: flex; gap: 8px; align-items: center; }
+#problems { position: absolute; top: 8px; left: 8px; right: 8px; max-height: 40%; overflow: auto; background: #2a1618ee; border: 1px solid var(--bad); border-radius: 6px; padding: 8px 10px; display: none; }
+#problems.on { display: block; }
+#problems div { cursor: pointer; padding: 2px 0; } #problems div:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>Empyrean Engines Quest Editor</h1>
+    <button id="undoBtn" title="Ctrl+Z">Undo</button>
+    <button id="redoBtn" title="Ctrl+Y">Redo</button>
+    <button id="checkBtn" title="List problems: missing items, broken links">Check</button>
+    <button id="saveBtn" class="primary" title="Ctrl+S: saves book.json and rebuilds the FTB Quests files">Save &amp; build</button>
+    <span id="dirty">● unsaved</span>
+    <span class="spacer"></span>
+    <span id="status">Loading…</span>
+  </header>
+  <aside id="chapters"></aside>
+  <div id="canvasWrap">
+    <svg id="canvas"><defs>
+      <pattern id="gridPat" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M 28 0 L 0 0 0 28" fill="none" stroke="#1f222a" stroke-width="1"/></pattern>
+      <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7d8396"/></marker>
+      <marker id="arrowHot" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6aa9ff"/></marker>
+    </defs><rect id="bg" width="100%" height="100%" fill="url(#gridPat)"/><g id="view"><g id="deps"></g><g id="nodes"></g></g></svg>
+    <div id="problems"></div>
+    <div id="hint" title="Click to hide" onclick="this.remove()">Double-click: new quest · Ctrl+click: link to selected · Shift+click: multi-select · Drag space: pan · Wheel: zoom · F: fit · ✕</div>
+    <div id="zoomBox"><button id="zoomOut">−</button><button id="fitBtn">Fit</button><button id="zoomIn">+</button></div>
+  </div>
+  <aside id="inspector"></aside>
+</div>
+<div id="modal"><div id="picker">
+  <div class="top"><input id="pickQ" placeholder="Search items by name or id (e.g. 'brass', 'create:cog')" autocomplete="off"><select id="pickMod"></select></div>
+  <div id="grid"></div>
+  <div class="foot"><span id="pickCount"></span><span class="spacer" style="flex:1"></span><button id="pickTyped">Use typed id</button><button id="pickClear">No icon</button><button id="pickCancel">Cancel</button></div>
+</div></div>
+
+<script>
+"use strict";
+// ---------------------------------------------------------------------------------------------
+// State
+// ---------------------------------------------------------------------------------------------
+const U = 56;                                  // pixels per quest unit at zoom 1
+const SHAPES = ["", "circle", "square", "rsquare", "diamond", "pentagon", "hexagon", "octagon", "heart", "gear", "none"];
+const TASK_TYPES = ["item", "checkmark", "gamestage", "dimension", "structure"];
+let book = null, items = [], itemMap = new Map(), mods = {}, knownNs = new Set();
+let cur = 0;                                   // chapter index
+let sel = new Set();                           // selected quest keys
+let view = { x: 0, y: 0, s: 1 };
+let undoStack = [], redoStack = [], dirty = false;
+const fresh = new Set();                       // keys made this session: they follow the title until saved
+const $ = id => document.getElementById(id);
+const svgNS = "http://www.w3.org/2000/svg";
+
+function chapter() { return book.chapters[cur]; }
+function allQuests() { return book.chapters.flatMap((c, ci) => c.quests.map(q => ({ q, ci }))); }
+function findQuest(key) { for (let ci = 0; ci < book.chapters.length; ci++) { const q = book.chapters[ci].quests.find(q => q.key === key); if (q) return { q, ci }; } return null; }
+function esc(s) { return String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function texUrl(t) { return "/api/tex?id=" + encodeURIComponent(t); }
+function itemIcon(id) { const it = itemMap.get(id); return it && it.icon ? texUrl(it.icon) : null; }
+function itemName(id) { const it = itemMap.get(id); return it ? it.name : id; }
+function unknownItem(id) { if (!id) return false; const ns = id.split(":")[0]; return items.length > 0 && knownNs.has(ns) && !itemMap.has(id); }
+function questIconId(q) { if (q.icon) return q.icon; const t = (q.tasks || []).find(t => t.type === "item"); return t ? t.item : null; }
+function slug(s) { return String(s).toLowerCase().replace(/&./g, "").replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "").slice(0, 40) || "quest"; }
+function uniqueKey(base) { let k = base, n = 2; while (findQuest(k)) k = base + "_" + n++; return k; }
+
+function status(msg, kind) { const s = $("status"); s.textContent = msg; s.className = kind || ""; }
+function setDirty(d) { dirty = d; $("dirty").style.display = d ? "inline" : "none"; }
+
+// Every edit goes through change(): it snapshots for undo first.
+function snapshot() { return JSON.stringify({ book, cur }); }
+function change(fn, { keepRedo = false } = {}) {
+  undoStack.push(snapshot()); if (undoStack.length > 200) undoStack.shift();
+  if (!keepRedo) redoStack = [];
+  fn(); setDirty(true); renderAll();
+}
+function restore(s) { const o = JSON.parse(s); book = o.book; cur = Math.min(o.cur, book.chapters.length - 1); for (const k of [...sel]) if (!findQuest(k)) sel.delete(k); renderAll(); setDirty(true); }
+function undo() { if (!undoStack.length) return; redoStack.push(snapshot()); restore(undoStack.pop()); }
+function redo() { if (!redoStack.length) return; undoStack.push(snapshot()); restore(redoStack.pop()); }
+
+// ---------------------------------------------------------------------------------------------
+// Loading and saving
+// ---------------------------------------------------------------------------------------------
+async function load() {
+  book = await (await fetch("/api/book")).json();
+  renderAll(); fit();
+  status("Reading items from the mod jars…");
+  const d = await (await fetch("/api/items")).json();
+  items = d.items; mods = d.mods || {};
+  itemMap = new Map(items.map(i => [i.id, i]));
+  knownNs = new Set(items.map(i => i.mod));
+  status(d.error ? "Item scan failed: " + d.error : `${items.length} items from ${d.jars} jars`, d.error ? "bad" : "");
+  const sm = $("pickMod");
+  sm.innerHTML = `<option value="">All mods</option>` + [...knownNs].sort((a, b) => (mods[a] || a).localeCompare(mods[b] || b))
+    .map(ns => `<option value="${esc(ns)}">${esc(mods[ns] || ns)}</option>`).join("");
+  renderAll();
+}
+
+async function save() {
+  const bad = problems().filter(p => p.fatal);
+  if (bad.length) { showProblems(); status("Fix the problems first (they'd break the book).", "bad"); return; }
+  status("Saving…");
+  try {
+    const r = await fetch("/api/book", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(book) });
+    const d = await r.json();
+    if (d.ok) { setDirty(false); fresh.clear(); status(d.message, "ok"); }
+    else status(d.message, "bad");
+  } catch (e) { status("Save failed: is serve.py still running? " + e, "bad"); }
+}
+
+// ---------------------------------------------------------------------------------------------
+// Problems
+// ---------------------------------------------------------------------------------------------
+function problems() {
+  const out = [], keys = new Map(), files = new Set(), groups = new Set((book.groups || []).map(g => g.key));
+  book.chapters.forEach((c, ci) => {
+    if (files.has(c.file)) out.push({ msg: `Two chapters use the file name "${c.file}"`, ci, fatal: true });
+    files.add(c.file);
+    if (c.group && !groups.has(c.group)) out.push({ msg: `Chapter "${c.title}" is in a missing group`, ci, fatal: true });
+    if (unknownItem(c.icon)) out.push({ msg: `Chapter "${c.title}": unknown icon ${c.icon}`, ci });
+    c.quests.forEach(q => {
+      if (keys.has(q.key)) out.push({ msg: `Quest key "${q.key}" is used twice`, ci, key: q.key, fatal: true });
+      keys.set(q.key, ci);
+      if (!q.tasks || !q.tasks.length) out.push({ msg: `"${q.title}" has no tasks`, ci, key: q.key, fatal: true });
+      if (unknownItem(q.icon)) out.push({ msg: `"${q.title}": unknown icon ${q.icon}`, ci, key: q.key });
+      (q.tasks || []).forEach(t => { if (t.type === "item" && (!t.item || unknownItem(t.item))) out.push({ msg: `"${q.title}": unknown item ${t.item || "(none)"}`, ci, key: q.key, fatal: !t.item }); });
+    });
+  });
+  book.chapters.forEach((c, ci) => c.quests.forEach(q => (q.dependencies || []).forEach(d => {
+    if (!keys.has(d)) out.push({ msg: `"${q.title}" depends on a missing quest "${d}"`, ci, key: q.key, fatal: true });
+    if (d === q.key) out.push({ msg: `"${q.title}" depends on itself`, ci, key: q.key, fatal: true });
+  })));
+  return out;
+}
+function showProblems() {
+  const p = problems(), box = $("problems");
+  if (!p.length) { box.classList.remove("on"); status("No problems found.", "ok"); return; }
+  box.innerHTML = `<b>${p.length} problem${p.length > 1 ? "s" : ""}</b> <span style="color:var(--dim)">(red ones block saving; click to go there)</span> <button style="float:right" onclick="this.parentNode.classList.remove('on')">Close</button>` +
+    p.map((x, i) => `<div data-i="${i}" style="color:${x.fatal ? "var(--bad)" : "var(--accent)"}">${esc(x.msg)}</div>`).join("");
+  box.querySelectorAll("div[data-i]").forEach(d => d.onclick = () => { const x = p[+d.dataset.i]; cur = x.ci; sel = new Set(x.key ? [x.key] : []); renderAll(); fit(); });
+  box.classList.add("on");
+}
+
+// ---------------------------------------------------------------------------------------------
+// Rendering: chapter list
+// ---------------------------------------------------------------------------------------------
+function icHtml(id, size) {
+  const u = itemIcon(id), st = size ? `width:${size}px;height:${size}px;flex-basis:${size}px;` : "";
+  return u ? `<span class="ic" style="${st}background-image:url('${u}')"></span>` : `<span class="ic" style="${st}">${id ? "?" : ""}</span>`;
+}
+function renderChapters() {
+  const el = $("chapters"), groups = book.groups || [];
+  let html = "";
+  const sections = [{ key: "", title: "Chapters" }, ...groups];
+  for (const g of sections) {
+    const list = book.chapters.map((c, i) => ({ c, i })).filter(x => (x.c.group || "") === g.key);
+    if (!list.length && g.key === "") continue;
+    html += `<div class="group">${esc(g.title)}</div>`;
+    for (const { c, i } of list)
+      html += `<div class="chap ${i === cur ? "on" : ""}" data-i="${i}">${icHtml(c.icon, 22)}<span class="n">${esc(c.title)}</span><span class="c">${c.quests.length}</span></div>`;
+  }
+  html += `<div style="margin-top:12px" class="row"><button id="addChap">+ Chapter</button></div>`;
+  el.innerHTML = html;
+  el.querySelectorAll(".chap").forEach(d => d.onclick = () => { cur = +d.dataset.i; sel.clear(); renderAll(); fit(); });
+  $("addChap").onclick = () => change(() => {
+    let f = "new_chapter", n = 2; while (book.chapters.some(c => c.file === f)) f = "new_chapter_" + n++;
+    book.chapters.push({ file: f, title: "New Chapter", subtitle: "", group: null, icon: "minecraft:book", quests: [] });
+    cur = book.chapters.length - 1; sel.clear(); freshChapter = f;
+  });
+}
+let freshChapter = null;
+
+// ---------------------------------------------------------------------------------------------
+// Rendering: canvas
+// ---------------------------------------------------------------------------------------------
+function shapePath(shape, r) {
+  const poly = (n, rot = -Math.PI / 2, rr = r) => { let d = ""; for (let i = 0; i < n; i++) { const a = rot + i * 2 * Math.PI / n; d += (i ? "L" : "M") + (rr * Math.cos(a)).toFixed(2) + "," + (rr * Math.sin(a)).toFixed(2); } return d + "Z"; };
+  switch (shape) {
+    case "square": return `M${-r},${-r}H${r}V${r}H${-r}Z`;
+    case "rsquare": { const k = r * 0.35; return `M${-r + k},${-r}H${r - k}Q${r},${-r} ${r},${-r + k}V${r - k}Q${r},${r} ${r - k},${r}H${-r + k}Q${-r},${r} ${-r},${r - k}V${-r + k}Q${-r},${-r} ${-r + k},${-r}Z`; }
+    case "diamond": return poly(4, -Math.PI / 2, r * 1.15);
+    case "pentagon": return poly(5, -Math.PI / 2, r * 1.05);
+    case "hexagon": return poly(6, 0, r * 1.05);
+    case "octagon": return poly(8, Math.PI / 8, r * 1.05);
+    case "heart": return `M0,${r * .9}C${-r * 1.4},${r * .1} ${-r * .9},${-r * 1.1} 0,${-r * .35}C${r * .9},${-r * 1.1} ${r * 1.4},${r * .1} 0,${r * .9}Z`;
+    case "gear": { let d = ""; const n = 10; for (let i = 0; i < n * 2; i++) { const a = i * Math.PI / n, rr = i % 2 ? r * .82 : r * 1.08; d += (i ? "L" : "M") + (rr * Math.cos(a)).toFixed(2) + "," + (rr * Math.sin(a)).toFixed(2); } return d + "Z"; }
+    case "none": return "";
+    default: return `M${r},0A${r},${r} 0 1,1 ${-r},0A${r},${r} 0 1,1 ${r},0Z`;
+  }
+}
+function applyView() {
+  $("view").setAttribute("transform", `translate(${view.x},${view.y}) scale(${view.s})`);
+  const g = U * 0.5 * view.s, p = $("gridPat");   // one grid square = half a quest, the snap step
+  p.setAttribute("width", g); p.setAttribute("height", g); p.setAttribute("x", view.x); p.setAttribute("y", view.y);
+  p.querySelector("path").setAttribute("d", `M ${g} 0 L 0 0 0 ${g}`);
+}
+function renderCanvas() {
+  const c = chapter(), nodes = $("nodes"), deps = $("deps");
+  nodes.innerHTML = ""; deps.innerHTML = "";
+  if (!c) return;
+  const here = new Map(c.quests.map(q => [q.key, q]));
+  const badKeys = new Set(problems().filter(p => p.key).map(p => p.key));
+  // Dependency lines: from the required quest to the one that needs it.
+  for (const q of c.quests) for (const d of q.dependencies || []) {
+    const p = here.get(d); if (!p) continue;
+    const r1 = (p.size || 1) * U * 0.42, r2 = (q.size || 1) * U * 0.42;
+    const x1 = p.x * U, y1 = p.y * U, x2 = q.x * U, y2 = q.y * U, len = Math.hypot(x2 - x1, y2 - y1) || 1;
+    const ux = (x2 - x1) / len, uy = (y2 - y1) / len;
+    const hot = sel.has(q.key) || sel.has(p.key);
+    const line = document.createElementNS(svgNS, "path");
+    const ax = x1 + ux * r1, ay = y1 + uy * r1, bx = x2 - ux * r2, by = y2 - uy * r2;
+    line.setAttribute("d", `M${ax},${ay} L${(ax + bx) / 2},${(ay + by) / 2} L${bx},${by}`);
+    line.setAttribute("class", "dep" + (hot ? " hot" : ""));
+    line.setAttribute("marker-mid", hot ? "url(#arrowHot)" : "url(#arrow)");
+    deps.appendChild(line);
+  }
+  for (const q of c.quests) {
+    const g = document.createElementNS(svgNS, "g"), r = (q.size || 1) * U * 0.42;
+    g.setAttribute("class", "q" + (sel.has(q.key) ? " sel" : "") + (badKeys.has(q.key) ? " bad" : "") + (q.optional ? " optional" : "") + (q.invisible ? " invisible" : ""));
+    g.setAttribute("transform", `translate(${q.x * U},${q.y * U})`);
+    g.dataset.key = q.key;
+    const sh = q.shape || "circle";
+    const hit = document.createElementNS(svgNS, "path");
+    hit.setAttribute("d", shapePath(sh === "none" ? "circle" : sh, r)); hit.setAttribute("class", "q-shape");
+    if (sh === "none") { hit.style.fill = "transparent"; hit.style.stroke = sel.has(q.key) ? "" : "transparent"; }
+    g.appendChild(hit);
+    const iid = questIconId(q), u = iid && itemIcon(iid);
+    if (u) {
+      const im = document.createElementNS(svgNS, "image"), s = r * 1.15;
+      im.setAttribute("href", u); im.setAttribute("x", -s / 2); im.setAttribute("y", -s / 2); im.setAttribute("width", s); im.setAttribute("height", s);
+      im.setAttribute("preserveAspectRatio", "xMidYMin slice"); im.style.pointerEvents = "none";
+      g.appendChild(im);
+    } else {
+      const t = document.createElementNS(svgNS, "text");
+      t.setAttribute("class", "q-label"); t.setAttribute("y", 5); t.style.fontSize = (r * 0.7) + "px";
+      t.textContent = (q.tasks || []).some(t => t.type === "checkmark") ? "✓" : (q.tasks || []).some(t => t.type === "gamestage") ? "★" : "?";
+      g.appendChild(t);
+    }
+    const lab = document.createElementNS(svgNS, "text");
+    lab.setAttribute("class", "q-label"); lab.setAttribute("y", r + 14);
+    lab.textContent = stripCodes(q.title).slice(0, 34);
+    g.appendChild(lab);
+    const ext = (q.dependencies || []).filter(d => !here.has(d)).length;
+    if (ext) { const e = document.createElementNS(svgNS, "text"); e.setAttribute("class", "ext"); e.setAttribute("x", r * 0.75); e.setAttribute("y", -r * 0.75); e.textContent = "↗" + ext; g.appendChild(e); }
+    nodes.appendChild(g);
+  }
+  applyView();
+}
+function stripCodes(s) { return String(s || "").replace(/&[0-9a-fk-or]/gi, ""); }
+
+// ---------------------------------------------------------------------------------------------
+// Rendering: inspector
+// ---------------------------------------------------------------------------------------------
+function itemButton(id, attr) {
+  const bad = unknownItem(id);
+  return `<button class="itembtn ${bad ? "bad" : ""}" ${attr}>${icHtml(id)}<span class="nm">${esc(id ? itemName(id) : "(none)")}<small>${esc(id || "click to pick")}${bad ? " · not found in the jars" : ""}</small></span></button>`;
+}
+const MC = { 0: "#000", 1: "#00a", 2: "#0a0", 3: "#0aa", 4: "#a00", 5: "#a0a", 6: "#fa0", 7: "#aaa", 8: "#555", 9: "#55f", a: "#5f5", b: "#5ff", c: "#f55", d: "#f5f", e: "#ff5", f: "#fff" };
+function mcFormat(lines) {
+  return (lines || []).map(line => {
+    let out = "", st = { c: null, b: false, i: false, u: false, s: false }, buf = "";
+    const flush = () => { if (!buf) return; let css = (st.c ? `color:${st.c};` : "") + (st.b ? "font-weight:700;" : "") + (st.i ? "font-style:italic;" : "") + (st.u || st.s ? `text-decoration:${st.u ? "underline " : ""}${st.s ? "line-through" : ""};` : ""); out += css ? `<span style="${css}">${esc(buf)}</span>` : esc(buf); buf = ""; };
+    for (let i = 0; i < line.length; i++) {
+      const ch = line[i], k = (line[i + 1] || "").toLowerCase();
+      if (ch === "&" && /[0-9a-fk-or]/.test(k)) {
+        flush(); i++;
+        if (MC[k]) st = { c: MC[k], b: false, i: false, u: false, s: false };
+        else if (k === "l") st.b = true; else if (k === "o") st.i = true; else if (k === "n") st.u = true; else if (k === "m") st.s = true;
+        else if (k === "r") st = { c: null, b: false, i: false, u: false, s: false };
+      } else buf += ch;
+    }
+    flush(); return out || "&nbsp;";
+  }).join("\n");
+}
+
+function renderInspector() {
+  const el = $("inspector"), c = chapter();
+  if (!c) { el.innerHTML = ""; return; }
+  const selected = c.quests.filter(q => sel.has(q.key));
+  if (selected.length === 1) return questInspector(el, selected[0]);
+  if (selected.length > 1) {
+    el.innerHTML = `<h2>${selected.length} quests selected</h2>
+      <label>Move to chapter</label><div class="row"><select id="mvCh">${book.chapters.map((x, i) => `<option value="${i}" ${i === cur ? "selected" : ""}>${esc(x.title)}</option>`).join("")}</select><button class="shrink" id="mvGo">Move</button></div>
+      <label>Shape for all</label><select id="allShape">${SHAPES.map(s => `<option value="${s}">${s || "(chapter default)"}</option>`).join("")}</select>
+      <div class="row" style="margin-top:12px"><button id="dupSel">Duplicate</button><button class="danger" id="delSel">Delete</button></div>
+      <p class="note">Drag any of them to move the whole selection. Arrow keys nudge by half a square.</p>`;
+    $("mvGo").onclick = () => moveTo(+$("mvCh").value);
+    $("allShape").onchange = e => change(() => selected.forEach(q => { if (e.target.value) q.shape = e.target.value; else delete q.shape; }));
+    $("dupSel").onclick = duplicate; $("delSel").onclick = del;
+    return;
+  }
+  // Chapter settings
+  const groups = book.groups || [];
+  el.innerHTML = `<h2>Chapter</h2>
+    <label>Title</label><input id="cTitle" value="${esc(c.title)}">
+    <label>Subtitle</label><input id="cSub" value="${esc(c.subtitle || "")}">
+    <label>Icon</label>${itemButton(c.icon, 'id="cIcon"')}
+    <label>Group</label><select id="cGroup"><option value="">(none)</option>${groups.map(g => `<option value="${esc(g.key)}" ${c.group === g.key ? "selected" : ""}>${esc(g.title)}</option>`).join("")}</select>
+    <label>File name</label><input id="cFile" value="${esc(c.file)}">
+    <div class="warn">The file name sets the chapter's id: changing it after release resets nothing, but keep it unique.</div>
+    <label>Order</label><div class="row"><button id="cUp">Move up</button><button id="cDown">Move down</button></div>
+    <div class="row" style="margin-top:14px"><button class="danger" id="cDel">Delete chapter</button></div>
+    <hr style="border-color:var(--line);margin:16px 0">
+    <h2>Book</h2>
+    <label>Book title</label><input id="bTitle" value="${esc(book.title || "")}">
+    <label>Groups</label><div class="box">${groups.map((g, i) => `<div class="row" style="margin-bottom:4px"><input data-g="${i}" value="${esc(g.title)}"><button class="shrink danger" data-gd="${i}">✕</button></div>`).join("")}<button id="gAdd">+ Group</button></div>
+    <p class="note" style="margin-top:14px">${c.quests.length} quests in this chapter. Click a quest to edit it; double-click empty space to add one.</p>`;
+  bindText("cTitle", v => { c.title = v; if (freshChapter === c.file) { const f = uniqueFile(slug(v)); c.file = f; freshChapter = f; } });
+  bindText("cSub", v => c.subtitle = v);
+  bindText("cFile", v => { c.file = slug(v) || c.file; freshChapter = null; });
+  bindText("bTitle", v => book.title = v);
+  $("cIcon").onclick = () => pick(c.icon, id => change(() => c.icon = id || "minecraft:book"));
+  $("cGroup").onchange = e => change(() => c.group = e.target.value || null);
+  $("cUp").onclick = () => change(() => { if (cur > 0) { [book.chapters[cur - 1], book.chapters[cur]] = [book.chapters[cur], book.chapters[cur - 1]]; cur--; } });
+  $("cDown").onclick = () => change(() => { if (cur < book.chapters.length - 1) { [book.chapters[cur + 1], book.chapters[cur]] = [book.chapters[cur], book.chapters[cur + 1]]; cur++; } });
+  $("cDel").onclick = () => {
+    if (book.chapters.length <= 1) return;
+    if (c.quests.length && !confirm(`Delete "${c.title}" and its ${c.quests.length} quests?`)) return;
+    change(() => { const gone = new Set(c.quests.map(q => q.key)); book.chapters.splice(cur, 1); cur = Math.max(0, cur - 1); stripDeps(gone); });
+  };
+  el.querySelectorAll("input[data-g]").forEach(inp => inp.onchange = () => change(() => groups[+inp.dataset.g].title = inp.value));
+  el.querySelectorAll("button[data-gd]").forEach(b => b.onclick = () => change(() => { const g = groups.splice(+b.dataset.gd, 1)[0]; book.chapters.forEach(x => { if (x.group === g.key) x.group = null; }); }));
+  $("gAdd").onclick = () => change(() => { book.groups = groups; let k = "group", n = 2; while (groups.some(g => g.key === k)) k = "group_" + n++; groups.push({ key: k, title: "New Group" }); });
+}
+function uniqueFile(base) { let f = base || "chapter", n = 2; while (book.chapters.some((c, i) => i !== cur && c.file === f)) f = base + "_" + n++; return f; }
+
+// Text fields commit on change (blur/enter), so typing a title is one undo step.
+function bindText(id, set, { live } = {}) {
+  const e = $(id); if (!e) return;
+  e.addEventListener(live ? "input" : "change", () => change(() => set(e.value)));
+}
+
+function questInspector(el, q) {
+  const requiredBy = allQuests().filter(x => (x.q.dependencies || []).includes(q.key));
+  el.innerHTML = `<h2>Quest</h2>
+    <label>Title</label><input id="qTitle" value="${esc(q.title)}">
+    <label>Subtitle</label><input id="qSub" value="${esc(q.subtitle || "")}">
+    <label>Icon (blank = first task's item)</label>${itemButton(q.icon, 'id="qIcon"')}
+    <div class="row"><div><label>Shape</label><select id="qShape">${SHAPES.map(s => `<option value="${s}" ${(q.shape || "") === s ? "selected" : ""}>${s || "(default: circle)"}</option>`).join("")}</select></div>
+      <div><label>Size</label><input id="qSize" type="number" step="0.25" min="0.25" value="${q.size || 1}"></div></div>
+    <div class="row"><div><label>X</label><input id="qX" type="number" step="0.5" value="${q.x}"></div><div><label>Y</label><input id="qY" type="number" step="0.5" value="${q.y}"></div></div>
+    <div class="row" style="margin-top:8px;color:var(--dim)">
+      <span><input type="checkbox" id="qOpt" ${q.optional ? "checked" : ""}> optional</span>
+      <span><input type="checkbox" id="qInv" ${q.invisible ? "checked" : ""}> invisible</span>
+      <span title="Hidden until its dependencies are done"><input type="checkbox" id="qHide" ${q.hide_until_deps ? "checked" : ""}> hide until deps</span></div>
+    <label>Description <span style="text-transform:none;letter-spacing:0">(one line per row; &amp;e colour, &amp;l bold, &amp;r reset)</span></label>
+    <textarea id="qDesc" rows="7">${esc((q.description || []).join("\n"))}</textarea>
+    <div class="preview" id="qPrev">${mcFormat(q.description)}</div>
+    <label>Tasks</label><div id="qTasks"></div>
+    <div class="row" style="margin-top:4px"><select id="qNewTask">${TASK_TYPES.map(t => `<option>${t}</option>`).join("")}</select><button class="shrink" id="qAddTask">+ Task</button></div>
+    <label>Needs (dependencies)</label>
+    <div class="chips">${(q.dependencies || []).map(d => { const f = findQuest(d); return `<span class="chip" data-go="${esc(d)}">${esc(f ? stripCodes(f.q.title) : d)}${f && f.ci !== cur ? ` <b>· ${esc(book.chapters[f.ci].title)}</b>` : ""}${f ? "" : ` <b style="color:var(--bad)">missing</b>`}<button class="x" data-rm="${esc(d)}">✕</button></span>`; }).join("") || `<span class="note">None. Ctrl+click a quest on the map to add one.</span>`}</div>
+    <div class="row" style="margin-top:4px"><input id="qDepAdd" list="qDepList" placeholder="Add from any chapter: type a title or key"><datalist id="qDepList">${allQuests().filter(x => x.q.key !== q.key).map(x => `<option value="${esc(x.q.key)}">${esc(stripCodes(x.q.title))} · ${esc(book.chapters[x.ci].title)}</option>`).join("")}</datalist></div>
+    <label>Needed by</label><div class="chips">${requiredBy.map(x => `<span class="chip" data-go="${esc(x.q.key)}">${esc(stripCodes(x.q.title))}${x.ci !== cur ? ` <b>· ${esc(book.chapters[x.ci].title)}</b>` : ""}</span>`).join("") || `<span class="note">Nothing yet.</span>`}</div>
+    <label>Key</label><input id="qKey" value="${esc(q.key)}">
+    <div class="warn">${fresh.has(q.key) ? "New quest: the key follows the title until you save." : "Quest ids come from this key. Renaming it after players have done the quest resets their progress on it."}</div>
+    <label>Chapter</label><div class="row"><select id="mvCh">${book.chapters.map((x, i) => `<option value="${i}" ${i === cur ? "selected" : ""}>${esc(x.title)}</option>`).join("")}</select><button class="shrink" id="mvGo">Move</button></div>
+    <div class="row" style="margin-top:14px"><button id="qDup">Duplicate</button><button class="danger" id="qDel">Delete</button></div>`;
+
+  bindText("qTitle", v => { q.title = v; if (fresh.has(q.key)) { const nk = uniqueKey(slug(v)); if (nk !== q.key) { fresh.delete(q.key); renameKey(q.key, nk); fresh.add(nk); } } });
+  bindText("qSub", v => { if (v) q.subtitle = v; else delete q.subtitle; });
+  $("qIcon").onclick = () => pick(q.icon, id => change(() => { if (id) q.icon = id; else delete q.icon; }));
+  $("qShape").onchange = e => change(() => { if (e.target.value) q.shape = e.target.value; else delete q.shape; });
+  bindText("qSize", v => { const n = Math.max(0.25, +v || 1); if (n === 1) delete q.size; else q.size = n; });
+  bindText("qX", v => q.x = +v || 0); bindText("qY", v => q.y = +v || 0);
+  $("qOpt").onchange = e => change(() => { if (e.target.checked) q.optional = true; else delete q.optional; });
+  $("qInv").onchange = e => change(() => { if (e.target.checked) q.invisible = true; else delete q.invisible; });
+  $("qHide").onchange = e => change(() => { if (e.target.checked) q.hide_until_deps = true; else delete q.hide_until_deps; });
+  const ta = $("qDesc");
+  ta.addEventListener("input", () => { $("qPrev").innerHTML = mcFormat(ta.value.split("\n")); });
+  ta.addEventListener("change", () => change(() => { const lines = ta.value.split("\n"); while (lines.length && lines[lines.length - 1] === "") lines.pop(); if (lines.length) q.description = lines; else delete q.description; }));
+  renderTasks(q);
+  $("qAddTask").onclick = () => change(() => q.tasks.push(newTask($("qNewTask").value)));
+  el.querySelectorAll("[data-rm]").forEach(b => b.onclick = e => { e.stopPropagation(); change(() => { q.dependencies = q.dependencies.filter(d => d !== b.dataset.rm); if (!q.dependencies.length) delete q.dependencies; }); });
+  el.querySelectorAll("[data-go]").forEach(c => c.onclick = () => goTo(c.dataset.go));
+  $("qDepAdd").onchange = e => { const v = e.target.value.trim(); const f = findQuest(v) || allQuests().find(x => stripCodes(x.q.title).toLowerCase() === v.toLowerCase()); if (f) addDep(q, f.q.key); else status(`No quest "${v}"`, "bad"); };
+  bindText("qKey", v => { const nk = slug(v); if (nk && nk !== q.key) { if (findQuest(nk)) { status(`Key "${nk}" is taken`, "bad"); return; } fresh.delete(q.key); renameKey(q.key, nk); } });
+  $("mvGo").onclick = () => moveTo(+$("mvCh").value);
+  $("qDup").onclick = duplicate; $("qDel").onclick = del;
+}
+
+function newTask(type) {
+  switch (type) {
+    case "item": return { type: "item", item: "minecraft:stone" };
+    case "gamestage": return { type: "gamestage", stage: "emp_engines:" };
+    case "dimension": return { type: "dimension", dimension: "minecraft:the_nether" };
+    case "structure": return { type: "structure", structure: "minecraft:village_plains" };
+    default: return { type: "checkmark" };
+  }
+}
+function renderTasks(q) {
+  const box = $("qTasks");
+  box.innerHTML = q.tasks.map((t, i) => {
+    let body;
+    if (t.type === "item") body = `${itemButton(t.item, `data-ti="${i}"`)}<div class="row" style="margin-top:4px"><span class="shrink note">Count</span><input type="number" min="1" data-tc="${i}" value="${t.count || 1}"></div>`;
+    else if (t.type === "checkmark") body = `<span class="note">✓ Checkmark: the player ticks it themselves.</span>`;
+    else if (t.type === "gamestage") body = `<input data-tf="${i}" data-k="stage" value="${esc(t.stage)}" placeholder="emp_engines:andesite"><span class="note">Completes when the player gets this stage (Chapters research grants these).</span>`;
+    else if (t.type === "dimension") body = `<input data-tf="${i}" data-k="dimension" value="${esc(t.dimension)}" placeholder="minecraft:the_nether">`;
+    else body = `<input data-tf="${i}" data-k="structure" value="${esc(t.structure)}" placeholder="minecraft:village_plains">`;
+    return `<div class="task"><div><div class="note" style="margin-bottom:3px">${i + 1}. ${t.type}</div>${body}</div><div style="display:flex;flex-direction:column;gap:3px"><button data-tu="${i}" title="Move up">↑</button><button class="danger" data-td="${i}" title="Remove">✕</button></div></div>`;
+  }).join("") || `<span class="note">No tasks: add one (a quest needs at least one).</span>`;
+  box.querySelectorAll("[data-ti]").forEach(b => b.onclick = () => { const t = q.tasks[+b.dataset.ti]; pick(t.item, id => { if (id) change(() => t.item = id); }, { noClear: true }); });
+  box.querySelectorAll("[data-tc]").forEach(inp => inp.onchange = () => change(() => { const t = q.tasks[+inp.dataset.tc], n = Math.max(1, Math.round(+inp.value || 1)); if (n === 1) delete t.count; else t.count = n; }));
+  box.querySelectorAll("[data-tf]").forEach(inp => inp.onchange = () => change(() => q.tasks[+inp.dataset.tf][inp.dataset.k] = inp.value.trim()));
+  box.querySelectorAll("[data-td]").forEach(b => b.onclick = () => change(() => q.tasks.splice(+b.dataset.td, 1)));
+  box.querySelectorAll("[data-tu]").forEach(b => b.onclick = () => change(() => { const i = +b.dataset.tu; if (i > 0) [q.tasks[i - 1], q.tasks[i]] = [q.tasks[i], q.tasks[i - 1]]; }));
+}
+
+// ---------------------------------------------------------------------------------------------
+// Edits
+// ---------------------------------------------------------------------------------------------
+function renameKey(old, nk) {
+  const f = findQuest(old); if (!f) return;
+  f.q.key = nk;
+  for (const { q } of allQuests()) if (q.dependencies) q.dependencies = q.dependencies.map(d => d === old ? nk : d);
+  if (sel.delete(old)) sel.add(nk);
+}
+function stripDeps(gone) {
+  for (const { q } of allQuests()) if (q.dependencies) { q.dependencies = q.dependencies.filter(d => !gone.has(d)); if (!q.dependencies.length) delete q.dependencies; }
+}
+function wouldLoop(from, to) {   // does `to` (directly or not) already need `from`?
+  const seen = new Set(), stack = [to];
+  while (stack.length) { const k = stack.pop(); if (k === from) return true; if (seen.has(k)) continue; seen.add(k); const f = findQuest(k); if (f) stack.push(...(f.q.dependencies || [])); }
+  return false;
+}
+function addDep(q, dep) {
+  if (dep === q.key || (q.dependencies || []).includes(dep)) return;
+  if (wouldLoop(q.key, dep)) { status("That would make a loop: the other quest already needs this one.", "bad"); return; }
+  change(() => { (q.dependencies = q.dependencies || []).push(dep); });
+}
+function toggleDep(q, dep) {
+  if ((q.dependencies || []).includes(dep)) change(() => { q.dependencies = q.dependencies.filter(d => d !== dep); if (!q.dependencies.length) delete q.dependencies; });
+  else addDep(q, dep);
+}
+function addQuest(x, y) {
+  change(() => {
+    const key = uniqueKey(slug(chapter().file + "_new"));
+    chapter().quests.push({ key, title: "New Quest", x, y, tasks: [{ type: "checkmark" }] });
+    fresh.add(key); sel = new Set([key]);
+  });
+  setTimeout(() => { const t = $("qTitle"); if (t) { t.focus(); t.select(); } }, 0);
+}
+function duplicate() {
+  const c = chapter(), src = c.quests.filter(q => sel.has(q.key)); if (!src.length) return;
+  change(() => {
+    const map = new Map();
+    for (const q of src) { const n = JSON.parse(JSON.stringify(q)); n.key = uniqueKey(q.key + "_copy"); n.x += 1; n.y += 1; map.set(q.key, n.key); fresh.add(n.key); c.quests.push(n); }
+    for (const nk of map.values()) { const n = findQuest(nk).q; if (n.dependencies) n.dependencies = n.dependencies.map(d => map.get(d) || d); }
+    sel = new Set(map.values());
+  });
+}
+function del() {
+  const keys = [...sel]; if (!keys.length) return;
+  const users = allQuests().filter(x => !sel.has(x.q.key) && (x.q.dependencies || []).some(d => sel.has(d))).length;
+  if ((keys.length > 1 || users) && !confirm(`Delete ${keys.length} quest${keys.length > 1 ? "s" : ""}?${users ? ` ${users} other quest(s) depend on them; those links are removed.` : ""}`)) return;
+  change(() => { const gone = new Set(keys); for (const c of book.chapters) c.quests = c.quests.filter(q => !gone.has(q.key)); stripDeps(gone); sel.clear(); });
+}
+function moveTo(ci) {
+  if (ci === cur) return;
+  change(() => { const moving = chapter().quests.filter(q => sel.has(q.key)); chapter().quests = chapter().quests.filter(q => !sel.has(q.key)); book.chapters[ci].quests.push(...moving); cur = ci; });
+  fit();
+}
+function goTo(key) { const f = findQuest(key); if (!f) return; const other = f.ci !== cur; cur = f.ci; sel = new Set([key]); renderAll(); if (other) fit(); else centerOn(f.q); }
+
+// ---------------------------------------------------------------------------------------------
+// Item picker
+// ---------------------------------------------------------------------------------------------
+let pickCb = null, pickResults = [];
+function pick(current, cb, { noClear } = {}) {
+  pickCb = cb; $("modal").classList.add("on"); $("pickClear").style.display = noClear ? "none" : "";
+  const q = $("pickQ"); q.value = current || ""; q.focus(); q.select(); runPick();
+}
+function closePick() { $("modal").classList.remove("on"); pickCb = null; }
+function runPick() {
+  const words = $("pickQ").value.toLowerCase().split(/\s+/).filter(Boolean), mod = $("pickMod").value;
+  pickResults = items.filter(i => (!mod || i.mod === mod) && words.every(w => i.id.includes(w) || i.name.toLowerCase().includes(w)));
+  // Exact id and name-starts-with matches first.
+  const q = $("pickQ").value.toLowerCase();
+  pickResults.sort((a, b) => (b.id === q) - (a.id === q) || (b.name.toLowerCase().startsWith(q)) - (a.name.toLowerCase().startsWith(q)) || a.name.length - b.name.length);
+  const shown = pickResults.slice(0, 400);
+  $("grid").innerHTML = shown.map((i, n) => `<div class="it ${n === 0 ? "first" : ""}" data-id="${esc(i.id)}">${icHtml(i.id)}<span class="nm">${esc(i.name)}<small>${esc(i.id)} · ${esc(mods[i.mod] || i.mod)}</small></span></div>`).join("")
+    || `<div class="note" style="padding:10px">${items.length ? "No items match." : "Items are still loading (or none were found: see the server window)."}</div>`;
+  $("pickCount").textContent = pickResults.length > 400 ? `${pickResults.length} matches (showing 400: type more)` : `${pickResults.length} matches`;
+  $("grid").querySelectorAll(".it").forEach(d => d.onclick = () => choose(d.dataset.id));
+}
+function choose(id) { const cb = pickCb; closePick(); if (cb) cb(id); }
+$("pickQ").addEventListener("input", runPick);
+$("pickMod").addEventListener("change", runPick);
+$("pickQ").addEventListener("keydown", e => { if (e.key === "Enter" && pickResults[0]) choose(pickResults[0].id); if (e.key === "Escape") closePick(); });
+$("pickCancel").onclick = closePick;
+$("pickClear").onclick = () => choose(null);
+$("pickTyped").onclick = () => { const v = $("pickQ").value.trim(); if (/^[a-z0-9_.-]+:[a-z0-9_./-]+$/.test(v)) choose(v); else status("Type a full id like create:cogwheel", "bad"); };
+$("modal").addEventListener("mousedown", e => { if (e.target.id === "modal") closePick(); });
+
+// ---------------------------------------------------------------------------------------------
+// Canvas interaction
+// ---------------------------------------------------------------------------------------------
+const svg = $("canvas");
+function toWorld(cx, cy) { const r = svg.getBoundingClientRect(); return { x: (cx - r.left - view.x) / view.s / U, y: (cy - r.top - view.y) / view.s / U }; }
+const snap = (v, free) => free ? Math.round(v * 100) / 100 : Math.round(v * 2) / 2;
+let drag = null;
+svg.addEventListener("mousedown", e => {
+  if (e.button !== 0) return;
+  const g = e.target.closest(".q");
+  if (g) {
+    const key = g.dataset.key, q = chapter().quests.find(x => x.key === key);
+    if ((e.ctrlKey || e.metaKey) && sel.size && !sel.has(key)) {   // link: selected quests need this one
+      const targets = chapter().quests.filter(x => sel.has(x.key));
+      if (targets.length === 1) toggleDep(targets[0], key);
+      else change(() => targets.forEach(t => { if (!(t.dependencies || []).includes(key) && !wouldLoop(t.key, key)) (t.dependencies = t.dependencies || []).push(key); }));
+      return;
+    }
+    if (e.shiftKey) { sel.has(key) ? sel.delete(key) : sel.add(key); renderAll(); return; }
+    if (!sel.has(key)) { sel = new Set([key]); renderAll(); }
+    const p = toWorld(e.clientX, e.clientY);
+    drag = { kind: "move", start: p, snapshot: snapshot(), orig: chapter().quests.filter(x => sel.has(x.key)).map(x => ({ q: x, x: x.x, y: x.y })), moved: false };
+  } else {
+    drag = { kind: "pan", sx: e.clientX, sy: e.clientY, vx: view.x, vy: view.y, moved: false };
+    svg.classList.add("panning");
+  }
+});
+window.addEventListener("mousemove", e => {
+  if (!drag) return;
+  if (drag.kind === "pan") {
+    const dx = e.clientX - drag.sx, dy = e.clientY - drag.sy;
+    if (Math.abs(dx) + Math.abs(dy) > 3) drag.moved = true;
+    view.x = drag.vx + dx; view.y = drag.vy + dy; applyView();
+  } else {
+    const p = toWorld(e.clientX, e.clientY), dx = p.x - drag.start.x, dy = p.y - drag.start.y;
+    if (!drag.moved && Math.hypot(dx, dy) < 0.15) return;
+    drag.moved = true;
+    for (const o of drag.orig) { o.q.x = snap(o.x + dx, e.altKey); o.q.y = snap(o.y + dy, e.altKey); }
+    renderCanvas();
+  }
+});
+window.addEventListener("mouseup", () => {
+  if (!drag) return;
+  if (drag.kind === "pan") { svg.classList.remove("panning"); if (!drag.moved && sel.size) { sel.clear(); renderAll(); } }
+  else if (drag.moved) { undoStack.push(drag.snapshot); redoStack = []; setDirty(true); renderAll(); }
+  drag = null;
+});
+svg.addEventListener("dblclick", e => { if (e.target.closest(".q")) return; const p = toWorld(e.clientX, e.clientY); addQuest(snap(p.x), snap(p.y)); });
+svg.addEventListener("wheel", e => {
+  e.preventDefault();
+  const r = svg.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top;
+  zoomAt(mx, my, Math.exp(-e.deltaY * 0.0015));
+}, { passive: false });
+function zoomAt(mx, my, f) { const ns = Math.min(4, Math.max(0.15, view.s * f)); view.x = mx - (mx - view.x) * ns / view.s; view.y = my - (my - view.y) * ns / view.s; view.s = ns; applyView(); }
+function fit() {
+  const c = chapter(), r = svg.getBoundingClientRect(); if (!c) return;
+  if (!c.quests.length) { view = { x: r.width / 2, y: r.height / 2, s: 1 }; applyView(); return; }
+  let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+  for (const q of c.quests) { const s = (q.size || 1) / 2 + 0.6; x0 = Math.min(x0, q.x - s); y0 = Math.min(y0, q.y - s); x1 = Math.max(x1, q.x + s); y1 = Math.max(y1, q.y + s + 0.4); }
+  const s = Math.min(2, Math.min(r.width / ((x1 - x0) * U), r.height / ((y1 - y0) * U)) * 0.92);
+  view.s = s; view.x = r.width / 2 - (x0 + x1) / 2 * U * s; view.y = r.height / 2 - (y0 + y1) / 2 * U * s; applyView();
+}
+function centerOn(q) { const r = svg.getBoundingClientRect(); view.x = r.width / 2 - q.x * U * view.s; view.y = r.height / 2 - q.y * U * view.s; applyView(); }
+$("fitBtn").onclick = fit;
+$("zoomIn").onclick = () => { const r = svg.getBoundingClientRect(); zoomAt(r.width / 2, r.height / 2, 1.25); };
+$("zoomOut").onclick = () => { const r = svg.getBoundingClientRect(); zoomAt(r.width / 2, r.height / 2, 0.8); };
+
+window.addEventListener("keydown", e => {
+  const typing = /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName);
+  const mod = e.ctrlKey || e.metaKey;
+  if (mod && e.key.toLowerCase() === "s") { e.preventDefault(); document.activeElement.blur(); setTimeout(save, 0); return; }
+  if ($("modal").classList.contains("on")) { if (e.key === "Escape") closePick(); return; }
+  if (typing) return;
+  if (mod && e.key.toLowerCase() === "z") { e.preventDefault(); e.shiftKey ? redo() : undo(); }
+  else if (mod && e.key.toLowerCase() === "y") { e.preventDefault(); redo(); }
+  else if (mod && e.key.toLowerCase() === "d") { e.preventDefault(); duplicate(); }
+  else if (mod && e.key.toLowerCase() === "a") { e.preventDefault(); sel = new Set(chapter().quests.map(q => q.key)); renderAll(); }
+  else if (e.key === "Delete" || e.key === "Backspace") { e.preventDefault(); del(); }
+  else if (e.key === "Escape") { sel.clear(); renderAll(); }
+  else if (e.key === "f" || e.key === "F") fit();
+  else if (e.key.startsWith("Arrow") && sel.size) {
+    e.preventDefault();
+    const d = { ArrowLeft: [-.5, 0], ArrowRight: [.5, 0], ArrowUp: [0, -.5], ArrowDown: [0, .5] }[e.key];
+    change(() => chapter().quests.filter(q => sel.has(q.key)).forEach(q => { q.x += d[0]; q.y += d[1]; }));
+  }
+});
+$("undoBtn").onclick = undo; $("redoBtn").onclick = redo; $("saveBtn").onclick = save; $("checkBtn").onclick = showProblems;
+window.addEventListener("beforeunload", e => { if (dirty) { e.preventDefault(); e.returnValue = ""; } });
+window.addEventListener("resize", applyView);
+
+function renderAll() {
+  renderChapters(); renderCanvas(); renderInspector();
+  $("undoBtn").disabled = !undoStack.length; $("redoBtn").disabled = !redoStack.length;
+}
+if (location.protocol === "file:") {
+  document.body.innerHTML = `<div style="max-width:560px;margin:15vh auto;font-size:15px;line-height:1.6">
+    <h2>Start the editor from QuestEditor.bat</h2>
+    <p>This page needs its small local server to read the book and the mod jars. Double-click
+    <b>tools\\questedit\\QuestEditor.bat</b> (or run <code>python tools\\questedit\\serve.py</code>):
+    it opens the editor in your browser at http://127.0.0.1:8765.</p></div>`;
+} else load().catch(e => status("Couldn't load: " + e, "bad"));
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.6,
+  "downfall": 0.4,
+  "effects": {
+    "grass_color": 11983713,
+    "foliage_color": 11983713,
+    "sky_color": 8103167,
+    "fog_color": 12638463,
+    "water_color": 6141935,
+    "water_fog_color": 6141935,
+    "particle": {
+      "options": {
+        "type": "minecraft:cherry_leaves"
+      },
+      "probability": 0.003
+    },
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    },
+    "additions_sound": {
+      "sound": "minecraft:ambient.basalt_deltas.additions",
+      "tick_chance": 0.0011
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "minecraft:zombie",
+        "weight": 95,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:skeleton",
+        "weight": 100,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:spider",
+        "weight": 90,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:creeper",
+        "weight": 90,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:enderman",
+        "weight": 15,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
+    "creature": [
+      {
+        "type": "minecraft:rabbit",
+        "weight": 4,
+        "minCount": 2,
+        "maxCount": 3
+      }
+    ],
+    "ambient": [],
+    "axolotls": [],
+    "underground_water_creature": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [
+      "emp_engines:etheric/pond"
+    ],
+    [],
+    [],
+    [],
+    [],
+    [
+      "emp_engines:etheric/ore_coal",
+      "emp_engines:etheric/ore_iron",
+      "emp_engines:etheric/ore_copper"
+    ],
+    [
+      "minecraft:glow_lichen",
+      "emp_engines:etheric/hanging_pink"
+    ],
+    [
+      "emp_engines:etheric/waterfall"
+    ],
+    [
+      "minecraft:trees_cherry",
+      "emp_engines:etheric/giant_cherry",
+      "minecraft:flower_cherry",
+      "minecraft:patch_grass_plain",
+      "minecraft:patch_waterlily"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ]
+}

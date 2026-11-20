@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ],
+  "type": "tieredfoundry:part_casting",
+  "part": "silentgear:ring_shank",
+  "part_type": "silentgear:main",
+  "gear_type": "silentgear:ring",
+  "material_count": 2
+}

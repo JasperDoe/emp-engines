@@ -1,0 +1,44 @@
+{
+  "type": "emp_engines:crystal_spike",
+  "config": {
+    "body": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 4,
+          "data": {
+            "Name": "minecraft:sandstone"
+          }
+        },
+        {
+          "weight": 2,
+          "data": {
+            "Name": "minecraft:smooth_sandstone"
+          }
+        },
+        {
+          "weight": 1,
+          "data": {
+            "Name": "minecraft:orange_terracotta"
+          }
+        }
+      ]
+    },
+    "core": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:orange_terracotta"
+      }
+    },
+    "tip": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:sandstone"
+      }
+    },
+    "min_height": 5,
+    "max_height": 14,
+    "giant_chance": 10,
+    "hanging": true
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:ingots/netherite"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_netherite",
+    "amount": 90
+  },
+  "temperature": 1500
+}

@@ -1,4 +1,4 @@
-name = "Skybound SMP"
+name = "Empyrean Engines"
 author = "Jasper"
 version = "0.1.0"
 pack-format = "packwiz:1.1.0"
@@ -6,8 +6,8 @@ pack-format = "packwiz:1.1.0"
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "f0909d155bafc92e04a08cffc24b7c1d4746e2c3219088bdac6403b72568389c"
+hash = "bfaf4ca927c74b1d52e3305657044d9ca705b575fe2cd739dc0b37f31f7e4181"
 
 [versions]
 minecraft = "1.21.1"
-neoforge = "21.1.265"
+neoforge = "21.1.267"

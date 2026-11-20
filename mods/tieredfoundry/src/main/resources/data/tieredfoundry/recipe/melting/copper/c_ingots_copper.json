@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:ingots/copper"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_copper",
+    "amount": 90
+  },
+  "temperature": 800
+}

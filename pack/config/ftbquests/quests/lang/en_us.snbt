@@ -1,4 +1,8 @@
 {
+	chapter.15CD34AC3363B895.chapter_subtitle: [
+		"Every fifth night they come for you"
+	]
+	chapter.15CD34AC3363B895.title: "Night Raids & Gems"
 	chapter.1FF88932C1EC4636.chapter_subtitle: [
 		"Steel, brass and the foundry"
 	]
@@ -45,7 +49,14 @@
 	chapter.DC9E4321F3FC141C.title: "Gears & Metals"
 	chapter_group.9692EDFE2DE3589D.title: "Into the Unknown"
 	chapter_group.F02A3E854920CEED.title: "March of Industry"
-	file.0000000000000001.title: "Skybound SMP"
+	file.0000000000000001.title: "Create: Empyrean Engines"
+	quest.00F44E2A039FDE10.quest_desc: [
+		"Your &6world tier&r rises on its own with your play time and milestones:"
+		"&aHaven&r at the start, &eFrontier&r at 5 h, &6Ascent&r at 15 h once you've been to the Nether, &cSummit&r at 30 h once you've killed the Wither, &5Pinnacle&r at 60 h once you've been to the End."
+		""
+		"A higher tier means harder night raids (more waves, better armour on the raiders, Elites and then Invaders) and better gems. It also lets your gear reach higher levels. Sieges get a little harder within a tier too, the longer you play."
+	]
+	quest.00F44E2A039FDE10.title: "World Tiers"
 	quest.017976F9830C816D.quest_desc: [
 		"Your first power source. Put it in flowing water."
 	]
@@ -59,17 +70,21 @@
 	]
 	quest.0618566213779297.title: "Mechanical Crafters"
 	quest.0635FFA2161C851C.quest_desc: [
-		"Fire clay bakes into fire bricks, the walls of the foundry."
+		"A tier 1 foundry is built from plain bricks: floor, walls and corners, all the same kind."
 	]
-	quest.0635FFA2161C851C.title: "Fire Bricks"
+	quest.0635FFA2161C851C.title: "Foundry Bricks"
 	quest.085E83B071D5B549.quest_desc: [
 		"Pipes, pumps and tanks move liquids. Copper casing opens fluid machines."
 	]
 	quest.085E83B071D5B549.title: "Copper and Fluids"
-	quest.0B632D1E4278637F.quest_desc: [
-		"IE multiblocks are built by hand, then struck with the hammer to form."
+	quest.0988524BF2C669CF.quest_desc: [
+		"Put a plain book and some lapis in an enchanting table. Click a button to begin: the three buttons light up and chime in an order. Click them back in the same order."
+		""
+		"Three rounds, each one step longer. A wrong press costs 1 lapis and plays the round again. Books in chiseled bookshelves around the table play it slower."
+		""
+		"Finish the third round and the book becomes a &dResearch Focus&r for a random kind of gear."
 	]
-	quest.0B632D1E4278637F.title: "Engineer's Hammer"
+	quest.0988524BF2C669CF.title: "Echo"
 	quest.14C07CE62313C72B.quest_desc: [
 		"Load a repair kit with materials and use it on worn gear."
 	]
@@ -119,10 +134,23 @@
 		"A rarer, windier village."
 	]
 	quest.2F252DBFBEB84507.title: "Highwind"
+	quest.321BF1A1BBE4410F.quest_desc: [
+		"Put the focus back in the table and open its research tree. Pick a level: it costs a few XP levels to start, then the table pulls its resource from a chest, barrel or vault up to 2 blocks away."
+		""
+		"A book holds one enchantment. Researching a different line replaces it, so bind more books for more enchantments."
+		""
+		"Feed it with a hopper or a Create belt and the bigger levels research themselves."
+	]
+	quest.321BF1A1BBE4410F.title: "First Research"
 	quest.33B02D03094CCD4D.quest_desc: [
 		"Build a farm that harvests and collects on its own."
 	]
 	quest.33B02D03094CCD4D.title: "First Automated Farm"
+	quest.366EBEC9A45AC5A1.quest_desc: [
+		"Killing the Wither is the milestone for &cSummit&r (with 30 hours of play)."
+	]
+	quest.366EBEC9A45AC5A1.quest_subtitle: "Kill the Wither"
+	quest.366EBEC9A45AC5A1.title: "Summit"
 	quest.38E272BEC301C853.quest_desc: [
 		"Mixing recipes. Some need heat underneath the basin."
 	]
@@ -139,10 +167,6 @@
 		"Steer and throttle from the deck."
 	]
 	quest.3A67502FB1B16E8F.title: "At the Helm"
-	quest.3B9F503039519367.quest_desc: [
-		"Hot enough to make steel."
-	]
-	quest.3B9F503039519367.title: "Coal Coke"
 	quest.3D89B36A28B15DD4.quest_desc: [
 		"A new material for your gear. Check its stats with Shift."
 	]
@@ -159,26 +183,19 @@
 	quest.443C440118CD9977.quest_desc: [
 		"This chapter guides you through the age once you've researched it."
 		""
-		"&eResearch unlocks:&r Crafts & Additions (alternators, motors, rolling mill, wires) and IE's powered machines."
+		"&eResearch unlocks:&r Crafts & Additions: alternators, motors, the rolling mill and wires."
 		""
 		"&7Until then these recipes stay hidden in JEI and can't be crafted. You can still use and trade the items if someone else makes them."
 	]
 	quest.443C440118CD9977.quest_subtitle: "Learn this age at the Research Bench"
 	quest.443C440118CD9977.title: "Electricity Age"
-	quest.474E0AF0EE3B1761.quest_desc: [
-		"Copy written books and enchanted books."
-	]
-	quest.474E0AF0EE3B1761.title: "Printer"
 	quest.49CD7CDF44232AC1.quest_desc: [
 		"Plot a course."
 	]
 	quest.49CD7CDF44232AC1.title: "Navigation Table"
-	quest.5226AD7C7CCFF81E.quest_desc: [
-		"The metal every later age is built on."
-	]
-	quest.5226AD7C7CCFF81E.title: "Steel"
 	quest.52C6999E0CE31C24.quest_desc: [
-		"Pour metal into casts for ingots, blocks and Silent Gear parts."
+		"A &eFoundry Tap&r on a drain pours into a casting table or basin below. Pour molten gold over an ingot, nugget, plate, gem or Silent Gear part to make a reusable &egold cast&r of it, or click sand onto it for a one-use sand cast."
+		"Silent Gear parts from metals and gems above iron can only be cast here, not crafted by hand. Pour metal over finished gear to coat it."
 	]
 	quest.52C6999E0CE31C24.title: "Casting"
 	quest.535CEE7D8640DD6C.quest_desc: [
@@ -214,16 +231,12 @@
 		"Rolls ingots into rods and wire."
 	]
 	quest.6970297A89A93F61.title: "Rolling Mill"
-	quest.6D79E5BD18B1DCA9.quest_desc: [
-		"A 3x3x3 of coke bricks. Bakes coal into coke and gives creosote."
-	]
-	quest.6D79E5BD18B1DCA9.title: "Coke Oven"
 	quest.72AA908A48110531.quest_desc: [
 		"Rail lines for heavy freight. Trains are part of the Brass Age."
 	]
 	quest.72AA908A48110531.title: "Trains"
 	quest.7557F1786D6F0996.quest_desc: [
-		"Copper and zinc, alloyed in the foundry or a heated mixer. Brass opens the next age and the sky."
+		"Copper and zinc, alloyed in the foundry (alloys only come from the foundry now). Brass opens the next age and the sky."
 	]
 	quest.7557F1786D6F0996.title: "Brass"
 	quest.766D007B2DE59619.quest_desc: [
@@ -251,10 +264,12 @@
 	]
 	quest.814A0EAEBA710452.title: "Alternator"
 	quest.84B0E8F0A2AF6216.quest_desc: [
-		"The Nether is sealed. Opening it takes the whole server working together."
-		"When the project is finished, the Nether opens for &eeveryone&r, including players who are offline."
+		"Nether portals won't light. Try one: the fire goes out, and a block of the frame turns into an &5Obsidian Keyhole&r."
+		"Search &eruined portals&r: every one hides a &bFragmented Obsidian Key&r in its chest."
+		"Research the fragment at the Research Table (Metallurgy). It shows you how to cast it whole again: the fragment on a casting table, with 4 ingots of molten gold poured over it."
+		"Use the &dObsidian Key&r on the keyhole and the portal will light. Every new portal needs its own key."
 	]
-	quest.84B0E8F0A2AF6216.quest_subtitle: "Server project"
+	quest.84B0E8F0A2AF6216.quest_subtitle: "Unlock a nether portal"
 	quest.84B0E8F0A2AF6216.title: "The Nether Key"
 	quest.85A8A025C5D4688B.quest_desc: [
 		"Order from your whole network at one counter."
@@ -306,19 +321,18 @@
 		"Machines that break blocks for you."
 	]
 	quest.94BBFA5581DD8AEB.title: "Drills and Saws"
-	quest.96790FA4E2D5231E.quest_desc: [
-		"The building blocks of IE's powered machines, like the arc furnace."
-	]
-	quest.96790FA4E2D5231E.title: "Engineering Blocks"
 	quest.9974DE548ABA45E5.quest_desc: [
-		"A multiblock that melts metal. Raw ore melts into &etwice&r the metal."
-		"Open the Productive Metalworks guide for the build."
+		"A multiblock that melts metal: a &eFoundry Controller&r in a brick wall, an air inside up to 7x7 and 8 tall over a floor made entirely of &eSolid Fuel Heaters&r, a brick ring around the heaters, walls of bricks and &eFoundry Drains&r, and a &eBrick Wall&r up every corner. Put items in through the controller. Hold &eW&r over the controller for a Ponder."
+		"Raw and crushed ore melt into &emore&r than an ingot: x1.2 in brick."
+		""
+		"Blow a running Create fan into an &eAir Intake&r in the ring around the heaters for more heat, slower heat loss, x1.4 ore and &ealloying&r (brass, netherite and Silent Gear's alloys only come from here)."
+		"Later, &eFire Bricks&r and &eLava Heaters&r: hotter, x1.6, slower heat loss, and the diamond-tier metals. Melt sand into &eMolten Glass&r here, then pour 250 mB over &eFire Clay&r on a casting table for a &eFire Brick&r; four make a block."
 	]
 	quest.9974DE548ABA45E5.title: "The Foundry"
 	quest.99B23FA3B8E06D0D.quest_desc: [
 		"This chapter guides you through the age once you've researched it."
 		""
-		"&eResearch unlocks:&r the IE coke oven, blast furnace and alloy kiln, copper fluid handling, brass, and the foundry."
+		"&eResearch unlocks:&r copper fluid handling, brass, and the foundry."
 		""
 		"&7Until then these recipes stay hidden in JEI and can't be crafted. You can still use and trade the items if someone else makes them."
 	]
@@ -354,6 +368,12 @@
 		"A new material for your gear. Check its stats with Shift."
 	]
 	quest.A0C4D919AA3197C5.title: "Copper"
+	quest.A1B72F262A31BCFA.quest_desc: [
+		"A Sigil of Socketing adds &bone extra socket&r to any piece of gear, at the smithing table. Each item can take only one."
+		""
+		"Sigils can't be crafted. They come from quests, raid Elites and Invaders, and from beating every wave of a night raid."
+	]
+	quest.A1B72F262A31BCFA.title: "Sigil of Socketing"
 	quest.A51226797E7CF426.quest_desc: [
 		"A burner under an envelope. The simplest way up."
 	]
@@ -362,6 +382,11 @@
 		"Presses ingots into sheets."
 	]
 	quest.A7103F6D54C8870C.title: "Mechanical Press"
+	quest.AC09C81595E8C819.quest_desc: [
+		"Reaching the End is the milestone for &5Pinnacle&r (with 60 hours of play)."
+	]
+	quest.AC09C81595E8C819.quest_subtitle: "Reach the End"
+	quest.AC09C81595E8C819.title: "Pinnacle"
 	quest.ACB3E347E1F626CF.quest_desc: [
 		"Box up items and send them by frog."
 	]
@@ -374,27 +399,37 @@
 		"Fill and empty items with liquids."
 	]
 	quest.B00685259C307645.title: "Spout and Drain"
-	quest.B618FBDD4DC45E32.quest_desc: [
-		"Iron plus coal coke makes steel."
-	]
-	quest.B618FBDD4DC45E32.title: "Blast Furnace"
 	quest.B6872F8D80B7F51F.quest_desc: [
 		"Power back into rotation, wherever you need it."
 	]
 	quest.B6872F8D80B7F51F.title: "Electric Motor"
+	quest.B7743506000A68FD.quest_desc: [
+		"There's no enchanted 'affix' loot here: Apotheosis gives &dgems&r only."
+		""
+		"Monsters drop them now and then. Raid &6Elites&r always drop one, and &5Invaders&r several."
+		""
+		"Put a gem in a socket at the smithing table (gear in the middle, gem on the right). A &bSigil of Withdrawal&r takes gems back out."
+	]
+	quest.B7743506000A68FD.title: "Your First Gem"
 	quest.BAF4C2C8B1FCA99A.quest_desc: [
 		"This chapter guides you through the age once you've researched it."
 		""
-		"&eResearch unlocks:&r Create: Enchantment Industry (liquid XP, blaze enchanting). Exotic material chains come in a later update."
+		"&eResearch unlocks:&r the Melee Elemental research focus (Fire Aspect, and Smite's lightning) when you bind books at an enchanting table. Exotic material chains come in a later update."
 		""
-		"&7Until then these recipes stay hidden in JEI and can't be crafted. You can still use and trade the items if someone else makes them."
+		"&7Enchanting itself is open from the start: the quests below walk through it."
 	]
 	quest.BAF4C2C8B1FCA99A.quest_subtitle: "Learn this age at the Research Bench"
 	quest.BAF4C2C8B1FCA99A.title: "Exotic Age"
-	quest.BEEEF5D03C97F95E.quest_desc: [
-		"XP as a fluid. Bank it in tanks, trade it, or feed it into factories."
+	quest.BD28D265D7D81A23.quest_desc: [
+		"&6Silent Gear&r tools, weapons and armour gain &eXP&r as you use them: tools by mining (ores give more), weapons by hitting monsters, armour by taking hits from mobs."
+		""
+		"Every level gives &a+5% to all stats&r. Levels &b3, 6 and 9&r each add a &bgem socket&r."
+		""
+		"The top level depends on your world tier: 3 in Haven, 5 Frontier, 7 Ascent, 9 Summit, 10 Pinnacle. XP keeps counting at the cap."
+		""
+		"The Salvager won't take apart gear with levels or gems."
 	]
-	quest.BEEEF5D03C97F95E.title: "Liquid Knowledge"
+	quest.BD28D265D7D81A23.title: "Gear That Grows"
 	quest.C498BC94A5589DF8.quest_desc: [
 		"Moor your ship at a dock."
 	]
@@ -408,6 +443,19 @@
 	]
 	quest.CDDC586BD5311E42.quest_subtitle: "The start of every machine"
 	quest.CDDC586BD5311E42.title: "Andesite"
+	quest.CF7EF539889F3C85.quest_desc: [
+		"Every &c5th night&r raiders come for the Overworld: a &cNight Raid&r. You get a warning at dusk the evening before, and on the night &cbeds don't work&r."
+		""
+		"From nightfall, waves of raiders spawn &e30-40 blocks&r from every player who is on the ground. They come for you, and if they can't reach you they &cbreak in&r: about 30 seconds per block."
+		""
+		"They can only break plain Minecraft blocks. &aChests, furnaces, beds and every block from Create, Create: New Age, the foundry or any other mod are safe&r, and so is obsidian."
+		""
+		"Players &bon an airship or flying&r get no waves. Players close together share one siege."
+		""
+		"&7/silentraids status&r shows when the next one is."
+	]
+	quest.CF7EF539889F3C85.quest_subtitle: "Read me"
+	quest.CF7EF539889F3C85.title: "The Night Raid"
 	quest.D11F451A37DE5F06.quest_desc: [
 		"Villages float high above the build limit. Land, trade, and see what they sell."
 	]
@@ -436,11 +484,17 @@
 		"Start like any vanilla world. This book is your guide: it opens new chapters as you find things and learn new ages."
 	]
 	quest.D6BFAAAE8DC45F87.quest_subtitle: "Read me first"
-	quest.D6BFAAAE8DC45F87.title: "Welcome to Skybound"
+	quest.D6BFAAAE8DC45F87.title: "Welcome to Empyrean Engines"
 	quest.D74E43DBFCECFBCF.quest_desc: [
 		"Carry power between buildings."
 	]
 	quest.D74E43DBFCECFBCF.title: "Wiring"
+	quest.DDBC83D1289E3DB3.quest_desc: [
+		"Shelve the researched focus in a chiseled bookshelf two blocks from the table, with a clear block between."
+		""
+		"Now put a tool, weapon or armour piece in the table: the buttons list what the shelved foci know. Pick exactly the enchantments you want. Books are never used up."
+	]
+	quest.DDBC83D1289E3DB3.title: "Chosen Enchantment"
 	quest.E17A9DE819FE4B0D.quest_desc: [
 		"Picks up and places items between machines."
 	]
@@ -477,7 +531,7 @@
 		"&7-&r Something red runs in the walls of the Nether."
 		"&7-&r Blue veins are said to glitter in the End."
 		"&7-&r Black crystals hide deep below the stone."
-		"&7-&r Some of the best metals aren't mined at all. They're alloyed."
+		"&7-&r Some of the best metals aren't mined at all. They're alloyed in the foundry."
 		""
 		"The &eFoundry&r (Alloy Age) casts parts and doubles your ore."
 	]
@@ -491,6 +545,10 @@
 		"Move items between machines."
 	]
 	quest.F20B642B11B151E9.title: "Belts"
+	quest.F23D3779B9A7EA81.quest_desc: [
+		"Grind spare gems into &dgem dust&r at the Salvaging Table, then use the Gem Cutting Table to raise a gem's purity."
+	]
+	quest.F23D3779B9A7EA81.title: "Gem Cutting"
 	quest.F52B627E99FFF93E.quest_desc: [
 		"A new material for your gear. Check its stats with Shift."
 	]
@@ -503,8 +561,4 @@
 		"A hand that uses items for you."
 	]
 	quest.FA5E2AA3C9E46332.title: "Deployers"
-	quest.FE1FC22B01550C40.quest_desc: [
-		"Automated enchanting, fuelled by liquid XP."
-	]
-	quest.FE1FC22B01550C40.title: "Blaze Enchanter"
 }

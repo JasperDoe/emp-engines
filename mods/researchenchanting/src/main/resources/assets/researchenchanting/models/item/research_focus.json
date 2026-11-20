@@ -1,0 +1,219 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:item/book",
+    "layer1": "researchenchanting:item/focus/sword_0"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "researchenchanting:look": 0.015625
+      },
+      "model": "researchenchanting:item/focus/sword_1"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.03125
+      },
+      "model": "researchenchanting:item/focus/sword_2"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.046875
+      },
+      "model": "researchenchanting:item/focus/sword_3"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.0625
+      },
+      "model": "researchenchanting:item/focus/sword_4"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.078125
+      },
+      "model": "researchenchanting:item/focus/sword_5"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.09375
+      },
+      "model": "researchenchanting:item/focus/bow_0"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.109375
+      },
+      "model": "researchenchanting:item/focus/bow_1"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.125
+      },
+      "model": "researchenchanting:item/focus/bow_2"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.140625
+      },
+      "model": "researchenchanting:item/focus/bow_3"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.15625
+      },
+      "model": "researchenchanting:item/focus/bow_4"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.171875
+      },
+      "model": "researchenchanting:item/focus/bow_5"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.1875
+      },
+      "model": "researchenchanting:item/focus/armour_0"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.203125
+      },
+      "model": "researchenchanting:item/focus/armour_1"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.21875
+      },
+      "model": "researchenchanting:item/focus/armour_2"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.234375
+      },
+      "model": "researchenchanting:item/focus/armour_3"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.25
+      },
+      "model": "researchenchanting:item/focus/armour_4"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.265625
+      },
+      "model": "researchenchanting:item/focus/armour_5"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.28125
+      },
+      "model": "researchenchanting:item/focus/tools_0"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.296875
+      },
+      "model": "researchenchanting:item/focus/tools_1"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.3125
+      },
+      "model": "researchenchanting:item/focus/tools_2"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.328125
+      },
+      "model": "researchenchanting:item/focus/tools_3"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.34375
+      },
+      "model": "researchenchanting:item/focus/tools_4"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.359375
+      },
+      "model": "researchenchanting:item/focus/tools_5"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.375
+      },
+      "model": "researchenchanting:item/focus/trident_0"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.390625
+      },
+      "model": "researchenchanting:item/focus/trident_1"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.40625
+      },
+      "model": "researchenchanting:item/focus/trident_2"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.421875
+      },
+      "model": "researchenchanting:item/focus/trident_3"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.4375
+      },
+      "model": "researchenchanting:item/focus/trident_4"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.453125
+      },
+      "model": "researchenchanting:item/focus/trident_5"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.46875
+      },
+      "model": "researchenchanting:item/focus/crossbow_0"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.484375
+      },
+      "model": "researchenchanting:item/focus/crossbow_1"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.5
+      },
+      "model": "researchenchanting:item/focus/crossbow_2"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.515625
+      },
+      "model": "researchenchanting:item/focus/crossbow_3"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.53125
+      },
+      "model": "researchenchanting:item/focus/crossbow_4"
+    },
+    {
+      "predicate": {
+        "researchenchanting:look": 0.546875
+      },
+      "model": "researchenchanting:item/focus/crossbow_5"
+    }
+  ]
+}

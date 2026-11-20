@@ -1,0 +1,42 @@
+{
+  "type": "silentgear:compound_part",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "type": "silentgear:blueprint",
+      "gear_type": "silentgear:mace",
+      "part_type": "silentgear:main"
+    },
+    {
+      "item": "minecraft:heavy_core"
+    },
+    {
+      "type": "silentgear:material",
+      "gear_type": "silentgear:mace",
+      "part_type": "silentgear:main",
+      "not_categories": [
+        "emp_cast_only"
+      ]
+    },
+    {
+      "type": "silentgear:material",
+      "gear_type": "silentgear:mace",
+      "part_type": "silentgear:main",
+      "not_categories": [
+        "emp_cast_only"
+      ]
+    },
+    {
+      "type": "silentgear:material",
+      "gear_type": "silentgear:mace",
+      "part_type": "silentgear:main",
+      "not_categories": [
+        "emp_cast_only"
+      ]
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "silentgear:mace_core"
+  }
+}

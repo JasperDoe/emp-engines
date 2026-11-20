@@ -1,0 +1,40 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="silentraids"
+version="0.1.0"
+displayName="Silent Apotheosis Raids"
+description='''Night raids (sieges) every few nights, an automatic Apotheosis world tier for each player, and levels for Silent Gear tools, weapons and armour.'''
+
+[[mixins]]
+config="silentraids.mixins.json"
+
+[[dependencies.silentraids]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.silentraids]]
+modId="silentgear"
+type="required"
+versionRange="*"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.silentraids]]
+modId="apotheosis"
+type="optional"
+versionRange="*"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.silentraids]]
+modId="sable"
+type="optional"
+versionRange="*"
+ordering="AFTER"
+side="BOTH"

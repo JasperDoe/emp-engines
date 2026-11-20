@@ -1,0 +1,12 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:ores/copper"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_copper",
+    "amount": 90
+  },
+  "temperature": 800,
+  "ore": true
+}

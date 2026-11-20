@@ -1,0 +1,13 @@
+{
+  "type": "tieredfoundry:casting",
+  "block": "table",
+  "pattern": "ingot",
+  "fluid": {
+    "tag": "c:molten_netherite",
+    "amount": 90
+  },
+  "result": {
+    "id": "minecraft:netherite_ingot",
+    "count": 1
+  }
+}

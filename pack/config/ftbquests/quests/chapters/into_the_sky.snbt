@@ -26,7 +26,7 @@
 			tasks: [
 				{
 					id: "69246CC9CC17266B"
-					structure: "#skybound:sky_villages"
+					structure: "#emp_engines:sky_villages"
 					type: "structure"
 				}
 			]

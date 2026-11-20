@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "tieredfoundry:block/tier1/duct_on"
+  }
+}

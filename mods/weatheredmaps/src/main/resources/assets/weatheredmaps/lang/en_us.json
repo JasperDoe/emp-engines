@@ -1,0 +1,14 @@
+{
+  "item.weatheredmaps.weathered_dungeon_map": "Weathered Dungeon Map",
+  "item.weatheredmaps.weathered_dungeon_map.desc": "Sealed. Leads to a dungeon or trial chamber.",
+  "item.weatheredmaps.weathered_dungeon_map.unrolled": "Dungeon Map",
+  "item.weatheredmaps.weathered_pillager_map": "Weathered Pillager Map",
+  "item.weatheredmaps.weathered_pillager_map.desc": "Sealed. Leads to a pillager outpost or mansion.",
+  "item.weatheredmaps.weathered_pillager_map.unrolled": "Pillager Base Map",
+  "item.weatheredmaps.weathered_fort_map": "Weathered Fort Map",
+  "item.weatheredmaps.weathered_fort_map.desc": "Sealed. Leads to a hostile keep, garrison or fort.",
+  "item.weatheredmaps.weathered_fort_map.unrolled": "Hostile Fort Map",
+  "item.weatheredmaps.weathered_map.hint": "Use to unroll it",
+  "item.weatheredmaps.weathered_map.unrolled": "The map unrolls, its markings sharpen...",
+  "item.weatheredmaps.weathered_map.nothing": "The markings match nothing within reach of here."
+}

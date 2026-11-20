@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "lit=false,tier=1": {
+      "model": "tieredfoundry:block/solid_fuel_heater_off"
+    },
+    "lit=true,tier=1": {
+      "model": "tieredfoundry:block/solid_fuel_heater_on"
+    },
+    "lit=false,tier=2": {
+      "model": "tieredfoundry:block/solid_fuel_heater_off"
+    },
+    "lit=true,tier=2": {
+      "model": "tieredfoundry:block/solid_fuel_heater_on"
+    }
+  }
+}

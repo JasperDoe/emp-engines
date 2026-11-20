@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "emp_engines:dungeon/gilded_reliquary",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 56,
+    "separation": 20,
+    "salt": 71230413
+  }
+}

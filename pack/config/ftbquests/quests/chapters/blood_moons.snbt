@@ -1,0 +1,205 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "blood_moons"
+	group: ""
+	icon: {
+		count: 1
+		id: "apotheosis:sigil_of_socketing"
+	}
+	id: "15CD34AC3363B895"
+	order_index: 11
+	quest_links: [ ]
+	quests: [
+		{
+			icon: {
+				count: 1
+				id: "minecraft:zombie_head"
+			}
+			id: "CF7EF539889F3C85"
+			shape: "gear"
+			size: 2.0d
+			tasks: [
+				{
+					id: "1D0FA8A56999A9EB"
+					type: "checkmark"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"CF7EF539889F3C85"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:experience_bottle"
+			}
+			id: "00F44E2A039FDE10"
+			tasks: [
+				{
+					id: "ECC59E118D306596"
+					type: "checkmark"
+				}
+			]
+			x: 2.5d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"CF7EF539889F3C85"
+			]
+			icon: {
+				count: 1
+				id: "silentgear:pickaxe"
+			}
+			id: "BD28D265D7D81A23"
+			tasks: [
+				{
+					id: "94C92DFD1148E1C7"
+					type: "checkmark"
+				}
+			]
+			x: 2.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"CF7EF539889F3C85"
+			]
+			icon: {
+				count: 1
+				id: "apotheosis:gem"
+			}
+			id: "B7743506000A68FD"
+			rewards: [
+				{
+					id: "142C523A930E1412"
+					item: {
+						count: 1
+						id: "apotheosis:sigil_of_socketing"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "E27E0CE4FEF19C8D"
+					item: {
+						count: 1
+						id: "apotheosis:gem"
+					}
+					type: "item"
+				}
+			]
+			x: 5.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"B7743506000A68FD"
+			]
+			icon: {
+				count: 1
+				id: "apotheosis:sigil_of_socketing"
+			}
+			id: "A1B72F262A31BCFA"
+			tasks: [
+				{
+					id: "06D6AE0B546C3132"
+					item: {
+						count: 1
+						id: "apotheosis:sigil_of_socketing"
+					}
+					type: "item"
+				}
+			]
+			x: 7.5d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"B7743506000A68FD"
+			]
+			icon: {
+				count: 1
+				id: "apotheosis:gem_cutting_table"
+			}
+			id: "F23D3779B9A7EA81"
+			tasks: [
+				{
+					id: "EC24590D79D35F73"
+					item: {
+						count: 1
+						id: "apotheosis:gem_cutting_table"
+					}
+					type: "item"
+				}
+			]
+			x: 7.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"A1B72F262A31BCFA"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:nether_star"
+			}
+			id: "366EBEC9A45AC5A1"
+			rewards: [
+				{
+					id: "F88851CABC782DD4"
+					item: {
+						count: 1
+						id: "apotheosis:sigil_of_socketing"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "CFEB09F383E31D81"
+					item: {
+						count: 1
+						id: "minecraft:nether_star"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"A1B72F262A31BCFA"
+			]
+			icon: {
+				count: 1
+				id: "minecraft:end_portal_frame"
+			}
+			id: "AC09C81595E8C819"
+			rewards: [
+				{
+					id: "B5744F356DF3B8EC"
+					item: {
+						count: 1
+						id: "apotheosis:sigil_of_socketing"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					dimension: "minecraft:the_end"
+					id: "E98DE44D453D72AB"
+					type: "dimension"
+				}
+			]
+			x: 10.0d
+			y: 1.5d
+		}
+	]
+}

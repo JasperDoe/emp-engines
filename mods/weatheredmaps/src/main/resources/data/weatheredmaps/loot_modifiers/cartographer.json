@@ -1,0 +1,23 @@
+{
+  "type": "neoforge:add_table",
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:chests/village/village_cartographer"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "revampedvillages:professions/cartographer_librarian"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "cr_aero_structures:chests/captains_cabin"
+        }
+      ]
+    }
+  ],
+  "table": "weatheredmaps:chests/cartographer"
+}

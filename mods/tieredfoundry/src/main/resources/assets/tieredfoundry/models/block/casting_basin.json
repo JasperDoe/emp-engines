@@ -1,0 +1,8 @@
+{
+  "parent": "tieredfoundry:block/template/basin",
+  "textures": {
+    "top": "tieredfoundry:block/casting/basin_top",
+    "side": "tieredfoundry:block/casting/basin_side",
+    "bottom": "tieredfoundry:block/casting/basin_bottom"
+  }
+}

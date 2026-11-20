@@ -1,8 +1,8 @@
 """Writes the Ponder schematic for the launcher scene and its lang lines.
 
 Run: python tools/art/ponder_launcher.py   (needs: pip install nbtlib)
-- assets/createskybound/ponder/launcher.nbt  (structure template, 7 x 6 x 7)
-- the createskybound.ponder.launcher.* lines in lang/en_us.json, read from LauncherScenes.java
+- assets/emp_engines/ponder/launcher.nbt  (structure template, 7 x 6 x 7)
+- the emp_engines.ponder.launcher.* lines in lang/en_us.json, read from LauncherScenes.java
 """
 import json
 import os
@@ -11,8 +11,8 @@ import re
 import nbtlib
 from nbtlib.tag import Compound, Int, List, String
 
-ROOT = os.path.join(os.path.dirname(__file__), "..", "..", "mods", "createskybound", "src", "main")
-ASSETS = os.path.join(ROOT, "resources", "assets", "createskybound")
+ROOT = os.path.join(os.path.dirname(__file__), "..", "..", "mods", "emp_engines", "src", "main")
+ASSETS = os.path.join(ROOT, "resources", "assets", "emp_engines")
 
 palette, blocks = [], []
 
@@ -37,14 +37,14 @@ for x in range(1, 6):
     for z in range(1, 6):
         corner = x in (1, 5) and z in (1, 5)
         edge = x in (1, 5) or z in (1, 5)
-        if corner:
-            put(x, 1, z, "createskybound:resonance_pylon_t1")
-        elif edge:
+        if edge:
             put(x, 1, z, "create:brass_casing")
+            if corner:   # the pylons stand on top of the ring's corners
+                put(x, 2, z, "emp_engines:resonance_pylon_t1", charge="0")
         else:
             put(x, 1, z, "minecraft:quartz_block")
 put(6, 1, 3, "create:shaft", axis="x", waterlogged="false")
-put(3, 2, 5, "createskybound:vector_planar_computer", facing="south")
+put(3, 2, 5, "emp_engines:vector_planar_computer", facing="south")
 put(2, 2, 5, "minecraft:lever", face="floor", facing="south", powered="false")
 # a little ship: spruce deck, a mast and a sail
 for x in range(2, 5):
@@ -67,15 +67,15 @@ os.makedirs(os.path.join(ASSETS, "ponder"), exist_ok=True)
 nbtlib.File(root).save(os.path.join(ASSETS, "ponder", "launcher.nbt"), gzipped=True)
 
 # Lang: Ponder looks texts up as <modid>.ponder.<scene>.text_<n>, numbered in the order they appear.
-src = open(os.path.join(ROOT, "java", "dev", "skybound", "createskybound", "client", "ponder", "LauncherScenes.java"), encoding="utf-8").read()
+src = open(os.path.join(ROOT, "java", "dev", "empengines", "engines", "client", "ponder", "LauncherScenes.java"), encoding="utf-8").read()
 title = re.search(r'title\("launcher", "([^"]+)"\)', src).group(1)
 texts = re.findall(r'\.text\("([^"]+)"\)', src)
 lang_path = os.path.join(ASSETS, "lang", "en_us.json")
 lang = json.load(open(lang_path, encoding="utf-8"))
-lang = {k: v for k, v in lang.items() if not k.startswith("createskybound.ponder.launcher.")}
-lang["createskybound.ponder.launcher.header"] = title
+lang = {k: v for k, v in lang.items() if not k.startswith("emp_engines.ponder.launcher.")}
+lang["emp_engines.ponder.launcher.header"] = title
 for i, t in enumerate(texts, 1):
-    lang["createskybound.ponder.launcher.text_" + str(i)] = t
+    lang["emp_engines.ponder.launcher.text_" + str(i)] = t
 json.dump(lang, open(lang_path, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
 open(lang_path, "a").write("\n")
 print("schematic and", len(texts), "ponder lines written")

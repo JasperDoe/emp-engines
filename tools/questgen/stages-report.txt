@@ -1,6 +1,9 @@
-Scanned 5931 recipes, 2507 items, 632 item tags
+Scanned 6396 recipes, 2930 items, 801 item tags
+RESEARCH GATES ARE OFF ("gates_off": true in stages.json): the stage files lock nothing.
+What each stage would lock is listed below.
 
-== andesite_age: 48 listed + 25 crafted from them
+
+== andesite_age: 48 listed + 27 crafted from them
   create:analog_lever
   create:andesite_alloy_block
   create:andesite_bars
@@ -25,25 +28,25 @@ Scanned 5931 recipes, 2507 items, 632 item tags
   create:sticker
   create:turntable
   create:wooden_bracket
+  create_enchantment_industry:mechanical_grindstone
   numismatics:andesite_depositor
+  sliceanddice:slicer
 
-== alloy_age: 15 listed + 14 crafted from them, whole mods: productivemetalworks
+== logistics: 10 listed + 0 crafted from them
+
+== alloy_age: 10 listed + 10 crafted from them, whole mods: tieredfoundry
   create:brass_bars
   create:brass_ladder
   create:brass_scaffolding
   create:copper_door
   create:flywheel
   create_dragons_plus:fluid_hatch
-  immersiveengineering:bannerpattern_hammer
-  immersiveengineering:gunpart_barrel
-  immersiveengineering:plate_copper
-  immersiveengineering:plate_gold
-  immersiveengineering:plate_iron
-  immersiveengineering:slab_alloybrick
-  immersiveengineering:slab_blastbrick
-  immersiveengineering:slab_cokebrick
+  create_enchantment_industry:experience_hatch
+  create_enchantment_industry:experience_lantern
+  create_enchantment_industry:gem_cutter
+  create_enchantment_industry:printer
 
-== brass_age: 32 listed + 44 crafted from them
+== brass_age: 32 listed + 48 crafted from them
   create:brass_door
   create:clockwork_bearing
   create:controller_rail
@@ -52,6 +55,10 @@ Scanned 5931 recipes, 2507 items, 632 item tags
   create:train_door
   create:train_trapdoor
   create:wand_of_symmetry
+  create_enchantment_industry:affix_augmentor
+  create_enchantment_industry:brass_bookshelf
+  create_enchantment_industry:ender_woven_bag
+  create_enchantment_industry:infuser
   numismatics:bank_terminal
   numismatics:black_authorized_card
   numismatics:black_card
@@ -89,57 +96,12 @@ Scanned 5931 recipes, 2507 items, 632 item tags
   numismatics:yellow_authorized_card
   numismatics:yellow_card
 
-== electricity_age: 11 listed + 45 crafted from them, whole mods: createaddition
-  immersiveengineering:buzzsaw
-  immersiveengineering:chemthrower
-  immersiveengineering:cloche
-  immersiveengineering:connector_probe
-  immersiveengineering:current_transformer
-  immersiveengineering:drill
-  immersiveengineering:dynamo
-  immersiveengineering:electromagnet
-  immersiveengineering:floodlight
-  immersiveengineering:fluid_pump
-  immersiveengineering:fluid_sorter
-  immersiveengineering:fluorescent_tube
-  immersiveengineering:generator
-  immersiveengineering:item_batcher
-  immersiveengineering:machine_interface
-  immersiveengineering:pipe_valve
-  immersiveengineering:railgun
-  immersiveengineering:redstone_breaker
-  immersiveengineering:redstone_switchboard
-  immersiveengineering:redstone_timer
-  immersiveengineering:resonanz_engineering
-  immersiveengineering:revolver
-  immersiveengineering:robot_wolf
-  immersiveengineering:sample_drill
-  immersiveengineering:siren
-  immersiveengineering:skyhook
-  immersiveengineering:slab_blastbrick_reinforced
-  immersiveengineering:sorter
-  immersiveengineering:speedloader
-  immersiveengineering:tesla_coil
-  immersiveengineering:toolupgrade_chemthrower_focus
-  immersiveengineering:toolupgrade_chemthrower_multitank
-  immersiveengineering:toolupgrade_drill_damage
-  immersiveengineering:toolupgrade_drill_fortune
-  immersiveengineering:toolupgrade_powerpack_induction
-  immersiveengineering:toolupgrade_powerpack_magnet
-  immersiveengineering:toolupgrade_powerpack_tesla
-  immersiveengineering:toolupgrade_revolver_magazine
-  immersiveengineering:toolupgrade_skyhook_mace
-  immersiveengineering:toolupgrade_skyhook_slope
-  immersiveengineering:transformer
-  immersiveengineering:transformer_hv
-  immersiveengineering:turntable
-  immersiveengineering:turret_chem
-  immersiveengineering:turret_gun
-
-== exotic_age: 0 listed + 0 crafted from them, whole mods: create_enchantment_industry
-
 == flight: 0 listed + 1 crafted from them, whole mods: aeronautics, simulated, offroad, aeroworks
   create_dragons_plus:levitite_fragile_fluid_tank
 
-== logistics: 10 listed + 0 crafted from them
+== electricity_age: 0 listed + 0 crafted from them, whole mods: createaddition
+
+== exotic_age: 0 listed + 0 crafted from them
+
+== obsidian_key: 1 listed + 0 crafted from them
 

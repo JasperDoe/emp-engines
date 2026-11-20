@@ -1,0 +1,2252 @@
+{
+ "title": "Create: Empyrean Engines",
+ "groups": [
+  {
+   "key": "industry",
+   "title": "March of Industry"
+  },
+  {
+   "key": "unknown",
+   "title": "Into the Unknown"
+  }
+ ],
+ "chapters": [
+  {
+   "file": "briefing",
+   "title": "Briefing",
+   "subtitle": "Start here",
+   "group": null,
+   "icon": "minecraft:map",
+   "quests": [
+    {
+     "key": "brief_welcome",
+     "title": "Welcome to Empyrean Engines",
+     "x": 0.0,
+     "y": 0.0,
+     "subtitle": "Read me first",
+     "description": [
+      "The ground is yours to build on. The sky is not.",
+      "",
+      "Everything valuable floats above &bY 250&r, where nobody can place or break blocks. To reach it you'll need to build something that flies.",
+      "",
+      "Start like any vanilla world. This book is your guide: it opens new chapters as you find things and learn new ages."
+     ],
+     "icon": "minecraft:map",
+     "tasks": [
+      {
+       "type": "checkmark"
+      }
+     ],
+     "shape": "hexagon",
+     "size": 2.0
+    },
+    {
+     "key": "brief_rules",
+     "title": "Server Rules",
+     "x": 0.0,
+     "y": -2.5,
+     "description": [
+      "&c-&r No building or breaking at or above &bY 250&r.",
+      "&c-&r The Nether is &b1:1&r with the Overworld. It's a destination, not a shortcut.",
+      "&c-&r No elytra and no teleporting.",
+      "&c-&r Mob farms don't work. XP comes from exploring.",
+      "&c-&r XP is &eknowledge&r: you spend it to research new recipes."
+     ],
+     "icon": "minecraft:writable_book",
+     "tasks": [
+      {
+       "type": "checkmark"
+      }
+     ],
+     "dependencies": [
+      "brief_welcome"
+     ]
+    },
+    {
+     "key": "brief_table",
+     "title": "Getting Started",
+     "x": 2.5,
+     "y": 0.0,
+     "description": [
+      "Punch a tree and make a crafting table."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "minecraft:crafting_table"
+      }
+     ],
+     "dependencies": [
+      "brief_welcome"
+     ]
+    },
+    {
+     "key": "brief_furnace",
+     "title": "Stone Age",
+     "x": 4.5,
+     "y": 0.0,
+     "description": [
+      "Stone tools and a furnace. Your tools are made of parts. You'll learn what that means soon."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "minecraft:furnace"
+      }
+     ],
+     "dependencies": [
+      "brief_table"
+     ]
+    },
+    {
+     "key": "brief_shelter",
+     "title": "A Roof and a Bed",
+     "x": 4.5,
+     "y": -2.0,
+     "description": [
+      "Get through your first night."
+     ],
+     "icon": "minecraft:red_bed",
+     "tasks": [
+      {
+       "type": "checkmark"
+      }
+     ],
+     "dependencies": [
+      "brief_table"
+     ]
+    },
+    {
+     "key": "brief_food",
+     "title": "Something to Eat",
+     "x": 4.5,
+     "y": 2.0,
+     "description": [
+      "Find a steady food source before you go far."
+     ],
+     "icon": "minecraft:bread",
+     "tasks": [
+      {
+       "type": "checkmark"
+      }
+     ],
+     "dependencies": [
+      "brief_table"
+     ]
+    },
+    {
+     "key": "trig_iron",
+     "title": "Iron",
+     "x": 7.0,
+     "y": -2.0,
+     "subtitle": "Opens: Gears & Metals",
+     "description": [
+      "Your first iron ingot. Look closer at your tools."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "minecraft:iron_ingot"
+      }
+     ],
+     "dependencies": [
+      "brief_furnace"
+     ],
+     "shape": "diamond"
+    },
+    {
+     "key": "trig_andesite",
+     "title": "Andesite",
+     "x": 7.0,
+     "y": 0.0,
+     "subtitle": "The start of every machine",
+     "description": [
+      "A grey stone with a future. Andesite plus iron makes andesite alloy, the backbone of Create. You'll need to research it first."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "minecraft:andesite"
+      }
+     ],
+     "dependencies": [
+      "brief_furnace"
+     ],
+     "shape": "diamond"
+    },
+    {
+     "key": "trig_lapis",
+     "title": "The Price of Knowledge",
+     "x": 7.0,
+     "y": 2.0,
+     "subtitle": "Opens: March of Industry",
+     "description": [
+      "Lapis is the key to research.",
+      "",
+      "Every recipe beyond vanilla has to be researched at the &eResearch Bench&r. Research costs &eXP&r plus a few sample items, and it's per player. One person can learn machines and supply the rest of the team.",
+      "",
+      "When you research an age, its chapter in this book opens."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "minecraft:lapis_lazuli"
+      }
+     ],
+     "dependencies": [
+      "brief_furnace"
+     ],
+     "shape": "diamond"
+    },
+    {
+     "key": "brief_sky",
+     "title": "The Sky Is Off-Limits",
+     "x": 9.5,
+     "y": 0.0,
+     "description": [
+      "Climb a mountain and look up. Sky villages, wrecks and loot drift above &bY 250&r.",
+      "You can't pillar up there. You'll have to fly."
+     ],
+     "icon": "minecraft:feather",
+     "tasks": [
+      {
+       "type": "checkmark"
+      }
+     ],
+     "dependencies": [
+      "trig_iron",
+      "trig_andesite"
+     ],
+     "optional": true
+    }
+   ]
+  },
+  {
+   "file": "gears_and_metals",
+   "title": "Gears & Metals",
+   "subtitle": "Silent Gear",
+   "group": null,
+   "icon": "silentgear:pickaxe",
+   "quests": [
+    {
+     "key": "sg_reveal",
+     "title": "Look Closer at Your Pickaxe",
+     "x": 0.0,
+     "y": 0.0,
+     "description": [
+      "Every tool and piece of armour here is built from &eparts&r: a head, a rod, sometimes a binding or grip.",
+      "Each part's material decides the stats. Hover a tool and hold Shift to see them.",
+      "",
+      "Better materials come from exploring. You won't know which metal is best until you find it."
+     ],
+     "icon": "silentgear:pickaxe",
+     "tasks": [
+      {
+       "type": "checkmark"
+      }
+     ],
+     "dependencies": [
+      "trig_iron"
+     ],
+     "shape": "hexagon",
+     "size": 2.0,
+     "hide_until_deps": true
+    },
+    {
+     "key": "sg_blueprint",
+     "title": "Blueprints",
+     "x": 2.5,
+     "y": -1.5,
+     "description": [
+      "Blueprints and templates shape the parts. Craft a blueprint for the part you want, then craft it with your material."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "silentgear:blueprint_paper"
+      },
+      {
+       "type": "item",
+       "item": "silentgear:template_board"
+      }
+     ],
+     "dependencies": [
+      "sg_reveal"
+     ]
+    },
+    {
+     "key": "sg_modkit",
+     "title": "Swapping Parts",
+     "x": 2.5,
+     "y": 1.5,
+     "description": [
+      "A mod kit lets you swap parts on a tool without starting over."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "silentgear:mod_kit"
+      }
+     ],
+     "dependencies": [
+      "sg_reveal"
+     ]
+    },
+    {
+     "key": "sg_repair",
+     "title": "Repairs",
+     "x": 5.0,
+     "y": -1.5,
+     "description": [
+      "Load a repair kit with materials and use it on worn gear."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "silentgear:crude_repair_kit"
+      }
+     ],
+     "dependencies": [
+      "sg_blueprint"
+     ]
+    },
+    {
+     "key": "sg_paint",
+     "title": "A Splash of Colour",
+     "x": 5.0,
+     "y": 1.5,
+     "description": [
+      "Paint your gear any colour you like."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "silentgear:paint_mixer"
+      }
+     ],
+     "dependencies": [
+      "sg_modkit"
+     ],
+     "optional": true
+    },
+    {
+     "key": "sg_salvage",
+     "title": "Salvager",
+     "x": 7.5,
+     "y": 0.0,
+     "description": [
+      "Break old gear back down into parts and materials."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "silentgear:salvager"
+      }
+     ],
+     "dependencies": [
+      "sg_repair",
+      "sg_modkit"
+     ]
+    },
+    {
+     "key": "sg_notes",
+     "title": "Field Notes: Metals",
+     "x": 0.0,
+     "y": 3.5,
+     "subtitle": "Hints for hidden entries",
+     "description": [
+      "Each metal gets its own entry here once you hold it. Rumours so far:",
+      "&7-&r Something red runs in the walls of the Nether.",
+      "&7-&r Blue veins are said to glitter in the End.",
+      "&7-&r Black crystals hide deep below the stone.",
+      "&7-&r Some of the best metals aren't mined at all. They're alloyed in the foundry.",
+      "",
+      "The &eFoundry&r (Alloy Age) casts parts and doubles your ore."
+     ],
+     "icon": "minecraft:paper",
+     "tasks": [
+      {
+       "type": "checkmark"
+      }
+     ],
+     "dependencies": [
+      "sg_reveal"
+     ]
+    },
+    {
+     "key": "metal_copper",
+     "title": "Copper",
+     "x": 2.5,
+     "y": 3.5,
+     "description": [
+      "A new material for your gear. Check its stats with Shift."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "minecraft:copper_ingot"
+      }
+     ],
+     "dependencies": [
+      "sg_notes"
+     ],
+     "invisible": true
+    },
+    {
+     "key": "metal_gold",
+     "title": "Gold",
+     "x": 4.5,
+     "y": 3.5,
+     "description": [
+      "A new material for your gear. Check its stats with Shift."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "minecraft:gold_ingot"
+      }
+     ],
+     "dependencies": [
+      "sg_notes"
+     ],
+     "invisible": true
+    },
+    {
+     "key": "metal_diamond",
+     "title": "Diamond",
+     "x": 6.5,
+     "y": 3.5,
+     "description": [
+      "A new material for your gear. Check its stats with Shift."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "minecraft:diamond"
+      }
+     ],
+     "dependencies": [
+      "sg_notes"
+     ],
+     "invisible": true
+    },
+    {
+     "key": "metal_bort",
+     "title": "Bort",
+     "x": 8.5,
+     "y": 3.5,
+     "description": [
+      "A new material for your gear. Check its stats with Shift."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "silentgear:bort"
+      }
+     ],
+     "dependencies": [
+      "sg_notes"
+     ],
+     "invisible": true
+    },
+    {
+     "key": "metal_crimson_iron",
+     "title": "Crimson Iron",
+     "x": 10.5,
+     "y": 3.5,
+     "description": [
+      "A new material for your gear. Check its stats with Shift."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "silentgear:crimson_iron_ingot"
+      }
+     ],
+     "dependencies": [
+      "sg_notes"
+     ],
+     "invisible": true
+    },
+    {
+     "key": "metal_blaze_gold",
+     "title": "Blaze Gold",
+     "x": 12.5,
+     "y": 3.5,
+     "description": [
+      "A new material for your gear. Check its stats with Shift."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "silentgear:blaze_gold_ingot"
+      }
+     ],
+     "dependencies": [
+      "sg_notes"
+     ],
+     "invisible": true
+    },
+    {
+     "key": "metal_crimson_steel",
+     "title": "Crimson Steel",
+     "x": 2.5,
+     "y": 5.5,
+     "description": [
+      "A new material for your gear. Check its stats with Shift."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "silentgear:crimson_steel_ingot"
+      }
+     ],
+     "dependencies": [
+      "sg_notes"
+     ],
+     "invisible": true
+    },
+    {
+     "key": "metal_netherite",
+     "title": "Netherite",
+     "x": 4.5,
+     "y": 5.5,
+     "description": [
+      "A new material for your gear. Check its stats with Shift."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "minecraft:netherite_ingot"
+      }
+     ],
+     "dependencies": [
+      "sg_notes"
+     ],
+     "invisible": true
+    },
+    {
+     "key": "metal_azure_silver",
+     "title": "Azure Silver",
+     "x": 6.5,
+     "y": 5.5,
+     "description": [
+      "A new material for your gear. Check its stats with Shift."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "silentgear:azure_silver_ingot"
+      }
+     ],
+     "dependencies": [
+      "sg_notes"
+     ],
+     "invisible": true
+    },
+    {
+     "key": "metal_azure_electrum",
+     "title": "Azure Electrum",
+     "x": 8.5,
+     "y": 5.5,
+     "description": [
+      "A new material for your gear. Check its stats with Shift."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "silentgear:azure_electrum_ingot"
+      }
+     ],
+     "dependencies": [
+      "sg_notes"
+     ],
+     "invisible": true
+    },
+    {
+     "key": "metal_tyrian_steel",
+     "title": "Tyrian Steel",
+     "x": 10.5,
+     "y": 5.5,
+     "description": [
+      "A new material for your gear. Check its stats with Shift."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "silentgear:tyrian_steel_ingot"
+      }
+     ],
+     "dependencies": [
+      "sg_notes"
+     ],
+     "invisible": true
+    }
+   ]
+  },
+  {
+   "file": "andesite_age",
+   "title": "1 · Andesite Age",
+   "subtitle": "Rotation and stress",
+   "group": "industry",
+   "icon": "create:andesite_alloy",
+   "quests": [
+    {
+     "key": "and_root",
+     "title": "Andesite Age",
+     "x": 0.0,
+     "y": 0.0,
+     "subtitle": "Learn this age at the Research Bench",
+     "description": [
+      "This chapter guides you through the age once you've researched it.",
+      "",
+      "&eResearch unlocks:&r andesite alloy, shafts and cogs, water wheels, the millstone, press, mixer, fans, drills, saws and belts.",
+      "",
+      "&7Until then these recipes stay hidden in JEI and can't be crafted. You can still use and trade the items if someone else makes them."
+     ],
+     "icon": "create:andesite_alloy",
+     "tasks": [
+      {
+       "type": "gamestage",
+       "stage": "emp_engines:andesite_age"
+      }
+     ],
+     "dependencies": [
+      "trig_lapis",
+      "trig_andesite"
+     ],
+     "shape": "gear",
+     "size": 2.0
+    },
+    {
+     "key": "and_alloy",
+     "title": "Andesite Alloy",
+     "x": 2.5,
+     "y": 0.0,
+     "description": [
+      "The backbone of every early machine. Andesite plus iron nuggets."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:andesite_alloy",
+       "count": 16
+      }
+     ],
+     "dependencies": [
+      "and_root"
+     ]
+    },
+    {
+     "key": "and_kinetics",
+     "title": "Shafts and Cogs",
+     "x": 4.5,
+     "y": -2.0,
+     "description": [
+      "Rotation travels through shafts and cogs. Large cogs change speed."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:shaft",
+       "count": 8
+      },
+      {
+       "type": "item",
+       "item": "create:cogwheel",
+       "count": 4
+      }
+     ],
+     "dependencies": [
+      "and_alloy"
+     ]
+    },
+    {
+     "key": "and_wheel",
+     "title": "Water Wheel",
+     "x": 4.5,
+     "y": 0.0,
+     "description": [
+      "Your first power source. Put it in flowing water."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:water_wheel"
+      }
+     ],
+     "dependencies": [
+      "and_alloy"
+     ]
+    },
+    {
+     "key": "and_goggles",
+     "title": "Stress",
+     "x": 6.5,
+     "y": -2.0,
+     "description": [
+      "Every machine costs stress units (SU). Goggles show how much your network can handle."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:goggles"
+      }
+     ],
+     "dependencies": [
+      "and_kinetics",
+      "and_wheel"
+     ]
+    },
+    {
+     "key": "and_windmill",
+     "title": "Windmill",
+     "x": 6.5,
+     "y": 2.0,
+     "description": [
+      "More power, no river needed."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:windmill_bearing"
+      },
+      {
+       "type": "item",
+       "item": "create:white_sail",
+       "count": 8
+      }
+     ],
+     "dependencies": [
+      "and_wheel"
+     ],
+     "optional": true
+    },
+    {
+     "key": "and_millstone",
+     "title": "Millstone",
+     "x": 6.5,
+     "y": 0.0,
+     "description": [
+      "Grind ores, flowers and gravel."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:millstone"
+      }
+     ],
+     "dependencies": [
+      "and_wheel"
+     ]
+    },
+    {
+     "key": "and_press",
+     "title": "Mechanical Press",
+     "x": 8.5,
+     "y": -1.0,
+     "description": [
+      "Presses ingots into sheets."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:mechanical_press"
+      }
+     ],
+     "dependencies": [
+      "and_millstone"
+     ]
+    },
+    {
+     "key": "and_mixer",
+     "title": "Mixer and Basin",
+     "x": 8.5,
+     "y": 1.0,
+     "description": [
+      "Mixing recipes. Some need heat underneath the basin."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:mechanical_mixer"
+      },
+      {
+       "type": "item",
+       "item": "create:basin"
+      }
+     ],
+     "dependencies": [
+      "and_millstone"
+     ]
+    },
+    {
+     "key": "and_belts",
+     "title": "Belts",
+     "x": 10.5,
+     "y": -2.0,
+     "description": [
+      "Move items between machines."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:belt_connector",
+       "count": 8
+      }
+     ],
+     "dependencies": [
+      "and_press"
+     ]
+    },
+    {
+     "key": "and_fan",
+     "title": "Encased Fan",
+     "x": 10.5,
+     "y": 0.0,
+     "description": [
+      "Blow through fire to smelt, through water to wash."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:encased_fan"
+      }
+     ],
+     "dependencies": [
+      "and_press",
+      "and_mixer"
+     ]
+    },
+    {
+     "key": "and_tools",
+     "title": "Drills and Saws",
+     "x": 10.5,
+     "y": 2.0,
+     "description": [
+      "Machines that break blocks for you."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:mechanical_drill"
+      },
+      {
+       "type": "item",
+       "item": "create:mechanical_saw"
+      }
+     ],
+     "dependencies": [
+      "and_mixer"
+     ]
+    },
+    {
+     "key": "and_farm",
+     "title": "First Automated Farm",
+     "x": 12.5,
+     "y": 0.0,
+     "description": [
+      "Build a farm that harvests and collects on its own."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:mechanical_harvester"
+      }
+     ],
+     "dependencies": [
+      "and_belts",
+      "and_tools"
+     ],
+     "shape": "hexagon"
+    }
+   ]
+  },
+  {
+   "file": "alloy_age",
+   "title": "2 · Alloy Age",
+   "subtitle": "Steel, brass and the foundry",
+   "group": "industry",
+   "icon": "create:brass_ingot",
+   "quests": [
+    {
+     "key": "al_root",
+     "title": "Alloy Age",
+     "x": 0.0,
+     "y": 0.0,
+     "subtitle": "Learn this age at the Research Bench",
+     "description": [
+      "This chapter guides you through the age once you've researched it.",
+      "",
+      "&eResearch unlocks:&r copper fluid handling, brass, and the foundry.",
+      "",
+      "&7Until then these recipes stay hidden in JEI and can't be crafted. You can still use and trade the items if someone else makes them."
+     ],
+     "icon": "create:brass_ingot",
+     "tasks": [
+      {
+       "type": "gamestage",
+       "stage": "emp_engines:alloy_age"
+      }
+     ],
+     "dependencies": [
+      "and_root"
+     ],
+     "shape": "gear",
+     "size": 2.0
+    },
+    {
+     "key": "al_fluids",
+     "title": "Copper and Fluids",
+     "x": 2.5,
+     "y": 2.0,
+     "description": [
+      "Pipes, pumps and tanks move liquids. Copper casing opens fluid machines."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:fluid_pipe",
+       "count": 8
+      },
+      {
+       "type": "item",
+       "item": "create:mechanical_pump"
+      },
+      {
+       "type": "item",
+       "item": "create:fluid_tank"
+      }
+     ],
+     "dependencies": [
+      "al_root"
+     ]
+    },
+    {
+     "key": "al_spout",
+     "title": "Spout and Drain",
+     "x": 4.5,
+     "y": 2.0,
+     "description": [
+      "Fill and empty items with liquids."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:spout"
+      },
+      {
+       "type": "item",
+       "item": "create:item_drain"
+      }
+     ],
+     "dependencies": [
+      "al_fluids"
+     ]
+    },
+    {
+     "key": "al_fireclay",
+     "title": "Foundry Bricks",
+     "x": 2.5,
+     "y": 0.0,
+     "description": [
+      "A tier 1 foundry is built from plain bricks: floor, walls and corners, all the same kind."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "minecraft:bricks",
+       "count": 32
+      }
+     ],
+     "dependencies": [
+      "al_root"
+     ]
+    },
+    {
+     "key": "al_foundry",
+     "title": "The Foundry",
+     "x": 4.5,
+     "y": 0.0,
+     "description": [
+      "A multiblock that melts metal: a &eFoundry Controller&r in a brick wall, an air inside up to 7x7 and 8 tall over a floor made entirely of &eSolid Fuel Heaters&r, a brick ring around the heaters, walls of bricks and &eFoundry Drains&r, and a &eBrick Wall&r up every corner. Put items in through the controller. Hold &eW&r over the controller for a Ponder.",
+      "Raw and crushed ore melt into &emore&r than an ingot: x1.2 in brick.",
+      "",
+      "Blow a running Create fan into an &eAir Intake&r in the ring around the heaters for more heat, slower heat loss, x1.4 ore and &ealloying&r (brass, netherite and Silent Gear's alloys only come from here).",
+      "Later, &eFire Bricks&r and &eLava Heaters&r: hotter, x1.6, slower heat loss, and the diamond-tier metals. Melt sand into &eMolten Glass&r here, then pour 250 mB over &eFire Clay&r on a casting table for a &eFire Brick&r; four make a block."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "tieredfoundry:foundry_controller"
+      },
+      {
+       "type": "item",
+       "item": "tieredfoundry:solid_fuel_heater"
+      },
+      {
+       "type": "item",
+       "item": "tieredfoundry:foundry_drain"
+      }
+     ],
+     "dependencies": [
+      "al_fireclay"
+     ],
+     "shape": "hexagon",
+     "size": 1.5
+    },
+    {
+     "key": "al_cast",
+     "title": "Casting",
+     "x": 6.5,
+     "y": 0.0,
+     "description": [
+      "A &eFoundry Tap&r on a drain pours into a casting table or basin below. Pour molten gold over an ingot, nugget, plate, gem or Silent Gear part to make a reusable &egold cast&r of it, or click sand onto it for a one-use sand cast.",
+      "Silent Gear parts from metals and gems above iron can only be cast here, not crafted by hand. Pour metal over finished gear to coat it."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "tieredfoundry:foundry_tap"
+      },
+      {
+       "type": "item",
+       "item": "tieredfoundry:casting_table"
+      },
+      {
+       "type": "item",
+       "item": "tieredfoundry:casting_basin"
+      }
+     ],
+     "dependencies": [
+      "al_foundry"
+     ]
+    },
+    {
+     "key": "al_brass",
+     "title": "Brass",
+     "x": 8.5,
+     "y": 0.0,
+     "description": [
+      "Copper and zinc, alloyed in the foundry (alloys only come from the foundry now). Brass opens the next age and the sky."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:brass_ingot",
+       "count": 8
+      }
+     ],
+     "dependencies": [
+      "al_cast",
+      "al_spout"
+     ],
+     "shape": "hexagon"
+    }
+   ]
+  },
+  {
+   "file": "brass_age",
+   "title": "3 · Brass Age",
+   "subtitle": "Smarter machines",
+   "group": "industry",
+   "icon": "create:brass_casing",
+   "quests": [
+    {
+     "key": "br_root",
+     "title": "Brass Age",
+     "x": 0.0,
+     "y": 0.0,
+     "subtitle": "Learn this age at the Research Bench",
+     "description": [
+      "This chapter guides you through the age once you've researched it.",
+      "",
+      "&eResearch unlocks:&r brass machines, mechanical crafters, deployers and arms, precision mechanisms, crushing wheels, steam engines and trains.",
+      "",
+      "&7Until then these recipes stay hidden in JEI and can't be crafted. You can still use and trade the items if someone else makes them."
+     ],
+     "icon": "create:brass_casing",
+     "tasks": [
+      {
+       "type": "gamestage",
+       "stage": "emp_engines:brass_age"
+      }
+     ],
+     "dependencies": [
+      "al_root"
+     ],
+     "shape": "gear",
+     "size": 2.0
+    },
+    {
+     "key": "br_casing",
+     "title": "Brass Casing",
+     "x": 2.5,
+     "y": 0.0,
+     "description": [
+      "The shell for smarter machines."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:brass_casing",
+       "count": 8
+      }
+     ],
+     "dependencies": [
+      "br_root"
+     ]
+    },
+    {
+     "key": "br_tube",
+     "title": "Electron Tubes",
+     "x": 4.5,
+     "y": -2.0,
+     "description": [
+      "Polished rose quartz in an iron sheet."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:electron_tube",
+       "count": 4
+      }
+     ],
+     "dependencies": [
+      "br_casing"
+     ]
+    },
+    {
+     "key": "br_crafter",
+     "title": "Mechanical Crafters",
+     "x": 4.5,
+     "y": 0.0,
+     "description": [
+      "Big recipes, done by machines."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:mechanical_crafter",
+       "count": 9
+      }
+     ],
+     "dependencies": [
+      "br_casing"
+     ]
+    },
+    {
+     "key": "br_crush",
+     "title": "Crushing Wheels",
+     "x": 4.5,
+     "y": 2.0,
+     "description": [
+      "Automated ore processing. The foundry was the first upgrade. This is the next."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:crushing_wheel",
+       "count": 2
+      }
+     ],
+     "dependencies": [
+      "br_casing"
+     ]
+    },
+    {
+     "key": "br_deployer",
+     "title": "Deployers",
+     "x": 6.5,
+     "y": -2.0,
+     "description": [
+      "A hand that uses items for you."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:deployer"
+      }
+     ],
+     "dependencies": [
+      "br_tube"
+     ]
+    },
+    {
+     "key": "br_arm",
+     "title": "Mechanical Arm",
+     "x": 6.5,
+     "y": 0.0,
+     "description": [
+      "Picks up and places items between machines."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:mechanical_arm"
+      }
+     ],
+     "dependencies": [
+      "br_tube",
+      "br_crafter"
+     ]
+    },
+    {
+     "key": "br_precision",
+     "title": "Precision Mechanism",
+     "x": 8.5,
+     "y": -1.0,
+     "description": [
+      "Your first sequenced assembly line: deploy, press, repeat."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:precision_mechanism",
+       "count": 4
+      }
+     ],
+     "dependencies": [
+      "br_deployer"
+     ],
+     "shape": "hexagon"
+    },
+    {
+     "key": "br_speed",
+     "title": "Rotation Speed Controller",
+     "x": 8.5,
+     "y": 1.0,
+     "description": [
+      "Set an exact RPM."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:rotation_speed_controller"
+      }
+     ],
+     "dependencies": [
+      "br_arm"
+     ]
+    }
+   ]
+  },
+  {
+   "file": "electricity_age",
+   "title": "4 · Electricity Age",
+   "subtitle": "Power from rotation",
+   "group": "industry",
+   "icon": "createaddition:alternator",
+   "quests": [
+    {
+     "key": "el_root",
+     "title": "Electricity Age",
+     "x": 0.0,
+     "y": 0.0,
+     "subtitle": "Learn this age at the Research Bench",
+     "description": [
+      "This chapter guides you through the age once you've researched it.",
+      "",
+      "&eResearch unlocks:&r Crafts & Additions: alternators, motors, the rolling mill and wires.",
+      "",
+      "&7Until then these recipes stay hidden in JEI and can't be crafted. You can still use and trade the items if someone else makes them."
+     ],
+     "icon": "createaddition:alternator",
+     "tasks": [
+      {
+       "type": "gamestage",
+       "stage": "emp_engines:electricity_age"
+      }
+     ],
+     "dependencies": [
+      "br_root"
+     ],
+     "shape": "gear",
+     "size": 2.0
+    },
+    {
+     "key": "el_alt",
+     "title": "Alternator",
+     "x": 2.5,
+     "y": 0.0,
+     "description": [
+      "Electricity only comes from rotation. An alternator turns RPM into power."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "createaddition:alternator"
+      }
+     ],
+     "dependencies": [
+      "el_root"
+     ],
+     "shape": "hexagon"
+    },
+    {
+     "key": "el_mill",
+     "title": "Rolling Mill",
+     "x": 4.5,
+     "y": -2.0,
+     "description": [
+      "Rolls ingots into rods and wire."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "createaddition:rolling_mill"
+      }
+     ],
+     "dependencies": [
+      "el_alt"
+     ]
+    },
+    {
+     "key": "el_wire",
+     "title": "Wiring",
+     "x": 6.5,
+     "y": -2.0,
+     "description": [
+      "Carry power between buildings."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "createaddition:copper_spool"
+      },
+      {
+       "type": "item",
+       "item": "createaddition:connector",
+       "count": 4
+      }
+     ],
+     "dependencies": [
+      "el_mill"
+     ]
+    },
+    {
+     "key": "el_motor",
+     "title": "Electric Motor",
+     "x": 4.5,
+     "y": 0.0,
+     "description": [
+      "Power back into rotation, wherever you need it."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "createaddition:electric_motor"
+      }
+     ],
+     "dependencies": [
+      "el_alt"
+     ]
+    },
+    {
+     "key": "el_acc",
+     "title": "Accumulator",
+     "x": 4.5,
+     "y": 2.0,
+     "description": [
+      "Store power for later."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "createaddition:modular_accumulator"
+      }
+     ],
+     "dependencies": [
+      "el_alt"
+     ]
+    },
+    {
+     "key": "el_nether",
+     "title": "The Nether Is Calling",
+     "x": 8.5,
+     "y": 0.0,
+     "description": [
+      "The next age needs blaze power. The Nether opens through a server-wide project.",
+      "See &eInto the Unknown: The Nether&r."
+     ],
+     "icon": "minecraft:obsidian",
+     "tasks": [
+      {
+       "type": "checkmark"
+      }
+     ],
+     "dependencies": [
+      "el_motor",
+      "el_wire"
+     ]
+    }
+   ]
+  },
+  {
+   "file": "exotic_age",
+   "title": "5 · Exotic Age",
+   "subtitle": "Blaze and knowledge",
+   "group": "industry",
+   "icon": "researchenchanting:research_focus",
+   "quests": [
+    {
+     "key": "ex_root",
+     "title": "Exotic Age",
+     "x": 0.0,
+     "y": 0.0,
+     "subtitle": "Learn this age at the Research Bench",
+     "description": [
+      "This chapter guides you through the age once you've researched it.",
+      "",
+      "&eResearch unlocks:&r the Melee Elemental research focus (Fire Aspect, and Smite's lightning) when you bind books at an enchanting table. Exotic material chains come in a later update.",
+      "",
+      "&7Enchanting itself is open from the start: the quests below walk through it."
+     ],
+     "icon": "minecraft:blaze_powder",
+     "tasks": [
+      {
+       "type": "gamestage",
+       "stage": "emp_engines:exotic_age"
+      }
+     ],
+     "dependencies": [
+      "el_root"
+     ],
+     "shape": "gear",
+     "size": 2.0
+    },
+    {
+     "key": "ex_decipher",
+     "title": "Echo",
+     "x": 2.5,
+     "y": 0.0,
+     "description": [
+      "Put a plain book and some lapis in an enchanting table. Click a button to begin: the three buttons light up and chime in an order. Click them back in the same order.",
+      "",
+      "Three rounds, each one step longer. A wrong press costs 1 lapis and plays the round again. Books in chiseled bookshelves around the table play it slower.",
+      "",
+      "Finish the third round and the book becomes a &dResearch Focus&r for a random kind of gear."
+     ],
+     "icon": "researchenchanting:research_focus",
+     "tasks": [
+      {
+       "type": "advancement",
+       "advancement": "researchenchanting:bind_focus"
+      }
+     ],
+     "dependencies": [
+      "ex_root"
+     ]
+    },
+    {
+     "key": "ex_research",
+     "title": "First Research",
+     "x": 4.5,
+     "y": 0.0,
+     "description": [
+      "Put the focus back in the table and open its research tree. Pick a level: it costs a few XP levels to start, then the table pulls its resource from a chest, barrel or vault up to 2 blocks away.",
+      "",
+      "A book holds one enchantment. Researching a different line replaces it, so bind more books for more enchantments.",
+      "",
+      "Feed it with a hopper or a Create belt and the bigger levels research themselves."
+     ],
+     "icon": "minecraft:chiseled_bookshelf",
+     "tasks": [
+      {
+       "type": "advancement",
+       "advancement": "researchenchanting:research_node"
+      }
+     ],
+     "dependencies": [
+      "ex_decipher"
+     ]
+    },
+    {
+     "key": "ex_enchant",
+     "title": "Chosen Enchantment",
+     "x": 6.5,
+     "y": 0.0,
+     "description": [
+      "Shelve the researched focus in a chiseled bookshelf two blocks from the table, with a clear block between.",
+      "",
+      "Now put a tool, weapon or armour piece in the table: the buttons list what the shelved foci know. Pick exactly the enchantments you want. Books are never used up."
+     ],
+     "icon": "minecraft:enchanting_table",
+     "tasks": [
+      {
+       "type": "advancement",
+       "advancement": "researchenchanting:enchant_item"
+      }
+     ],
+     "dependencies": [
+      "ex_research"
+     ]
+    }
+   ]
+  },
+  {
+   "file": "first_flight",
+   "title": "1 · First Flight",
+   "subtitle": "Leave the ground",
+   "group": "unknown",
+   "icon": "aeronautics:propeller_bearing",
+   "quests": [
+    {
+     "key": "fl_wreck",
+     "title": "A Wreck in the Hills",
+     "x": -2.5,
+     "y": 0.0,
+     "description": [
+      "Something came down here. Someone was flying.",
+      "Search the wreck. There may be a map."
+     ],
+     "icon": "minecraft:compass",
+     "tasks": [
+      {
+       "type": "structure",
+       "structure": "#emp_engines:wrecks"
+      }
+     ],
+     "shape": "hexagon",
+     "size": 1.5,
+     "invisible": true
+    },
+    {
+     "key": "fl_root",
+     "title": "Flight",
+     "x": 0.0,
+     "y": 0.0,
+     "subtitle": "Learn Flight at the Research Bench",
+     "description": [
+      "Whoever flew that wreck knew something you don't. Research Flight to learn it.",
+      "",
+      "&eResearch unlocks:&r Create Aeronautics: envelopes, burners, propellers, levitite, the physics assembler and controls. Needs the Brass Age first."
+     ],
+     "icon": "aeronautics:propeller_bearing",
+     "tasks": [
+      {
+       "type": "gamestage",
+       "stage": "emp_engines:flight"
+      }
+     ],
+     "dependencies": [
+      "fl_wreck"
+     ],
+     "shape": "gear",
+     "size": 2.0
+    },
+    {
+     "key": "fl_assembler",
+     "title": "Physics Assembler",
+     "x": 2.5,
+     "y": -2.0,
+     "description": [
+      "Turns a build into a moving physics object."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "simulated:physics_assembler"
+      }
+     ],
+     "dependencies": [
+      "fl_root"
+     ]
+    },
+    {
+     "key": "fl_balloon",
+     "title": "Hot Air",
+     "x": 2.5,
+     "y": 0.0,
+     "description": [
+      "A burner under an envelope. The simplest way up."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "aeronautics:white_envelope",
+       "count": 16
+      },
+      {
+       "type": "item",
+       "item": "aeronautics:adjustable_burner"
+      }
+     ],
+     "dependencies": [
+      "fl_root"
+     ]
+    },
+    {
+     "key": "fl_prop",
+     "title": "Propellers",
+     "x": 2.5,
+     "y": 2.0,
+     "description": [
+      "Rotation into thrust."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "aeronautics:propeller_bearing"
+      },
+      {
+       "type": "item",
+       "item": "aeronautics:wooden_propeller"
+      }
+     ],
+     "dependencies": [
+      "fl_root"
+     ]
+    },
+    {
+     "key": "fl_controls",
+     "title": "At the Helm",
+     "x": 4.5,
+     "y": 0.0,
+     "description": [
+      "Steer and throttle from the deck."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "simulated:steering_wheel"
+      },
+      {
+       "type": "item",
+       "item": "simulated:throttle_lever"
+      }
+     ],
+     "dependencies": [
+      "fl_assembler",
+      "fl_balloon",
+      "fl_prop"
+     ]
+    },
+    {
+     "key": "fl_levitite",
+     "title": "Levitite",
+     "x": 4.5,
+     "y": -2.0,
+     "description": [
+      "A block that wants to float."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "aeronautics:levitite",
+       "count": 8
+      }
+     ],
+     "dependencies": [
+      "fl_assembler"
+     ],
+     "optional": true
+    },
+    {
+     "key": "fl_first",
+     "title": "First Flight",
+     "x": 6.5,
+     "y": 0.0,
+     "description": [
+      "Take your ship above &bY 250&r and bring it back in one piece."
+     ],
+     "icon": "minecraft:feather",
+     "tasks": [
+      {
+       "type": "checkmark"
+      }
+     ],
+     "dependencies": [
+      "fl_controls"
+     ],
+     "shape": "hexagon",
+     "size": 1.5
+    },
+    {
+     "key": "fl_nav",
+     "title": "Navigation Table",
+     "x": 8.5,
+     "y": 0.0,
+     "description": [
+      "Plot a course."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "simulated:navigation_table"
+      }
+     ],
+     "dependencies": [
+      "fl_first"
+     ]
+    }
+   ]
+  },
+  {
+   "file": "into_the_sky",
+   "title": "2 · Into the Sky",
+   "subtitle": "Above Y 250",
+   "group": "unknown",
+   "icon": "minecraft:emerald",
+   "quests": [
+    {
+     "key": "sky_village",
+     "title": "Sky Village",
+     "x": 0.0,
+     "y": 0.0,
+     "description": [
+      "Villages float high above the build limit. Land, trade, and see what they sell."
+     ],
+     "icon": "minecraft:emerald",
+     "tasks": [
+      {
+       "type": "structure",
+       "structure": "#emp_engines:sky_villages"
+      }
+     ],
+     "dependencies": [
+      "fl_first"
+     ],
+     "shape": "hexagon",
+     "size": 1.5,
+     "hide_until_deps": true
+    },
+    {
+     "key": "sky_highwind",
+     "title": "Highwind",
+     "x": 2.5,
+     "y": -1.5,
+     "description": [
+      "A rarer, windier village."
+     ],
+     "tasks": [
+      {
+       "type": "structure",
+       "structure": "create_sky_village:highwind_village"
+      }
+     ],
+     "dependencies": [
+      "sky_village"
+     ]
+    },
+    {
+     "key": "sky_cargo",
+     "title": "Drifting Cargo",
+     "x": 2.5,
+     "y": 1.5,
+     "description": [
+      "Lost cargo, still floating."
+     ],
+     "tasks": [
+      {
+       "type": "structure",
+       "structure": "aeronauticsdiscovery:balloon_loot"
+      }
+     ],
+     "dependencies": [
+      "sky_village"
+     ]
+    },
+    {
+     "key": "sky_pillager",
+     "title": "Pillager Airship",
+     "x": 4.5,
+     "y": 0.0,
+     "description": [
+      "They fly too. Board it."
+     ],
+     "tasks": [
+      {
+       "type": "structure",
+       "structure": "cr_aero_structures:pillager_airship"
+      }
+     ],
+     "dependencies": [
+      "sky_village"
+     ]
+    }
+   ]
+  },
+  {
+   "file": "the_nether",
+   "title": "2.5 · The Nether",
+   "subtitle": "A server project",
+   "group": "unknown",
+   "icon": "minecraft:crying_obsidian",
+   "quests": [
+    {
+     "key": "ne_root",
+     "title": "The Nether Key",
+     "x": 0.0,
+     "y": 0.0,
+     "subtitle": "Unlock a nether portal",
+     "description": [
+      "Nether portals won't light. Try one: the fire goes out, and a block of the frame turns into an &5Obsidian Keyhole&r.",
+      "Search &eruined portals&r: every one hides a &bFragmented Obsidian Key&r in its chest.",
+      "Research the fragment at the Research Table (Metallurgy). It shows you how to cast it whole again: the fragment on a casting table, with 4 ingots of molten gold poured over it.",
+      "Use the &dObsidian Key&r on the keyhole and the portal will light. Every new portal needs its own key."
+     ],
+     "icon": "minecraft:crying_obsidian",
+     "tasks": [
+      {
+       "type": "item",
+       "item": "emp_engines:obsidian_key"
+      }
+     ],
+     "dependencies": [
+      "el_root"
+     ],
+     "shape": "gear",
+     "size": 2.0,
+     "hide_until_deps": true
+    },
+    {
+     "key": "ne_enter",
+     "title": "Through the Portal",
+     "x": 2.5,
+     "y": 0.0,
+     "description": [
+      "The Nether is 1:1. Every block there is a block here."
+     ],
+     "tasks": [
+      {
+       "type": "dimension",
+       "dimension": "minecraft:the_nether"
+      }
+     ],
+     "dependencies": [
+      "ne_root"
+     ],
+     "rewards": [
+      {
+       "item": "apotheosis:sigil_of_socketing",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "key": "ne_blaze",
+     "title": "Blaze Rods",
+     "x": 4.5,
+     "y": -1.5,
+     "description": [
+      "Blaze power for the Exotic Age."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "minecraft:blaze_rod",
+       "count": 8
+      }
+     ],
+     "dependencies": [
+      "ne_enter"
+     ]
+    },
+    {
+     "key": "ne_burner",
+     "title": "Capture a Blaze",
+     "x": 4.5,
+     "y": 1.5,
+     "description": [
+      "Catch a blaze in an empty blaze burner. Superheated mixing needs it."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:blaze_burner"
+      }
+     ],
+     "dependencies": [
+      "ne_enter"
+     ]
+    }
+   ]
+  },
+  {
+   "file": "logistics",
+   "title": "Logistics & Transport",
+   "subtitle": "Side chapter",
+   "group": null,
+   "icon": "create:item_vault",
+   "quests": [
+    {
+     "key": "lo_root",
+     "title": "Logistics",
+     "x": 0.0,
+     "y": 0.0,
+     "subtitle": "Learn this age at the Research Bench",
+     "description": [
+      "This chapter guides you through the age once you've researched it.",
+      "",
+      "&eResearch unlocks:&r item vaults, portable storage interfaces, packagers, frogports and stock tickers.",
+      "",
+      "&7Until then these recipes stay hidden in JEI and can't be crafted. You can still use and trade the items if someone else makes them."
+     ],
+     "icon": "create:item_vault",
+     "tasks": [
+      {
+       "type": "gamestage",
+       "stage": "emp_engines:logistics"
+      }
+     ],
+     "dependencies": [
+      "and_root"
+     ],
+     "shape": "gear",
+     "size": 2.0
+    },
+    {
+     "key": "lo_vault",
+     "title": "Item Vault",
+     "x": 2.5,
+     "y": -2.0,
+     "description": [
+      "Bulk storage that grows with size."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:item_vault",
+       "count": 4
+      }
+     ],
+     "dependencies": [
+      "lo_root"
+     ]
+    },
+    {
+     "key": "lo_funnel",
+     "title": "Funnels",
+     "x": 2.5,
+     "y": 0.0,
+     "description": [
+      "Pull items in and out of anything."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:andesite_funnel",
+       "count": 4
+      }
+     ],
+     "dependencies": [
+      "lo_root"
+     ]
+    },
+    {
+     "key": "lo_packager",
+     "title": "Packages",
+     "x": 4.5,
+     "y": 0.0,
+     "description": [
+      "Box up items and send them by frog."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:packager"
+      },
+      {
+       "type": "item",
+       "item": "create:package_frogport"
+      }
+     ],
+     "dependencies": [
+      "lo_funnel",
+      "lo_vault"
+     ]
+    },
+    {
+     "key": "lo_stock",
+     "title": "Stock Ticker",
+     "x": 6.5,
+     "y": 0.0,
+     "description": [
+      "Order from your whole network at one counter."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:stock_link"
+      },
+      {
+       "type": "item",
+       "item": "create:stock_ticker"
+      }
+     ],
+     "dependencies": [
+      "lo_packager"
+     ]
+    },
+    {
+     "key": "lo_psi",
+     "title": "Ship Cargo",
+     "x": 4.5,
+     "y": -2.0,
+     "description": [
+      "Load and unload moving contraptions and ships."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:portable_storage_interface",
+       "count": 2
+      }
+     ],
+     "dependencies": [
+      "lo_vault"
+     ]
+    },
+    {
+     "key": "lo_dock",
+     "title": "Docking",
+     "x": 6.5,
+     "y": -2.0,
+     "description": [
+      "Moor your ship at a dock."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "simulated:docking_connector"
+      }
+     ],
+     "dependencies": [
+      "lo_psi",
+      "fl_root"
+     ]
+    },
+    {
+     "key": "lo_track",
+     "title": "Trains",
+     "x": 4.5,
+     "y": 2.5,
+     "description": [
+      "Rail lines for heavy freight. Trains are part of the Brass Age."
+     ],
+     "icon": "create:track",
+     "tasks": [
+      {
+       "type": "item",
+       "item": "create:track",
+       "count": 32
+      },
+      {
+       "type": "item",
+       "item": "create:track_station"
+      },
+      {
+       "type": "item",
+       "item": "create:controls"
+      }
+     ],
+     "dependencies": [
+      "lo_root",
+      "br_root"
+     ]
+    }
+   ]
+  },
+  {
+   "file": "blood_moons",
+   "title": "Night Raids & Gems",
+   "subtitle": "Every fifth night they come for you",
+   "icon": "apotheosis:sigil_of_socketing",
+   "quests": [
+    {
+     "key": "bm_root",
+     "title": "The Night Raid",
+     "x": 0.0,
+     "y": 0.0,
+     "subtitle": "Read me",
+     "shape": "gear",
+     "size": 2.0,
+     "icon": "minecraft:zombie_head",
+     "description": [
+      "Every &c5th night&r raiders come for the Overworld: a &cNight Raid&r. You get a warning at dusk the evening before, and on the night &cbeds don't work&r.",
+      "",
+      "From nightfall, waves of raiders spawn &e30-40 blocks&r from every player who is on the ground. They come for you, and if they can't reach you they &cbreak in&r: about 30 seconds per block.",
+      "",
+      "They can only break plain Minecraft blocks. &aChests, furnaces, beds and every block from Create, Create: New Age, the foundry or any other mod are safe&r, and so is obsidian.",
+      "",
+      "Players &bon an airship or flying&r get no waves. Players close together share one siege.",
+      "",
+      "&7/silentraids status&r shows when the next one is."
+     ],
+     "tasks": [
+      {
+       "type": "checkmark"
+      }
+     ]
+    },
+    {
+     "key": "bm_tiers",
+     "title": "World Tiers",
+     "x": 2.5,
+     "y": -1.5,
+     "icon": "minecraft:experience_bottle",
+     "description": [
+      "Your &6world tier&r rises on its own with your play time and milestones:",
+      "&aHaven&r at the start, &eFrontier&r at 5 h, &6Ascent&r at 15 h once you've been to the Nether, &cSummit&r at 30 h once you've killed the Wither, &5Pinnacle&r at 60 h once you've been to the End.",
+      "",
+      "A higher tier means harder night raids (more waves, better armour on the raiders, Elites and then Invaders) and better gems. It also lets your gear reach higher levels. Sieges get a little harder within a tier too, the longer you play."
+     ],
+     "tasks": [
+      {
+       "type": "checkmark"
+      }
+     ],
+     "dependencies": [
+      "bm_root"
+     ]
+    },
+    {
+     "key": "bm_levels",
+     "title": "Gear That Grows",
+     "x": 2.5,
+     "y": 1.5,
+     "icon": "silentgear:pickaxe",
+     "description": [
+      "&6Silent Gear&r tools, weapons and armour gain &eXP&r as you use them: tools by mining (ores give more), weapons by hitting monsters, armour by taking hits from mobs.",
+      "",
+      "Every level gives &a+5% to all stats&r. Levels &b3, 6 and 9&r each add a &bgem socket&r.",
+      "",
+      "The top level depends on your world tier: 3 in Haven, 5 Frontier, 7 Ascent, 9 Summit, 10 Pinnacle. XP keeps counting at the cap.",
+      "",
+      "The Salvager won't take apart gear with levels or gems."
+     ],
+     "tasks": [
+      {
+       "type": "checkmark"
+      }
+     ],
+     "dependencies": [
+      "bm_root"
+     ]
+    },
+    {
+     "key": "bm_gem",
+     "title": "Your First Gem",
+     "x": 5.0,
+     "y": 0.0,
+     "icon": "apotheosis:gem",
+     "description": [
+      "There's no enchanted 'affix' loot here: Apotheosis gives &dgems&r only.",
+      "",
+      "Monsters drop them now and then. Raid &6Elites&r always drop one, and &5Invaders&r several.",
+      "",
+      "Put a gem in a socket at the smithing table (gear in the middle, gem on the right). A &bSigil of Withdrawal&r takes gems back out."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "apotheosis:gem"
+      }
+     ],
+     "dependencies": [
+      "bm_root"
+     ],
+     "rewards": [
+      {
+       "item": "apotheosis:sigil_of_socketing",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "key": "bm_sigil",
+     "title": "Sigil of Socketing",
+     "x": 7.5,
+     "y": -1.5,
+     "icon": "apotheosis:sigil_of_socketing",
+     "description": [
+      "A Sigil of Socketing adds &bone extra socket&r to any piece of gear, at the smithing table. Each item can take only one.",
+      "",
+      "Sigils can't be crafted. They come from quests, raid Elites and Invaders, and from beating every wave of a night raid."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "apotheosis:sigil_of_socketing"
+      }
+     ],
+     "dependencies": [
+      "bm_gem"
+     ]
+    },
+    {
+     "key": "bm_cutting",
+     "title": "Gem Cutting",
+     "x": 7.5,
+     "y": 1.5,
+     "icon": "apotheosis:gem_cutting_table",
+     "description": [
+      "Grind spare gems into &dgem dust&r at the Salvaging Table, then use the Gem Cutting Table to raise a gem's purity."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "apotheosis:gem_cutting_table"
+      }
+     ],
+     "dependencies": [
+      "bm_gem"
+     ]
+    },
+    {
+     "key": "bm_wither",
+     "title": "Summit",
+     "x": 10.0,
+     "y": -1.5,
+     "icon": "minecraft:nether_star",
+     "subtitle": "Kill the Wither",
+     "description": [
+      "Killing the Wither is the milestone for &cSummit&r (with 30 hours of play)."
+     ],
+     "tasks": [
+      {
+       "type": "item",
+       "item": "minecraft:nether_star"
+      }
+     ],
+     "dependencies": [
+      "bm_sigil"
+     ],
+     "rewards": [
+      {
+       "item": "apotheosis:sigil_of_socketing",
+       "count": 1
+      }
+     ]
+    },
+    {
+     "key": "bm_end",
+     "title": "Pinnacle",
+     "x": 10.0,
+     "y": 1.5,
+     "icon": "minecraft:end_portal_frame",
+     "subtitle": "Reach the End",
+     "description": [
+      "Reaching the End is the milestone for &5Pinnacle&r (with 60 hours of play)."
+     ],
+     "tasks": [
+      {
+       "type": "dimension",
+       "dimension": "minecraft:the_end"
+      }
+     ],
+     "dependencies": [
+      "bm_sigil"
+     ],
+     "rewards": [
+      {
+       "item": "apotheosis:sigil_of_socketing",
+       "count": 1
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

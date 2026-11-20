@@ -1,4 +1,4 @@
-# Shared helpers for the Skybound SMP tools. Dot-source this: . "$PSScriptRoot\common.ps1"
+# Shared helpers for the Empyrean Engines tools. Dot-source this: . "$PSScriptRoot\common.ps1"
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'   # makes Invoke-WebRequest much faster
 
@@ -7,6 +7,29 @@ $PackDir = Join-Path $Root 'pack'
 $Build   = Join-Path $Root 'build'
 $Bin     = Join-Path $PSScriptRoot 'bin'
 New-Item -ItemType Directory -Force $Bin, $Build | Out-Null
+
+# Files can't be deleted by an update pushed from Claude's side, so a deleted file arrives as a tiny
+# "tombstone" holding the marker EMP_TOMBSTONE. This removes every tombstone (and the folders it leaves
+# empty) from pack\ and mods\ before anything is built, installed or exported.
+function Remove-Tombstones {
+    $n = 0
+    foreach ($top in 'pack', 'mods') {
+        $base = Join-Path $Root $top
+        if (-not (Test-Path $base)) { continue }
+        $dead = @(Get-ChildItem $base -Recurse -File -ErrorAction SilentlyContinue |
+            Where-Object { $_.Length -lt 512 -and $_.FullName -notmatch '\\(build|\.gradle|run)\\' } |
+            Where-Object { (Get-Content $_.FullName -Raw -ErrorAction SilentlyContinue) -match 'EMP_TOMBSTONE' })
+        foreach ($f in $dead) {
+            $dir = $f.Directory
+            Remove-Item $f.FullName -Force; $n++
+            while ($dir -and $dir.FullName.Length -gt $base.Length -and -not (Get-ChildItem $dir.FullName -Force)) {
+                $parent = $dir.Parent; Remove-Item $dir.FullName -Force; $dir = $parent
+            }
+        }
+    }
+    if ($n) { Write-Host "Removed $n deleted file(s) (tombstones)." }
+}
+Remove-Tombstones
 
 # Use a Java 21 install even if an older Java comes first on PATH.
 # Putting it first on PATH for this session also covers start.bat and other child processes.
@@ -60,7 +83,7 @@ function Get-Bootstrap {
 # that takes longer than $TimeoutSec is killed, so a prompt can never hang a script.
 function Invoke-Logged([string]$Log, [string]$Exe, [string[]]$ArgList, [int]$TimeoutSec = 900) {
     $tmp = [IO.Path]::GetTempPath()
-    $in = Join-Path $tmp 'skybound-in.txt'; $out = Join-Path $tmp 'skybound-out.txt'; $err = Join-Path $tmp 'skybound-err.txt'
+    $in = Join-Path $tmp 'empyrean-in.txt'; $out = Join-Path $tmp 'empyrean-out.txt'; $err = Join-Path $tmp 'empyrean-err.txt'
     Set-Content $in ("`r`n" * 20)
     $quoted = $ArgList | ForEach-Object { if ($_ -match '\s') { '"' + $_ + '"' } else { $_ } }
     $p = Start-Process -FilePath $Exe -ArgumentList $quoted -NoNewWindow -PassThru `

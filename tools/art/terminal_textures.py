@@ -1,14 +1,14 @@
 """Draws the Vector Planar Computer textures (16x16, vanilla style, Create brass palette).
 
 Run: python tools/art/terminal_textures.py
-Writes into mods/createskybound/src/main/resources/assets/createskybound/textures/block/.
+Writes into mods/emp_engines/src/main/resources/assets/emp_engines/textures/block/.
 """
 import os
 import random
 from PIL import Image
 
-OUT = os.path.join(os.path.dirname(__file__), "..", "..", "mods", "createskybound", "src", "main",
-                   "resources", "assets", "createskybound", "textures", "block")
+OUT = os.path.join(os.path.dirname(__file__), "..", "..", "mods", "emp_engines", "src", "main",
+                   "resources", "assets", "emp_engines", "textures", "block")
 os.makedirs(OUT, exist_ok=True)
 rng = random.Random(7)
 

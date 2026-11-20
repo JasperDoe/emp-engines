@@ -1,0 +1,151 @@
+{
+  "type": "neoforge:add_table",
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "cr_aero_structures:chests/plane"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "cr_aero_structures:chests/resources"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "cr_aero_structures:chests/engineering_loot"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "cr_aero_structures:chests/fisherman"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "cr_aero_structures:chests/wandering_trader"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "cr_aero_structures:chests/uniform"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "cr_aero_structures:chests/food"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "cr_aero_structures:chests/fuel"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "aeronauticsdiscovery:chests/airplane"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "aeronauticsdiscovery:chests/balloon"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "aeronauticsdiscovery:chests/village_balloon"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:chests/shipwreck_map"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:chests/shipwreck_supply"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "wabi_sabi_structures:chests/wandering_trader_cart/wandering_trader_cart_mineral"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "wabi_sabi_structures:chests/wandering_trader_cart/wandering_trader_cart_plant"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "wabi_sabi_structures:chests/wandering_trader_cart/wandering_trader_cart_value"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "wabi_sabi_structures:chests/wandering_trader_cart_cold/wandering_trader_cart_cold_shop"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "wabi_sabi_structures:chests/wandering_trader_cart_cold/wandering_trader_cart_cold_storage"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "wabi_sabi_structures:chests/firewatch_tower/firewatch_tower"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "wabi_sabi_structures:chests/lighthouse/lighthouse"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "wabi_sabi_structures:chests/spruce_cabin/spruce_cabin"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "wabi_sabi_structures:chests/tall_birch_house/tall_birch_house"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "wabi_sabi_structures:chests/old_tiny_house/old_tiny_house"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "wabi_sabi_structures:chests/mossy_roof_house/mossy_roof_house_inside"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "wabi_sabi_structures:chests/candlemaker_house/candlemaker_house_shop"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "trek:overworld/medium/explorer_cabin/default_1"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "trek:overworld/medium/explorer_cabin/default_2"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "trek:overworld/medium/wandering_traders/1"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "trek:overworld/medium/wandering_traders/2"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "trek:overworld/medium/wandering_traders/3"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "trek:overworld/medium/camp_1"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "trek:overworld/medium/birch_trade"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "trek:overworld/medium/dark_oak_trade"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "trek:overworld/medium/small_red_trade"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "trek:overworld/medium/cold_red_trade/main"
+        }
+      ]
+    }
+  ],
+  "table": "weatheredmaps:chests/traveller"
+}

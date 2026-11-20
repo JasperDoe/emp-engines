@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:nuggets/zinc"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_zinc",
+    "amount": 10
+  },
+  "temperature": 420
+}

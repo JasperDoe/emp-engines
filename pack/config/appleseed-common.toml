@@ -1,0 +1,46 @@
+# Diet - AppleSeed Edition, set up for Empyrean Engines: only rewards, no penalties.
+# Each food group gives a small bonus once it's above 60% and a bigger one above 80%.
+# Keep all five high (a balanced diet) and every bonus stacks. Nothing happens when a group is low.
+# Format: "min-max:effect(id,amplifier)" or "min-max:attribute(id,amount)", amounts are added to the base.
+
+[General_Settings]
+	ignore_hunger = false
+	entrance_visibility = "default"
+	craft_chain_search_depth = 3
+
+[Group_Overrides]
+	# Taking damage doesn't drain your diet (only getting hungry does)
+	grains_is_negative = false
+	grains_ignore_attack = true
+	grains_ignore_hunger = false
+	fruits_is_negative = false
+	fruits_ignore_attack = true
+	fruits_ignore_hunger = false
+	vegetables_is_negative = false
+	vegetables_ignore_attack = true
+	vegetables_ignore_hunger = false
+	proteins_is_negative = false
+	proteins_ignore_attack = true
+	proteins_ignore_hunger = false
+	sugars_is_negative = false
+	sugars_ignore_attack = true
+	sugars_ignore_hunger = false
+
+[Nutritions_Settings]
+	grains_initial = 0.5
+	fruits_initial = 0.5
+	vegetables_initial = 0.5
+	proteins_initial = 0.5
+	sugars_initial = 0.5
+
+	[Nutritions_Settings.Effects_Override]
+		# Grains: extra health (+1 heart, then +2)
+		grains_ranges = ["60-79:attribute(minecraft:generic.max_health,2.0)", "80-100:attribute(minecraft:generic.max_health,4.0)"]
+		# Fruits: faster on foot (+5%, then +10%)
+		fruits_ranges = ["60-79:attribute(minecraft:generic.movement_speed,0.005)", "80-100:attribute(minecraft:generic.movement_speed,0.01)"]
+		# Vegetables: armour (+1, then +2 and +1 toughness)
+		vegetables_ranges = ["60-79:attribute(minecraft:generic.armor,1.0)", "80-100:attribute(minecraft:generic.armor,2.0),attribute(minecraft:generic.armor_toughness,1.0)"]
+		# Protein: harder hits (+0.5 damage, then +1)
+		proteins_ranges = ["60-79:attribute(minecraft:generic.attack_damage,0.5)", "80-100:attribute(minecraft:generic.attack_damage,1.0)"]
+		# Sugars: faster mining (+10%, then +20%)
+		sugars_ranges = ["60-79:attribute(minecraft:player.block_break_speed,0.1)", "80-100:attribute(minecraft:player.block_break_speed,0.2)"]

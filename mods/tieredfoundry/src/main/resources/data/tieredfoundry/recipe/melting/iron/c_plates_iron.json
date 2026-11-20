@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:plates/iron"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_iron",
+    "amount": 90
+  },
+  "temperature": 950
+}

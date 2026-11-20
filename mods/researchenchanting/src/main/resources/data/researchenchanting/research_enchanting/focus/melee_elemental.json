@@ -1,0 +1,25 @@
+{
+  "gear": "sword",
+  "icon": "minecraft:blaze_powder",
+  "stage": "emp_engines:exotic_age",
+  "lines": [
+    {
+      "enchantment": "minecraft:fire_aspect",
+      "max_level": 2,
+      "resource": "minecraft:blaze_powder",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "enchantment": "minecraft:smite",
+      "max_level": 3,
+      "resource": "minecraft:copper_ingot",
+      "x": 1,
+      "y": 1,
+      "requires": {
+        "enchantment": "minecraft:fire_aspect",
+        "level": 1
+      }
+    }
+  ]
+}

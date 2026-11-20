@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:sands"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_glass",
+    "amount": 1000
+  },
+  "temperature": 1000
+}

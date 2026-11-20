@@ -1,0 +1,108 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.4,
+  "downfall": 0.4,
+  "effects": {
+    "grass_color": 14279132,
+    "foliage_color": 15659763,
+    "sky_color": 13950438,
+    "fog_color": 15659765,
+    "water_color": 10335944,
+    "water_fog_color": 2438207,
+    "particle": {
+      "options": {
+        "type": "minecraft:white_ash"
+      },
+      "probability": 0.003
+    },
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    },
+    "additions_sound": {
+      "sound": "minecraft:ambient.basalt_deltas.additions",
+      "tick_chance": 0.0011
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "minecraft:zombie",
+        "weight": 95,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:skeleton",
+        "weight": 100,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:spider",
+        "weight": 90,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:creeper",
+        "weight": 90,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:enderman",
+        "weight": 15,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
+    "creature": [
+      {
+        "type": "minecraft:fox",
+        "weight": 2,
+        "minCount": 1,
+        "maxCount": 2
+      }
+    ],
+    "ambient": [],
+    "axolotls": [],
+    "underground_water_creature": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [
+      "emp_engines:etheric/bone_ribs"
+    ],
+    [],
+    [
+      "emp_engines:etheric/ore_coal",
+      "emp_engines:etheric/ore_iron",
+      "emp_engines:etheric/ore_copper"
+    ],
+    [
+      "minecraft:glow_lichen",
+      "emp_engines:etheric/hanging_bone"
+    ],
+    [],
+    [
+      "emp_engines:etheric/pale_trees",
+      "emp_engines:etheric/white_flowers",
+      "minecraft:patch_grass_forest",
+      "emp_engines:etheric/cobwebs"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ]
+}

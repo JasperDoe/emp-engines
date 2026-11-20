@@ -1,7 +1,0 @@
-{
-  "category": "skybound:metallurgy", "title": "Alloy Age", "icon": "immersiveengineering:ingot_steel", "x": 0, "y": 0,
-  "description": "The coke oven, blast furnace and alloy kiln, copper fluid handling, brass, and the foundry.",
-  "parents": ["skybound:andesite_age"],
-  "xp": 550, "samples": [{ "item": "create:andesite_alloy", "count": 32 }, { "item": "minecraft:copper_ingot", "count": 16 }],
-  "stages": ["skybound:alloy_age"]
-}

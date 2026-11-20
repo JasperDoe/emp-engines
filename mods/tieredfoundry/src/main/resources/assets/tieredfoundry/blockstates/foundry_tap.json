@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=north,tier=1": {
+      "model": "tieredfoundry:block/tap_t1"
+    },
+    "facing=east,tier=1": {
+      "model": "tieredfoundry:block/tap_t1",
+      "y": 90
+    },
+    "facing=south,tier=1": {
+      "model": "tieredfoundry:block/tap_t1",
+      "y": 180
+    },
+    "facing=west,tier=1": {
+      "model": "tieredfoundry:block/tap_t1",
+      "y": 270
+    },
+    "facing=north,tier=2": {
+      "model": "tieredfoundry:block/tap_t2"
+    },
+    "facing=east,tier=2": {
+      "model": "tieredfoundry:block/tap_t2",
+      "y": 90
+    },
+    "facing=south,tier=2": {
+      "model": "tieredfoundry:block/tap_t2",
+      "y": 180
+    },
+    "facing=west,tier=2": {
+      "model": "tieredfoundry:block/tap_t2",
+      "y": 270
+    }
+  }
+}

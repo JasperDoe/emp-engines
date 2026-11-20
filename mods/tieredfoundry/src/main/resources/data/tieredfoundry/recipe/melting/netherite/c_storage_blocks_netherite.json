@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:storage_blocks/netherite"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_netherite",
+    "amount": 810
+  },
+  "temperature": 1500
+}

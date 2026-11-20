@@ -1,0 +1,12 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:ores/diamond"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_diamond",
+    "amount": 90
+  },
+  "temperature": 1450,
+  "ore": true
+}

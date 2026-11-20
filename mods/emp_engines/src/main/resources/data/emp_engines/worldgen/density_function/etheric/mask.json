@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:cache_2d",
+  "argument": {
+    "type": "minecraft:add",
+    "argument1": 0.4,
+    "argument2": {
+      "type": "emp_engines:island_cells",
+      "spacing": 285.0,
+      "jitter": 0.6,
+      "min_diameter": 50.0,
+      "max_diameter": 240.0,
+      "size_curve": 1.8,
+      "min_gap": 15.0,
+      "edge_amplitude": 22.0,
+      "warp": 35.0,
+      "edge": {
+        "type": "minecraft:noise",
+        "noise": "emp_engines:etheric/coast",
+        "xz_scale": 1.0,
+        "y_scale": 0.0
+      }
+    }
+  }
+}

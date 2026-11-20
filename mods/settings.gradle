@@ -8,5 +8,5 @@ plugins {
     id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
 }
 
-rootProject.name = 'skybound-mods'
-include 'expresearch', 'chunkupkeep', 'createskybound'
+rootProject.name = 'emp-engines-mods'
+include 'expresearch', 'emp_engines', 'silentraids', 'weatheredmaps', 'researchenchanting', 'tieredfoundry'   // chunkupkeep retired with Numismatics

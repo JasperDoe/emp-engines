@@ -1,0 +1,7 @@
+{
+  "configVersion": 12,
+  "enableAnimationSmoothing": false,
+  "disableLegSmoothing": true,
+  "enableLadderAnimation": false,
+  "bowAnimation": "VANILLA"
+}

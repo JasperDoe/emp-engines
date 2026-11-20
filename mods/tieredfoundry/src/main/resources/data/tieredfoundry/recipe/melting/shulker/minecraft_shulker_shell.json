@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "item": "minecraft:shulker_shell"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_shulker",
+    "amount": 100
+  },
+  "temperature": 1200
+}

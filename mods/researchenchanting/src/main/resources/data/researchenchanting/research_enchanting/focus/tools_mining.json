@@ -1,0 +1,35 @@
+{
+  "gear": "tools",
+  "icon": "minecraft:iron_pickaxe",
+  "lines": [
+    {
+      "enchantment": "minecraft:efficiency",
+      "max_level": 5,
+      "resource": "minecraft:redstone",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "enchantment": "minecraft:fortune",
+      "max_level": 3,
+      "resource": "minecraft:emerald",
+      "x": 2,
+      "y": 1,
+      "requires": {
+        "enchantment": "minecraft:efficiency",
+        "level": 2
+      }
+    },
+    {
+      "enchantment": "minecraft:silk_touch",
+      "max_level": 1,
+      "resource": "minecraft:string",
+      "x": 2,
+      "y": 2,
+      "requires": {
+        "enchantment": "minecraft:efficiency",
+        "level": 2
+      }
+    }
+  ]
+}

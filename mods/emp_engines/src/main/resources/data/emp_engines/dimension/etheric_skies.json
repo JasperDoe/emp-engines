@@ -1,0 +1,210 @@
+{
+  "type": "emp_engines:etheric_skies",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "emp_engines:etheric_skies",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "emp_engines:pale_remnant",
+          "parameters": {
+            "temperature": [
+              -1.0,
+              -0.45
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "emp_engines:twilight_shards",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.1
+            ],
+            "humidity": [
+              -1.0,
+              -0.33
+            ],
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "emp_engines:sky_oakwood",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.1
+            ],
+            "humidity": [
+              -0.33,
+              0.33
+            ],
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "emp_engines:pale_forest",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.1
+            ],
+            "humidity": [
+              0.33,
+              1.0
+            ],
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "emp_engines:gilded_grove",
+          "parameters": {
+            "temperature": [
+              -0.1,
+              0.25
+            ],
+            "humidity": [
+              -1.0,
+              -0.33
+            ],
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "emp_engines:sky_meadow",
+          "parameters": {
+            "temperature": [
+              -0.1,
+              0.25
+            ],
+            "humidity": [
+              -0.33,
+              0.33
+            ],
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "emp_engines:amethyst_expanse",
+          "parameters": {
+            "temperature": [
+              -0.1,
+              0.25
+            ],
+            "humidity": [
+              0.33,
+              1.0
+            ],
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "emp_engines:sky_desert",
+          "parameters": {
+            "temperature": [
+              0.25,
+              1.0
+            ],
+            "humidity": [
+              -1.0,
+              -0.16
+            ],
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "emp_engines:cherry_rift",
+          "parameters": {
+            "temperature": [
+              0.25,
+              1.0
+            ],
+            "humidity": [
+              -0.16,
+              0.0
+            ],
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "emp_engines:azure_wilds",
+          "parameters": {
+            "temperature": [
+              0.25,
+              1.0
+            ],
+            "humidity": [
+              0.0,
+              0.16
+            ],
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "emp_engines:sky_jungle",
+          "parameters": {
+            "temperature": [
+              0.25,
+              1.0
+            ],
+            "humidity": [
+              0.16,
+              1.0
+            ],
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "weirdness": 0.0,
+            "depth": 0.0,
+            "offset": 0.0
+          }
+        }
+      ]
+    }
+  }
+}

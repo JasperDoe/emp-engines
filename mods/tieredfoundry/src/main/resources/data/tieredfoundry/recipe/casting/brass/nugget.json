@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "tieredfoundry:casting",
+  "block": "table",
+  "pattern": "nugget",
+  "fluid": {
+    "tag": "c:molten_brass",
+    "amount": 10
+  },
+  "result": {
+    "id": "create:brass_nugget",
+    "count": 1
+  }
+}

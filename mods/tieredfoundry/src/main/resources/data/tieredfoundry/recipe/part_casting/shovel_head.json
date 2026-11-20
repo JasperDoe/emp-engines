@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ],
+  "type": "tieredfoundry:part_casting",
+  "part": "silentgear:shovel_head",
+  "part_type": "silentgear:main",
+  "gear_type": "silentgear:shovel",
+  "material_count": 1
+}

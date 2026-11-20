@@ -1,0 +1,21 @@
+{
+  "values": [
+    {
+      "id": "betterdungeons:skeleton_dungeon",
+      "required": false
+    },
+    {
+      "id": "betterdungeons:zombie_dungeon",
+      "required": false
+    },
+    {
+      "id": "betterdungeons:spider_dungeon",
+      "required": false
+    },
+    {
+      "id": "betterdungeons:small_dungeon",
+      "required": false
+    },
+    "minecraft:trial_chambers"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:storage_blocks/copper"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_copper",
+    "amount": 810
+  },
+  "temperature": 800
+}

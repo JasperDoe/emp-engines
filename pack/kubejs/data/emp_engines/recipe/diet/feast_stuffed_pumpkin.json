@@ -1,0 +1,27 @@
+{
+  "type": "appleseed:simulate_recipe",
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "appleseed"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "inputs": [
+    {
+      "type": "item",
+      "id": "farmersdelight:stuffed_pumpkin_block",
+      "count": 1
+    }
+  ],
+  "outputs": [
+    {
+      "type": "item",
+      "id": "farmersdelight:stuffed_pumpkin",
+      "count": 4
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "entries": [
+    "weatheredmaps:cartographer",
+    "weatheredmaps:traveller",
+    "weatheredmaps:village"
+  ]
+}

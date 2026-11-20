@@ -1,0 +1,46 @@
+{
+  "gear": "bow",
+  "icon": "minecraft:bow",
+  "lines": [
+    {
+      "enchantment": "minecraft:power",
+      "max_level": 5,
+      "resource": "minecraft:arrow",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "enchantment": "minecraft:punch",
+      "max_level": 2,
+      "resource": "minecraft:slime_ball",
+      "x": 1,
+      "y": 1,
+      "requires": {
+        "enchantment": "minecraft:power",
+        "level": 1
+      }
+    },
+    {
+      "enchantment": "minecraft:flame",
+      "max_level": 1,
+      "resource": "minecraft:blaze_powder",
+      "x": 2,
+      "y": 2,
+      "requires": {
+        "enchantment": "minecraft:power",
+        "level": 2
+      }
+    },
+    {
+      "enchantment": "minecraft:infinity",
+      "max_level": 1,
+      "resource": "minecraft:arrow",
+      "x": 3,
+      "y": 3,
+      "requires": {
+        "enchantment": "minecraft:power",
+        "level": 3
+      }
+    }
+  ]
+}

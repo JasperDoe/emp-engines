@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:storage_blocks/zinc"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_zinc",
+    "amount": 810
+  },
+  "temperature": 420
+}

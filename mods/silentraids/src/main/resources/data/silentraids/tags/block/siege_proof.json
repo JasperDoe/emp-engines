@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:obsidian",
+    "minecraft:crying_obsidian",
+    "minecraft:respawn_anchor",
+    "minecraft:bedrock",
+    "minecraft:reinforced_deepslate",
+    "minecraft:end_portal_frame",
+    "minecraft:end_portal",
+    "minecraft:nether_portal",
+    "minecraft:barrier",
+    "minecraft:light",
+    "minecraft:command_block",
+    "minecraft:chain_command_block",
+    "minecraft:repeating_command_block",
+    "minecraft:structure_block",
+    "minecraft:structure_void",
+    "minecraft:jigsaw",
+    "minecraft:netherite_block",
+    "minecraft:ancient_debris",
+    "minecraft:beacon",
+    "minecraft:spawner",
+    "minecraft:trial_spawner",
+    "minecraft:vault"
+  ]
+}

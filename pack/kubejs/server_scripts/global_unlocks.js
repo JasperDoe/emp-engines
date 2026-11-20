@@ -1,18 +1,18 @@
-// Server-wide unlocks (Nether, End, later the Sky Gate).
+// Server-wide unlocks (the End, later the Sky Gate). The Nether has no server-wide lock:
+// each nether portal needs an Obsidian Key instead (emp_engines).
 // A flag is stored in the server's persistent data. Players get the matching
 // Chapters stage when the flag is set, and again whenever they log in, so
 // offline players catch up.
 //
-//   /skybound unlock <name>   set the flag (FTB Quests project rewards run this)
-//   /skybound lock <name>     clear it again (admin)
-//   /skybound status          list flags
+//   /empyrean unlock <name>   set the flag (FTB Quests project rewards run this)
+//   /empyrean lock <name>     clear it again (admin)
+//   /empyrean status          list flags
 
 const GLOBAL_UNLOCKS = {
-  nether: 'skybound:nether_access',
-  end: 'skybound:end_access'
+  end: 'emp_engines:end_access'
 }
 
-function unlockKey(name) { return 'skybound_unlock_' + name }
+function unlockKey(name) { return 'emp_engines_unlock_' + name }
 
 function syncPlayer(server, player) {
   Object.keys(GLOBAL_UNLOCKS).forEach(name => {
@@ -27,7 +27,7 @@ function setUnlock(server, name, on) {
   server.players.forEach(p => syncPlayer(server, p))
   const label = name.charAt(0).toUpperCase() + name.slice(1)
   server.tell(on ? Text.gold(`The ${label} is now open to everyone.`) : Text.gray(`The ${label} has been sealed.`))
-  console.info(`[Skybound] Global unlock ${name} = ${on}`)
+  console.info(`[Empyrean] Global unlock ${name} = ${on}`)
 }
 
 PlayerEvents.loggedIn(event => syncPlayer(event.server, event.player))
@@ -48,6 +48,6 @@ ServerEvents.commandRegistry(event => {
     })
     return 1
   })
-  event.register(Commands.literal('skybound').requires(src => src.hasPermission(2))
+  event.register(Commands.literal('empyrean').requires(src => src.hasPermission(2))
     .then(unlock).then(lock).then(status))
 })

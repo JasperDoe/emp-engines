@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Skybound SMP server start (Linux hosts). Installs NeoForge on first run.
+# Empyrean Engines server start (Linux hosts). Installs NeoForge on first run.
 set -e
 cd "$(dirname "$0")"
 NEO=$(cat neoforge-version.txt)

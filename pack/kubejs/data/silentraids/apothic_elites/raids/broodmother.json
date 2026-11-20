@@ -1,0 +1,90 @@
+{
+  "type": "apotheosis:elite",
+  "basic_data": {
+    "constraints": {
+      "dimensions": [
+        "minecraft:overworld"
+      ]
+    },
+    "name": "Broodmother",
+    "valid_gear_sets": {
+      "haven": [
+        "#haven_melee"
+      ],
+      "frontier": [
+        "#frontier_melee"
+      ],
+      "ascent": [
+        "#ascent_melee"
+      ],
+      "summit": [
+        "#summit_melee"
+      ],
+      "pinnacle": [
+        "#pinnacle_melee"
+      ]
+    },
+    "weights": {
+      "haven": {
+        "quality": 0.1,
+        "weight": 100
+      },
+      "frontier": {
+        "quality": 0.1,
+        "weight": 100
+      },
+      "ascent": {
+        "quality": 0.1,
+        "weight": 100
+      },
+      "summit": {
+        "quality": 0.1,
+        "weight": 100
+      },
+      "pinnacle": {
+        "quality": 0.1,
+        "weight": 100
+      }
+    }
+  },
+  "entities": [
+    "minecraft:spider",
+    "minecraft:cave_spider"
+  ],
+  "stats": {
+    "attribute_modifiers": [
+      {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "add_value",
+        "value": {
+          "min": 12,
+          "max": 24
+        }
+      },
+      {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "add_multiplied_total",
+        "value": {
+          "min": 0.4,
+          "max": 0.7
+        }
+      },
+      {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "add_multiplied_base",
+        "value": 0.1
+      },
+      {
+        "attribute": "minecraft:generic.scale",
+        "operation": "add_value",
+        "value": 0.35
+      }
+    ],
+    "enchant_chance": 0.25,
+    "enchantment_levels": {
+      "primary": 15,
+      "secondary": 8
+    }
+  },
+  "success_chance": 0.0
+}

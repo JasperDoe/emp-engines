@@ -1,4 +1,4 @@
-# Builds the three Skybound mods (EXP Research, Chunk Upkeep, Create: Skybound)
+# Builds the Empyrean Engines mods (EXP Research, Create: Empyrean Engines, Silent Apotheosis Raids)
 # and puts their jars into pack\mods, so the next server build or client install
 # includes them.
 #
@@ -46,6 +46,13 @@ if ($code -ne 0) {
     exit 1
 }
 if (Test-Path $errors) { Remove-Item $errors }
+
+# Mods that were retired: take their old jars out of the pack
+foreach ($old in @('chunkupkeep')) {
+    Get-ChildItem (Join-Path $PackDir 'mods') -Filter "$old-*.jar" -ErrorAction SilentlyContinue | ForEach-Object {
+        Remove-Item $_.FullName; Write-Host "  removed retired pack\mods\$($_.Name)"
+    }
+}
 
 $packwiz = Get-Packwiz
 Push-Location $PackDir

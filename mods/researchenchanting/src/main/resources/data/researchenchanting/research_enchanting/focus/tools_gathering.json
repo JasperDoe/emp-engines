@@ -1,0 +1,20 @@
+{
+  "gear": "tools",
+  "icon": "minecraft:fishing_rod",
+  "lines": [
+    {
+      "enchantment": "minecraft:luck_of_the_sea",
+      "max_level": 3,
+      "resource": "minecraft:emerald",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "enchantment": "minecraft:lure",
+      "max_level": 3,
+      "resource": "minecraft:cod",
+      "x": 0,
+      "y": 1
+    }
+  ]
+}

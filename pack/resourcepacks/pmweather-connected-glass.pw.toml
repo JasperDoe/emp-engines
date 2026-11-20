@@ -1,0 +1,13 @@
+name = "PMWeather Connected Glass"
+filename = "PMWeather Connected Glass - v1.1.zip"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/duB0vUrg/versions/oEQGxm9U/PMWeather%20Connected%20Glass%20-%20v1.1.zip"
+hash-format = "sha512"
+hash = "4990a79a9aa9abfffad8eae9ba950b5043ccd254d0554b213406a3fc4ec8651ddff03e62e1a1656a55dd32337cf33de574acf8173502f934155c292f2b864bf8"
+
+[update]
+[update.modrinth]
+mod-id = "duB0vUrg"
+version = "oEQGxm9U"

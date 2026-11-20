@@ -1,4 +1,4 @@
-// Shared setup for the three Skybound mods.
+// Shared setup for the Empyrean Engines mods.
 //
 // The mods compile against the exact jars the pack uses: mod-files\mods
 // (filled by tools\download-mods.ps1) plus the libraries bundled inside them
@@ -10,7 +10,7 @@ plugins {
 
 def modFiles = file('../mod-files/mods')
 def jijDir = layout.buildDirectory.dir("jij").get().asFile
-def ownMods = ['expresearch', 'chunkupkeep', 'createskybound']
+def ownMods = ['expresearch', 'chunkupkeep', 'emp_engines', 'silentraids', 'weatheredmaps', 'researchenchanting', 'tieredfoundry']   // chunkupkeep kept here so an old jar is never compiled against
 
 // Extract jar-in-jar libraries (Create's Flywheel and Ponder, Sable's companion, ...)
 if (modFiles.exists()) {
@@ -38,7 +38,7 @@ subprojects {
     apply plugin: 'java-library'
     apply plugin: 'net.neoforged.moddev'
 
-    group = 'dev.skybound'
+    group = 'dev.empengines'
     version = '0.1.0'
     base { archivesName = project.name }
     java.toolchain.languageVersion = JavaLanguageVersion.of(21)
@@ -57,7 +57,16 @@ subprojects {
         }
     }
 
-    tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+    tasks.withType(JavaCompile).configureEach {
+        options.encoding = 'UTF-8'
+        // Harden the shipped jars against casual reading. Keep line numbers so
+        // player crash reports still point at a line; drop the source-file name
+        // and the local-variable table so a decompiler shows var1/var2 with no
+        // original parameter names. Bytecode is always decompilable, but this
+        // makes the output much harder to follow and copy.
+        options.debug = true
+        options.debugOptions.debugLevel = 'lines'
+    }
 
     // Copy the finished jar into the pack, replacing older versions.
     tasks.register('installToPack') {

@@ -1,0 +1,11 @@
+{
+  "type": "tieredfoundry:melting",
+  "ingredient": {
+    "tag": "c:plates/gold"
+  },
+  "result": {
+    "id": "tieredfoundry:molten_gold",
+    "amount": 90
+  },
+  "temperature": 850
+}
